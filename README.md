@@ -17,6 +17,6 @@ The B1 prompt in this repository is a template with placeholders; its examples a
 
 Each request uses a fresh conversation with tool restrictions and is rejected if tool use is reported. Quota or authentication issues stop dispatch and offer a shared login prompt after in-flight requests finish. Once signed in, resume; successful results are skipped. Recursive retries continue until selected predictions succeed or the user stops the cell. This can consume additional quota; persistent failures remain visible in local logs. Avoid running two schedulers for the same experiment at once.
 
-The notebook expects pre-existing `b0_results/b0_flash_medium_v2` and `b1_results/b1_flash_medium_v1` directories to review the original results. Those directories are not published; without them, prediction cells create new results locally. To start a new experiment, use a new experiment name in its prediction and comparison cells.
+The notebook expects pre-existing `b0_results/b0_flash_medium_v3` and `b1_results/b1_flash_medium_v2` directories to review the original results. Those directories are not published; without them, prediction cells create new results locally. To start a new experiment, use a new experiment name in its prediction and comparison cells.
 
 The reported research sample is near balanced and need not represent deployment prevalence. Compare precision, recall, F1, confusion matrices, and run-to-run consistency as well as accuracy. Any threshold tuned on the same tests requires separate validation.
