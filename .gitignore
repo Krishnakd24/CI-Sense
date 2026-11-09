@@ -3,12 +3,15 @@
 *.jsonl
 b0_data*.json
 b1_data*.json
+b2_o1_data*.json
 *few_shot*.json
 prompt_b0.txt
+prompt_b2_o1.txt
 data/
 results/
 b0_results/
 b1_results/
+b2_o1_results/
 diffs/
 __pycache__/
 .ipynb_checkpoints/
