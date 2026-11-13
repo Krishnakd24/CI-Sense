@@ -1,0 +1,64 @@
+diff --git a/build.xml b/build.xml
+index 8e932d832..8f83fced9 100644
+--- a/build.xml
++++ b/build.xml
+@@ -106,6 +106,7 @@
+     <jar jarfile="${maven.build.directory}/dist/lib/${maven.build.final.name}.jar" basedir="${maven.build.output}" excludes="**/package.html"/>
+     <!-- copy the scripts -->
+     <copy file="${basedir}/src/test/bin/testme.sh" todir="${maven.build.directory}/dist"/>
++    <copy file="${basedir}/src/test/bin/testme.bat" todir="${maven.build.directory}/dist"/>
+     <copy todir="${maven.build.directory}/dist/src/test/scripts">
+       <fileset dir="${basedir}/src/test/scripts"/>
+     </copy>
+diff --git a/src/test/scripts/forever.bat b/src/test/scripts/forever.bat
+index 335c22e3e..96c62afd0 100644
+--- a/src/test/scripts/forever.bat
++++ b/src/test/scripts/forever.bat
+@@ -1,21 +1,24 @@
+-@ECHO OFF
+-
+-REM Little batch file to run nearly foerver
+-REM see http://malektips.com/dos0017.html
+-REM
+-REM Licensed to the Apache Software Foundation (ASF) under one or more
+-REM contributor license agreements.  See the NOTICE file distributed with
+-REM this work for additional information regarding copyright ownership.
+-REM The ASF licenses this file to You under the Apache License, Version 2.0
+-REM (the "License"); you may not use this file except in compliance with
+-REM the License.  You may obtain a copy of the License at
+-REM
+-REM      http://www.apache.org/licenses/LICENSE-2.0
+-REM
+-REM Unless required by applicable law or agreed to in writing, software
+-REM distributed under the License is distributed on an "AS IS" BASIS,
+-REM WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-REM See the License for the specific language governing permissions and
+-REM limitations under the License.
+-
+-@ping 127.0.0.1 -n 3600 -w 1000 > .\target\forever.txt
+\ No newline at end of file
++@ECHO OFF
++
++REM Little batch file to run nearly foerver
++REM see http://malektips.com/dos0017.html
++REM
++REM Licensed to the Apache Software Foundation (ASF) under one or more
++REM contributor license agreements.  See the NOTICE file distributed with
++REM this work for additional information regarding copyright ownership.
++REM The ASF licenses this file to You under the Apache License, Version 2.0
++REM (the "License"); you may not use this file except in compliance with
++REM the License.  You may obtain a copy of the License at
++REM
++REM      http://www.apache.org/licenses/LICENSE-2.0
++REM
++REM Unless required by applicable law or agreed to in writing, software
++REM distributed under the License is distributed on an "AS IS" BASIS,
++REM WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++REM See the License for the specific language governing permissions and
++REM limitations under the License.
++
++:LOOP
++  ECHO .
++  PAUSE
++GOTO LOOP
+\ No newline at end of file

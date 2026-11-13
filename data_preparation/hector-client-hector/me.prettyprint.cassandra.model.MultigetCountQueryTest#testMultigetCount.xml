@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="me.prettyprint.cassandra.model.MultigetCountQueryTest" time="0.898" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/working/proj/hector-client-hector-4381/hector-client-hector/core/target/test-classes:/working/proj/hector-client-hector-4381/hector-client-hector/core/target/classes:/root/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/root/.m2/repository/commons-pool/commons-pool/1.5.3/commons-pool-1.5.3.jar:/root/.m2/repository/org/apache/cassandra/cassandra-all/0.7.0-rc4/cassandra-all-0.7.0-rc4.jar:/root/.m2/repository/com/google/guava/guava/r05/guava-r05.jar:/root/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/root/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/root/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.1/concurrentlinkedhashmap-lru-1.1.jar:/root/.m2/repository/org/mortbay/jetty/jetty/6.1.21/jetty-6.1.21.jar:/root/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar:/root/.m2/repository/org/mortbay/jetty/jetty-util/6.1.21/jetty-util-6.1.21.jar:/root/.m2/repository/org/antlr/antlr/3.1.3/antlr-3.1.3.jar:/root/.m2/repository/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar:/root/.m2/repository/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar:/root/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.4.0/jackson-core-asl-1.4.0.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.4.0/jackson-mapper-asl-1.4.0.jar:/root/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/root/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/root/.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar:/root/.m2/repository/org/safehaus/jug/jug/2.0.0/jug-2.0.0-asl.jar:/root/.m2/repository/org/apache/cassandra/deps/avro/1.4.0-cassandra-1/avro-1.4.0-cassandra-1.jar:/root/.m2/repository/org/apache/cassandra/deps/libthrift/0.5.0/libthrift-0.5.0.jar:/root/.m2/repository/com/github/stephenc/high-scale-lib/high-scale-lib/1.1.1/high-scale-lib-1.1.1.jar:/root/.m2/repository/org/apache/cassandra/cassandra-javautils/0.7.0-rc4/cassandra-javautils-0.7.0-rc4.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.5.11/slf4j-api-1.5.11.jar:/root/.m2/repository/com/github/stephenc/eaio-uuid/uuid/3.2.0/uuid-3.2.0.jar:/root/.m2/repository/org/perf4j/perf4j/0.9.12/perf4j-0.9.12.jar:/root/.m2/repository/org/osgi/osgi_R4_core/1.0/osgi_R4_core-1.0.jar:/root/.m2/repository/org/osgi/osgi_R4_compendium/1.0/osgi_R4_compendium-1.0.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.5.11/slf4j-log4j12-1.5.11.jar:/root/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar:/root/.m2/repository/org/slf4j/jcl-over-slf4j/1.5.11/jcl-over-slf4j-1.5.11.jar:/root/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar:/root/.m2/repository/org/mockito/mockito-all/1.8.2/mockito-all-1.8.2.jar:/root/.m2/repository/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-core/3.0.0.RELEASE/spring-core-3.0.0.RELEASE.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/org/springframework/spring-context/3.0.0.RELEASE/spring-context-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-expression/3.0.0.RELEASE/spring-expression-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-asm/3.0.0.RELEASE/spring-asm-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-test/3.0.0.RELEASE/spring-test-3.0.0.RELEASE.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="storage-config" value="/working/proj/hector-client-hector-4381/hector-client-hector/core/src/test/conf"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="sun.java.command" value="/working/proj/hector-client-hector-4381/hector-client-hector/core/target/surefire/surefirebooter1582324682352102668.jar /working/proj/hector-client-hector-4381/hector-client-hector/core/target/surefire 2019-09-09T23-12-46_567-jvmRun1 surefire8382395817705585934tmp surefire_88133605526029243356tmp"/>
+    <property name="surefire.test.class.path" value="/working/proj/hector-client-hector-4381/hector-client-hector/core/target/test-classes:/working/proj/hector-client-hector-4381/hector-client-hector/core/target/classes:/root/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/root/.m2/repository/commons-pool/commons-pool/1.5.3/commons-pool-1.5.3.jar:/root/.m2/repository/org/apache/cassandra/cassandra-all/0.7.0-rc4/cassandra-all-0.7.0-rc4.jar:/root/.m2/repository/com/google/guava/guava/r05/guava-r05.jar:/root/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/root/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/root/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.1/concurrentlinkedhashmap-lru-1.1.jar:/root/.m2/repository/org/mortbay/jetty/jetty/6.1.21/jetty-6.1.21.jar:/root/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar:/root/.m2/repository/org/mortbay/jetty/jetty-util/6.1.21/jetty-util-6.1.21.jar:/root/.m2/repository/org/antlr/antlr/3.1.3/antlr-3.1.3.jar:/root/.m2/repository/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar:/root/.m2/repository/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar:/root/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.4.0/jackson-core-asl-1.4.0.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.4.0/jackson-mapper-asl-1.4.0.jar:/root/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/root/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/root/.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar:/root/.m2/repository/org/safehaus/jug/jug/2.0.0/jug-2.0.0-asl.jar:/root/.m2/repository/org/apache/cassandra/deps/avro/1.4.0-cassandra-1/avro-1.4.0-cassandra-1.jar:/root/.m2/repository/org/apache/cassandra/deps/libthrift/0.5.0/libthrift-0.5.0.jar:/root/.m2/repository/com/github/stephenc/high-scale-lib/high-scale-lib/1.1.1/high-scale-lib-1.1.1.jar:/root/.m2/repository/org/apache/cassandra/cassandra-javautils/0.7.0-rc4/cassandra-javautils-0.7.0-rc4.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.5.11/slf4j-api-1.5.11.jar:/root/.m2/repository/com/github/stephenc/eaio-uuid/uuid/3.2.0/uuid-3.2.0.jar:/root/.m2/repository/org/perf4j/perf4j/0.9.12/perf4j-0.9.12.jar:/root/.m2/repository/org/osgi/osgi_R4_core/1.0/osgi_R4_core-1.0.jar:/root/.m2/repository/org/osgi/osgi_R4_compendium/1.0/osgi_R4_compendium-1.0.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.5.11/slf4j-log4j12-1.5.11.jar:/root/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar:/root/.m2/repository/org/slf4j/jcl-over-slf4j/1.5.11/jcl-over-slf4j-1.5.11.jar:/root/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar:/root/.m2/repository/org/mockito/mockito-all/1.8.2/mockito-all-1.8.2.jar:/root/.m2/repository/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-core/3.0.0.RELEASE/spring-core-3.0.0.RELEASE.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/org/springframework/spring-context/3.0.0.RELEASE/spring-context-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-expression/3.0.0.RELEASE/spring-expression-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-asm/3.0.0.RELEASE/spring-asm-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-test/3.0.0.RELEASE/spring-test-3.0.0.RELEASE.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/working/proj/hector-client-hector-4381/hector-client-hector/core"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="surefire.real.class.path" value="/working/proj/hector-client-hector-4381/hector-client-hector/core/target/surefire/surefirebooter1582324682352102668.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="user.name" value="root"/>
+    <property name="path.separator" value=":"/>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="os.version" value="4.15.0-1047-aws"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="user.dir" value="/working/proj/hector-client-hector-4381/hector-client-hector/core"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+  </properties>
+  <testcase name="testMultigetCount" classname="me.prettyprint.cassandra.model.MultigetCountQueryTest" time="0.121">
+    <error message="Cassandra encountered an internal error processing this request: TApplicationError type: 6 message:Internal error processing multiget_count" type="me.prettyprint.hector.api.exceptions.HCassandraInternalException">me.prettyprint.hector.api.exceptions.HCassandraInternalException: Cassandra encountered an internal error processing this request: TApplicationError type: 6 message:Internal error processing multiget_count
+	at me.prettyprint.cassandra.model.MultigetCountQueryTest.testMultigetCount(MultigetCountQueryTest.java:60)
+</error>
+    <system-out><![CDATA[23:12:57,750  INFO DatabaseDescriptor:121 - Loading settings from file:tmp/cassandra.yaml
+23:12:57,856  INFO DatabaseDescriptor:172 - DiskAccessMode 'auto' determined to be mmap, indexAccessMode is mmap
+23:12:57,994  INFO CommitLogSegment:50 - Creating new commitlog segment tmp/var/lib/cassandra/commitlog/CommitLog-1568070777994.log
+23:12:58,015  INFO DatabaseDescriptor:570 - memtable_throughput_in_mb not configured for Standard1, using 56
+23:12:58,015  INFO DatabaseDescriptor:575 - memtable_operations_in_millions not configured for Standard1, using 0.2625
+23:12:58,016  INFO DatabaseDescriptor:570 - memtable_throughput_in_mb not configured for Standard2, using 56
+23:12:58,016  INFO DatabaseDescriptor:575 - memtable_operations_in_millions not configured for Standard2, using 0.2625
+23:12:58,017  INFO DatabaseDescriptor:570 - memtable_throughput_in_mb not configured for StandardByUUID1, using 56
+23:12:58,017  INFO DatabaseDescriptor:575 - memtable_operations_in_millions not configured for StandardByUUID1, using 0.2625
+23:12:58,017  INFO DatabaseDescriptor:570 - memtable_throughput_in_mb not configured for Super1, using 56
+23:12:58,018  INFO DatabaseDescriptor:575 - memtable_operations_in_millions not configured for Super1, using 0.2625
+23:12:58,018  INFO DatabaseDescriptor:570 - memtable_throughput_in_mb not configured for Super2, using 56
+23:12:58,019  INFO DatabaseDescriptor:575 - memtable_operations_in_millions not configured for Super2, using 0.2625
+23:12:58,019  INFO DatabaseDescriptor:570 - memtable_throughput_in_mb not configured for Super3, using 56
+23:12:58,020  INFO DatabaseDescriptor:575 - memtable_operations_in_millions not configured for Super3, using 0.2625
+23:12:58,024  INFO DatabaseDescriptor:570 - memtable_throughput_in_mb not configured for Indexed1, using 56
+23:12:58,024  INFO DatabaseDescriptor:575 - memtable_operations_in_millions not configured for Indexed1, using 0.2625
+23:12:58,034  INFO AbstractCassandraDaemon:74 - Heap size: 122683392/954728448
+23:12:58,035  INFO CLibrary:47 - JNA not found. Native methods will be disabled.
+23:12:58,104  INFO DatabaseDescriptor:413 - Couldn't detect any schema definitions in local storage.
+23:12:58,105  INFO DatabaseDescriptor:439 - Found table data in data directories. Consider using JMX to call org.apache.cassandra.service.StorageService.loadSchemaFromYaml().
+23:12:58,114  INFO CommitLog:188 - No commitlog files found; skipping replay
+23:12:58,121  INFO ColumnFamilyStore:326 - Creating index org.apache.cassandra.db.Table@1740a695.Indexed1.626972746879656172
+23:12:58,126  INFO ColumnFamilyStore:340 - Index Indexed1.626972746879656172 complete
+23:12:58,127  INFO ColumnFamilyStore:648 - switching in a fresh Memtable for IndexInfo at CommitLogContext(file='tmp/var/lib/cassandra/commitlog/CommitLog-1568070777994.log', position=424)
+23:12:58,128  INFO ColumnFamilyStore:952 - Enqueuing flush of Memtable-IndexInfo@1052791563(42 bytes, 1 operations)
+23:12:58,129  INFO Memtable:155 - Writing Memtable-IndexInfo@1052791563(42 bytes, 1 operations)
+23:12:58,139  INFO SystemTable:80 - Upgrading to 0.7. Purging hints if there are any. Old hints will be snapshotted.
+23:12:58,142  INFO StorageService:294 - Cassandra version: 0.7.0-rc4
+23:12:58,146  INFO StorageService:295 - Thrift API version: 19.4.0
+23:12:58,155  INFO StorageService:317 - Loading persisted ring state
+23:12:58,157  INFO StorageService:325 - Starting up server gossip
+23:12:58,171  INFO ColumnFamilyStore:648 - switching in a fresh Memtable for LocationInfo at CommitLogContext(file='tmp/var/lib/cassandra/commitlog/CommitLog-1568070777994.log', position=848)
+23:12:58,171  INFO ColumnFamilyStore:952 - Enqueuing flush of Memtable-LocationInfo@1989335500(236 bytes, 4 operations)
+23:12:58,202  INFO Memtable:162 - Completed flushing tmp/var/lib/cassandra/data/system/IndexInfo-e-1-Data.db (170 bytes)
+23:12:58,205  INFO Memtable:155 - Writing Memtable-LocationInfo@1989335500(236 bytes, 4 operations)
+23:12:58,236  INFO Memtable:162 - Completed flushing tmp/var/lib/cassandra/data/system/LocationInfo-e-1-Data.db (482 bytes)
+23:12:58,262  WARN StorageService:375 - Generated random token DASpyc4RU4L6EYEm. Random tokens will result in an unbalanced ring; see http://wiki.apache.org/cassandra/Operations
+23:12:58,263  INFO ColumnFamilyStore:648 - switching in a fresh Memtable for LocationInfo at CommitLogContext(file='tmp/var/lib/cassandra/commitlog/CommitLog-1568070777994.log', position=1144)
+23:12:58,264  INFO ColumnFamilyStore:952 - Enqueuing flush of Memtable-LocationInfo@796667727(53 bytes, 2 operations)
+23:12:58,265  INFO Memtable:155 - Writing Memtable-LocationInfo@796667727(53 bytes, 2 operations)
+23:12:58,302  INFO Memtable:162 - Completed flushing tmp/var/lib/cassandra/data/system/LocationInfo-e-2-Data.db (301 bytes)
+23:12:58,305  INFO Mx4jTool:72 - Will not load MX4J, mx4j-tools.jar is not in the classpath
+23:12:58,320  INFO CassandraDaemon:77 - Binding thrift service to localhost/127.0.0.1:9170
+23:12:58,321  INFO CassandraDaemon:91 - Using TFramedTransport with a max frame size of 15728640 bytes.
+23:12:58,325  INFO CassandraDaemon:119 - Listening for thrift clients...
+23:12:58,335  INFO CassandraHostRetryService:37 - Downed Host Retry service started with queue size 3 and retry delay 10s
+23:12:58,351  INFO JmxMonitor:65 - Registering JMX me.prettyprint.cassandra.service:ServiceType=hector,MonitorType=hector
+23:12:58,438 ERROR Cassandra$Processor:2834 - Internal error processing multiget_count
+java.lang.AssertionError: java.net.UnknownHostException: ip-172-31-55-212: ip-172-31-55-212: Temporary failure in name resolution
+	at org.apache.cassandra.utils.GuidGenerator.<clinit>(GuidGenerator.java:50)
+	at org.apache.cassandra.net.MessagingService.sendRR(MessagingService.java:298)
+	at org.apache.cassandra.service.StorageProxy.strongRead(StorageProxy.java:353)
+	at org.apache.cassandra.service.StorageProxy.readProtocol(StorageProxy.java:229)
+	at org.apache.cassandra.thrift.CassandraServer.readColumnFamily(CassandraServer.java:98)
+	at org.apache.cassandra.thrift.CassandraServer.getSlice(CassandraServer.java:195)
+	at org.apache.cassandra.thrift.CassandraServer.multigetSliceInternal(CassandraServer.java:271)
+	at org.apache.cassandra.thrift.CassandraServer.multiget_count(CassandraServer.java:321)
+	at org.apache.cassandra.thrift.Cassandra$Processor$multiget_count.process(Cassandra.java:2826)
+	at org.apache.cassandra.thrift.Cassandra$Processor.process(Cassandra.java:2555)
+	at org.apache.cassandra.thrift.CustomTThreadPoolServer$WorkerProcess.run(CustomTThreadPoolServer.java:167)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.UnknownHostException: ip-172-31-55-212: ip-172-31-55-212: Temporary failure in name resolution
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1506)
+	at org.apache.cassandra.utils.GuidGenerator.<clinit>(GuidGenerator.java:47)
+	... 13 more
+Caused by: java.net.UnknownHostException: ip-172-31-55-212: Temporary failure in name resolution
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501)
+	... 14 more
+]]></system-out>
+  </testcase>
+</testsuite>

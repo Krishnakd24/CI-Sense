@@ -1,0 +1,2256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="12.408" tests="78" errors="0" skipped="0" failures="78">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/spring-projects-spring-boot-143/spring-projects-spring-boot"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/spring-projects-spring-boot-143/spring-projects-spring-boot"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[0]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.254">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.327 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[0]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.172">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.165 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[1]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.172">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.162 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[1]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.167">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.163 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[2]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.159">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.153 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[2]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.171">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.164 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[3]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.183">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.174 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[3]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.156">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.146 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[4]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.144">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.141 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[4]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.14">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.138 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[5]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.149">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.143 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[5]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.146">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.14 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[6]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.16">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.154 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[6]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.179">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.168 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[7]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.16">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.153 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[7]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.181">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.174 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[8]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.153">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.146 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[8]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.135">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.126 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[9]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.161">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.156 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[9]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.208">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.201 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[10]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.177">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.17 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[10]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.161">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.156 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[11]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.154">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.147 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[11]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.147">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.141 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[12]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.162">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.156 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[12]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.184">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.179 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[13]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.167">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.161 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[13]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.17">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.162 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[14]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.164">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.16 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[14]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.177">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.162 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[15]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.192">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.188 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[15]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.229">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.225 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[16]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.174">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.168 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[16]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.17">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.164 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[17]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.159">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.146 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[17]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.135">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.137 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[18]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.143">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.138 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[18]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.188">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.182 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[19]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.173">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.163 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[19]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.157">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.155 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[20]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.137">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.131 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[20]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.149">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.143 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[21]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.144">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.138 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[21]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.203">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.198 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[22]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.177">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.172 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[22]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.131">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.126 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[23]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.149">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.146 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[23]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.144">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.138 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[24]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.163">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.157 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[24]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.184">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.151 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[25]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.132">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.127 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[25]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.145">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.139 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[26]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.159">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.153 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[26]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.146">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.139 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[27]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.149">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.143 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[27]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.131">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.126 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[28]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.164">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.16 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[28]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.125">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.121 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[29]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.154">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.148 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[29]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.196">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.183 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[30]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.18">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.174 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[30]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.18">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.172 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[31]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.191">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.192 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[31]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.146">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.137 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[32]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.122">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.117 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[32]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.104">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.1 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[33]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.103">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.099 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[33]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.136">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.131 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[34]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.169">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.164 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[34]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.137">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.132 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[35]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.148">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.142 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[35]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.146">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.14 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[36]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.143">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.138 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[36]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.128">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.123 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[37]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.16">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.156 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[37]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.139">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.133 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="commonsLoggingIsNotATransitiveDependency[38]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.127">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.commonsLoggingIsNotATransitiveDependency(StarterDependenciesIntegrationTests.java:98)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.121 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+  <testcase name="oldSpringModulesAreNotTransitiveDependencies[38]" classname="org.springframework.boot.starter.StarterDependenciesIntegrationTests" time="0.134">
+    <failure message="Could not find org.springframework:spring-core:4.1.3.RELEASE.&#10;Required by:&#10;    :starter-dependencies:unspecified &gt; org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT &gt; org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT" type="java.lang.AssertionError">java.lang.AssertionError: Could not find org.springframework:spring-core:4.1.3.RELEASE.
+Required by:
+    :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.runBuildForTask(StarterDependenciesIntegrationTests.java:115)
+	at org.springframework.boot.starter.StarterDependenciesIntegrationTests.oldSpringModulesAreNotTransitiveDependencies(StarterDependenciesIntegrationTests.java:103)
+</failure>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+
+BUILD FAILED
+
+Total time: 0.128 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring root project 'starter-dependencies'.
+> Could not resolve all dependencies for configuration ':classpath'.
+   > Could not find org.springframework:spring-core:4.1.3.RELEASE.
+     Required by:
+         :starter-dependencies:unspecified > org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT > org.springframework.boot:spring-boot-loader-tools:1.2.0.BUILD-SNAPSHOT
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+]]></system-err>
+  </testcase>
+</testsuite>

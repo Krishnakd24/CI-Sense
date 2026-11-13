@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.boot.gradle.CustomVersionManagementTests" time="0.066" tests="2" errors="2" skipped="0" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.242-b08"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/tmp/proj/spring-projects-spring-boot-50000/spring-projects-spring-boot"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/tmp/proj/spring-projects-spring-boot-50000/spring-projects-spring-boot"/>
+    <property name="java.runtime.version" value="1.8.0_242-8u242-b08-0ubuntu3~18.04-b08"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-88-generic"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B -s /experiment/maven-settings.xml install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_242"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="customSpringVersionIsUsed" classname="org.springframework.boot.gradle.CustomVersionManagementTests" time="0.028">
+    <error message="Could not install Gradle distribution from &apos;http://services.gradle.org/distributions/gradle-1.12-bin.zip&apos;." type="org.gradle.tooling.GradleConnectionException">org.gradle.tooling.GradleConnectionException: Could not install Gradle distribution from 'http://services.gradle.org/distributions/gradle-1.12-bin.zip'.
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ZippedDistribution.getToolingImplementationClasspath(DistributionFactory.java:112)
+	at org.gradle.tooling.internal.consumer.loader.CachingToolingImplementationLoader.create(CachingToolingImplementationLoader.java:36)
+	at org.gradle.tooling.internal.consumer.loader.SynchronizedToolingImplementationLoader.create(SynchronizedToolingImplementationLoader.java:43)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.onStartAction(LazyConnection.java:118)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:101)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at org.gradle.tooling.internal.consumer.BlockingResultHandler.getResult(BlockingResultHandler.java:46)
+	at org.gradle.tooling.internal.consumer.DefaultBuildLauncher.run(DefaultBuildLauncher.java:100)
+	at org.springframework.boot.gradle.CustomVersionManagementTests.customSpringVersionIsUsed(CustomVersionManagementTests.java:52)
+Caused by: java.lang.RuntimeException: java.io.IOException: Server returned HTTP response code: 403 for URL: http://services.gradle.org/distributions/gradle-1.12-bin.zip
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:78)
+	at org.gradle.wrapper.Install.createDist(Install.java:47)
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ZippedDistribution.getToolingImplementationClasspath(DistributionFactory.java:108)
+	at org.gradle.tooling.internal.consumer.loader.CachingToolingImplementationLoader.create(CachingToolingImplementationLoader.java:36)
+	at org.gradle.tooling.internal.consumer.loader.SynchronizedToolingImplementationLoader.create(SynchronizedToolingImplementationLoader.java:43)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.onStartAction(LazyConnection.java:118)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:101)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Server returned HTTP response code: 403 for URL: http://services.gradle.org/distributions/gradle-1.12-bin.zip
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1900)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at org.gradle.wrapper.Download.downloadInternal(Download.java:59)
+	at org.gradle.wrapper.Download.download(Download.java:45)
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ProgressReportingDownload.download(DistributionFactory.java:132)
+	at org.gradle.wrapper.Install$1.call(Install.java:60)
+	at org.gradle.wrapper.Install$1.call(Install.java:47)
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:65)
+	at org.gradle.wrapper.Install.createDist(Install.java:47)
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ZippedDistribution.getToolingImplementationClasspath(DistributionFactory.java:108)
+	at org.gradle.tooling.internal.consumer.loader.CachingToolingImplementationLoader.create(CachingToolingImplementationLoader.java:36)
+	at org.gradle.tooling.internal.consumer.loader.SynchronizedToolingImplementationLoader.create(SynchronizedToolingImplementationLoader.java:43)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.onStartAction(LazyConnection.java:118)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:101)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</error>
+    <system-out><![CDATA[Downloading http://services.gradle.org/distributions/gradle-1.12-bin.zip
+
+]]></system-out>
+  </testcase>
+  <testcase name="exclusionsAreStillInPlace" classname="org.springframework.boot.gradle.CustomVersionManagementTests" time="0.038">
+    <error message="Could not install Gradle distribution from &apos;http://services.gradle.org/distributions/gradle-1.12-bin.zip&apos;." type="org.gradle.tooling.GradleConnectionException">org.gradle.tooling.GradleConnectionException: Could not install Gradle distribution from 'http://services.gradle.org/distributions/gradle-1.12-bin.zip'.
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ZippedDistribution.getToolingImplementationClasspath(DistributionFactory.java:112)
+	at org.gradle.tooling.internal.consumer.loader.CachingToolingImplementationLoader.create(CachingToolingImplementationLoader.java:36)
+	at org.gradle.tooling.internal.consumer.loader.SynchronizedToolingImplementationLoader.create(SynchronizedToolingImplementationLoader.java:43)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.onStartAction(LazyConnection.java:118)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:101)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at org.gradle.tooling.internal.consumer.BlockingResultHandler.getResult(BlockingResultHandler.java:46)
+	at org.gradle.tooling.internal.consumer.DefaultBuildLauncher.run(DefaultBuildLauncher.java:100)
+	at org.springframework.boot.gradle.CustomVersionManagementTests.exclusionsAreStillInPlace(CustomVersionManagementTests.java:46)
+Caused by: java.lang.RuntimeException: java.io.IOException: Server returned HTTP response code: 403 for URL: http://services.gradle.org/distributions/gradle-1.12-bin.zip
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:78)
+	at org.gradle.wrapper.Install.createDist(Install.java:47)
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ZippedDistribution.getToolingImplementationClasspath(DistributionFactory.java:108)
+	at org.gradle.tooling.internal.consumer.loader.CachingToolingImplementationLoader.create(CachingToolingImplementationLoader.java:36)
+	at org.gradle.tooling.internal.consumer.loader.SynchronizedToolingImplementationLoader.create(SynchronizedToolingImplementationLoader.java:43)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.onStartAction(LazyConnection.java:118)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:101)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Server returned HTTP response code: 403 for URL: http://services.gradle.org/distributions/gradle-1.12-bin.zip
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1900)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at org.gradle.wrapper.Download.downloadInternal(Download.java:59)
+	at org.gradle.wrapper.Download.download(Download.java:45)
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ProgressReportingDownload.download(DistributionFactory.java:132)
+	at org.gradle.wrapper.Install$1.call(Install.java:60)
+	at org.gradle.wrapper.Install$1.call(Install.java:47)
+	at org.gradle.wrapper.ExclusiveFileAccessManager.access(ExclusiveFileAccessManager.java:65)
+	at org.gradle.wrapper.Install.createDist(Install.java:47)
+	at org.gradle.tooling.internal.consumer.DistributionFactory$ZippedDistribution.getToolingImplementationClasspath(DistributionFactory.java:108)
+	at org.gradle.tooling.internal.consumer.loader.CachingToolingImplementationLoader.create(CachingToolingImplementationLoader.java:36)
+	at org.gradle.tooling.internal.consumer.loader.SynchronizedToolingImplementationLoader.create(SynchronizedToolingImplementationLoader.java:43)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.onStartAction(LazyConnection.java:118)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:101)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</error>
+    <system-out><![CDATA[Downloading http://services.gradle.org/distributions/gradle-1.12-bin.zip
+
+]]></system-out>
+  </testcase>
+</testsuite>

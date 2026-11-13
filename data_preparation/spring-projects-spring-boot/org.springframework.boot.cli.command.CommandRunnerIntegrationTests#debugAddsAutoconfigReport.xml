@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.boot.cli.command.CommandRunnerIntegrationTests" time="1.612" tests="2" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/spring-projects-spring-boot-145/spring-projects-spring-boot"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/spring-projects-spring-boot-145/spring-projects-spring-boot"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="debugSwitchedOffForAppArgs" classname="org.springframework.boot.cli.command.CommandRunnerIntegrationTests" time="0.803"/>
+  <testcase name="debugAddsAutoconfigReport" classname="org.springframework.boot.cli.command.CommandRunnerIntegrationTests" time="0.809">
+    <failure type="java.lang.AssertionError:">java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.springframework.boot.cli.command.CommandRunnerIntegrationTests.debugAddsAutoconfigReport(CommandRunnerIntegrationTests.java:42)
+</failure>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::  (v1.2.0.BUILD-SNAPSHOT)
+
+2019-08-27 00:00:51.823  INFO 3889 --- [       runner-1] o.s.boot.SpringApplication               : Starting application on ip-172-31-63-63 with PID 3889 (/root/.m2/repository/org/springframework/boot/spring-boot/1.2.0.BUILD-SNAPSHOT/spring-boot-1.2.0.BUILD-SNAPSHOT.jar started by root in /working/proj/spring-projects-spring-boot-145/spring-projects-spring-boot/spring-boot-cli)
+2019-08-27 00:00:51.826 DEBUG 3889 --- [       runner-1] o.s.boot.SpringApplication               : Running with Spring Boot v1.2.0.BUILD-SNAPSHOT, Spring v4.1.1.RELEASE
+2019-08-27 00:00:51.826 DEBUG 3889 --- [       runner-1] o.s.boot.SpringApplication               : Loading source class org.test.MyService,class org.test.Example
+2019-08-27 00:00:51.862 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Activated profiles integration
+2019-08-27 00:00:51.863 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.xml' resource not found
+2019-08-27 00:00:51.863 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yml' resource not found
+2019-08-27 00:00:51.863 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.properties' resource not found
+2019-08-27 00:00:51.863 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yaml' resource not found
+2019-08-27 00:00:51.865 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.xml' resource not found
+2019-08-27 00:00:51.865 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yml' resource not found
+2019-08-27 00:00:51.865 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.properties' resource not found
+2019-08-27 00:00:51.865 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yaml' resource not found
+2019-08-27 00:00:51.865 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.xml' resource not found
+2019-08-27 00:00:51.866 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yml' resource not found
+2019-08-27 00:00:51.866 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.properties' resource not found
+2019-08-27 00:00:51.866 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yaml' resource not found
+2019-08-27 00:00:51.866 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.xml' resource not found
+2019-08-27 00:00:51.866 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yml' resource not found
+2019-08-27 00:00:51.868 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.properties' resource not found
+2019-08-27 00:00:51.872 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yaml' resource not found
+2019-08-27 00:00:51.872 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.xml' resource not found
+2019-08-27 00:00:51.872 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.xml' for profile integrationresource not found
+2019-08-27 00:00:51.875 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.xml' for profile integrationresource not found
+2019-08-27 00:00:51.875 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.yml' resource not found
+2019-08-27 00:00:51.875 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.yml' for profile integrationresource not found
+2019-08-27 00:00:51.875 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yml' for profile integrationresource not found
+2019-08-27 00:00:51.875 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.properties' resource not found
+2019-08-27 00:00:51.876 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.properties' for profile integrationresource not found
+2019-08-27 00:00:51.877 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.properties' for profile integrationresource not found
+2019-08-27 00:00:51.877 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.yaml' resource not found
+2019-08-27 00:00:51.877 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application-integration.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.877 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./config/application.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.877 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.xml' resource not found
+2019-08-27 00:00:51.877 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.xml' for profile integrationresource not found
+2019-08-27 00:00:51.878 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.xml' for profile integrationresource not found
+2019-08-27 00:00:51.879 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.yml' resource not found
+2019-08-27 00:00:51.879 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.yml' for profile integrationresource not found
+2019-08-27 00:00:51.879 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yml' for profile integrationresource not found
+2019-08-27 00:00:51.879 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.properties' resource not found
+2019-08-27 00:00:51.879 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.properties' for profile integrationresource not found
+2019-08-27 00:00:51.880 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.properties' for profile integrationresource not found
+2019-08-27 00:00:51.880 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.yaml' resource not found
+2019-08-27 00:00:51.880 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application-integration.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.881 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'file:./application.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.882 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.xml' resource not found
+2019-08-27 00:00:51.882 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.xml' for profile integrationresource not found
+2019-08-27 00:00:51.882 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.xml' for profile integrationresource not found
+2019-08-27 00:00:51.882 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.yml' resource not found
+2019-08-27 00:00:51.882 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.yml' for profile integrationresource not found
+2019-08-27 00:00:51.882 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yml' for profile integrationresource not found
+2019-08-27 00:00:51.882 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.properties' resource not found
+2019-08-27 00:00:51.883 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.properties' for profile integrationresource not found
+2019-08-27 00:00:51.883 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.properties' for profile integrationresource not found
+2019-08-27 00:00:51.883 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.yaml' resource not found
+2019-08-27 00:00:51.883 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application-integration.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.885 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/config/application.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.885 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.xml' resource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.xml' for profile integrationresource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.xml' for profile integrationresource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.yml' resource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.yml' for profile integrationresource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yml' for profile integrationresource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.properties' resource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.properties' for profile integrationresource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.properties' for profile integrationresource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.yaml' resource not found
+2019-08-27 00:00:51.886 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application-integration.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.887 DEBUG 3889 --- [       runner-1] o.s.b.c.c.ConfigFileApplicationListener  : Skipped config file 'classpath:/application.yaml' for profile integrationresource not found
+2019-08-27 00:00:51.887  INFO 3889 --- [       runner-1] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@532e295f: startup date [Tue Aug 27 00:00:51 UTC 2019]; root of context hierarchy
+2019-08-27 00:00:52.169  INFO 3889 --- [       runner-1] .b.l.ClasspathLoggingApplicationListener : Application failed to start with classpath: []
+2019-08-27 00:00:52.173 ERROR 3889 --- [       runner-1] o.s.boot.SpringApplication               : Application startup failed
+
+java.lang.NoSuchMethodError: org.springframework.beans.factory.support.DefaultListableBeanFactory.isAllowEagerClassLoading()Z
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.get(BeanTypeRegistry.java:147)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:154)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:143)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:115)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:90)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:45)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:102)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:177)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:146)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:122)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:318)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:239)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:691)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:961)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.cli.command.run.SpringApplicationRunner$RunThread.run(SpringApplicationRunner.java:152)
+
+2019-08-27 00:00:52.173  INFO 3889 --- [       runner-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@532e295f: startup date [Tue Aug 27 00:00:51 UTC 2019]; root of context hierarchy
+2019-08-27 00:00:52.175  WARN 3889 --- [       runner-1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from ApplicationListener handling ContextClosedEvent
+
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.context.annotation.AnnotationConfigApplicationContext@532e295f: startup date [Tue Aug 27 00:00:51 UTC 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:344)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:961)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.cli.command.run.SpringApplicationRunner$RunThread.run(SpringApplicationRunner.java:152)
+
+2019-08-27 00:00:52.176  WARN 3889 --- [       runner-1] s.c.a.AnnotationConfigApplicationContext : Exception thrown from LifecycleProcessor on context close
+
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: org.springframework.context.annotation.AnnotationConfigApplicationContext@532e295f: startup date [Tue Aug 27 00:00:51 UTC 2019]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:357)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:836)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:961)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.cli.command.run.SpringApplicationRunner$RunThread.run(SpringApplicationRunner.java:152)
+
+]]></system-out>
+    <system-err><![CDATA[java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.cli.command.run.SpringApplicationRunner$RunThread.run(SpringApplicationRunner.java:152)
+Caused by: java.lang.NoSuchMethodError: org.springframework.beans.factory.support.DefaultListableBeanFactory.isAllowEagerClassLoading()Z
+	at org.springframework.boot.autoconfigure.condition.BeanTypeRegistry.get(BeanTypeRegistry.java:147)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:154)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:143)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:115)
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:90)
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:45)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:102)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:177)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:146)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:122)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:318)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:239)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:691)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:961)
+	... 5 more
+]]></system-err>
+  </testcase>
+</testsuite>

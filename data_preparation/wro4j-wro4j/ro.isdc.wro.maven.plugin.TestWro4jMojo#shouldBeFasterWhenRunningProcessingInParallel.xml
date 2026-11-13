@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="28" failures="1" name="ro.isdc.wro.maven.plugin.TestWro4jMojo" time="5.509" errors="0" skipped="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/wro4j-wro4j-1032/wro4j-wro4j"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/wro4j-wro4j-1032/wro4j-wro4j"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithConfigurableWroManagerFactoryWithValidConfigFileSet" time="0.736"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldReuseGroupNameMappingFileWithIncrementalBuild" time="0.177"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testInvalidMojoWithWroManagerFactorySet" time="0.021"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldUseTaskExecutorWhenRunningInParallel" time="0.673"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldGenerateGroupMappingUsingNoOpNamingStrategy" time="0.323"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testOnlyJsDestinationFolderSet" time="0.017"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithConfigurableWroManagerFactoryWithValidAndEmptyConfigFileSet" time="0.214"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldFailWhenInvalidResourcesAreUsed" time="0.202"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithCustomManagerFactoryWithInvalidResourceAndIgnoreMissingResources" time="0.108"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldGenerateGroupMappingUsingCustomNamingStrategy" time="0.162"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testComputedAggregatedFolder" time="0.164"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testNoDestinationFolderSet" time="0.008"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testOnlyCssDestinationFolderSet" time="0.015"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldUseConfiguredNamingStrategy" time="0.343"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldProcessTargetGroupsWhenDestinationFolderDoesNotExist" time="0.994"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldIgnoreChangesOfGroupsWhichAreNotPartOfTargetGroups" time="0.039"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldDetectIncrementalChangeOfImportedCss" time="0.029"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="cannotExecuteWhenInvalidResourcesPresentAndDoNotIgnoreMissingResources" time="0.051"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithConfigurableWroManagerFactory" time="0.017"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testJsAndCssDestinationFolderSet" time="0.28"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithWroManagerFactorySet" time="0.07"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithPropertiesSetAndOneTargetGroup" time="0.112"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldBeFasterWhenRunningProcessingInParallel" time="0.269">
+    <failure type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at ro.isdc.wro.maven.plugin.TestWro4jMojo.shouldBeFasterWhenRunningProcessingInParallel(TestWro4jMojo.java:299)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+    <system-out>[info] Executing the mojo: 
+[info] Wro4j Model path: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target/test-classes/wro.xml
+[info] targetGroups: null
+[info] minimize: true
+[info] ignoreMissingResources: true
+[info] parallelProcessing: false
+[debug] wroManagerFactory: ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory
+[debug] extraConfig: /tmp/extraConfig-1566988444652
+[debug] Classpath elements:
+[info] destinationFolder: /tmp/wroTemp-1566988444652
+[info] jsDestinationFolder: null
+[info] cssDestinationFolder: null
+[info] groupNameMappingFile: null
+[info] wroManagerFactory class: ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory
+[debug] Using extraConfigFile: /tmp/extraConfig-1566988444652
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/invalid.css&apos; : 5547db3140c8d311b1bcdcabd6b592778c65178e
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@26f3d90c[CSS,classpath:ro/isdc/wro/maven/plugin/css/invalid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/valid.css&apos; : fbbe647161c9b6994b36254a136e4eccd7d825e6
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@4c5204af[CSS,classpath:ro/isdc/wro/maven/plugin/css/valid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/invalid.js&apos; : cd98e6e949f18ccfe0a8b01d02a368434100f895
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/invalid.js&apos; : cd98e6e949f18ccfe0a8b01d02a368434100f895
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/invalid.css&apos; : 5547db3140c8d311b1bcdcabd6b592778c65178e
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@3b809711[CSS,classpath:ro/isdc/wro/maven/plugin/css/invalid.css,true]
+[debug] could not check fingerprint of resource: ro.isdc.wro.model.resource.Resource@236ab296[JS,/invalid/path/to/resource/*.js,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/valid.css&apos; : fbbe647161c9b6994b36254a136e4eccd7d825e6
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@55a8dc49[CSS,classpath:ro/isdc/wro/maven/plugin/css/valid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/invalid.js&apos; : cd98e6e949f18ccfe0a8b01d02a368434100f895
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/invalid.css&apos; : 5547db3140c8d311b1bcdcabd6b592778c65178e
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@2392212b[CSS,classpath:ro/isdc/wro/maven/plugin/css/invalid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/valid.css&apos; : fbbe647161c9b6994b36254a136e4eccd7d825e6
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@66f66866[CSS,classpath:ro/isdc/wro/maven/plugin/css/valid.css,true]
+[info] The following groups will be processed: [g1, g2, g3, g4, invalidResources, invalidWildcardResource, undef, valid, wildcard]
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g1.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g1.css
+[info] file size: g1.css -&gt; 341 bytes
+[info] /tmp/wroTemp-1566988444652/g1.css (341 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g1.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g1.js
+[info] file size: g1.js -&gt; 93 bytes
+[info] /tmp/wroTemp-1566988444652/g1.js (93 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g2.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g2.css
+[debug] No content found for group: g2.css
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g2.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g2.js
+[info] file size: g2.js -&gt; 36 bytes
+[info] /tmp/wroTemp-1566988444652/g2.js (36 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g3.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g3.css
+[debug] No content found for group: g3.css
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g3.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g3.js
+[info] file size: g3.js -&gt; 57 bytes
+[info] /tmp/wroTemp-1566988444652/g3.js (57 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g4.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g4.css
+[debug] No content found for group: g4.css
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g4.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g4.js
+[info] file size: g4.js -&gt; 218 bytes
+[info] /tmp/wroTemp-1566988444652/g4.js (218 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: invalidResources.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: invalidResources.css
+[info] file size: invalidResources.css -&gt; 325 bytes
+[info] /tmp/wroTemp-1566988444652/invalidResources.css (325 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: invalidResources.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: invalidResources.js
+[info] file size: invalidResources.js -&gt; 125 bytes
+[info] /tmp/wroTemp-1566988444652/invalidResources.js (125 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: invalidWildcardResource.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: invalidWildcardResource.css
+[debug] No content found for group: invalidWildcardResource.css
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: invalidWildcardResource.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: invalidWildcardResource.js
+[debug] No content found for group: invalidWildcardResource.js
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: undef.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: undef.css
+[debug] No content found for group: undef.css
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: undef.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: undef.js
+[info] file size: undef.js -&gt; 71 bytes
+[info] /tmp/wroTemp-1566988444652/undef.js (71 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: valid.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: valid.css
+[info] file size: valid.css -&gt; 16 bytes
+[info] /tmp/wroTemp-1566988444652/valid.css (16 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: valid.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: valid.js
+[debug] No content found for group: valid.js
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: wildcard.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: wildcard.css
+[info] file size: wildcard.css -&gt; 341 bytes
+[info] /tmp/wroTemp-1566988444652/wildcard.css (341 bytes)
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: wildcard.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: wildcard.js
+[info] file size: wildcard.js -&gt; 218 bytes
+[info] /tmp/wroTemp-1566988444652/wildcard.js (218 bytes)
+StopWatch &apos;&apos;: running time (millis) = 87
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00087  100%  processGroups: [g1, g2, g3, g4, invalidResources, invalidWildcardResource, undef, valid, wildcard]
+
+[info] Executing the mojo: 
+[info] Wro4j Model path: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target/test-classes/wro.xml
+[info] targetGroups: null
+[info] minimize: true
+[info] ignoreMissingResources: true
+[info] parallelProcessing: true
+[debug] wroManagerFactory: ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory
+[debug] extraConfig: /tmp/extraConfig-1566988444652
+[debug] Classpath elements:
+[info] destinationFolder: /tmp/wroTemp-1566988444652
+[info] jsDestinationFolder: null
+[info] cssDestinationFolder: null
+[info] groupNameMappingFile: null
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/invalid.css&apos; : 5547db3140c8d311b1bcdcabd6b592778c65178e
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@26f3d90c[CSS,classpath:ro/isdc/wro/maven/plugin/css/invalid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/valid.css&apos; : fbbe647161c9b6994b36254a136e4eccd7d825e6
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@4c5204af[CSS,classpath:ro/isdc/wro/maven/plugin/css/valid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/invalid.js&apos; : cd98e6e949f18ccfe0a8b01d02a368434100f895
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/invalid.js&apos; : cd98e6e949f18ccfe0a8b01d02a368434100f895
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/invalid.css&apos; : 5547db3140c8d311b1bcdcabd6b592778c65178e
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@3b809711[CSS,classpath:ro/isdc/wro/maven/plugin/css/invalid.css,true]
+[debug] could not check fingerprint of resource: ro.isdc.wro.model.resource.Resource@236ab296[JS,/invalid/path/to/resource/*.js,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/valid.css&apos; : fbbe647161c9b6994b36254a136e4eccd7d825e6
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@55a8dc49[CSS,classpath:ro/isdc/wro/maven/plugin/css/valid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/1.js&apos; : f62489add75d7d76832bce798e5ab37a00b3139a
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/2.js&apos; : ee1f57333a33b207726f2efb894044bc0de622e8
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/invalid.js&apos; : cd98e6e949f18ccfe0a8b01d02a368434100f895
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/js/undef.js&apos; : b9d63724e402210b9b25ab480ef46358cbfebb37
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/invalid.css&apos; : 5547db3140c8d311b1bcdcabd6b592778c65178e
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@2392212b[CSS,classpath:ro/isdc/wro/maven/plugin/css/invalid.css,true]
+[debug] Persist fingerprint for resource &apos;classpath:ro/isdc/wro/maven/plugin/css/valid.css&apos; : fbbe647161c9b6994b36254a136e4eccd7d825e6
+[debug] Check @import directive from ro.isdc.wro.model.resource.Resource@66f66866[CSS,classpath:ro/isdc/wro/maven/plugin/css/valid.css,true]
+[info] The following groups will be processed: [g1, g2, g3, g4, invalidResources, invalidWildcardResource, undef, valid, wildcard]
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] folder: /tmp/wroTemp-1566988444652
+[info] processing group: g1.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[info] processing group: g1.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g1.js
+[info] file size: g1.js -&gt; 93 bytes
+[info] /tmp/wroTemp-1566988444652/g1.js (93 bytes)
+[info] processing group: g2.css
+[debug] Created file: g1.css
+[info] file size: g1.css -&gt; 341 bytes
+[info] /tmp/wroTemp-1566988444652/g1.css (341 bytes)
+[info] processing group: g2.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g2.js
+[info] file size: g2.js -&gt; 36 bytes
+[info] /tmp/wroTemp-1566988444652/g2.js (36 bytes)
+[info] processing group: g3.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g2.css
+[debug] No content found for group: g2.css
+[info] processing group: g3.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g3.css
+[debug] No content found for group: g3.css
+[info] processing group: g4.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] Created file: g3.js
+[info] file size: g3.js -&gt; 57 bytes
+[info] /tmp/wroTemp-1566988444652/g3.js (57 bytes)
+[info] processing group: g4.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g4.js
+[info] file size: g4.js -&gt; 218 bytes
+[info] /tmp/wroTemp-1566988444652/g4.js (218 bytes)
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: g4.css
+[debug] No content found for group: g4.css
+[info] processing group: invalidResources.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[info] processing group: invalidResources.js
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: invalidResources.js
+[info] file size: invalidResources.js -&gt; 125 bytes
+[info] /tmp/wroTemp-1566988444652/invalidResources.js (125 bytes)
+[debug] Created file: invalidResources.css
+[info] file size: invalidResources.css -&gt; 325 bytes
+[info] /tmp/wroTemp-1566988444652/invalidResources.css (325 bytes)
+[info] processing group: invalidWildcardResource.css
+[info] processing group: invalidWildcardResource.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: invalidWildcardResource.css
+[debug] No content found for group: invalidWildcardResource.css
+[info] processing group: undef.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] Created file: invalidWildcardResource.js
+[debug] No content found for group: invalidWildcardResource.js
+[info] processing group: undef.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: undef.js
+[info] file size: undef.js -&gt; 71 bytes
+[info] /tmp/wroTemp-1566988444652/undef.js (71 bytes)
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: undef.css
+[debug] No content found for group: undef.css
+[info] processing group: valid.css
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: valid.css
+[info] file size: valid.css -&gt; 16 bytes
+[info] /tmp/wroTemp-1566988444652/valid.css (16 bytes)
+[info] processing group: valid.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[info] processing group: wildcard.css
+[debug] Created file: valid.js
+[debug] No content found for group: valid.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[info] processing group: wildcard.js
+[debug] buildDirectory: /tmp/wroTemp-1566988444652
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: wildcard.css
+[info] file size: wildcard.css -&gt; 341 bytes
+[info] /tmp/wroTemp-1566988444652/wildcard.css (341 bytes)
+[debug] contextFolder: /working/proj/wro4j-wro4j-1032/wro4j-wro4j/wro4j-maven-plugin/target
+[debug] cssTargetFolder: /tmp/wroTemp-1566988444652
+[debug] rootFolder: /tmp/wroTemp-1566988444652
+[debug] computedAggregatedFolderPath: 
+[debug] Created file: wildcard.js
+[info] file size: wildcard.js -&gt; 218 bytes
+[info] /tmp/wroTemp-1566988444652/wildcard.js (218 bytes)
+StopWatch &apos;&apos;: running time (millis) = 125
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00125  100%  processGroups: [g1, g2, g3, g4, invalidResources, invalidWildcardResource, undef, valid, wildcard]
+
+2668 INFO TestWro4jMojo        - serial took: 116ms
+2668 INFO TestWro4jMojo        - parallel took: 139ms
+</system-out>
+  </testcase>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testWroXmlWithInvalidResourcesAndIgnoreMissingResourcesTrue" time="0.096"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithCustomManagerFactoryWithInvalidResourceAndNotIgnoreMissingResources" time="0.067"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="shouldDetectIncrementalChange" time="0.146"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="testMojoWithConfigurableWroManagerFactoryWithInvalidPreProcessor" time="0.037"/>
+  <testcase classname="ro.isdc.wro.maven.plugin.TestWro4jMojo" name="executeWithNullTargetGroupsProperty" time="0.139"/>
+</testsuite>

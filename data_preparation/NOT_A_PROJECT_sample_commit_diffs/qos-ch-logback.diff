@@ -1,0 +1,69 @@
+diff --git a/logback-classic/src/main/groovy/ch/qos/logback/classic/gaffer/AsyncAppenderDelegate.groovy b/logback-classic/src/main/groovy/ch/qos/logback/classic/gaffer/AsyncAppenderDelegate.groovy
+index 867609e0f8..7a14299c96 100644
+--- a/logback-classic/src/main/groovy/ch/qos/logback/classic/gaffer/AsyncAppenderDelegate.groovy
++++ b/logback-classic/src/main/groovy/ch/qos/logback/classic/gaffer/AsyncAppenderDelegate.groovy
+@@ -17,15 +17,14 @@ import ch.qos.logback.core.Appender
+ 
+ class AsyncAppenderDelegate extends AppenderDelegate {
+ 
+-    Map<String, Appender<?>> appendersByName = [:]
++  Map<String, Appender<?>> appendersByName = [:]
+ 
+-    AsyncAppenderDelegate(Appender appender, List<Appender<?>> appenders) {
+-        super(appender)
+-        appendersByName = appenders.collectEntries { [(it.name) : it]}
+-    }
++  AsyncAppenderDelegate(Appender appender, List<Appender<?>> appenders) {
++    super(appender)
++    appendersByName = appenders.collectEntries { [(it.name) : it]}
++  }
+ 
+-
+-    void appenderRef(String name){
+-        component.addAppender(appendersByName[name])
+-    }
++  void appenderRef(String name){
++    component.addAppender(appendersByName[name])
++  }
+ }
+diff --git a/logback-classic/src/test/input/gaffer/asyncAppender.groovy b/logback-classic/src/test/input/gaffer/asyncAppender.groovy
+index 2069e7faf8..9fb1d88d59 100644
+--- a/logback-classic/src/test/input/gaffer/asyncAppender.groovy
++++ b/logback-classic/src/test/input/gaffer/asyncAppender.groovy
+@@ -1,17 +1,31 @@
++/**
++ * Logback: the reliable, generic, fast and flexible logging framework.
++ * Copyright (C) 1999-2013, QOS.ch. All rights reserved.
++ *
++ * This program and the accompanying materials are dual-licensed under
++ * either the terms of the Eclipse Public License v1.0 as published by
++ * the Eclipse Foundation
++ *
++ *   or (per the licensee's choosing)
++ *
++ * under the terms of the GNU Lesser General Public License version 2.1
++ * as published by the Free Software Foundation.
++ */
++
+ import ch.qos.logback.classic.AsyncAppender
+ import ch.qos.logback.classic.PatternLayout
+ import ch.qos.logback.core.ConsoleAppender
+ import ch.qos.logback.core.encoder.LayoutWrappingEncoder
+ 
+ appender("STDOUT", ConsoleAppender) {
+-    encoder(LayoutWrappingEncoder) {
+-        layout(PatternLayout) {
+-            pattern = "${p} %m%n"
+-        }
++  encoder(LayoutWrappingEncoder) {
++    layout(PatternLayout) {
++      pattern = "${p} %m%n"
+     }
++  }
+ }
+ appender("STDOUT-ASYNC", AsyncAppender) {
+-    appenderRef('STDOUT')
++  appenderRef('STDOUT')
+ }
+ root(DEBUG, ["STDOUT-ASYNC"])
+ 

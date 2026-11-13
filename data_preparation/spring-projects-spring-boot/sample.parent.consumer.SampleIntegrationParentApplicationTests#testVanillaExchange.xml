@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.parent.consumer.SampleIntegrationParentApplicationTests" time="0.508" tests="1" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/spring-projects-spring-boot-1092/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-parent-context"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/spring-projects-spring-boot-1092/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-parent-context"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.repo.local" value="/root/.m2/repository"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -D maven.repo.local=/root/.m2/repository -f interpolated-pom.xml -s /working/proj/spring-projects-spring-boot-1092/spring-projects-spring-boot/spring-boot-integration-tests/src/it/interpolated-settings.xml -P integration-test package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testVanillaExchange" classname="sample.parent.consumer.SampleIntegrationParentApplicationTests" time="0.508">
+    <failure message="Wrong output: " type="java.lang.AssertionError">java.lang.AssertionError: Wrong output: 
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at sample.parent.consumer.SampleIntegrationParentApplicationTests.testVanillaExchange(SampleIntegrationParentApplicationTests.java:64)
+</failure>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::  (v1.2.0.BUILD-SNAPSHOT)
+
+2019-08-28 12:35:33.157  INFO 8215 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v2.17 on ip-172-31-61-242 with PID 8215 (/root/.m2/repository/org/apache/maven/surefire/surefire-booter/2.17/surefire-booter-2.17.jar started by root in /working/proj/spring-projects-spring-boot-1092/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-parent-context)
+2019-08-28 12:35:33.199  INFO 8215 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@402e37bc: startup date [Wed Aug 28 12:35:33 UTC 2019]; root of context hierarchy
+2019-08-28 12:35:33.771  INFO 8215 --- [           main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [integration-context.xml]
+2019-08-28 12:35:34.059  INFO 8215 --- [           main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/root/.m2/repository/org/springframework/integration/spring-integration-core/4.1.0.RC1/spring-integration-core-4.1.0.RC1.jar!/META-INF/spring.integration.default.properties]
+2019-08-28 12:35:34.085  INFO 8215 --- [           main] o.s.i.config.IntegrationRegistrar        : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-08-28 12:35:34.124  INFO 8215 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': replacing [Generic bean: class [org.springframework.boot.autoconfigure.AutoConfigurationPackages$BasePackages]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.springframework.boot.autoconfigure.AutoConfigurationPackages$BasePackages]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+2019-08-28 12:35:34.625  INFO 8215 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-08-28 12:35:34.626  INFO 8215 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-08-28 12:35:34.683  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.743  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean '$autoCreateChannelCandidates' of type [class org.springframework.integration.config.ChannelInitializer$AutoCreateCandidatesCollector] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.758  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.jmx.config.IntegrationMBeanExportConfiguration' of type [class org.springframework.integration.jmx.config.IntegrationMBeanExportConfiguration$$EnhancerBySpringCGLIB$$ed46f4d2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.806  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'objectNamingStrategy' of type [class org.springframework.boot.autoconfigure.jmx.ParentAwareNamingStrategy] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.807  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [class org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$6656c6c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.859  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'mbeanServer' of type [class com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.913  INFO 8215 --- [           main] o.s.b.f.config.PropertiesFactoryBean     : Loading properties file from URL [jar:file:/root/.m2/repository/org/springframework/integration/spring-integration-core/4.1.0.RC1/spring-integration-core-4.1.0.RC1.jar!/META-INF/spring.integration.default.properties]
+2019-08-28 12:35:34.914  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.914  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.918  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.952  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean '(inner bean)#3a320ade' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.953  INFO 8215 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'taskScheduler'
+2019-08-28 12:35:34.955  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:34.955  INFO 8215 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-28 12:35:35.333  INFO 8215 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService  'metricsExecutor'
+2019-08-28 12:35:35.803  INFO 8215 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-08-28 12:35:35.814  INFO 8215 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'service.CONFIGURATION_PROPERTIES' has been autodetected for JMX exposure
+2019-08-28 12:35:35.815  INFO 8215 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'integrationMbeanExporter' has been autodetected for JMX exposure
+2019-08-28 12:35:35.819  INFO 8215 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'service.CONFIGURATION_PROPERTIES': registering with JMX server as MBean [sample.parent:name=service.CONFIGURATION_PROPERTIES,type=ServiceProperties]
+2019-08-28 12:35:35.833  INFO 8215 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'integrationMbeanExporter': registering with JMX server as MBean [org.springframework.integration.monitor:name=integrationMbeanExporter,type=IntegrationMBeanExporter]
+2019-08-28 12:35:35.896  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering beans for JMX exposure on startup
+2019-08-28 12:35:35.907  INFO 8215 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483648
+2019-08-28 12:35:35.913  INFO 8215 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2019-08-28 12:35:35.923  INFO 8215 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {service-activator} as a subscriber to the 'input' channel
+2019-08-28 12:35:35.924  INFO 8215 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application.input' has 1 subscriber(s).
+2019-08-28 12:35:35.924  INFO 8215 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started org.springframework.integration.config.ConsumerEndpointFactoryBean#0
+2019-08-28 12:35:35.924  INFO 8215 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {message-handler} as a subscriber to the 'output' channel
+2019-08-28 12:35:35.924  INFO 8215 --- [           main] o.s.integration.channel.DirectChannel    : Channel 'application.output' has 1 subscriber(s).
+2019-08-28 12:35:35.924  INFO 8215 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started org.springframework.integration.config.ConsumerEndpointFactoryBean#1
+2019-08-28 12:35:36.000  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel input
+2019-08-28 12:35:36.010  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=input': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=input]
+2019-08-28 12:35:36.033  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel errorChannel
+2019-08-28 12:35:36.035  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=errorChannel': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=errorChannel]
+2019-08-28 12:35:36.050  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel output
+2019-08-28 12:35:36.060  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=output': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=output]
+2019-08-28 12:35:36.069  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel metricsChannel
+2019-08-28 12:35:36.072  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=metricsChannel': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=metricsChannel]
+2019-08-28 12:35:36.090  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registering MessageChannel nullChannel
+2019-08-28 12:35:36.092  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageChannel,name=nullChannel': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=nullChannel]
+2019-08-28 12:35:36.115  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageHandler,name=input,bean=anonymous': registering with JMX server as MBean [org.springframework.integration:type=MessageHandler,name=input,bean=anonymous]
+2019-08-28 12:35:36.132  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageHandler,name=output,bean=anonymous': registering with JMX server as MBean [org.springframework.integration:type=MessageHandler,name=output,bean=anonymous]
+2019-08-28 12:35:36.142  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageHandler,name=errorLogger,bean=internal': registering with JMX server as MBean [org.springframework.integration:type=MessageHandler,name=errorLogger,bean=internal]
+2019-08-28 12:35:36.156  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=MessageSource,name=input,bean=anonymous': registering with JMX server as MBean [org.springframework.integration:type=MessageSource,name=input,bean=anonymous]
+2019-08-28 12:35:36.161  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Located managed bean 'org.springframework.integration:type=ManagedEndpoint,name=org.springframework.integration.config.ConsumerEndpointFactoryBean#0,bean=endpoint': registering with JMX server as MBean [org.springframework.integration:type=ManagedEndpoint,name=org.springframework.integration.config.ConsumerEndpointFactoryBean#0,bean=endpoint]
+2019-08-28 12:35:36.165  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : Registered endpoint without MessageSource: org.springframework.integration:type=ManagedEndpoint,name=org.springframework.integration.config.ConsumerEndpointFactoryBean#0,bean=endpoint
+2019-08-28 12:35:36.165  INFO 8215 --- [           main] o.s.i.monitor.IntegrationMBeanExporter   : started org.springframework.integration.monitor.IntegrationMBeanExporter@1d8e2eea
+2019-08-28 12:35:36.166  INFO 8215 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-08-28 12:35:36.169  INFO 8215 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2019-08-28 12:35:36.170  INFO 8215 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-08-28 12:35:36.170  INFO 8215 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 1073741823
+2019-08-28 12:35:36.174  INFO 8215 --- [           main] o.s.i.e.SourcePollingChannelAdapter      : started org.springframework.integration.config.SourcePollingChannelAdapterFactoryBean#0
+2019-08-28 12:35:36.176  INFO 8215 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 3.361 seconds (JVM running for 3.881)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::  (v1.2.0.BUILD-SNAPSHOT)
+
+2019-08-28 12:35:36.240  INFO 8215 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v2.17 on ip-172-31-61-242 with PID 8215 (/root/.m2/repository/org/apache/maven/surefire/surefire-booter/2.17/surefire-booter-2.17.jar started by root in /working/proj/spring-projects-spring-boot-1092/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-parent-context)
+2019-08-28 12:35:36.256  INFO 8215 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@39ce27f2: startup date [Wed Aug 28 12:35:36 UTC 2019]; root of context hierarchy
+2019-08-28 12:35:36.265  INFO 8215 --- [           main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 0.073 seconds (JVM running for 3.97)
+2019-08-28 12:35:36.674  INFO 8215 --- [ask-scheduler-1] o.s.i.file.FileReadingMessageSource      : Created message: [GenericMessage [payload=target/input/data1566995736265.txt, headers={id=8c0b289c-5ece-2298-9a55-9bc924dec07f, timestamp=1566995736674}]]
+]]></system-out>
+  </testcase>
+</testsuite>

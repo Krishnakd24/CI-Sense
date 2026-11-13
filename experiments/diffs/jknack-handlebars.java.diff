@@ -1,0 +1,216 @@
+diff --git a/handlebars/src/main/java/com/github/jknack/handlebars/StringHelpers.java b/handlebars/src/main/java/com/github/jknack/handlebars/StringHelpers.java
+index 168a3368b..55ec7dc40 100644
+--- a/handlebars/src/main/java/com/github/jknack/handlebars/StringHelpers.java
++++ b/handlebars/src/main/java/com/github/jknack/handlebars/StringHelpers.java
+@@ -21,6 +21,7 @@
+ import java.text.SimpleDateFormat;
+ import java.util.Date;
+ import java.util.HashMap;
++import java.util.Iterator;
+ import java.util.Locale;
+ import java.util.Map;
+ import java.util.regex.Matcher;
+@@ -122,39 +123,49 @@ public CharSequence apply(final Object value, final Options options)
+   },
+ 
+   /**
+-   * Joins a list with a string, like Python's str.join(list)
++   * Joins an array, iterator or an iterable with a string.
+    * For example:
+    *
+    * <pre>
+    * {{join value " // " [prefix=""] [suffix=""]}}
+    * </pre>
+    *
+-   * If value is the list ['a', 'b', 'c'], the output will be the string
+-   * "a // b // c".
++   * <p>
++   * If value is the list ['a', 'b', 'c'], the output will be the string "a // b // c".
++   * </p>
++   * Or:
++   *
++   * <pre>
++   * {{join "a" "b" "c" " // " [prefix=""] [suffix=""]}}
++   * <p>Join the "a", "b", "c", the output will be the string "a // b // c".</p>
++   * </pre>
+    */
+   join {
+     @SuppressWarnings("rawtypes")
+     @Override
+     public CharSequence apply(final Object context, final Options options)
+         throws IOException {
+-      Object separator = options.param(0, null);
+-      notNull(separator, "found 'null', expected 'separator' at param: 0");
++      int separatorIdx = options.params.length - 1;
++      Object separator = options.param(separatorIdx, null);
++      notNull(separator, "found 'null', expected 'separator' at param[%s]", separatorIdx);
+       isTrue(separator instanceof String,
+-          "found '%s', expected 'separator' at param: 0", separator);
+-      if (context == null) {
+-        return null;
+-      }
++          "found '%s', expected 'separator' at param[%s]", separator, separatorIdx);
+       String prefix = options.hash("prefix", "");
+       String suffix = options.hash("suffix", "");
+       if (context instanceof Iterable) {
+-        return prefix
+-            + StringUtils.join((Iterable) context, (String) separator) + suffix;
++        return prefix + StringUtils.join((Iterable) context, (String) separator) + suffix;
++      }
++      if (context instanceof Iterator) {
++        return prefix + StringUtils.join((Iterator) context, (String) separator) + suffix;
+       }
+       if (context.getClass().isArray()) {
+-        return prefix
+-            + StringUtils.join((Object[]) context, (String) separator) + suffix;
++        return prefix + StringUtils.join((Object[]) context, (String) separator) + suffix;
+       }
+-      return null;
++      // join everything as single values
++      Object[] values = new Object[options.params.length];
++      System.arraycopy(options.params, 0, values, 1, separatorIdx);
++      values[0] = context;
++      return prefix + StringUtils.join(values, (String) separator) + suffix;
+     }
+   },
+ 
+@@ -487,15 +498,25 @@ public CharSequence apply(final Object value, final Options options)
+   };
+ 
+   /**
+-   * Regiter all the text helpers.
++   * Register the helper in a handlebars instance.
++   *
++   * @param handlebars A handlebars object. Required.
++   */
++  public void registerHelper(final Handlebars handlebars) {
++    notNull(handlebars, "The handlebars is required.");
++    handlebars.registerHelper(name(), this);
++  }
++
++  /**
++   * Register all the text helpers.
+    *
+-   * @param handlebars The helper's owner.
++   * @param handlebars The helper's owner. Required.
+    */
+   public static void register(final Handlebars handlebars) {
+     notNull(handlebars, "A handlebars object is required.");
+     StringHelpers[] helpers = values();
+     for (StringHelpers helper : helpers) {
+-      handlebars.registerHelper(helper.name(), helper);
++      helper.registerHelper(handlebars);
+     }
+   }
+ }
+diff --git a/handlebars/src/test/java/com/github/jknack/handlebars/StringHelpersTest.java b/handlebars/src/test/java/com/github/jknack/handlebars/StringHelpersTest.java
+index 23f6cc42f..c3c398727 100644
+--- a/handlebars/src/test/java/com/github/jknack/handlebars/StringHelpersTest.java
++++ b/handlebars/src/test/java/com/github/jknack/handlebars/StringHelpersTest.java
+@@ -6,7 +6,6 @@
+ import static com.github.jknack.handlebars.StringHelpers.center;
+ import static com.github.jknack.handlebars.StringHelpers.cut;
+ import static com.github.jknack.handlebars.StringHelpers.defaultIfEmpty;
+-import static com.github.jknack.handlebars.StringHelpers.join;
+ import static com.github.jknack.handlebars.StringHelpers.ljust;
+ import static com.github.jknack.handlebars.StringHelpers.lower;
+ import static com.github.jknack.handlebars.StringHelpers.rjust;
+@@ -35,7 +34,7 @@
+  * @author edgar.espina
+  * @since 0.2.2
+  */
+-public class StringHelpersTest {
++public class StringHelpersTest extends AbstractTest {
+ 
+   @Test
+   public void capFirst() throws IOException {
+@@ -130,40 +129,33 @@ public void defaultStr() throws IOException {
+   }
+ 
+   @Test
+-  public void join() throws IOException {
+-    Options options = createMock(Options.class);
+-    expect(options.param(0, null)).andReturn(", ").anyTimes();
+-    expect(options.hash("prefix", "")).andReturn("").anyTimes();
+-    expect(options.hash("suffix", "")).andReturn("").anyTimes();
+-
+-    replay(options);
++  public void joinIterable() throws IOException {
++    shouldCompileTo("{{{join this \", \"}}}", Arrays.asList("6", "7", "8"),
++        $("join", StringHelpers.join), "6, 7, 8");
++  }
+ 
+-    assertEquals("join", join.name());
+-    assertEquals("6, 7, 8",
+-        join.apply(Arrays.asList("6", "7", "8"), options));
+-    assertEquals("6, 7, 8",
+-        join.apply(new Object[] {"6", "7", "8" }, options));
++  @Test
++  public void joinIterator() throws IOException {
++    shouldCompileTo("{{{join this \", \"}}}", Arrays.asList("6", "7", "8").iterator(),
++        $("join", StringHelpers.join), "6, 7, 8");
++  }
+ 
+-    assertEquals(null,
+-        join.apply("Not an array or iterable", options));
+-    assertEquals(null, join.apply(null, options));
++  @Test
++  public void joinArray() throws IOException {
++    shouldCompileTo("{{{join this \", \"}}}", new String[]{"6", "7", "8" },
++        $("join", StringHelpers.join), "6, 7, 8");
++  }
+ 
+-    verify(options);
++  @Test
++  public void joinValues() throws IOException {
++    shouldCompileTo("{{{join \"6\" 7 n8 \"-\"}}}", $("n8", 8), $("join", StringHelpers.join),
++        "6-7-8");
+   }
+ 
+   @Test
+   public void joinWithPrefixAndSuffix() throws IOException {
+-    Options options = createMock(Options.class);
+-    expect(options.param(0, null)).andReturn(", ");
+-    expect(options.hash("prefix", "")).andReturn("<");
+-    expect(options.hash("suffix", "")).andReturn(">");
+-
+-    replay(options);
+-
+-    assertEquals("<6, 7, 8>",
+-        join.apply(Arrays.asList("6", "7", "8"), options));
+-
+-    verify(options);
++    shouldCompileTo("{{{join this \", \" prefix='<' suffix='>'}}}", Arrays.asList("6", "7", "8"),
++        $("join", StringHelpers.join), "<6, 7, 8>");
+   }
+ 
+   @Test
+@@ -272,7 +264,7 @@ public void stringFormat() throws IOException {
+     Template fn = createMock(Template.class);
+ 
+     Options options = new Options.Builder(hbs, ctx, fn)
+-        .setParams(new Object[] {"handlebars.java" })
++        .setParams(new Object[]{"handlebars.java" })
+         .build();
+ 
+     assertEquals("stringFormat", stringFormat.name());
+@@ -288,7 +280,7 @@ public void stringDecimalFormat() throws IOException {
+     Template fn = createMock(Template.class);
+ 
+     Options options = new Options.Builder(hbs, ctx, fn)
+-        .setParams(new Object[] {10.0 / 3.0 })
++        .setParams(new Object[]{10.0 / 3.0 })
+         .build();
+ 
+     assertEquals("stringFormat", stringFormat.name());
+@@ -370,8 +362,8 @@ public void wordWrap() throws IOException {
+     assertEquals("wordWrap", wordWrap.name());
+ 
+     assertEquals("Joel" + SystemUtils.LINE_SEPARATOR + "is a"
+-            + SystemUtils.LINE_SEPARATOR + "slug",
+-            wordWrap.apply("Joel is a slug", options));
++        + SystemUtils.LINE_SEPARATOR + "slug",
++        wordWrap.apply("Joel is a slug", options));
+ 
+     verify(options);
+   }

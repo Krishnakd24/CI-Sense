@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.atomikos.SampleAtomikosApplicationTests" time="33.855" tests="1" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.242-b08"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/tmp/proj/spring-projects-spring-boot-51200/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-jta-atomikos"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/tmp/proj/spring-projects-spring-boot-51200/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-jta-atomikos"/>
+    <property name="java.runtime.version" value="1.8.0_242-8u242-b08-0ubuntu3~18.04-b08"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.repo.local" value="/root/.m2/repository"/>
+    <property name="os.version" value="4.15.0-88-generic"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B -D maven.repo.local=/root/.m2/repository -f interpolated-pom.xml -s /tmp/proj/spring-projects-spring-boot-51200/spring-projects-spring-boot/spring-boot-integration-tests/src/it/interpolated-settings.xml -P integration-test package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_242"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testTransactionRollback" classname="sample.atomikos.SampleAtomikosApplicationTests" time="33.855">
+    <error message="Uncategorized exception occured during JMS processing; nested exception is com.atomikos.jms.AtomikosJMSException: Connection pool exhausted - try increasing &apos;maxPoolSize&apos; and/or &apos;borrowConnectionTimeout&apos; on the AtomikosConnectionFactoryBean.; nested exception is com.atomikos.datasource.pool.PoolExhaustedException: ConnectionPool: pool is empty - increase either maxPoolSize or borrowConnectionTimeout" type="org.springframework.jms.UncategorizedJmsException"><![CDATA[org.springframework.jms.UncategorizedJmsException: Uncategorized exception occured during JMS processing; nested exception is com.atomikos.jms.AtomikosJMSException: Connection pool exhausted - try increasing 'maxPoolSize' and/or 'borrowConnectionTimeout' on the AtomikosConnectionFactoryBean.; nested exception is com.atomikos.datasource.pool.PoolExhaustedException: ConnectionPool: pool is empty - increase either maxPoolSize or borrowConnectionTimeout
+	at com.atomikos.datasource.pool.ConnectionPool.waitForAtLeastOneAvailableConnection(ConnectionPool.java:346)
+	at com.atomikos.datasource.pool.ConnectionPool.findOrWaitForAnAvailableConnection(ConnectionPool.java:163)
+	at com.atomikos.datasource.pool.ConnectionPool.borrowConnection(ConnectionPool.java:151)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:616)
+	at org.springframework.jms.support.JmsAccessor.createConnection(JmsAccessor.java:180)
+	at org.springframework.jms.core.JmsTemplate.access$600(JmsTemplate.java:90)
+	at org.springframework.jms.core.JmsTemplate$JmsTemplateResourceFactory.createConnection(JmsTemplate.java:1205)
+	at org.springframework.jms.connection.ConnectionFactoryUtils.doGetTransactionalSession(ConnectionFactoryUtils.java:312)
+	at org.springframework.jms.core.JmsTemplate.execute(JmsTemplate.java:480)
+	at org.springframework.jms.core.JmsTemplate.send(JmsTemplate.java:579)
+	at org.springframework.jms.core.JmsTemplate.convertAndSend(JmsTemplate.java:667)
+	at sample.atomikos.AccountService.createAccountAndNotify(AccountService.java:40)
+	at sample.atomikos.AccountService$$FastClassBySpringCGLIB$$4cbd831b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:266)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at sample.atomikos.AccountService$$EnhancerBySpringCGLIB$$5e89ea0.createAccountAndNotify(<generated>)
+	at sample.atomikos.SampleAtomikosApplication.main(SampleAtomikosApplication.java:37)
+	at sample.atomikos.SampleAtomikosApplicationTests.testTransactionRollback(SampleAtomikosApplicationTests.java:39)
+]]></error>
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::  (v1.2.0.BUILD-SNAPSHOT)
+
+2020-03-05 00:41:10.867  INFO 17979 --- [           main] s.atomikos.SampleAtomikosApplication     : Starting SampleAtomikosApplication on hadoop-builders-31 with PID 17979 (/tmp/proj/spring-projects-spring-boot-51200/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-jta-atomikos/target/classes started by root in /tmp/proj/spring-projects-spring-boot-51200/spring-projects-spring-boot/spring-boot-samples/spring-boot-sample-jta-atomikos)
+2020-03-05 00:41:10.894  INFO 17979 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@402e37bc: startup date [Thu Mar 05 00:41:10 UTC 2020]; root of context hierarchy
+2020-03-05 00:41:11.505  INFO 17979 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2020-03-05 00:41:11.560  INFO 17979 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-05 00:41:11.569  INFO 17979 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.jms.annotation.JmsBootstrapConfiguration' of type [class org.springframework.jms.annotation.JmsBootstrapConfiguration$$EnhancerBySpringCGLIB$$b8026acd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-05 00:41:11.693  WARN 17979 --- [           main] c.atomikos.jdbc.AbstractDataSourceBean   : AtomikosDataSoureBean 'dataSource': poolSize equals default - this may cause performance problems!
+2020-03-05 00:41:12.016  INFO 17979 --- [           main] org.hornetq.core.server                  : HQ221000: live server is starting with configuration HornetQ Configuration (clustered=false,backup=false,sharedStore=true,journalDirectory=/tmp/hornetq-data/journal,bindingsDirectory=data/bindings,largeMessagesDirectory=data/largemessages,pagingDirectory=data/paging)
+2020-03-05 00:41:12.022  INFO 17979 --- [           main] org.hornetq.core.server                  : HQ221045: libaio is not available, switching the configuration into NIO
+2020-03-05 00:41:12.108  INFO 17979 --- [           main] org.hornetq.core.server                  : HQ221043: Adding protocol support CORE
+2020-03-05 00:41:12.149  INFO 17979 --- [           main] org.hornetq.core.server                  : HQ221003: trying to deploy queue jms.queue.accounts
+2020-03-05 00:41:12.195  INFO 17979 --- [           main] org.hornetq.core.server                  : HQ221007: Server is now live
+2020-03-05 00:41:12.195  INFO 17979 --- [           main] org.hornetq.core.server                  : HQ221001: HornetQ Server version 2.5.0.SNAPSHOT (Wild Hornet, 124) [0ddbe50a-5e79-11ea-b7ad-6f73ae78e6c7] 
+2020-03-05 00:41:12.444  WARN 17979 --- [           main] c.a.i.config.UserTransactionServiceImp   : No properties path set - looking for transactions.properties in classpath...
+2020-03-05 00:41:12.444  WARN 17979 --- [           main] c.a.i.config.UserTransactionServiceImp   : transactions.properties not found - looking for jta.properties in classpath...
+2020-03-05 00:41:12.446  WARN 17979 --- [           main] c.a.i.config.UserTransactionServiceImp   : Failed to open transactions properties file - using default values
+2020-03-05 00:41:12.959  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000100111 with state COMMITTING
+2020-03-05 00:41:12.960  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000100111 with state COMMITTING
+2020-03-05 00:41:12.968  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000300111 with state COMMITTING
+2020-03-05 00:41:12.968  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000300111 with state COMMITTING
+2020-03-05 00:41:12.973  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000400111 with state COMMITTING
+2020-03-05 00:41:12.973  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000400111 with state COMMITTING
+2020-03-05 00:41:12.979  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000500111 with state COMMITTING
+2020-03-05 00:41:12.980  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000500111 with state COMMITTING
+2020-03-05 00:41:12.985  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000800111 with state COMMITTING
+2020-03-05 00:41:12.985  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000800111 with state COMMITTING
+2020-03-05 00:41:12.986  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000700111 with state COMMITTING
+2020-03-05 00:41:12.986  WARN 17979 --- [           main] com.atomikos.icatch.imp.CoordinatorImp   : Local heuristic termination of coordinator 127.0.1.1.tm0000700111 with state COMMITTING
+2020-03-05 00:41:13.089  INFO 17979 --- [           main] o.s.t.jta.JtaTransactionManager          : Using JTA UserTransaction: com.atomikos.icatch.jta.UserTransactionManager@1136b469
+2020-03-05 00:41:13.089  INFO 17979 --- [           main] o.s.t.jta.JtaTransactionManager          : Using JTA TransactionManager: com.atomikos.icatch.jta.UserTransactionManager@1136b469
+2020-03-05 00:41:13.185  INFO 17979 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2020-03-05 00:41:13.201  INFO 17979 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-03-05 00:41:13.260  INFO 17979 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.6.Final}
+2020-03-05 00:41:13.261  INFO 17979 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-03-05 00:41:13.262  INFO 17979 --- [           main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2020-03-05 00:41:13.407  INFO 17979 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2020-03-05 00:41:13.481  INFO 17979 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-03-05 00:41:13.580  INFO 17979 --- [           main] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2020-03-05 00:41:13.759  INFO 17979 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2020-03-05 00:41:13.763  INFO 17979 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2020-03-05 00:41:14.163  INFO 17979 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2020-03-05 00:41:14.205  INFO 17979 --- [           main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2020-03-05 00:41:14.207  INFO 17979 --- [           main] s.atomikos.SampleAtomikosApplication     : Started SampleAtomikosApplication in 3.643 seconds (JVM running for 4.052)
+2020-03-05 00:41:24.132  WARN 17979 --- [eads-328197868)] org.hornetq.core.server                  : HQ222103: transaction with xid XidImpl (402018913 bq:49.50.55.46.48.46.49.46.49.46.116.109.49 formatID:1096044365 gtxid:49.50.55.46.48.46.49.46.49.46.116.109.48.48.48.48.49.48.48.49.49.50 base64:MTI3LjAuMS4xLnRtMTEyNy4wLjEuMS50bTAwMDAxMDAxMTIy5JVB timed out
+2020-03-05 00:41:24.272  WARN 17979 --- [     Atomikos:3] c.a.icatch.imp.ActiveStateHandler        : Timeout/setRollbackOnly of ACTIVE coordinator !
+2020-03-05 00:41:24.272  WARN 17979 --- [     Atomikos:2] c.a.icatch.imp.ActiveStateHandler        : Timeout/setRollbackOnly of ACTIVE coordinator !
+2020-03-05 00:41:29.370  WARN 17979 --- [enerContainer-1] c.a.datasource.xa.XAResourceTransaction  : XA resource 'jmsConnectionFactory': commit for XID '3132372E302E312E312E746D30303030313030313132:3132372E302E312E312E746D31' raised -4: the supplied XID is invalid for this XA resource
+
+javax.transaction.xa.XAException: null
+	at org.hornetq.core.client.impl.ClientSessionImpl.commit(ClientSessionImpl.java:1468)
+	at com.atomikos.datasource.xa.XAResourceTransaction.commit(XAResourceTransaction.java:733)
+	at com.atomikos.icatch.imp.CommitMessage.send(CommitMessage.java:72)
+	at com.atomikos.icatch.imp.PropagationMessage.submit(PropagationMessage.java:83)
+	at com.atomikos.icatch.imp.Propagator$PropagatorThread.run(Propagator.java:79)
+	at com.atomikos.icatch.imp.Propagator.submitPropagationMessage(Propagator.java:58)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitFromWithinCallback(CoordinatorStateHandler.java:582)
+	at com.atomikos.icatch.imp.ActiveStateHandler$6.doCommit(ActiveStateHandler.java:301)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitWithAfterCompletionNotification(CoordinatorStateHandler.java:852)
+	at com.atomikos.icatch.imp.ActiveStateHandler.commit(ActiveStateHandler.java:296)
+	at com.atomikos.icatch.imp.CoordinatorImp.commit(CoordinatorImp.java:707)
+	at com.atomikos.icatch.imp.CoordinatorImp.terminate(CoordinatorImp.java:968)
+	at com.atomikos.icatch.imp.CompositeTerminatorImp.commit(CompositeTerminatorImp.java:82)
+	at com.atomikos.icatch.imp.CompositeTransactionImp.commit(CompositeTransactionImp.java:336)
+	at com.atomikos.icatch.jta.TransactionImp.commit(TransactionImp.java:190)
+	at com.atomikos.icatch.jta.TransactionManagerImp.commit(TransactionManagerImp.java:436)
+	at com.atomikos.icatch.jta.UserTransactionManager.commit(UserTransactionManager.java:177)
+	at org.springframework.transaction.jta.JtaTransactionManager.doCommit(JtaTransactionManager.java:1021)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:726)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:240)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-03-05 00:41:29.372  WARN 17979 --- [enerContainer-1] com.atomikos.icatch.imp.CommitMessage    : Unexpected error in commit
+
+com.atomikos.icatch.SysException: XA resource 'jmsConnectionFactory': commit for XID '3132372E302E312E312E746D30303030313030313132:3132372E302E312E312E746D31' raised -4: the supplied XID is invalid for this XA resource
+	at com.atomikos.datasource.xa.XAResourceTransaction.commit(XAResourceTransaction.java:773)
+	at com.atomikos.icatch.imp.CommitMessage.send(CommitMessage.java:72)
+	at com.atomikos.icatch.imp.PropagationMessage.submit(PropagationMessage.java:83)
+	at com.atomikos.icatch.imp.Propagator$PropagatorThread.run(Propagator.java:79)
+	at com.atomikos.icatch.imp.Propagator.submitPropagationMessage(Propagator.java:58)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitFromWithinCallback(CoordinatorStateHandler.java:582)
+	at com.atomikos.icatch.imp.ActiveStateHandler$6.doCommit(ActiveStateHandler.java:301)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitWithAfterCompletionNotification(CoordinatorStateHandler.java:852)
+	at com.atomikos.icatch.imp.ActiveStateHandler.commit(ActiveStateHandler.java:296)
+	at com.atomikos.icatch.imp.CoordinatorImp.commit(CoordinatorImp.java:707)
+	at com.atomikos.icatch.imp.CoordinatorImp.terminate(CoordinatorImp.java:968)
+	at com.atomikos.icatch.imp.CompositeTerminatorImp.commit(CompositeTerminatorImp.java:82)
+	at com.atomikos.icatch.imp.CompositeTransactionImp.commit(CompositeTransactionImp.java:336)
+	at com.atomikos.icatch.jta.TransactionImp.commit(TransactionImp.java:190)
+	at com.atomikos.icatch.jta.TransactionManagerImp.commit(TransactionManagerImp.java:436)
+	at com.atomikos.icatch.jta.UserTransactionManager.commit(UserTransactionManager.java:177)
+	at org.springframework.transaction.jta.JtaTransactionManager.doCommit(JtaTransactionManager.java:1021)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:726)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:240)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.lang.Thread.run(Thread.java:748)
+	at org.hornetq.core.client.impl.ClientSessionImpl.commit(ClientSessionImpl.java:1468)
+	at com.atomikos.datasource.xa.XAResourceTransaction.commit(XAResourceTransaction.java:733)
+	at com.atomikos.icatch.imp.CommitMessage.send(CommitMessage.java:72)
+	at com.atomikos.icatch.imp.PropagationMessage.submit(PropagationMessage.java:83)
+	at com.atomikos.icatch.imp.Propagator$PropagatorThread.run(Propagator.java:79)
+	at com.atomikos.icatch.imp.Propagator.submitPropagationMessage(Propagator.java:58)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitFromWithinCallback(CoordinatorStateHandler.java:582)
+	at com.atomikos.icatch.imp.ActiveStateHandler$6.doCommit(ActiveStateHandler.java:301)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitWithAfterCompletionNotification(CoordinatorStateHandler.java:852)
+	at com.atomikos.icatch.imp.ActiveStateHandler.commit(ActiveStateHandler.java:296)
+	at com.atomikos.icatch.imp.CoordinatorImp.commit(CoordinatorImp.java:707)
+	at com.atomikos.icatch.imp.CoordinatorImp.terminate(CoordinatorImp.java:968)
+	at com.atomikos.icatch.imp.CompositeTerminatorImp.commit(CompositeTerminatorImp.java:82)
+	at com.atomikos.icatch.imp.CompositeTransactionImp.commit(CompositeTransactionImp.java:336)
+	at com.atomikos.icatch.jta.TransactionImp.commit(TransactionImp.java:190)
+	at com.atomikos.icatch.jta.TransactionManagerImp.commit(TransactionManagerImp.java:436)
+	at com.atomikos.icatch.jta.UserTransactionManager.commit(UserTransactionManager.java:177)
+	at org.springframework.transaction.jta.JtaTransactionManager.doCommit(JtaTransactionManager.java:1021)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:726)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:240)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-03-05 00:41:39.411  WARN 17979 --- [enerContainer-1] c.a.datasource.xa.XAResourceTransaction  : XA resource 'jmsConnectionFactory': commit for XID '3132372E302E312E312E746D30303030313030313132:3132372E302E312E312E746D31' raised -4: the supplied XID is invalid for this XA resource
+
+javax.transaction.xa.XAException: null
+	at org.hornetq.core.client.impl.ClientSessionImpl.commit(ClientSessionImpl.java:1468)
+	at com.atomikos.datasource.xa.XAResourceTransaction.commit(XAResourceTransaction.java:733)
+	at com.atomikos.icatch.imp.CommitMessage.send(CommitMessage.java:72)
+	at com.atomikos.icatch.imp.PropagationMessage.submit(PropagationMessage.java:83)
+	at com.atomikos.icatch.imp.Propagator$PropagatorThread.run(Propagator.java:79)
+	at com.atomikos.icatch.imp.Propagator.submitPropagationMessage(Propagator.java:58)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitFromWithinCallback(CoordinatorStateHandler.java:582)
+	at com.atomikos.icatch.imp.ActiveStateHandler$6.doCommit(ActiveStateHandler.java:301)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitWithAfterCompletionNotification(CoordinatorStateHandler.java:852)
+	at com.atomikos.icatch.imp.ActiveStateHandler.commit(ActiveStateHandler.java:296)
+	at com.atomikos.icatch.imp.CoordinatorImp.commit(CoordinatorImp.java:707)
+	at com.atomikos.icatch.imp.CoordinatorImp.terminate(CoordinatorImp.java:968)
+	at com.atomikos.icatch.imp.CompositeTerminatorImp.commit(CompositeTerminatorImp.java:82)
+	at com.atomikos.icatch.imp.CompositeTransactionImp.commit(CompositeTransactionImp.java:336)
+	at com.atomikos.icatch.jta.TransactionImp.commit(TransactionImp.java:190)
+	at com.atomikos.icatch.jta.TransactionManagerImp.commit(TransactionManagerImp.java:436)
+	at com.atomikos.icatch.jta.UserTransactionManager.commit(UserTransactionManager.java:177)
+	at org.springframework.transaction.jta.JtaTransactionManager.doCommit(JtaTransactionManager.java:1021)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:726)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:240)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-03-05 00:41:39.412  WARN 17979 --- [enerContainer-1] com.atomikos.icatch.imp.CommitMessage    : Unexpected error in commit
+
+com.atomikos.icatch.SysException: XA resource 'jmsConnectionFactory': commit for XID '3132372E302E312E312E746D30303030313030313132:3132372E302E312E312E746D31' raised -4: the supplied XID is invalid for this XA resource
+	at com.atomikos.datasource.xa.XAResourceTransaction.commit(XAResourceTransaction.java:773)
+	at com.atomikos.icatch.imp.CommitMessage.send(CommitMessage.java:72)
+	at com.atomikos.icatch.imp.PropagationMessage.submit(PropagationMessage.java:83)
+	at com.atomikos.icatch.imp.Propagator$PropagatorThread.run(Propagator.java:79)
+	at com.atomikos.icatch.imp.Propagator.submitPropagationMessage(Propagator.java:58)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitFromWithinCallback(CoordinatorStateHandler.java:582)
+	at com.atomikos.icatch.imp.ActiveStateHandler$6.doCommit(ActiveStateHandler.java:301)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitWithAfterCompletionNotification(CoordinatorStateHandler.java:852)
+	at com.atomikos.icatch.imp.ActiveStateHandler.commit(ActiveStateHandler.java:296)
+	at com.atomikos.icatch.imp.CoordinatorImp.commit(CoordinatorImp.java:707)
+	at com.atomikos.icatch.imp.CoordinatorImp.terminate(CoordinatorImp.java:968)
+	at com.atomikos.icatch.imp.CompositeTerminatorImp.commit(CompositeTerminatorImp.java:82)
+	at com.atomikos.icatch.imp.CompositeTransactionImp.commit(CompositeTransactionImp.java:336)
+	at com.atomikos.icatch.jta.TransactionImp.commit(TransactionImp.java:190)
+	at com.atomikos.icatch.jta.TransactionManagerImp.commit(TransactionManagerImp.java:436)
+	at com.atomikos.icatch.jta.UserTransactionManager.commit(UserTransactionManager.java:177)
+	at org.springframework.transaction.jta.JtaTransactionManager.doCommit(JtaTransactionManager.java:1021)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:726)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:240)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.lang.Thread.run(Thread.java:748)
+	at org.hornetq.core.client.impl.ClientSessionImpl.commit(ClientSessionImpl.java:1468)
+	at com.atomikos.datasource.xa.XAResourceTransaction.commit(XAResourceTransaction.java:733)
+	at com.atomikos.icatch.imp.CommitMessage.send(CommitMessage.java:72)
+	at com.atomikos.icatch.imp.PropagationMessage.submit(PropagationMessage.java:83)
+	at com.atomikos.icatch.imp.Propagator$PropagatorThread.run(Propagator.java:79)
+	at com.atomikos.icatch.imp.Propagator.submitPropagationMessage(Propagator.java:58)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitFromWithinCallback(CoordinatorStateHandler.java:582)
+	at com.atomikos.icatch.imp.ActiveStateHandler$6.doCommit(ActiveStateHandler.java:301)
+	at com.atomikos.icatch.imp.CoordinatorStateHandler.commitWithAfterCompletionNotification(CoordinatorStateHandler.java:852)
+	at com.atomikos.icatch.imp.ActiveStateHandler.commit(ActiveStateHandler.java:296)
+	at com.atomikos.icatch.imp.CoordinatorImp.commit(CoordinatorImp.java:707)
+	at com.atomikos.icatch.imp.CoordinatorImp.terminate(CoordinatorImp.java:968)
+	at com.atomikos.icatch.imp.CompositeTerminatorImp.commit(CompositeTerminatorImp.java:82)
+	at com.atomikos.icatch.imp.CompositeTransactionImp.commit(CompositeTransactionImp.java:336)
+	at com.atomikos.icatch.jta.TransactionImp.commit(TransactionImp.java:190)
+	at com.atomikos.icatch.jta.TransactionManagerImp.commit(TransactionManagerImp.java:436)
+	at com.atomikos.icatch.jta.UserTransactionManager.commit(UserTransactionManager.java:177)
+	at org.springframework.transaction.jta.JtaTransactionManager.doCommit(JtaTransactionManager.java:1021)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:726)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:240)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1134)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1031)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-03-05 00:41:44.240  WARN 17979 --- [           main] com.atomikos.jms.AtomikosJMSException    : Connection pool exhausted - try increasing 'maxPoolSize' and/or 'borrowConnectionTimeout' on the AtomikosConnectionFactoryBean.
+
+com.atomikos.datasource.pool.PoolExhaustedException: ConnectionPool: pool is empty - increase either maxPoolSize or borrowConnectionTimeout
+	at com.atomikos.datasource.pool.ConnectionPool.waitForAtLeastOneAvailableConnection(ConnectionPool.java:346)
+	at com.atomikos.datasource.pool.ConnectionPool.findOrWaitForAnAvailableConnection(ConnectionPool.java:163)
+	at com.atomikos.datasource.pool.ConnectionPool.borrowConnection(ConnectionPool.java:151)
+	at com.atomikos.jms.AtomikosConnectionFactoryBean.createConnection(AtomikosConnectionFactoryBean.java:616)
+	at org.springframework.jms.support.JmsAccessor.createConnection(JmsAccessor.java:180)
+	at org.springframework.jms.core.JmsTemplate.access$600(JmsTemplate.java:90)
+	at org.springframework.jms.core.JmsTemplate$JmsTemplateResourceFactory.createConnection(JmsTemplate.java:1205)
+	at org.springframework.jms.connection.ConnectionFactoryUtils.doGetTransactionalSession(ConnectionFactoryUtils.java:312)
+	at org.springframework.jms.core.JmsTemplate.execute(JmsTemplate.java:480)
+	at org.springframework.jms.core.JmsTemplate.send(JmsTemplate.java:579)
+	at org.springframework.jms.core.JmsTemplate.convertAndSend(JmsTemplate.java:667)
+	at sample.atomikos.AccountService.createAccountAndNotify(AccountService.java:40)
+	at sample.atomikos.AccountService$$FastClassBySpringCGLIB$$4cbd831b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:266)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at sample.atomikos.AccountService$$EnhancerBySpringCGLIB$$5e89ea0.createAccountAndNotify(<generated>)
+	at sample.atomikos.SampleAtomikosApplication.main(SampleAtomikosApplication.java:37)
+	at sample.atomikos.SampleAtomikosApplicationTests.testTransactionRollback(SampleAtomikosApplicationTests.java:39)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.boot.test.OutputCapture$1.evaluate(OutputCapture.java:50)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+]]></system-out>
+  </testcase>
+</testsuite>

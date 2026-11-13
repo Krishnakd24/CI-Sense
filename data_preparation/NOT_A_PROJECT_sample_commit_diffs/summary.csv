@@ -1,0 +1,109 @@
+﻿"project","repository","requested_sha","commit_sha","parent_sha","parent_count","commit_date","commit_message","changed_files","additions","deletions","diff_file","error","git_diff_summary","git_diff_detailed_explanation"
+"activiti-activiti","https://github.com/activiti/activiti","b11f757a","b11f757a48600e53aaf3fcb7a3ba1ece6c463cb4","3cf95cf6f4877ff0fdf1a07b5563769b200acf67","2","2018-09-28T16:19:38Z","Merge pull request #2034 from Activiti/updatebot-bf8cb8fa-c63e-49df-81d0-e632fd74c046
+
+[UpdateBot](https://github.com/jenkins-x/updatebot) merging this pull request - checks on PR status were skipped","1","1","1","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\activiti-activiti.diff","","Updates the Activiti parent Maven version from 7.0.27 to 7.0.28.","In pom.xml, changes the org.activiti.build:activiti-parent version from 7.0.27 to 7.0.28."
+"Alluxio-alluxio","https://github.com/Alluxio/alluxio","78c063ae181279d81cbc0808a684864a8c8b311c","78c063ae181279d81cbc0808a684864a8c8b311c","ef6e77d7fef4c6b06fb9a2a61fcd4c4bbd6e1f07","1","2013-09-08T13:18:02Z","add get files locations","1","62","0","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\Alluxio-alluxio.diff","","Adds file-location functionality to TachyonFS.","Adds synchronized getFileNetAddresses(fileId) to TachyonFS. It connects to the master, returns null if not connected, obtains file blocks, collects unique NetAddress locations in a set, and returns them as a list; it can throw IOException."
+"apache-ambari","https://github.com/apache/ambari","675d6aeb5435c502640f47854af0e04b8428d697","675d6aeb5435c502640f47854af0e04b8428d697","b87dc45ed36daeb9823df1a1849cc8b67fbd6a86","1","2012-12-13T02:39:54Z","Removing multiple changes files
+
+git-svn-id: https://svn.apache.org/repos/asf/incubator/ambari/trunk@1421066 13f79535-47bb-0310-9956-ffa450edef68","1","0","633","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\apache-ambari.diff","","Removes an Ambari changes text file.","Deletes AMBARI-666-CHANGES.txt, a branch changelog containing 633 removed lines."
+"apache-commons-exec","https://github.com/apache/commons-exec","ea4d1d423b5a2c6ce6b61dd4f1618ad1e78ef3ee","ea4d1d423b5a2c6ce6b61dd4f1618ad1e78ef3ee","475dee96447f16629a270e6e8ccf37d4ce456cc5","1","2008-04-07T15:34:47Z","Improving the regression tests on Windows
+
+git-svn-id: https://svn.apache.org/repos/asf/commons/sandbox/exec/trunk@645565 13f79535-47bb-0310-9956-ffa450edef68","2","25","21","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\apache-commons-exec.diff","","Updates the build and Windows regression test script.","Changes the build to copy testme.bat into the distribution directory and modifies the forever.bat Windows test script."
+"apache-hbase","https://github.com/apache/hbase","e593f0efbf1144bcb5909d2630321e631a2e66bb","e593f0efbf1144bcb5909d2630321e631a2e66bb","8e95593f42c7ed15ed197a9d97df70cde363297d","1","2010-05-15T00:16:40Z","The core elements of HBASE-2037: refactoring flushing, and adding configurability in which HRegion subclass is instantiated
+
+
+
+git-svn-id: https://svn.apache.org/repos/asf/hadoop/hbase/trunk@944527 13f79535-47bb-0310-9956-ffa450edef68","10","646","86","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\apache-hbase.diff","","Refactors region flushing and makes the HRegion implementation configurable.","Adds the hbase.hregion.impl configuration key and refactors region flushing and storage classes including HRegion, HRegionServer, MemStore and StoreFlusher. It also changes region implementation selection and related tests."
+"apache-httpcore","https://github.com/apache/httpcore","49247d208bde47f652812493e1d3576e136b8eb8","49247d208bde47f652812493e1d3576e136b8eb8","d11fadb7930befd2384b018ccc9f24ad374c07dc","1","2011-08-22T15:41:34Z","HTTPCORE-269: Connection pools incorrectly handle lease requests when the max limit for the given route has been exceeded and all connections in the route pool are stateful
+
+git-svn-id: https://svn.apache.org/repos/asf/httpcomponents/httpcore/trunk@1160308 13f79535-47bb-0310-9956-ffa450edef68","10","312","32","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\apache-httpcore.diff","","Fixes connection pool handling of lease requests at route connection limits and updates tests.","Changes connection-pool lease request handling when per-route limits are reached and connections are stateful. Connect timeout is calculated as a long instead of an int, lease requests use deadlines, and pool implementations and tests are updated."
+"apache-incubator-dubbo","https://github.com/apache/incubator-dubbo","737f7a7e","737f7a7ea67832d7f17517326fb2491d0a086dd7","8254e3da52f2b08c37a9e0fcf399142bf8b5fe38","1","2018-09-14T16:32:11Z","add jdk11 to travis ci (#2487)
+
+* add jdk11 to travis ci
+* Update .travis.yml
+* upgrade jacoco to support jdk11","2","2","1","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\apache-incubator-dubbo.diff","","Adds JDK 11 to Travis CI and upgrades JaCoCo compatibility.","Adds oraclejdk11 to the Travis CI JDK matrix and changes maven_jacoco_version from 0.8.1 to 0.8.2."
+"doanduyhai-Achilles","https://github.com/doanduyhai/Achilles","f52f7ec93b3da758119dbbbc1be8dad8e8783764","f52f7ec93b3da758119dbbbc1be8dad8e8783764","854fec579ef72ce9ff38fab2feb21278d8ef971c","1","2014-07-05T20:11:45Z","Fixes #88 Add SchemaBuilder","42","3390","907","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\doanduyhai-Achilles.diff","","Adds schema-building support and changes metadata, type mapping, and related code.","Introduces schema-building functionality across metadata, table handling, and tests. TypeMapper adds a java2CQLDataType map from Java classes to Cassandra DataType values, including blob and boolean mappings; many related metadata classes change."
+"elasticjob-elastic-job-lite","https://github.com/elasticjob/elastic-job-lite","b022898e","b022898ef1b8c984e17efb2a422ee45f6b13e46e","b84a7e2cac286611ce14f77138253c1f3742ee4b","2","2018-03-28T15:42:04Z","Merge pull request #500 from sevenzhao/event-trace-enhancement
+
+优化event trace模块查询SQL","1","1","1","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\elasticjob-elastic-job-lite.diff","","Limits a job event trace lookup query to one result.","In JobEventRdbStorage.getOriginalTaskId, adds LIMIT 1 to the SQL query for original_task_id matching taskId and TASK_STAGING state. The query now requests at most one matching row."
+"google-jimfs","","","","","","","","","","","","Root commit has no parent to compare.","NA","NA: root commit has no parent diff available."
+"hector-client-hector","https://github.com/hector-client/hector","29e88d0b988d9e5c8dc3b529414a270805ce0d7c","29e88d0b988d9e5c8dc3b529414a270805ce0d7c","c21ef243eb368ed37bc0ef1557a4d72c09bbd6ac","1","2011-01-06T12:18:12Z","tidy-up poms to something less of a mess","3","151","226","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\hector-client-hector.diff","","Cleans up Maven configuration across modules.","Reorganizes parent and module pom.xml files, including project coordinates, version inheritance, and dependency declarations."
+"jknack-handlebars.java","https://github.com/jknack/handlebars.java","db77ef2b6fd2bac7498b4124b95c47f753cf3a2f","db77ef2b6fd2bac7498b4124b95c47f753cf3a2f","3bd12131da7769a13fb09f0aa58636200dbc8827","1","2013-03-17T00:34:28Z","join helper should be more flexible #138
+
+it should be able to join:
+
+java.util.Iterable
+java.util.Iterator
+arrays
+values","2","63","50","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\jknack-handlebars.java.diff","","Extends the join helper to support iterables, iterators, arrays, and individual values.","Changes the join string helper and tests to accept more inputs, including iterable values, iterators, arrays, and supplied values. It adjusts separator and option handling while extending join behavior."
+"joel-costigliola-assertj-core","https://github.com/joel-costigliola/assertj-core","22be3825d4e7b1561cfdfa131446b24d6462b305","22be3825d4e7b1561cfdfa131446b24d6462b305","76906533010b705ea51b8f4fdfb9e9efcaa36d93","1","2015-04-18T03:53:10Z","Fixes #369 : Add Timestamp date format to default supported formats for Date assertions taking String parameter.","5","131","28","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\joel-costigliola-assertj-core.diff","","Adds timestamp date formats to supported string-based date assertions.","Adds a timestamp format yyyy-MM-dd HH:mm:ss.SSS to default date formats accepted by date assertions. The change introduces newTimestampDateFormat and updates assertion documentation and tests."
+"kevinsawicki-http-request","https://github.com/kevinsawicki/http-request","2d62a3e9","2d62a3e9da726942a93cf16b6e91c0187e6c0136","13c562146c27e005fe021e907d702bcfe0e65d6f","2","2015-04-13T17:01:31Z","Merge pull request #95 from fs111/master
+
+fix link to HttpRequest.java in README.md","1","1","1","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\kevinsawicki-http-request.diff","","Fixes the HttpRequest source link in the README.","Changes a README link for HttpRequest.java from raw2.github.com to raw.githubusercontent.com. The first-parent diff changes documentation only."
+"ninjaframework-ninja","https://github.com/ninjaframework/ninja","b1b58e874188e0aa2e80cfa020a284213a587f09","b1b58e874188e0aa2e80cfa020a284213a587f09","5a0b5e7f8aa3e5566da522ca4bc115ec11fa708d","1","2013-11-13T20:57:18Z","[maven-release-plugin] prepare release ninja-2.2.0","8","8","8","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\ninjaframework-ninja.diff","","Updates Maven module versions from 2.2.0-SNAPSHOT to the 2.2.0 release.","Updates Maven version values from 2.2.0-SNAPSHOT to 2.2.0 in the parent and module POM files as part of preparing a release."
+"orbit-orbit","https://github.com/orbit/orbit","7bcd0940f02974481cc652543ef57ec14a649ffd","7bcd0940f02974481cc652543ef57ec14a649ffd","585ce55e8fbb19d25ea06bda7ac5fbd9d7af04f6","1","2015-03-31T18:13:29Z","Adding a test to check actor exception behaviour.","1","114","0","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\orbit-orbit.diff","","Adds a test for actor exception behavior.","Adds a test exercising actor exception behavior, including actor calls and assertions."
+"qos-ch-logback","https://github.com/qos-ch/logback","0f57531977287fd3d8c9046e9f68e281715f3b10","0f57531977287fd3d8c9046e9f68e281715f3b10","98ef206080735ae73b4403edfbaa38c804215c0b","1","2014-01-19T10:17:28Z","LOGBACK-269 2-space tabs for new files and fileheader.","2","27","14","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\qos-ch-logback.diff","","Updates formatting and file headers in Logback files.","Changes indentation and file headers in Groovy logging code, including AsyncAppenderDelegate and its appendersByName map."
+"spring-projects-spring-boot","https://github.com/spring-projects/spring-boot","cf24af0bfbfdd778bfb076947ea6f012a88f372d","cf24af0bfbfdd778bfb076947ea6f012a88f372d","d17b7c8195477c43ea99b2508d216bb6dc4c6b65","1","2014-10-30T07:13:13Z","Rework logging to prevent double initialization
+
+Prior to this commit LoggingSystem initialization would happen multiple
+times. Once to configure ""quiet"" logging, and again to configure correct
+settings once the Application was initialized. This could cause problems
+if `logging.groovy` logback files were used.
+
+The logging system is now only initialized once (when possible) by
+following these steps:
+
+- Standard logging initialization occurs via the actual logging
+  implementation used (e.g. logback will load a logback.xml file if it
+  exists)
+- beforeInitization() is called to prevent early log output.
+  Implementations now either use a Filter or simply set the root logging
+  level.
+- initialize() is called with an optional log configuration file (e.g
+  a custom logback.xml location) and an optional log output file (the
+  default is null indicating console only output).
+
+The initialize() method will attempt to prevent double initialization
+by checking if a standard configuration file exists. Double
+initialization now only occurs in the following situations:
+
+- The user has a standard configuration file (e.g. classpath:logback.xml)
+  but also specifies a logging.config property. Double initialization is
+  required since the specified configuration file supersedes the default.
+- The user has a standard configuration file (e.g. classpath:logback.xml)
+  and specifies a logging.file property. Double initialization is
+  required since the standard configuration may use a ${LOG_FILE}
+  reference.
+
+In addition this commit removes the `logging.console` option and now
+assumes that logging either occurs only to console or to both the
+console and a file. This restriction helps simplify the LoggingSystem
+implementations. If file only logging is required a custom logback.xml
+can be used.
+
+Fixes gh-1091
+See gh-1612, gh-1770","46","652","657","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\spring-projects-spring-boot.diff","","Reworks logging initialization to prevent repeated setup and updates configuration and tests.","Reworks LoggingSystem initialization to avoid repeated initialization where possible. It changes logging initialization APIs, implementations and configuration resources, changes an EndpointMBeanExporter message from info to warn, and updates logging tests."
+"square-okhttp","https://github.com/square/okhttp","129c937fb33328e1f4ee8815a94e89676f242c2c","129c937fb33328e1f4ee8815a94e89676f242c2c","74027a4e0bf161fa11667e6ea29fab7f0c991ae7","1","2014-03-06T11:54:33Z","Make HttpURLConnection streams throw IOException after close()
+
+This is to revert to prior behavior found in earlier releases:
+OkHttp changed to throw IllegalStateException.
+
+HttpEngine has also been changed to explicitly close the request
+body on disconnect() to ensure that these exceptions are thrown
+at the expected moment (e.g. on write() on a closed, buffered
+stream).
+
+Additional close() checks have been added to okio classes and
+tests have been added. The tests are probes for interesting
+examples, not complete.","8","167","20","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\square-okhttp.diff","","Changes closed HTTP stream handling to throw IOException and updates buffering code and tests.","Changes behavior after an HTTP stream is closed: affected tests now expect IOException instead of IllegalStateException. HttpEngine closes bufferedRequestBody on disconnect, and Okio buffered sources and sinks gain close-state checks with corresponding tests."
+"tootallnate-java-websocket","https://github.com/tootallnate/java-websocket","fa3909c3","fa3909c391195178ccf5a92d4ac342a30ae247c8","8e9c82a138ff7b2f137e73a8b1df913aae317a17","2","2018-08-15T12:10:01Z","Merge pull request #754 from marci4/SonarQube
+
+Using SLF4J and refactored code","63","692","1234","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\tootallnate-java-websocket.diff","","Refactors code and logging to use SLF4J and changes build and project files.","First-parent diff refactors websocket code and logging, with SLF4J changes, and alters project/build files. It removes the old Travis Ant configuration and build.xml alongside broader code and test changes."
+"undertow-io-undertow","https://github.com/undertow-io/undertow","ac7204ab8cabb197a1327e5bbdb6e0e2ed1917f1","ac7204ab8cabb197a1327e5bbdb6e0e2ed1917f1","f19d5da12dd24bde910f12e1c69c78d89d089046","1","2013-11-27T13:39:56Z","[UNDERTOW-141] Add a test case to test SPNEGO with a fallback to BASIC authentication.","4","118","24","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\undertow-io-undertow.diff","","Adds a test for SPNEGO authentication with fallback to BASIC authentication.","Adds a SPNEGO authentication test with BASIC fallback and updates test helpers. A getAuthHeader helper searches response headers for a prefix and fails if the expected header is not found."
+"wildfly-wildfly","https://github.com/wildfly/wildfly","b19048b7","b19048b72669fc0e96665b1b125dc1fda21f5993","6d7b521d53f46a660f8038a9300a45138a5f4ac5","2","2018-09-26T15:10:13Z","Merge pull request #11694 from pferraro/jgroups
+
+WFLY-11018 Upgrade JGroups to 4.0.15.Final","1","1","1","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\wildfly-wildfly.diff","","Upgrades the JGroups dependency from 4.0.13.Final to 4.0.15.Final.","Changes the version.org.jgroups property in pom.xml from 4.0.13.Final to 4.0.15.Final."
+"wro4j-wro4j","https://github.com/wro4j/wro4j","7e3801e19fb43183c59607663ebd53c27a95cf77","7e3801e19fb43183c59607663ebd53c27a95cf77","3c9991c5c6578adaa9a7eecd995917a7795d08cb","1","2013-08-28T18:00:44Z","rename configuration flag to parallelProcessing","7","24","19","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\wro4j-wro4j.diff","","Renames a configuration flag to parallelProcessing.","Renames parallelPostprocessing to parallelProcessing in configuration, accessors, and logging; the flag controls parallel processing of multiple groups. The diff also updates subproject references."
+"zxing-zxing","https://github.com/zxing/zxing","59ea393a08e568d0c662707bccf56895acfb02cf","59ea393a08e568d0c662707bccf56895acfb02cf","4eb503ee7a8ef3d12c3d6533c4a5346a30a447a2","1","2013-11-17T01:34:42Z","Try again to introduce one parent pom for all modules
+
+git-svn-id: https://zxing.googlecode.com/svn/trunk@2910 59b500cc-1b3d-0410-9834-0bbf25fbcc57","6","336","970","D:\CI_sense_DATA\failing_logs_XMLS\sample_commit_diffs\zxing-zxing.diff","","Reorganizes Maven configuration around a shared parent POM.","Reorganizes Maven POMs to use a common parent across modules, changing parent and module configuration and removing or moving repeated project metadata."

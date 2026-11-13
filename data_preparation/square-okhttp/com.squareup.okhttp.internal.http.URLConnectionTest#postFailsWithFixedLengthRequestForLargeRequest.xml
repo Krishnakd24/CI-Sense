@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.squareup.okhttp.internal.http.URLConnectionTest" time="9.834" tests="181" errors="34" skipped="8" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/tmp/proj/square-okhttp-10039/square-okhttp"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/tmp/proj/square-okhttp-10039/square-okhttp"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-65-generic"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="connectViaHttpProxyToHttpsUsingProxyArg" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.788">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testConnectViaHttpProxyToHttps(URLConnectionTest.java:783)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpProxyToHttpsUsingProxyArg(URLConnectionTest.java:750)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:44 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 200 OK
+Exception in thread "MockWebServer" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:322)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]></system-err>
+  </testcase>
+  <testcase name="emptyRequestHeaderNameIsStrict" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="malformedUrlThrowsUnknownHostException" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="postFailsWithBufferedRequestForLargeRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.021"/>
+  <testcase name="proxyAuthenticateOnConnect" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.054">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.proxyAuthenticateOnConnect(URLConnectionTest.java:889)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:45 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 407 OK
+Oct 10, 2019 8:40:45 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 200 OK
+Exception in thread "MockWebServer" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:322)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]></system-err>
+  </testcase>
+  <testcase name="inputStreamAvailableWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="gzipAndConnectionReuseWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.052"/>
+  <testcase name="connectViaProxyUsingHttpProxySystemProperty" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.048"/>
+  <testcase name="contentDisagreesWithContentLengthHeader" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="getResponseCodeNoResponseBody" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="shoutcast" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="redirectToAnotherOriginServerWithHttps" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.redirectToAnotherOriginServer(URLConnectionTest.java:1760)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.redirectToAnotherOriginServerWithHttps(URLConnectionTest.java:1736)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:45 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: ICY 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="setValidRequestMethod" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="cookiesAndTrailers" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="redirectedFromHttpToHttpsFollowingProtocolRedirects" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getInputStream(HttpURLConnectionImpl.java:193)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2790)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.redirectedFromHttpToHttpsFollowingProtocolRedirects(URLConnectionTest.java:1727)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:45 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 302 OK
+]]></system-err>
+  </testcase>
+  <testcase name="customAuthenticator" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.045"/>
+  <testcase name="httpsWithCustomTrustManager" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.httpsWithCustomTrustManager(URLConnectionTest.java:2001)
+]]></error>
+  </testcase>
+  <testcase name="connectViaHttpProxyToHttpsUsingHttpProxySystemProperty" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testConnectViaDirectProxyToHttps(URLConnectionTest.java:743)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpProxyToHttpsUsingHttpProxySystemProperty(URLConnectionTest.java:730)
+]]></error>
+  </testcase>
+  <testcase name="chunkedUpload_largeBuffers" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.005"/>
+  <testcase name="getKeepAlive" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.013"/>
+  <testcase name="redirectedFromHttpsToHttpFollowingProtocolRedirects" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.redirectedFromHttpsToHttpFollowingProtocolRedirects(URLConnectionTest.java:1704)
+]]></error>
+  </testcase>
+  <testcase name="sameConnectionRedirectAndReuse" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.009"/>
+  <testcase name="flushAfterStreamTransmittedWithNoLengthHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="getHeadersThrows" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="gzipEncodingEnabledByDefault" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.009"/>
+  <testcase name="fixedLengthUpload_byteByByte" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.079"/>
+  <testcase name="nonStandardAuthenticationScheme" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="markAndResetWithNoLengthHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.009"/>
+  <testcase name="getContentOfType" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="redirectedWithContentLengthHeader" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.045"/>
+  <testcase name="getOutputAfterGetInputStreamFails" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="setProtocolsWithNull" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001"/>
+  <testcase name="bug10100" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008"/>
+  <testcase name="gzipAndConnectionReuseWithFixedLength" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.054"/>
+  <testcase name="proxyWithConnectionClose" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.proxyWithConnectionClose(URLConnectionTest.java:921)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:46 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="proxyWithConnectionReuse" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.proxyWithConnectionReuse(URLConnectionTest.java:939)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:46 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 execute
+WARNING: MockWebServer connection failed
+java.net.SocketException: Socket is closed
+	at java.net.Socket.getInputStream(Socket.java:903)
+	at sun.security.ssl.BaseSSLSocketImpl.getInputStream(BaseSSLSocketImpl.java:607)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:686)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:322)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+Oct 10, 2019 8:40:46 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="noTransparentGzipFor304NotModified" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.045"/>
+  <testcase name="postFailsWithFixedLengthRequestForLargeRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008">
+    <error message="Broken pipe (Write failed)" type="java.net.SocketException">java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at okio.Okio$1.write(Okio.java:70)
+	at okio.RealBufferedSink.emitCompleteSegments(RealBufferedSink.java:92)
+	at okio.RealBufferedSink.write(RealBufferedSink.java:44)
+	at com.squareup.okhttp.internal.http.HttpConnection$FixedLengthSink.write(HttpConnection.java:260)
+	at okio.RealBufferedSink.emitCompleteSegments(RealBufferedSink.java:92)
+	at okio.RealBufferedSink$1.write(RealBufferedSink.java:107)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.reusedConnectionFailsWithPost(URLConnectionTest.java:2466)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.postFailsWithFixedLengthRequestForLargeRequest(URLConnectionTest.java:2446)
+</error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:46 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET /a HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="response300MultipleChoiceWithPost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.052"/>
+  <testcase name="gzipAndConnectionReuseWithChunkedEncodingAndTls" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getInputStream(HttpURLConnectionImpl.java:193)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getInputStream(DelegatingHttpsURLConnection.java:210)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testClientConfiguredGzipContentEncodingAndConnectionReuse(URLConnectionTest.java:1166)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.gzipAndConnectionReuseWithChunkedEncodingAndTls(URLConnectionTest.java:1124)
+]]></error>
+  </testcase>
+  <testcase name="cannotSetFixedLengthStreamingModeAfterChunkedStreamingMode" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="digestAuthentication" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.02"/>
+  <testcase name="flushAfterStreamTransmittedWithFixedLength" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="urlContainsQueryButNoPath" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.009"/>
+  <testcase name="getErrorStreamOnUnsuccessfulRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.005"/>
+  <testcase name="setDoOutputOrDoInputAfterConnectFails" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0"/>
+  <testcase name="postBodiesRetransmittedOnAuthProblems" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="testPooledConnectionsDetectHttp10" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="authenticateWithGet" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.138"/>
+  <testcase name="getContentTypeConnects" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="requestBodySurvivesRetriesWithFixedLength" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="clientSendsContentLength" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="nonStandardAuthenticationSchemeWithRealm" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="zeroLengthPut_HTTP_2" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPayload(URLConnectionTest.java:2669)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPut(URLConnectionTest.java:2647)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPut_HTTP_2(URLConnectionTest.java:2657)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:46 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 execute
+WARNING: MockWebServer connection failed
+java.net.SocketException: Socket closed
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.writeResponse(MockWebServer.java:535)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.access$1700(MockWebServer.java:77)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processOneRequest(MockWebServer.java:394)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:356)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+]]></system-err>
+  </testcase>
+  <testcase name="cannotSetChunkedStreamingModeAfterConnect" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.006"/>
+  <testcase name="flushAfterStreamTransmittedWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="requestHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.011"/>
+  <testcase name="authenticateWithPost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.132"/>
+  <testcase name="invalidHost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001"/>
+  <testcase name="markAndResetWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.047"/>
+  <testcase name="notRedirectedFromHttpToHttps" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="setChunkedEncodingAsRequestProperty" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.005"/>
+  <testcase name="deflateCompression" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="earlyDisconnectDoesntHarmPoolingWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.044"/>
+  <testcase name="zeroLengthPut_SPDY_3" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPayload(URLConnectionTest.java:2669)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPut(URLConnectionTest.java:2647)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPut_SPDY_3(URLConnectionTest.java:2652)
+]]></error>
+  </testcase>
+  <testcase name="emptyRequestHeaderValueIsAllowed" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="chunkedConnectionsArePooled" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.091"/>
+  <testcase name="serverSendsInvalidCodeNotANumber" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="gzipAndConnectionReuseWithFixedLengthAndTls" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getInputStream(HttpURLConnectionImpl.java:193)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getInputStream(DelegatingHttpsURLConnection.java:210)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testClientConfiguredGzipContentEncodingAndConnectionReuse(URLConnectionTest.java:1166)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.gzipAndConnectionReuseWithFixedLengthAndTls(URLConnectionTest.java:1120)
+]]></error>
+  </testcase>
+  <testcase name="connectRetriesUntilConnectedOrFailed" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0"/>
+  <testcase name="redirectWithProxySelector" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001"/>
+  <testcase name="missingChunkBody" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.009"/>
+  <testcase name="connectViaHttpProxyToHttpsUsingHttpsProxySystemProperty" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testConnectViaHttpProxyToHttps(URLConnectionTest.java:783)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpProxyToHttpsUsingHttpsProxySystemProperty(URLConnectionTest.java:762)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:46 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 200 OK
+Oct 10, 2019 8:40:46 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="streamDiscardingIsTimely" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.103"/>
+  <testcase name="cannotSetFixedLengthStreamingModeAfterConnect" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.006"/>
+  <testcase name="follow20Redirects" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.886"/>
+  <testcase name="clientConfiguredGzipContentEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="responseCodeDisagreesWithHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0"/>
+  <testcase name="emptyResponseHeaderValueIsAllowed" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="doesNotFollow21Redirects" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.882"/>
+  <testcase name="allAttributesSetInProxyAuthenticationCallbacks" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="pooledConnectionProblemsNotReportedToProxySelector" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="connectionCloseWithRedirect" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.006"/>
+  <testcase name="sslFallbackNotUsedWhenRecycledConnectionFails" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.sslFallbackNotUsedWhenRecycledConnectionFails(URLConnectionTest.java:642)
+]]></error>
+  </testcase>
+  <testcase name="defaultRequestProperty" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0"/>
+  <testcase name="connectViaProxyUsingProxyArg" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="serverSendsInvalidResponseHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="markAndResetWithContentLengthHeader" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.048"/>
+  <testcase name="serverClosesSocket" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="connectViaHttpProxyToHttpsUsingBadProxyAndHttpResponseCache" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:490)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpProxyToHttpsUsingBadProxyAndHttpResponseCache(URLConnectionTest.java:820)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:48 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET /b HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="connectViaHttpProxyToHttpsUsingProxyArgWithNoProxy" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testConnectViaDirectProxyToHttps(URLConnectionTest.java:743)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpProxyToHttpsUsingProxyArgWithNoProxy(URLConnectionTest.java:725)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:48 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 execute
+WARNING: MockWebServer connection failed
+java.net.SocketException: Socket closed
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.writeResponse(MockWebServer.java:534)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.access$1700(MockWebServer.java:77)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processOneRequest(MockWebServer.java:394)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.createTunnel(MockWebServer.java:376)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:314)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+]]></system-err>
+  </testcase>
+  <testcase name="canSetNegativeChunkedStreamingMode" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0"/>
+  <testcase name="requestBodySurvivesRetriesWithBufferedBody" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008"/>
+  <testcase name="notRedirectedFromHttpsToHttp" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getInputStream(HttpURLConnectionImpl.java:193)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getInputStream(DelegatingHttpsURLConnection.java:210)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.notRedirectedFromHttpsToHttp(URLConnectionTest.java:1675)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:48 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: POST /def HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="emptyResponseHeaderNameIsLenient" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="gzipWithRedirectAndConnectionReuse" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.044"/>
+  <testcase name="redirectedWithNoLengthHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.008"/>
+  <testcase name="fullyBufferedPostIsTooShort" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="fixedLengthUpload_smallBuffers" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.016"/>
+  <testcase name="bug2939" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="connectionCloseInResponse" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.009"/>
+  <testcase name="authenticateWithFixedLengthStreaming" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.006"/>
+  <testcase name="headerValuesContainingNullCharacter" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="zeroLengthPost_HTTP_2" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPayload(URLConnectionTest.java:2669)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPost(URLConnectionTest.java:2632)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPost_HTTP_2(URLConnectionTest.java:2642)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:48 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 execute
+WARNING: MockWebServer connection failed
+java.net.SocketException: Socket closed
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.flush(BufferedOutputStream.java:140)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.writeResponse(MockWebServer.java:535)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.access$1700(MockWebServer.java:77)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processOneRequest(MockWebServer.java:394)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:356)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+]]></system-err>
+  </testcase>
+  <testcase name="setChunkedStreamingMode" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="response307WithGet" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.047"/>
+  <testcase name="serverSendsUnnecessaryWhitespace" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="getContentEncodingConnects" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="dnsFailureThrowsIOException" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.076"/>
+  <testcase name="redirectedPostStripsRequestBodyHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.044"/>
+  <testcase name="connectViaHttps" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttps(URLConnectionTest.java:529)
+]]></error>
+  </testcase>
+  <testcase name="response301MovedPermanentlyWithPost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.046"/>
+  <testcase name="cannotSetChunkedStreamingModeAfterFixedLengthStreamingMode" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001"/>
+  <testcase name="postFailsWithChunkedRequestForSmallRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="zeroLengthPost_SPDY_3" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPayload(URLConnectionTest.java:2669)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPost(URLConnectionTest.java:2632)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.zeroLengthPost_SPDY_3(URLConnectionTest.java:2637)
+]]></error>
+  </testcase>
+  <testcase name="allAttributesSetInServerAuthenticationCallbacks" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="getErrorStreamOnSuccessfulRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="disconnectBeforeConnect" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.006"/>
+  <testcase name="connectionsArePooled" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.09"/>
+  <testcase name="readTimeouts" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="1.004"/>
+  <testcase name="chunkedUpload_byteByByte" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.025"/>
+  <testcase name="redirectedWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.049"/>
+  <testcase name="setInvalidRequestMethodLowercase" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0"/>
+  <testcase name="fullyBufferedPostIsTooLong" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="redirectToAnotherOriginServer" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.049"/>
+  <testcase name="authenticateRealmUppercase" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.048"/>
+  <testcase name="postFailsWithBufferedRequestForSmallRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="inputStreamAvailableWithContentLengthHeader" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="setProtocols" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="connectionCloseInRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="response307WithOptions" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="connectViaHttpsReusingConnections" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpsReusingConnections(URLConnectionTest.java:578)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:50 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: OPTIONS /page1 HTTP/1.1 and responded: HTTP/1.1 307 OK
+]]></system-err>
+  </testcase>
+  <testcase name="getOutputStreamOnGetFails" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001"/>
+  <testcase name="earlyDisconnectDoesntHarmPoolingWithFixedLengthEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.046"/>
+  <testcase name="unauthorizedResponseHandling" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.005"/>
+  <testcase name="clientConfiguredCustomContentEncoding" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.009"/>
+  <testcase name="cannotSetNegativeFixedLengthStreamingMode" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="response303SeeOtherWithPost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.047"/>
+  <testcase name="connectViaHttpsWithSSLFallback" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpsWithSSLFallback(URLConnectionTest.java:619)
+]]></error>
+  </testcase>
+  <testcase name="chunkedUpload_smallBuffers" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="connectViaHttpsToUntrustedServer" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getInputStream(HttpURLConnectionImpl.java:193)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getInputStream(DelegatingHttpsURLConnection.java:210)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpsToUntrustedServer(URLConnectionTest.java:664)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:50 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: POST / HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="npnSetsProtocolHeader_HTTP_2" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getHeaderFields(HttpURLConnectionImpl.java:169)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getHeaderFields(DelegatingHttpsURLConnection.java:178)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getHeaderFields(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.npnSetsProtocolHeader(URLConnectionTest.java:2625)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.npnSetsProtocolHeader_HTTP_2(URLConnectionTest.java:2616)
+]]></error>
+  </testcase>
+  <testcase name="setInvalidRequestMethodConnect" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="serverShutdownOutput" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.011"/>
+  <testcase name="responseHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="redirectedOnHttps" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getInputStream(HttpURLConnectionImpl.java:193)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getInputStream(DelegatingHttpsURLConnection.java:210)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.redirectedOnHttps(URLConnectionTest.java:1655)
+]]></error>
+  </testcase>
+  <testcase name="fixedLengthUpload_largeBuffers" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.012"/>
+  <testcase name="singleByteReadIsSigned" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="proxyConnectIncludesProxyHeadersOnly" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.proxyConnectIncludesProxyHeadersOnly(URLConnectionTest.java:860)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:50 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 200 OK
+Exception in thread "MockWebServer" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:322)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]></system-err>
+  </testcase>
+  <testcase name="postBodiesRetransmittedOnIpAddressProblems" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="postFailsWithFixedLengthRequestForSmallRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="serverSendsInvalidCodeTooLarge" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="response305UseProxy" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="secureChunkedStreaming" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getOutputStream(HttpURLConnectionImpl.java:211)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getOutputStream(DelegatingHttpsURLConnection.java:218)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testSecureStreamingPost(URLConnectionTest.java:1514)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.secureChunkedStreaming(URLConnectionTest.java:1492)
+]]></error>
+  </testcase>
+  <testcase name="readAfterLastByte" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.005"/>
+  <testcase name="serverShutdownInput" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.005"/>
+  <testcase name="inputStreamAvailableWithNoLengthHeaders" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="zeroLengthPut" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="response307WithHead" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="response307WithPost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="response302MovedTemporarilyWithPost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.046"/>
+  <testcase name="headerNamesContainingNullCharacter" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="authenticateWithChunkedStreaming" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="npnSetsProtocolHeader_SPDY_3" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getHeaderFields(HttpURLConnectionImpl.java:169)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getHeaderFields(DelegatingHttpsURLConnection.java:178)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getHeaderFields(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.npnSetsProtocolHeader(URLConnectionTest.java:2625)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.npnSetsProtocolHeader_SPDY_3(URLConnectionTest.java:2612)
+]]></error>
+  </testcase>
+  <testcase name="nonHexChunkSize" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.004"/>
+  <testcase name="requestBodySurvivesRetriesWithChunkedStreaming" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="getContentLengthConnects" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001"/>
+  <testcase name="contentDisagreesWithChunkedHeader" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.006"/>
+  <testcase name="connectViaProxyUsingProxySystemProperty" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="postFailsWithChunkedRequestForLargeRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.015"/>
+  <testcase name="veryLargeFixedLengthRequest" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="3.949"/>
+  <testcase name="zeroLengthPost" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.006"/>
+  <testcase name="getContent" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="setProtocolsWithoutHttp11" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001"/>
+  <testcase name="secureFixedLengthStreaming" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getOutputStream(HttpURLConnectionImpl.java:211)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getOutputStream(DelegatingHttpsURLConnection.java:218)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testSecureStreamingPost(URLConnectionTest.java:1514)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.secureFixedLengthStreaming(URLConnectionTest.java:1488)
+]]></error>
+    <system-err><![CDATA[Oct 10, 2019 8:40:54 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="connectViaHttpProxyToHttpsUsingProxySystemProperty" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.testConnectViaHttpProxyToHttps(URLConnectionTest.java:783)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpProxyToHttpsUsingProxySystemProperty(URLConnectionTest.java:758)
+]]></error>
+    <system-err><![CDATA[Exception in thread "MockWebServer" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+Oct 10, 2019 8:40:54 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: CONNECT android.com:443 HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="disconnectedConnection" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.002"/>
+  <testcase name="inspectHandshakeThroughoutRequestLifecycle" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.001">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.inspectHandshakeThroughoutRequestLifecycle(URLConnectionTest.java:553)
+]]></error>
+    <system-err><![CDATA[	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Oct 10, 2019 8:40:54 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="getRequestPropertyReturnsLastValue" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003"/>
+  <testcase name="responseCacheReturnsNullOutputStream" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.007"/>
+  <testcase name="connectViaHttpsReusingConnectionsDifferentFactories" classname="com.squareup.okhttp.internal.http.URLConnectionTest" time="0.003">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.connect(HttpURLConnectionImpl.java:106)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.connect(DelegatingHttpsURLConnection.java:89)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2789)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.assertContent(URLConnectionTest.java:2794)
+	at com.squareup.okhttp.internal.http.URLConnectionTest.connectViaHttpsReusingConnectionsDifferentFactories(URLConnectionTest.java:598)
+]]></error>
+    <system-err><![CDATA[Exception in thread "MockWebServer" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:322)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]></system-err>
+  </testcase>
+</testsuite>

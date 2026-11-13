@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.092" tests="10" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/qos-ch-logback-1017/qos-ch-logback"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/qos-ch-logback-1017/qos-ch-logback"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="noCompression_FileBlank_NoRestart_1" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0"/>
+  <testcase name="withCompression_FileBlank_NoRestart_2" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.006"/>
+  <testcase name="noCompression_FileBlank_StopRestart_3" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.006"/>
+  <testcase name="noCompression_FileSet_StopRestart_4" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.021"/>
+  <testcase name="noCompression_FileSet_StopRestart_WithLongWait_4B" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.003"/>
+  <testcase name="noCompression_FileSet_NoRestart_5" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.002"/>
+  <testcase name="withCompression_FileSet_NoRestart_6" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.004"/>
+  <testcase name="withMissingTargetDirWithCompression" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.027">
+    <error message="target/test-output/44021894/2019-08-28/-2019-08-28_10_07_17.gz (No such file or directory)" type="java.io.FileNotFoundException"><![CDATA[java.io.FileNotFoundException: target/test-output/44021894/2019-08-28/-2019-08-28_10_07_17.gz (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at ch.qos.logback.core.util.Compare.gzFileToBufferedReader(Compare.java:43)
+	at ch.qos.logback.core.util.Compare.gzFileCompare(Compare.java:55)
+	at ch.qos.logback.core.util.Compare.compare(Compare.java:34)
+	at ch.qos.logback.core.rolling.DefaultRolloverChecker.check(DefaultRolloverChecker.java:44)
+	at ch.qos.logback.core.rolling.TimeBasedRollingTest.genericTest(TimeBasedRollingTest.java:132)
+	at ch.qos.logback.core.rolling.TimeBasedRollingTest.defaultTest(TimeBasedRollingTest.java:138)
+	at ch.qos.logback.core.rolling.TimeBasedRollingTest.withMissingTargetDirWithCompression(TimeBasedRollingTest.java:202)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:159)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:87)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+]]></error>
+    <system-out>10:07:16,062 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy - Will use gz compression
+10:07:16,062 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy - Will use the pattern target/test-output/44021894/%d{yyyy-MM-dd, aux}/-%d{yyyy-MM-dd_HH_mm_ss} for the active file
+10:07:16,062 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - The date pattern is 'yyyy-MM-dd_HH_mm_ss' from file name pattern 'target/test-output/44021894/%d{yyyy-MM-dd, aux}/-%d{yyyy-MM-dd_HH_mm_ss}.gz'.
+10:07:16,062 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Roll-over every second.
+10:07:16,062 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Setting initial period to Wed Aug 28 10:07:16 UTC 2019
+10:07:16,062 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[null] - Active log file name: target/test-output/44021894/test7.log
+10:07:16,062 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[null] - File property is set to [target/test-output/44021894/test7.log]
+10:07:16,062 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Elapsed period: Wed Aug 28 10:07:16 UTC 2019
+10:07:16,062 |-INFO in c.q.l.co.rolling.helper.RenameUtil - Renaming file [target/test-output/44021894/test7.log] to [target/test-output/44021894/test7.log844347448233.tmp]
+10:07:16,067 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Elapsed period: Wed Aug 28 10:07:17 UTC 2019
+10:07:16,067 |-INFO in c.q.l.co.rolling.helper.RenameUtil - Renaming file [target/test-output/44021894/test7.log] to [target/test-output/44021894/test7.log844352108177.tmp]
+10:07:16,067 |-INFO in ch.qos.logback.core.rolling.helper.Compressor - GZ compressing [target/test-output/44021894/test7.log844347448233.tmp] as [target/test-output/44021894/2019-08-28/-2019-08-28_10_07_16.gz]
+10:07:16,071 |-INFO in ch.qos.logback.core.rolling.helper.Compressor - GZ compressing [target/test-output/44021894/test7.log844352108177.tmp] as [target/test-output/44021894/2019-08-28/-2019-08-28_10_07_17.gz]
+10:07:16,071 |-INFO in ch.qos.logback.core.rolling.helper.Compressor - Created missing parent directories for [/working/proj/qos-ch-logback-1017/qos-ch-logback/logback-core/target/test-output/44021894/2019-08-28/-2019-08-28_10_07_16.gz]
+10:07:16,072 |-ERROR in c.q.l.core.rolling.TimeBasedRollingPolicy - Unexpected exception while waiting for compression job to finish java.util.concurrent.ExecutionException: java.lang.IllegalStateException: target/test-output/44021894/2019-08-28/-2019-08-28_10_07_17.gz should not have existing parent directory
+	at java.util.concurrent.ExecutionException: java.lang.IllegalStateException: target/test-output/44021894/2019-08-28/-2019-08-28_10_07_17.gz should not have existing parent directory
+	at 	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at 	at java.util.concurrent.FutureTask.get(FutureTask.java:206)
+	at 	at ch.qos.logback.core.rolling.TimeBasedRollingPolicy.waitForAsynchronousJobToStop(TimeBasedRollingPolicy.java:119)
+	at 	at ch.qos.logback.core.rolling.TimeBasedRollingPolicy.stop(TimeBasedRollingPolicy.java:111)
+	at 	at ch.qos.logback.core.rolling.RollingFileAppender.stop(RollingFileAppender.java:104)
+	at 	at ch.qos.logback.core.rolling.TimeBasedRollingTest.genericTest(TimeBasedRollingTest.java:122)
+	at 	at ch.qos.logback.core.rolling.TimeBasedRollingTest.defaultTest(TimeBasedRollingTest.java:138)
+	at 	at ch.qos.logback.core.rolling.TimeBasedRollingTest.withMissingTargetDirWithCompression(TimeBasedRollingTest.java:202)
+	at 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at 	at java.lang.reflect.Method.invoke(Method.java:498)
+	at 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at 	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at 	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at 	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at 	at java.lang.reflect.Method.invoke(Method.java:498)
+	at 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:159)
+	at 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:87)
+	at 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+Caused by: java.lang.IllegalStateException: target/test-output/44021894/2019-08-28/-2019-08-28_10_07_17.gz should not have existing parent directory
+	at 	at ch.qos.logback.core.util.FileUtil.createMissingParentDirectories(FileUtil.java:54)
+	at 	at ch.qos.logback.core.rolling.helper.Compressor.createMissingTargetDirsIfNecessary(Compressor.java:261)
+	at 	at ch.qos.logback.core.rolling.helper.Compressor.gzCompress(Compressor.java:194)
+	at 	at ch.qos.logback.core.rolling.helper.Compressor.compress(Compressor.java:55)
+	at 	at ch.qos.logback.core.rolling.helper.CompressionRunnable.run(CompressionRunnable.java:33)
+	at 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at 	at java.lang.Thread.run(Thread.java:748)
+
+</system-out>
+  </testcase>
+  <testcase name="withMissingTargetDirWithZipCompression" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0.023"/>
+  <testcase name="failed_rename" classname="ch.qos.logback.core.rolling.TimeBasedRollingTest" time="0"/>
+</testsuite>

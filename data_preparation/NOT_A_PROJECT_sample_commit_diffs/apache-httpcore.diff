@@ -1,0 +1,546 @@
+diff --git a/RELEASE_NOTES.txt b/RELEASE_NOTES.txt
+index 37d9f31be1..74cee43ea7 100644
+--- a/RELEASE_NOTES.txt
++++ b/RELEASE_NOTES.txt
+@@ -1,3 +1,10 @@
++Changes since 4.2-ALPHA1  
++
++* [HTTPCORE-269] Connection pools incorrectly handle lease requests when the max limit for the given 
++  route has been exceeded and all connections in the route pool are stateful.
++  Contributed by Oleg Kalnichevski <olegk at apache.org>
++
++
+ Release 4.2-ALPHA1
+ -------------------
+ 
+diff --git a/httpcore-nio/src/main/java/org/apache/http/nio/pool/AbstractNIOConnPool.java b/httpcore-nio/src/main/java/org/apache/http/nio/pool/AbstractNIOConnPool.java
+index be05ce8a00..2b1a5ef692 100644
+--- a/httpcore-nio/src/main/java/org/apache/http/nio/pool/AbstractNIOConnPool.java
++++ b/httpcore-nio/src/main/java/org/apache/http/nio/pool/AbstractNIOConnPool.java
+@@ -37,6 +37,7 @@
+ import java.util.Set;
+ import java.util.concurrent.Future;
+ import java.util.concurrent.TimeUnit;
++import java.util.concurrent.TimeoutException;
+ import java.util.concurrent.locks.Lock;
+ import java.util.concurrent.locks.ReentrantLock;
+ 
+@@ -184,10 +185,7 @@ public Future<E> lease(
+         }
+         this.lock.lock();
+         try {
+-            int timeout = (int) tunit.toMillis(connectTimeout);
+-            if (timeout < 0) {
+-                timeout = 0;
+-            }
++            long timeout = connectTimeout > 0 ? tunit.toMillis(connectTimeout) : 0;
+             BasicFuture<E> future = new BasicFuture<E>(callback);
+             LeaseRequest<T, C, E> request = new LeaseRequest<T, C, E>(route, state, timeout, future);
+             this.leasingRequests.add(request);
+@@ -238,10 +236,17 @@ private void processPendingRequests() {
+ 
+             T route = request.getRoute();
+             Object state = request.getState();
+-            int timeout = request.getConnectTimeout();
++            long deadline = request.getDeadline();
+             BasicFuture<E> future = request.getFuture();
+ 
+-            RouteSpecificPool<T, C, E> pool = getPool(request.getRoute());
++            long now = System.currentTimeMillis();
++            if (now > deadline) {
++                it.remove();
++                future.failed(new TimeoutException());
++                continue;
++            }
++
++            RouteSpecificPool<T, C, E> pool = getPool(route);
+             E entry = null;
+             for (;;) {
+                 entry = pool.getFree(state);
+@@ -263,7 +268,24 @@ private void processPendingRequests() {
+                 future.completed(entry);
+                 continue;
+             }
+-            if (pool.getAllocatedCount() < getMaxPerRoute(route)) {
++
++            // New connection is needed
++            int maxPerRoute = getMaxPerRoute(route);
++            // Shrink the pool prior to allocating a new connection
++            int excess = Math.max(0, pool.getAllocatedCount() + 1 - maxPerRoute);
++            if (excess > 0) {
++                for (int i = 0; i < excess; i++) {
++                    E lastUsed = pool.getLastUsed();
++                    if (lastUsed == null) {
++                        break;
++                    }
++                    closeEntry(lastUsed);
++                    this.available.remove(lastUsed);
++                    pool.remove(lastUsed);
++                }
++            }
++
++            if (pool.getAllocatedCount() < maxPerRoute) {
+                 int totalUsed = this.pending.size() + this.leased.size();
+                 int freeCapacity = Math.max(this.maxTotal - totalUsed, 0);
+                 if (freeCapacity == 0) {
+@@ -271,7 +293,12 @@ private void processPendingRequests() {
+                 }
+                 int totalAvailable = this.available.size();
+                 if (totalAvailable > freeCapacity - 1) {
+-                    dropLastUsed();
++                    if (!this.available.isEmpty()) {
++                        E lastUsed = this.available.removeFirst();
++                        closeEntry(lastUsed);
++                        RouteSpecificPool<T, C, E> otherpool = getPool(lastUsed.getRoute());
++                        otherpool.remove(lastUsed);
++                    }
+                 }
+                 it.remove();
+                 SessionRequest sessionRequest = this.ioreactor.connect(
+@@ -279,19 +306,31 @@ private void processPendingRequests() {
+                         resolveLocalAddress(route),
+                         route,
+                         this.sessionRequestCallback);
+-                sessionRequest.setConnectTimeout(timeout);
++                int timout = request.getConnectTimeout() < Integer.MAX_VALUE ?
++                        (int) request.getConnectTimeout() : Integer.MAX_VALUE;
++                sessionRequest.setConnectTimeout(timout);
+                 this.pending.add(sessionRequest);
+                 pool.addPending(sessionRequest, future);
+             }
+         }
+     }
+ 
+-    private void dropLastUsed() {
+-        if (!this.available.isEmpty()) {
+-            E entry = this.available.removeFirst();
+-            closeEntry(entry);
+-            RouteSpecificPool<T, C, E> pool = getPool(entry.getRoute());
+-            pool.remove(entry);
++    public void validatePendingRequests() {
++        this.lock.lock();
++        try {
++            long now = System.currentTimeMillis();
++            ListIterator<LeaseRequest<T, C, E>> it = this.leasingRequests.listIterator();
++            while (it.hasNext()) {
++                LeaseRequest<T, C, E> request = it.next();
++                long deadline = request.getDeadline();
++                if (now > deadline) {
++                    it.remove();
++                    BasicFuture<E> future = request.getFuture();
++                    future.failed(new TimeoutException());
++                }
++            }
++        } finally {
++            this.lock.unlock();
+         }
+     }
+ 
+diff --git a/httpcore-nio/src/main/java/org/apache/http/nio/pool/LeaseRequest.java b/httpcore-nio/src/main/java/org/apache/http/nio/pool/LeaseRequest.java
+index 90719c052b..629f25fef3 100644
+--- a/httpcore-nio/src/main/java/org/apache/http/nio/pool/LeaseRequest.java
++++ b/httpcore-nio/src/main/java/org/apache/http/nio/pool/LeaseRequest.java
+@@ -35,18 +35,21 @@ class LeaseRequest<T, C, E extends PoolEntry<T, C>> {
+ 
+     private final T route;
+     private final Object state;
+-    private final int connectTimeout;
++    private final long connectTimeout;
++    private final long deadline;
+     private final BasicFuture<E> future;
+ 
+     public LeaseRequest(
+             final T route,
+             final Object state,
+-            final int connectTimeout,
++            final long connectTimeout,
+             final BasicFuture<E> future) {
+         super();
+         this.route = route;
+         this.state = state;
+         this.connectTimeout = connectTimeout;
++        this.deadline = connectTimeout > 0 ? System.currentTimeMillis() + connectTimeout :
++            Long.MAX_VALUE;
+         this.future = future;
+     }
+ 
+@@ -58,12 +61,16 @@ public Object getState() {
+         return this.state;
+     }
+ 
+-    public BasicFuture<E> getFuture() {
+-        return this.future;
++    public long getConnectTimeout() {
++        return this.connectTimeout;
+     }
+ 
+-    public int getConnectTimeout() {
+-        return this.connectTimeout;
++    public long getDeadline() {
++        return this.deadline;
++    }
++
++    public BasicFuture<E> getFuture() {
++        return this.future;
+     }
+ 
+     @Override
+diff --git a/httpcore-nio/src/main/java/org/apache/http/nio/pool/RouteSpecificPool.java b/httpcore-nio/src/main/java/org/apache/http/nio/pool/RouteSpecificPool.java
+index 20c7123206..78018b3baf 100644
+--- a/httpcore-nio/src/main/java/org/apache/http/nio/pool/RouteSpecificPool.java
++++ b/httpcore-nio/src/main/java/org/apache/http/nio/pool/RouteSpecificPool.java
+@@ -101,6 +101,14 @@ public E getFree(final Object state) {
+         return null;
+     }
+ 
++    public E getLastUsed() {
++        if (!this.available.isEmpty()) {
++            return this.available.getFirst();
++        } else {
++            return null;
++        }
++    }
++
+     public boolean remove(final E entry) {
+         if (entry == null) {
+             throw new IllegalArgumentException("Pool entry may not be null");
+diff --git a/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestNIOConnPool.java b/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestNIOConnPool.java
+index 3933abac33..7e51c1a219 100644
+--- a/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestNIOConnPool.java
++++ b/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestNIOConnPool.java
+@@ -598,6 +598,103 @@ public void testConnectionRedistributionOnTotalMaxLimit() throws Exception {
+         Assert.assertEquals(0, totals.getPending());
+     }
+ 
++    @Test
++    public void testStatefulConnectionRedistributionOnPerRouteMaxLimit() throws Exception {
++        IOSession iosession1 = Mockito.mock(IOSession.class);
++        SessionRequest sessionRequest1 = Mockito.mock(SessionRequest.class);
++        Mockito.when(sessionRequest1.getAttachment()).thenReturn("somehost");
++        Mockito.when(sessionRequest1.getSession()).thenReturn(iosession1);
++
++        IOSession iosession2 = Mockito.mock(IOSession.class);
++        SessionRequest sessionRequest2 = Mockito.mock(SessionRequest.class);
++        Mockito.when(sessionRequest2.getAttachment()).thenReturn("somehost");
++        Mockito.when(sessionRequest2.getSession()).thenReturn(iosession2);
++
++        IOSession iosession3 = Mockito.mock(IOSession.class);
++        SessionRequest sessionRequest3 = Mockito.mock(SessionRequest.class);
++        Mockito.when(sessionRequest3.getAttachment()).thenReturn("somehost");
++        Mockito.when(sessionRequest3.getSession()).thenReturn(iosession3);
++
++        ConnectingIOReactor ioreactor = Mockito.mock(ConnectingIOReactor.class);
++        Mockito.when(ioreactor.connect(
++                Mockito.eq(InetSocketAddress.createUnresolved("somehost", 80)),
++                Mockito.any(SocketAddress.class),
++                Mockito.any(), Mockito.any(SessionRequestCallback.class))).
++                thenReturn(sessionRequest1, sessionRequest2, sessionRequest3);
++
++        LocalSessionPool pool = new LocalSessionPool(ioreactor, 2, 10);
++        pool.setMaxPerRoute("somehost", 2);
++        pool.setMaxTotal(2);
++
++        Future<LocalPoolEntry> future1 = pool.lease("somehost", null);
++        Future<LocalPoolEntry> future2 = pool.lease("somehost", null);
++
++        Mockito.verify(ioreactor, Mockito.times(2)).connect(
++                Mockito.eq(InetSocketAddress.createUnresolved("somehost", 80)),
++                Mockito.any(SocketAddress.class),
++                Mockito.any(), Mockito.any(SessionRequestCallback.class));
++
++        pool.requestCompleted(sessionRequest1);
++        pool.requestCompleted(sessionRequest2);
++
++        Assert.assertTrue(future1.isDone());
++        LocalPoolEntry entry1 = future1.get();
++        Assert.assertNotNull(entry1);
++        Assert.assertTrue(future2.isDone());
++        LocalPoolEntry entry2 = future2.get();
++        Assert.assertNotNull(entry2);
++
++        PoolStats totals = pool.getTotalStats();
++        Assert.assertEquals(0, totals.getAvailable());
++        Assert.assertEquals(2, totals.getLeased());
++        Assert.assertEquals(0, totals.getPending());
++
++        entry1.setState("some-stuff");
++        pool.release(entry1, true);
++        entry2.setState("some-stuff");
++        pool.release(entry2, true);
++
++        Future<LocalPoolEntry> future3 = pool.lease("somehost", "some-stuff");
++        Future<LocalPoolEntry> future4 = pool.lease("somehost", "some-stuff");
++
++        Assert.assertTrue(future1.isDone());
++        LocalPoolEntry entry3 = future3.get();
++        Assert.assertNotNull(entry3);
++        Assert.assertTrue(future4.isDone());
++        LocalPoolEntry entry4 = future4.get();
++        Assert.assertNotNull(entry4);
++
++        Mockito.verify(ioreactor, Mockito.times(2)).connect(
++                Mockito.eq(InetSocketAddress.createUnresolved("somehost", 80)),
++                Mockito.any(SocketAddress.class),
++                Mockito.any(), Mockito.any(SessionRequestCallback.class));
++
++        pool.release(entry3, true);
++        pool.release(entry4, true);
++
++        totals = pool.getTotalStats();
++        Assert.assertEquals(2, totals.getAvailable());
++        Assert.assertEquals(0, totals.getLeased());
++        Assert.assertEquals(0, totals.getPending());
++
++        Future<LocalPoolEntry> future5 = pool.lease("somehost", "some-other-stuff");
++
++        Assert.assertFalse(future5.isDone());
++
++        Mockito.verify(ioreactor, Mockito.times(3)).connect(
++                Mockito.eq(InetSocketAddress.createUnresolved("somehost", 80)),
++                Mockito.any(SocketAddress.class),
++                Mockito.any(), Mockito.any(SessionRequestCallback.class));
++
++        Mockito.verify(iosession1).close();
++        Mockito.verify(iosession2, Mockito.never()).close();
++
++        totals = pool.getTotalStats();
++        Assert.assertEquals(1, totals.getAvailable());
++        Assert.assertEquals(0, totals.getLeased());
++        Assert.assertEquals(1, totals.getPending());
++    }
++
+     @Test
+     public void testCreateNewIfExpired() throws Exception {
+         IOSession iosession1 = Mockito.mock(IOSession.class);
+@@ -777,6 +874,42 @@ public void testCloseIdle() throws Exception {
+         Assert.assertEquals(0, stats.getPending());
+     }
+ 
++    @Test
++    public void testLeaseRequestTimeout() throws Exception {
++        IOSession iosession1 = Mockito.mock(IOSession.class);
++        Mockito.when(iosession1.isClosed()).thenReturn(Boolean.TRUE);
++        SessionRequest sessionRequest1 = Mockito.mock(SessionRequest.class);
++        Mockito.when(sessionRequest1.getAttachment()).thenReturn("somehost");
++        Mockito.when(sessionRequest1.getSession()).thenReturn(iosession1);
++
++        ConnectingIOReactor ioreactor = Mockito.mock(ConnectingIOReactor.class);
++        Mockito.when(ioreactor.connect(
++                Mockito.any(SocketAddress.class), Mockito.any(SocketAddress.class),
++                Mockito.any(), Mockito.any(SessionRequestCallback.class))).
++                thenReturn(sessionRequest1);
++
++        LocalSessionPool pool = new LocalSessionPool(ioreactor, 1, 1);
++
++        Future<LocalPoolEntry> future1 = pool.lease("somehost", null, 0, TimeUnit.MILLISECONDS, null);
++        Future<LocalPoolEntry> future2 = pool.lease("somehost", null, 0, TimeUnit.MILLISECONDS, null);
++        Future<LocalPoolEntry> future3 = pool.lease("somehost", null, 10, TimeUnit.MILLISECONDS, null);
++
++        pool.requestCompleted(sessionRequest1);
++
++        Assert.assertTrue(future1.isDone());
++        LocalPoolEntry entry1 = future1.get();
++        Assert.assertNotNull(entry1);
++        Assert.assertFalse(future2.isDone());
++        Assert.assertFalse(future3.isDone());
++
++        Thread.sleep(100);
++
++        pool.validatePendingRequests();
++
++        Assert.assertFalse(future2.isDone());
++        Assert.assertTrue(future3.isDone());
++    }
++
+     @Test(expected=IllegalArgumentException.class)
+     public void testCloseIdleInvalid() throws Exception {
+         ConnectingIOReactor ioreactor = Mockito.mock(ConnectingIOReactor.class);
+diff --git a/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestRouteSpecificPool.java b/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestRouteSpecificPool.java
+index 921892c951..fae3012cb7 100644
+--- a/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestRouteSpecificPool.java
++++ b/httpcore-nio/src/test/java/org/apache/http/nio/pool/TestRouteSpecificPool.java
+@@ -75,6 +75,7 @@ public void testEmptyPool() throws Exception {
+         Assert.assertEquals(0, pool.getAvailableCount());
+         Assert.assertEquals(0, pool.getLeasedCount());
+         Assert.assertEquals(0, pool.getPendingCount());
++        Assert.assertNull(pool.getLastUsed());
+         Assert.assertEquals("[route: whatever][leased: 0][available: 0][pending: 0]", pool.toString());
+     }
+ 
+@@ -213,6 +214,8 @@ public void testLeaseRelease() throws Exception {
+         pool.free(entry2, false);
+         pool.free(entry3, true);
+ 
++        Assert.assertSame(entry1, pool.getLastUsed());
++
+         Assert.assertEquals(2, pool.getAllocatedCount());
+         Assert.assertEquals(2, pool.getAvailableCount());
+         Assert.assertEquals(0, pool.getLeasedCount());
+diff --git a/httpcore/src/main/java/org/apache/http/pool/AbstractConnPool.java b/httpcore/src/main/java/org/apache/http/pool/AbstractConnPool.java
+index ea3533f4c7..b0d92171b7 100644
+--- a/httpcore/src/main/java/org/apache/http/pool/AbstractConnPool.java
++++ b/httpcore/src/main/java/org/apache/http/pool/AbstractConnPool.java
+@@ -199,13 +199,34 @@ private E getPoolEntryBlocking(
+                     return entry;
+                 }
+ 
+-                if (pool.getAllocatedCount() < getMaxPerRoute(route)) {
++                // New connection is needed
++                int maxPerRoute = getMaxPerRoute(route);
++                // Shrink the pool prior to allocating a new connection
++                int excess = Math.max(0, pool.getAllocatedCount() + 1 - maxPerRoute);
++                if (excess > 0) {
++                    for (int i = 0; i < excess; i++) {
++                        E lastUsed = pool.getLastUsed();
++                        if (lastUsed == null) {
++                            break;
++                        }
++                        closeEntry(lastUsed);
++                        this.available.remove(lastUsed);
++                        pool.remove(lastUsed);
++                    }
++                }
++
++                if (pool.getAllocatedCount() < maxPerRoute) {
+                     int totalUsed = this.leased.size();
+                     int freeCapacity = Math.max(this.maxTotal - totalUsed, 0);
+                     if (freeCapacity > 0) {
+                         int totalAvailable = this.available.size();
+                         if (totalAvailable > freeCapacity - 1) {
+-                            dropLastUsed();
++                            if (!this.available.isEmpty()) {
++                                E lastUsed = this.available.removeFirst();
++                                closeEntry(lastUsed);
++                                RouteSpecificPool<T, C, E> otherpool = getPool(lastUsed.getRoute());
++                                otherpool.remove(lastUsed);
++                            }
+                         }
+                         C conn = createConnection(route);
+                         entry = pool.add(conn);
+@@ -269,15 +290,6 @@ public void release(E entry, boolean reusable) {
+         }
+     }
+ 
+-    private void dropLastUsed() {
+-        if (!this.available.isEmpty()) {
+-            E entry = this.available.removeFirst();
+-            closeEntry(entry);
+-            RouteSpecificPool<T, C, E> pool = getPool(entry.getRoute());
+-            pool.remove(entry);
+-        }
+-    }
+-
+     private int getMaxPerRoute(final T route) {
+         Integer v = this.maxPerRoute.get(route);
+         if (v != null) {
+diff --git a/httpcore/src/main/java/org/apache/http/pool/RouteSpecificPool.java b/httpcore/src/main/java/org/apache/http/pool/RouteSpecificPool.java
+index a258d6da65..02d458422b 100644
+--- a/httpcore/src/main/java/org/apache/http/pool/RouteSpecificPool.java
++++ b/httpcore/src/main/java/org/apache/http/pool/RouteSpecificPool.java
+@@ -99,6 +99,14 @@ public E getFree(final Object state) {
+         return null;
+     }
+ 
++    public E getLastUsed() {
++        if (!this.available.isEmpty()) {
++            return this.available.getFirst();
++        } else {
++            return null;
++        }
++    }
++
+     public boolean remove(final E entry) {
+         if (entry == null) {
+             throw new IllegalArgumentException("Pool entry may not be null");
+diff --git a/httpcore/src/test/java/org/apache/http/pool/TestConnPool.java b/httpcore/src/test/java/org/apache/http/pool/TestConnPool.java
+index cb9a8f56d7..77365c8fa2 100644
+--- a/httpcore/src/test/java/org/apache/http/pool/TestConnPool.java
++++ b/httpcore/src/test/java/org/apache/http/pool/TestConnPool.java
+@@ -423,6 +423,66 @@ public void testConnectionRedistributionOnTotalMaxLimit() throws Exception {
+         Assert.assertEquals(0, totals.getLeased());
+     }
+ 
++    @Test
++    public void testStatefulConnectionRedistributionOnPerRouteMaxLimit() throws Exception {
++        HttpConnectionFactory connFactory = Mockito.mock(HttpConnectionFactory.class);
++
++        HttpConnection conn1 = Mockito.mock(HttpConnection.class);
++        HttpConnection conn2 = Mockito.mock(HttpConnection.class);
++        HttpConnection conn3 = Mockito.mock(HttpConnection.class);
++        Mockito.when(connFactory.create(Mockito.eq("somehost"))).thenReturn(conn1, conn2, conn3);
++
++        LocalConnPool pool = new LocalConnPool(connFactory, 2, 10);
++        pool.setMaxPerRoute("somehost", 2);
++        pool.setMaxTotal(2);
++
++        Future<LocalPoolEntry> future1 = pool.lease("somehost", null);
++        GetPoolEntryThread t1 = new GetPoolEntryThread(future1);
++        t1.start();
++        Future<LocalPoolEntry> future2 = pool.lease("somehost", null);
++        GetPoolEntryThread t2 = new GetPoolEntryThread(future2);
++        t2.start();
++
++        t1.join(GRACE_PERIOD);
++        Assert.assertTrue(future1.isDone());
++        LocalPoolEntry entry1 = t1.getEntry();
++        Assert.assertNotNull(entry1);
++        t2.join(GRACE_PERIOD);
++        Assert.assertTrue(future2.isDone());
++        LocalPoolEntry entry2 = t2.getEntry();
++        Assert.assertNotNull(entry2);
++
++        PoolStats totals = pool.getTotalStats();
++        Assert.assertEquals(0, totals.getAvailable());
++        Assert.assertEquals(2, totals.getLeased());
++        Assert.assertEquals(0, totals.getPending());
++
++        entry1.setState("some-stuff");
++        pool.release(entry1, true);
++        entry2.setState("some-stuff");
++        pool.release(entry2, true);
++
++        Mockito.verify(connFactory, Mockito.times(2)).create(Mockito.eq("somehost"));
++
++        Future<LocalPoolEntry> future3 = pool.lease("somehost", "some-other-stuff");
++        GetPoolEntryThread t3 = new GetPoolEntryThread(future3);
++        t3.start();
++
++        t3.join(GRACE_PERIOD);
++        Assert.assertTrue(future3.isDone());
++        LocalPoolEntry entry3 = t3.getEntry();
++        Assert.assertNotNull(entry3);
++
++        Mockito.verify(connFactory, Mockito.times(3)).create(Mockito.eq("somehost"));
++
++        Mockito.verify(conn1).close();
++        Mockito.verify(conn2, Mockito.never()).close();
++
++        totals = pool.getTotalStats();
++        Assert.assertEquals(1, totals.getAvailable());
++        Assert.assertEquals(1, totals.getLeased());
++    }
++
+     @Test
+     public void testCreateNewIfExpired() throws Exception {
+         HttpConnectionFactory connFactory = Mockito.mock(HttpConnectionFactory.class);
+diff --git a/httpcore/src/test/java/org/apache/http/pool/TestRouteSpecificPool.java b/httpcore/src/test/java/org/apache/http/pool/TestRouteSpecificPool.java
+index 93cfeed6aa..348bfbfc5f 100644
+--- a/httpcore/src/test/java/org/apache/http/pool/TestRouteSpecificPool.java
++++ b/httpcore/src/test/java/org/apache/http/pool/TestRouteSpecificPool.java
+@@ -76,6 +76,7 @@ public void testEmptyPool() throws Exception {
+         Assert.assertEquals(0, pool.getAvailableCount());
+         Assert.assertEquals(0, pool.getLeasedCount());
+         Assert.assertEquals(0, pool.getPendingCount());
++        Assert.assertNull(pool.getLastUsed());
+         Assert.assertEquals("[route: whatever][leased: 0][available: 0][pending: 0]", pool.toString());
+     }
+ 
+@@ -120,6 +121,8 @@ public void testLeaseRelease() throws Exception {
+         Assert.assertEquals(0, pool.getLeasedCount());
+         Assert.assertEquals(0, pool.getPendingCount());
+ 
++        Assert.assertSame(entry1, pool.getLastUsed());
++
+         Assert.assertNotNull(pool.getFree(null));
+         Assert.assertNotNull(pool.getFree(null));
+         Assert.assertNull(pool.getFree(null));

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="me.prettyprint.cassandra.utils.TimeUUIDUtilsTest" time="0.107" tests="3" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/working/proj/hector-client-hector-1017/hector-client-hector/core/target/test-classes:/working/proj/hector-client-hector-1017/hector-client-hector/core/target/classes:/root/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/root/.m2/repository/commons-pool/commons-pool/1.5.3/commons-pool-1.5.3.jar:/root/.m2/repository/org/apache/cassandra/cassandra-all/0.7.0-rc4/cassandra-all-0.7.0-rc4.jar:/root/.m2/repository/com/google/guava/guava/r05/guava-r05.jar:/root/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/root/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/root/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.1/concurrentlinkedhashmap-lru-1.1.jar:/root/.m2/repository/org/mortbay/jetty/jetty/6.1.21/jetty-6.1.21.jar:/root/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar:/root/.m2/repository/org/mortbay/jetty/jetty-util/6.1.21/jetty-util-6.1.21.jar:/root/.m2/repository/org/antlr/antlr/3.1.3/antlr-3.1.3.jar:/root/.m2/repository/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar:/root/.m2/repository/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar:/root/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.4.0/jackson-core-asl-1.4.0.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.4.0/jackson-mapper-asl-1.4.0.jar:/root/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/root/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/root/.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar:/root/.m2/repository/org/safehaus/jug/jug/2.0.0/jug-2.0.0-asl.jar:/root/.m2/repository/org/apache/cassandra/deps/avro/1.4.0-cassandra-1/avro-1.4.0-cassandra-1.jar:/root/.m2/repository/org/apache/cassandra/deps/libthrift/0.5.0/libthrift-0.5.0.jar:/root/.m2/repository/com/github/stephenc/high-scale-lib/high-scale-lib/1.1.1/high-scale-lib-1.1.1.jar:/root/.m2/repository/org/apache/cassandra/cassandra-javautils/0.7.0-rc4/cassandra-javautils-0.7.0-rc4.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.5.11/slf4j-api-1.5.11.jar:/root/.m2/repository/com/github/stephenc/eaio-uuid/uuid/3.2.0/uuid-3.2.0.jar:/root/.m2/repository/org/perf4j/perf4j/0.9.12/perf4j-0.9.12.jar:/root/.m2/repository/org/osgi/osgi_R4_core/1.0/osgi_R4_core-1.0.jar:/root/.m2/repository/org/osgi/osgi_R4_compendium/1.0/osgi_R4_compendium-1.0.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.5.11/slf4j-log4j12-1.5.11.jar:/root/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar:/root/.m2/repository/org/slf4j/jcl-over-slf4j/1.5.11/jcl-over-slf4j-1.5.11.jar:/root/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar:/root/.m2/repository/org/mockito/mockito-all/1.8.2/mockito-all-1.8.2.jar:/root/.m2/repository/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-core/3.0.0.RELEASE/spring-core-3.0.0.RELEASE.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/org/springframework/spring-context/3.0.0.RELEASE/spring-context-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-expression/3.0.0.RELEASE/spring-expression-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-asm/3.0.0.RELEASE/spring-asm-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-test/3.0.0.RELEASE/spring-test-3.0.0.RELEASE.jar:"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Linux"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="storage-config" value="/working/proj/hector-client-hector-1017/hector-client-hector/core/src/test/conf"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="sun.java.command" value="/working/proj/hector-client-hector-1017/hector-client-hector/core/target/surefire/surefirebooter498135827541145495.jar /working/proj/hector-client-hector-1017/hector-client-hector/core/target/surefire 2019-08-28T10-06-52_329-jvmRun1 surefire2171030863778691452tmp surefire_124256194463390553655tmp"/>
+    <property name="surefire.test.class.path" value="/working/proj/hector-client-hector-1017/hector-client-hector/core/target/test-classes:/working/proj/hector-client-hector-1017/hector-client-hector/core/target/classes:/root/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/root/.m2/repository/commons-pool/commons-pool/1.5.3/commons-pool-1.5.3.jar:/root/.m2/repository/org/apache/cassandra/cassandra-all/0.7.0-rc4/cassandra-all-0.7.0-rc4.jar:/root/.m2/repository/com/google/guava/guava/r05/guava-r05.jar:/root/.m2/repository/commons-cli/commons-cli/1.1/commons-cli-1.1.jar:/root/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/root/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/root/.m2/repository/com/googlecode/concurrentlinkedhashmap/concurrentlinkedhashmap-lru/1.1/concurrentlinkedhashmap-lru-1.1.jar:/root/.m2/repository/org/mortbay/jetty/jetty/6.1.21/jetty-6.1.21.jar:/root/.m2/repository/org/mortbay/jetty/servlet-api/2.5-20081211/servlet-api-2.5-20081211.jar:/root/.m2/repository/org/mortbay/jetty/jetty-util/6.1.21/jetty-util-6.1.21.jar:/root/.m2/repository/org/antlr/antlr/3.1.3/antlr-3.1.3.jar:/root/.m2/repository/org/antlr/antlr-runtime/3.1.3/antlr-runtime-3.1.3.jar:/root/.m2/repository/org/antlr/stringtemplate/3.2/stringtemplate-3.2.jar:/root/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.4.0/jackson-core-asl-1.4.0.jar:/root/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.4.0/jackson-mapper-asl-1.4.0.jar:/root/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/root/.m2/repository/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar:/root/.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar:/root/.m2/repository/org/safehaus/jug/jug/2.0.0/jug-2.0.0-asl.jar:/root/.m2/repository/org/apache/cassandra/deps/avro/1.4.0-cassandra-1/avro-1.4.0-cassandra-1.jar:/root/.m2/repository/org/apache/cassandra/deps/libthrift/0.5.0/libthrift-0.5.0.jar:/root/.m2/repository/com/github/stephenc/high-scale-lib/high-scale-lib/1.1.1/high-scale-lib-1.1.1.jar:/root/.m2/repository/org/apache/cassandra/cassandra-javautils/0.7.0-rc4/cassandra-javautils-0.7.0-rc4.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.5.11/slf4j-api-1.5.11.jar:/root/.m2/repository/com/github/stephenc/eaio-uuid/uuid/3.2.0/uuid-3.2.0.jar:/root/.m2/repository/org/perf4j/perf4j/0.9.12/perf4j-0.9.12.jar:/root/.m2/repository/org/osgi/osgi_R4_core/1.0/osgi_R4_core-1.0.jar:/root/.m2/repository/org/osgi/osgi_R4_compendium/1.0/osgi_R4_compendium-1.0.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.5.11/slf4j-log4j12-1.5.11.jar:/root/.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar:/root/.m2/repository/org/slf4j/jcl-over-slf4j/1.5.11/jcl-over-slf4j-1.5.11.jar:/root/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar:/root/.m2/repository/org/mockito/mockito-all/1.8.2/mockito-all-1.8.2.jar:/root/.m2/repository/org/springframework/spring-beans/3.0.0.RELEASE/spring-beans-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-core/3.0.0.RELEASE/spring-core-3.0.0.RELEASE.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/org/springframework/spring-context/3.0.0.RELEASE/spring-context-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-expression/3.0.0.RELEASE/spring-expression-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-asm/3.0.0.RELEASE/spring-asm-3.0.0.RELEASE.jar:/root/.m2/repository/org/springframework/spring-test/3.0.0.RELEASE/spring-test-3.0.0.RELEASE.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="basedir" value="/working/proj/hector-client-hector-1017/hector-client-hector/core"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="surefire.real.class.path" value="/working/proj/hector-client-hector-1017/hector-client-hector/core/target/surefire/surefirebooter498135827541145495.jar"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="user.name" value="root"/>
+    <property name="path.separator" value=":"/>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="user.dir" value="/working/proj/hector-client-hector-1017/hector-client-hector/core"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+  </properties>
+  <testcase name="testTimeUUIDAsByteArray" classname="me.prettyprint.cassandra.utils.TimeUUIDUtilsTest" time="0.009"/>
+  <testcase name="testTimeUUIDAsByteBuffer" classname="me.prettyprint.cassandra.utils.TimeUUIDUtilsTest" time="0"/>
+  <testcase name="testTimeUUIDWithClockResolution" classname="me.prettyprint.cassandra.utils.TimeUUIDUtilsTest" time="0.01">
+    <failure message="expected:&lt;3bebdb80-abfe-1b28-ad13-1236084d52be&gt; but was:&lt;97a40521-c97b-11e9-ad13-1236084d52be&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<3bebdb80-abfe-1b28-ad13-1236084d52be> but was:<97a40521-c97b-11e9-ad13-1236084d52be>
+	at me.prettyprint.cassandra.utils.TimeUUIDUtilsTest.testTimeUUIDWithClockResolution(TimeUUIDUtilsTest.java:35)
+]]></failure>
+  </testcase>
+</testsuite>

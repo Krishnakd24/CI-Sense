@@ -1,0 +1,2242 @@
+diff --git a/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/jmx/EndpointMBeanExporter.java b/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/jmx/EndpointMBeanExporter.java
+index 7a3076e93e1..cdcceca3af3 100644
+--- a/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/jmx/EndpointMBeanExporter.java
++++ b/spring-boot-actuator/src/main/java/org/springframework/boot/actuate/endpoint/jmx/EndpointMBeanExporter.java
+@@ -111,7 +111,7 @@ public void setBeanFactory(BeanFactory beanFactory) {
+ 			this.beanFactory = (ListableBeanFactory) beanFactory;
+ 		}
+ 		else {
+-			logger.info("EndpointMBeanExporter not running in a ListableBeanFactory: "
++			logger.warn("EndpointMBeanExporter not running in a ListableBeanFactory: "
+ 					+ "autodetection of Endpoints not available.");
+ 		}
+ 	}
+diff --git a/spring-boot-cli/src/test/resources/logback.xml b/spring-boot-cli/src/test/resources/logback.xml
+deleted file mode 100644
+index 566ec197ec0..00000000000
+--- a/spring-boot-cli/src/test/resources/logback.xml
++++ /dev/null
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<configuration>
+-	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+-	<!-- logger name="org.springframework.web" level="DEBUG"/-->
+-	<!-- logger name="org.springframework.jdbc" level="DEBUG"/-->
+-	<!-- logger name="org.springframework.jms" level="DEBUG"/-->
+-</configuration>
+diff --git a/spring-boot-samples/spring-boot-sample-actuator-log4j/src/main/java/sample/actuator/log4j/SampleActuatorApplication.java b/spring-boot-samples/spring-boot-sample-actuator-log4j/src/main/java/sample/actuator/log4j/SampleActuatorLog4JApplication.java
+similarity index 90%
+rename from spring-boot-samples/spring-boot-sample-actuator-log4j/src/main/java/sample/actuator/log4j/SampleActuatorApplication.java
+rename to spring-boot-samples/spring-boot-sample-actuator-log4j/src/main/java/sample/actuator/log4j/SampleActuatorLog4JApplication.java
+index 510ff7307cb..d75731aceb6 100644
+--- a/spring-boot-samples/spring-boot-sample-actuator-log4j/src/main/java/sample/actuator/log4j/SampleActuatorApplication.java
++++ b/spring-boot-samples/spring-boot-sample-actuator-log4j/src/main/java/sample/actuator/log4j/SampleActuatorLog4JApplication.java
+@@ -26,10 +26,10 @@
+ @EnableAutoConfiguration
+ @EnableConfigurationProperties
+ @ComponentScan
+-public class SampleActuatorApplication {
++public class SampleActuatorLog4JApplication {
+ 
+ 	public static void main(String[] args) throws Exception {
+-		SpringApplication.run(SampleActuatorApplication.class, args);
++		SpringApplication.run(SampleActuatorLog4JApplication.class, args);
+ 	}
+ 
+ }
+diff --git a/spring-boot-samples/spring-boot-sample-actuator-log4j/src/test/java/sample/actuator/log4j/SampleActuatorApplicationTests.java b/spring-boot-samples/spring-boot-sample-actuator-log4j/src/test/java/sample/actuator/log4j/SampleActuatorApplicationTests.java
+index f3b37bca4b2..1137113d763 100644
+--- a/spring-boot-samples/spring-boot-sample-actuator-log4j/src/test/java/sample/actuator/log4j/SampleActuatorApplicationTests.java
++++ b/spring-boot-samples/spring-boot-sample-actuator-log4j/src/test/java/sample/actuator/log4j/SampleActuatorApplicationTests.java
+@@ -38,7 +38,7 @@
+  * @author Dave Syer
+  */
+ @RunWith(SpringJUnit4ClassRunner.class)
+-@SpringApplicationConfiguration(classes = SampleActuatorApplication.class)
++@SpringApplicationConfiguration(classes = SampleActuatorLog4JApplication.class)
+ @WebAppConfiguration
+ @IntegrationTest("server.port=0")
+ @DirtiesContext
+diff --git a/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/main/java/sample/actuator/log4j2/SampleActuatorApplication.java b/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/main/java/sample/actuator/log4j2/SampleActuatorLog4J2Application.java
+similarity index 90%
+rename from spring-boot-samples/spring-boot-sample-actuator-log4j2/src/main/java/sample/actuator/log4j2/SampleActuatorApplication.java
+rename to spring-boot-samples/spring-boot-sample-actuator-log4j2/src/main/java/sample/actuator/log4j2/SampleActuatorLog4J2Application.java
+index 9d2cc38678d..a7b840a4d2f 100644
+--- a/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/main/java/sample/actuator/log4j2/SampleActuatorApplication.java
++++ b/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/main/java/sample/actuator/log4j2/SampleActuatorLog4J2Application.java
+@@ -26,10 +26,10 @@
+ @EnableAutoConfiguration
+ @EnableConfigurationProperties
+ @ComponentScan
+-public class SampleActuatorApplication {
++public class SampleActuatorLog4J2Application {
+ 
+ 	public static void main(String[] args) throws Exception {
+-		SpringApplication.run(SampleActuatorApplication.class, args);
++		SpringApplication.run(SampleActuatorLog4J2Application.class, args);
+ 	}
+ 
+ }
+diff --git a/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/test/java/sample/actuator/log4j2/SampleActuatorApplicationTests.java b/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/test/java/sample/actuator/log4j2/SampleActuatorApplicationTests.java
+index ad5c29a82c7..f9a8c2b6cd1 100644
+--- a/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/test/java/sample/actuator/log4j2/SampleActuatorApplicationTests.java
++++ b/spring-boot-samples/spring-boot-sample-actuator-log4j2/src/test/java/sample/actuator/log4j2/SampleActuatorApplicationTests.java
+@@ -38,7 +38,7 @@
+  * @author Dave Syer
+  */
+ @RunWith(SpringJUnit4ClassRunner.class)
+-@SpringApplicationConfiguration(classes = SampleActuatorApplication.class)
++@SpringApplicationConfiguration(classes = SampleActuatorLog4J2Application.class)
+ @WebAppConfiguration
+ @IntegrationTest("server.port=0")
+ @DirtiesContext
+diff --git a/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java b/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java
+index 27c9d1d8581..552e9df0246 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java
++++ b/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java
+@@ -282,13 +282,12 @@ public ConfigurableApplicationContext run(String... args) {
+ 			// Create and configure the environment
+ 			ConfigurableEnvironment environment = getOrCreateEnvironment();
+ 			configureEnvironment(environment, args);
+-			for (SpringApplicationRunListener runListener : runListeners) {
+-				runListener.environmentPrepared(environment);
+-			}
+-
+ 			if (this.showBanner) {
+ 				printBanner(environment);
+ 			}
++			for (SpringApplicationRunListener runListener : runListeners) {
++				runListener.environmentPrepared(environment);
++			}
+ 
+ 			// Create, load, refresh and run the ApplicationContext
+ 			context = createApplicationContext();
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/AbstractLoggingSystem.java b/spring-boot/src/main/java/org/springframework/boot/logging/AbstractLoggingSystem.java
+index 04e164ed532..fc4f9c3fbf1 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/AbstractLoggingSystem.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/AbstractLoggingSystem.java
+@@ -19,6 +19,7 @@
+ import org.springframework.core.io.ClassPathResource;
+ import org.springframework.util.ClassUtils;
+ import org.springframework.util.StringUtils;
++import org.springframework.util.SystemPropertyUtils;
+ 
+ /**
+  * Abstract base class for {@link LoggingSystem} implementations.
+@@ -30,50 +31,70 @@ public abstract class AbstractLoggingSystem extends LoggingSystem {
+ 
+ 	private final ClassLoader classLoader;
+ 
+-	private final String[] paths;
+-
+-	private boolean fileOutput;
+-
+-	private boolean consoleOutput;
+-
+ 	public AbstractLoggingSystem(ClassLoader classLoader) {
+-		this(classLoader, false, true);
+-	}
+-	
+-	public AbstractLoggingSystem(ClassLoader classLoader, boolean fileOutput,
+-			boolean consoleOutput) {
+ 		this.classLoader = classLoader;
+-		this.fileOutput = fileOutput;
+-		this.consoleOutput = consoleOutput;
+-		this.paths = getLogFileNames();
+-	}
+-
+-	protected abstract String[] getLogFileNames();
+-
+-	protected final ClassLoader getClassLoader() {
+-		return this.classLoader;
+ 	}
+ 
+ 	@Override
+ 	public void beforeInitialize() {
+-		initializeWithSensibleDefaults();
+ 	}
+ 
+ 	@Override
+-	public void initialize() {
+-		for (String path : this.paths) {
+-			ClassPathResource resource = new ClassPathResource(path, this.classLoader);
++	public void initialize(String configLocation, String logFile) {
++		if (StringUtils.hasLength(configLocation)) {
++			// Load a specific configuration
++			configLocation = SystemPropertyUtils.resolvePlaceholders(configLocation);
++			loadConfiguration(configLocation, logFile);
++		}
++		else {
++			String selfInitializationConfig = getSelfInitializationConfig();
++			if (selfInitializationConfig == null) {
++				// No self initialization has occurred, use defaults
++				loadDefaults(logFile);
++			}
++			else if (StringUtils.hasLength(logFile)) {
++				// Self initialization has occurred but the file has changed, reload
++				loadConfiguration(selfInitializationConfig, logFile);
++			}
++		}
++	}
++
++	/**
++	 * Return any self initialization config that has been applied. By default this method
++	 * checks {@link #getStandardConfigLocations()} and assumes that any file that exists
++	 * will have been applied.
++	 */
++	protected String getSelfInitializationConfig() {
++		for (String location : getStandardConfigLocations()) {
++			ClassPathResource resource = new ClassPathResource(location, this.classLoader);
+ 			if (resource.exists()) {
+-				initialize("classpath:" + path);
+-				return;
++				return "classpath:" + location;
+ 			}
+ 		}
+-		// Fallback to the non-prefixed value taking into account file and console preferences
+-		initialize(getPackagedConfigFile(addChannels(this.paths[this.paths.length - 1])));
++		return null;
+ 	}
+ 
+-	protected void initializeWithSensibleDefaults() {
+-		initialize(getPackagedConfigFile("basic-" + this.paths[this.paths.length - 1]));
++	/**
++	 * Return the standard config locations for this system.
++	 * @see #getSelfInitializationConfig()
++	 */
++	protected abstract String[] getStandardConfigLocations();
++
++	/**
++	 * Load sensible defaults for the logging system.
++	 * @param logFile the file to load or {@code null} if no log file is to be written
++	 */
++	protected abstract void loadDefaults(String logFile);
++
++	/**
++	 * Load a specific configuration.
++	 * @param location the location of the configuration to load (never {@code null})
++	 * @param logFile the file to load or {@code null} if no log file is to be written
++	 */
++	protected abstract void loadConfiguration(String location, String logFile);
++
++	protected final ClassLoader getClassLoader() {
++		return this.classLoader;
+ 	}
+ 
+ 	protected final String getPackagedConfigFile(String fileName) {
+@@ -84,14 +105,4 @@ protected final String getPackagedConfigFile(String fileName) {
+ 		return defaultPath;
+ 	}
+ 
+-	private String addChannels(String fileName) {
+-		String extension = "." + StringUtils.getFilenameExtension(fileName);
+-		return fileName.replace(extension, getChannel() + extension);
+-	}
+-
+-	private String getChannel() {
+-		return (fileOutput && consoleOutput) ? "-file-console" : (fileOutput ? "-file"
+-				: (consoleOutput ? "" : "-none"));
+-	}
+-
+ }
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java b/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
+index ef8671ddde4..745aaa18994 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/LoggingApplicationListener.java
+@@ -16,7 +16,6 @@
+ 
+ package org.springframework.boot.logging;
+ 
+-import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.Map.Entry;
+@@ -41,49 +40,27 @@
+ import org.springframework.util.StringUtils;
+ 
+ /**
+- * An {@link ApplicationListener} that configures a logging framework depending on what it
+- * finds on the classpath and in the {@link Environment}. If the environment contains a
+- * property <code>logging.config</code> then that will be used to initialize the logging
+- * system, otherwise a default location is used. The classpath is probed for log4j and
+- * logback and if those are present they will be reconfigured, otherwise vanilla
+- * <code>java.util.logging</code> will be used. </p>
++ * An {@link ApplicationListener} that configures the {@link LoggingSystem}. If the
++ * environment contains a {@code logging.config} property a then that will be used to
++ * initialize the logging system, otherwise a default configuration is used.
+  * <p>
+- * The default config locations are <code>classpath:log4j.properties</code> or
+- * <code>classpath:log4j.xml</code> for log4j; <code>classpath:logback.xml</code> for
+- * logback; and <code>classpath:logging.properties</code> for
+- * <code>java.util.logging</code>. If the correct one of those files is not found then
+- * some sensible defaults are adopted from files of the same name but in the package
+- * containing {@link LoggingApplicationListener}.
++ * By default, log output is only written to the console. If a log file is required the
++ * {@code logging.path} and {@code logging.file} properties can be used.
+  * <p>
+  * Some system properties may be set as side effects, and these can be useful if the
+  * logging configuration supports placeholders (i.e. log4j or logback):
+  * <ul>
+- * <li><code>LOG_FILE</code> is set to the value of <code>logging.file</code> if found in
+- * the environment</li>
+- * <li><code>LOG_PATH</code> is set to the value of <code>logging.path</code> if found in
+- * the environment</li>
+- * <li><code>PID</code> is set to the value of the current process ID if it can be
+- * determined</li>
++ * <li>{@code LOG_FILE} is set to the value of path of the log file that should be written
++ * (if any).</li>
++ * <li>{@code PID} is set to the value of the current process ID if it can be determined.</li>
+  * </ul>
+  *
+  * @author Dave Syer
+  * @author Phillip Webb
++ * @see LoggingSystem#get(ClassLoader)
+  */
+ public class LoggingApplicationListener implements SmartApplicationListener {
+ 
+-	private static final Map<String, String> ENVIRONMENT_SYSTEM_PROPERTY_MAPPING;
+-
+-	public static final String PID_KEY = "PID";
+-	
+-	public static final String LOG_FILE = "LOG_FILE";
+-
+-	static {
+-		ENVIRONMENT_SYSTEM_PROPERTY_MAPPING = new HashMap<String, String>();
+-		ENVIRONMENT_SYSTEM_PROPERTY_MAPPING.put("logging.file", "LOG_FILE");
+-		ENVIRONMENT_SYSTEM_PROPERTY_MAPPING.put("logging.path", "LOG_PATH");
+-		ENVIRONMENT_SYSTEM_PROPERTY_MAPPING.put(PID_KEY, PID_KEY);
+-	}
+-
+ 	private static MultiValueMap<LogLevel, String> LOG_LEVEL_LOGGERS;
+ 	static {
+ 		LOG_LEVEL_LOGGERS = new LinkedMultiValueMap<LogLevel, String>();
+@@ -96,9 +73,6 @@ public class LoggingApplicationListener implements SmartApplicationListener {
+ 		LOG_LEVEL_LOGGERS.add(LogLevel.DEBUG, "org.hibernate.SQL");
+ 	}
+ 
+-	private static Class<?>[] EVENT_TYPES = { ApplicationStartedEvent.class,
+-			ApplicationEnvironmentPreparedEvent.class };
+-
+ 	private final Log logger = LogFactory.getLog(getClass());
+ 
+ 	private int order = Ordered.HIGHEST_PRECEDENCE + 11;
+@@ -109,12 +83,8 @@ public class LoggingApplicationListener implements SmartApplicationListener {
+ 
+ 	@Override
+ 	public boolean supportsEventType(Class<? extends ApplicationEvent> eventType) {
+-		for (Class<?> type : EVENT_TYPES) {
+-			if (type.isAssignableFrom(eventType)) {
+-				return true;
+-			}
+-		}
+-		return false;
++		return ApplicationStartedEvent.class.isAssignableFrom(eventType)
++				|| ApplicationEnvironmentPreparedEvent.class.isAssignableFrom(eventType);
+ 	}
+ 
+ 	@Override
+@@ -124,39 +94,32 @@ public boolean supportsSourceType(Class<?> sourceType) {
+ 
+ 	@Override
+ 	public void onApplicationEvent(ApplicationEvent event) {
+-		if (event instanceof ApplicationEnvironmentPreparedEvent) {
+-			ApplicationEnvironmentPreparedEvent available = (ApplicationEnvironmentPreparedEvent) event;
+-			initialize(available.getEnvironment(), available.getSpringApplication()
+-					.getClassLoader());
++		if (event instanceof ApplicationStartedEvent) {
++			onApplicationStartedEvent((ApplicationStartedEvent) event);
+ 		}
+-		else {
+-			if (System.getProperty(PID_KEY) == null) {
+-				System.setProperty(PID_KEY, new ApplicationPid().toString());
+-			}
+-			LoggingSystem loggingSystem = LoggingSystem.get(ClassUtils.getDefaultClassLoader(), false, false);
+-			loggingSystem.beforeInitialize();
++		else if (event instanceof ApplicationEnvironmentPreparedEvent) {
++			onApplicationPreparedEvent((ApplicationEnvironmentPreparedEvent) event);
+ 		}
+ 	}
+ 
++	private void onApplicationStartedEvent(ApplicationStartedEvent event) {
++		LoggingSystem.get(ClassUtils.getDefaultClassLoader()).beforeInitialize();
++	}
++
++	private void onApplicationPreparedEvent(ApplicationEnvironmentPreparedEvent event) {
++		initialize(event.getEnvironment(), event.getSpringApplication().getClassLoader());
++	}
++
+ 	/**
+ 	 * Initialize the logging system according to preferences expressed through the
+ 	 * {@link Environment} and the classpath.
+ 	 */
+ 	protected void initialize(ConfigurableEnvironment environment, ClassLoader classLoader) {
+-		initializeEarlyLoggingLevel(environment);
+-		cleanLogTempProperty();
+-		boolean fileOutput = !StringUtils.isEmpty(environment.getProperty("logging.file"));
+-		boolean consoleOutput = true;
+-		if (!StringUtils.isEmpty(environment.getProperty("logging.console"))
+-				&& environment.getProperty("logging.console").equalsIgnoreCase("false")) {
+-			consoleOutput = false;
+-		}
+-		LoggingSystem system = LoggingSystem.get(classLoader, fileOutput, consoleOutput);
+-		boolean systemEnvironmentChanged = mapSystemPropertiesFromSpring(environment);
+-		if (systemEnvironmentChanged) {
+-			// Re-initialize the defaults in case the system Environment changed
+-			system.beforeInitialize();
++		if (System.getProperty("PID") == null) {
++			System.setProperty("PID", new ApplicationPid().toString());
+ 		}
++		initializeEarlyLoggingLevel(environment);
++		LoggingSystem system = LoggingSystem.get(classLoader);
+ 		initializeSystem(environment, system);
+ 		initializeFinalLoggingLevels(environment, system);
+ 	}
+@@ -172,52 +135,45 @@ private void initializeEarlyLoggingLevel(ConfigurableEnvironment environment) {
+ 		}
+ 	}
+ 
+-	private void cleanLogTempProperty() {
+-		// Logback won't read backslashes so add a clean path for it to use
+-		if (!StringUtils.hasLength(System.getProperty("LOG_TEMP"))) {
+-			String path = System.getProperty("java.io.tmpdir");
+-			path = StringUtils.cleanPath(path);
+-			if (path.endsWith("/")) {
+-				path = path.substring(0, path.length() - 1);
+-			}
+-			System.setProperty("LOG_TEMP", path);
+-		}
+-	}
+-
+-	private boolean mapSystemPropertiesFromSpring(Environment environment) {
+-		boolean changed = false;
+-		for (Map.Entry<String, String> mapping : ENVIRONMENT_SYSTEM_PROPERTY_MAPPING
+-				.entrySet()) {
+-			String springName = mapping.getKey();
+-			String systemName = mapping.getValue();
+-			if (environment.containsProperty(springName)) {
+-				System.setProperty(systemName, environment.getProperty(springName));
+-				changed = true;
+-			}
+-		}
+-		return changed;
+-	}
+-
+ 	private void initializeSystem(ConfigurableEnvironment environment,
+ 			LoggingSystem system) {
+-		if (environment.containsProperty("logging.config")) {
+-			String value = environment.getProperty("logging.config");
++		String logFile = getLogFile(environment);
++		String logConfig = environment.getProperty("logging.config");
++		if (StringUtils.hasLength(logConfig)) {
+ 			try {
+-				ResourceUtils.getURL(value).openStream().close();
+-				system.initialize(value);
++				ResourceUtils.getURL(logConfig).openStream().close();
++				system.initialize(logConfig, logFile);
+ 			}
+ 			catch (Exception ex) {
+-				this.logger.warn("Logging environment value '" + value
++				this.logger.warn("Logging environment value '" + logConfig
+ 						+ "' cannot be opened and will be ignored "
+ 						+ "(using default location instead)");
+-				system.initialize();
++				system.initialize(null, logFile);
+ 			}
+ 		}
+ 		else {
+-			system.initialize();
++			system.initialize(null, logFile);
+ 		}
+ 	}
+ 
++	private String getLogFile(ConfigurableEnvironment environment) {
++		String file = environment.getProperty("logging.file");
++		String path = environment.getProperty("logging.path");
++		if (StringUtils.hasLength(path) || StringUtils.hasLength(file)) {
++			if (!StringUtils.hasLength(file)) {
++				file = "spring.log";
++			}
++			if (!StringUtils.hasLength(path) && !file.contains("/")) {
++				path = StringUtils.cleanPath(System.getProperty("java.io.tmpdir"));
++			}
++			if (StringUtils.hasLength(path)) {
++				return StringUtils.applyRelativePath(path, file);
++			}
++			return file;
++		}
++		return null;
++	}
++
+ 	private void initializeFinalLoggingLevels(ConfigurableEnvironment environment,
+ 			LoggingSystem system) {
+ 		if (this.springBootLogging != null) {
+@@ -226,7 +182,16 @@ private void initializeFinalLoggingLevels(ConfigurableEnvironment environment,
+ 		setLogLevels(system, environment);
+ 	}
+ 
+-	public void setLogLevels(LoggingSystem system, Environment environment) {
++	protected void initializeLogLevel(LoggingSystem system, LogLevel level) {
++		List<String> loggers = LOG_LEVEL_LOGGERS.get(level);
++		if (loggers != null) {
++			for (String logger : loggers) {
++				system.setLogLevel(logger, level);
++			}
++		}
++	}
++
++	protected void setLogLevels(LoggingSystem system, Environment environment) {
+ 		Map<String, Object> levels = new RelaxedPropertyResolver(environment)
+ 				.getSubProperties("logging.level.");
+ 		for (Entry<String, Object> entry : levels.entrySet()) {
+@@ -248,15 +213,6 @@ private void setLogLevel(LoggingSystem system, Environment environment, String n
+ 		}
+ 	}
+ 
+-	protected void initializeLogLevel(LoggingSystem system, LogLevel level) {
+-		List<String> loggers = LOG_LEVEL_LOGGERS.get(level);
+-		if (loggers != null) {
+-			for (String logger : loggers) {
+-				system.setLogLevel(logger, level);
+-			}
+-		}
+-	}
+-
+ 	public void setOrder(int order) {
+ 		this.order = order;
+ 	}
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/LoggingSystem.java b/spring-boot/src/main/java/org/springframework/boot/logging/LoggingSystem.java
+index 168b0460d5c..38099c1a838 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/LoggingSystem.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/LoggingSystem.java
+@@ -33,35 +33,32 @@ public abstract class LoggingSystem {
+ 	private static final Map<String, String> SYSTEMS;
+ 	static {
+ 		Map<String, String> systems = new LinkedHashMap<String, String>();
+-		String pkg = LoggingSystem.class.getPackage().getName();
+-		systems.put("ch.qos.logback.core.Appender", pkg + ".logback.LogbackLoggingSystem");
+-		systems.put("org.apache.log4j.PropertyConfigurator", pkg
+-				+ ".log4j.Log4JLoggingSystem");
+-		systems.put("org.apache.logging.log4j.LogManager", pkg
+-				+ ".log4j2.Log4J2LoggingSystem");
+-		systems.put("java.util.logging.LogManager", pkg + ".java.JavaLoggingSystem");
++		systems.put("ch.qos.logback.core.Appender",
++				"org.springframework.boot.logging.logback.LogbackLoggingSystem");
++		systems.put("org.apache.log4j.PropertyConfigurator",
++				"org.springframework.boot.logging.log4j.Log4JLoggingSystem");
++		systems.put("org.apache.logging.log4j.LogManager",
++				"org.springframework.boot.logging.log4j2.Log4J2LoggingSystem");
++		systems.put("java.util.logging.LogManager",
++				"org.springframework.boot.logging.java.JavaLoggingSystem");
+ 		SYSTEMS = Collections.unmodifiableMap(systems);
+ 	}
+ 
+ 	/**
+ 	 * Reset the logging system to be limit output. This method may be called before
+-	 * {@link #initialize()} to reduce logging noise until the systems has been full
+-	 * Initialized.
++	 * {@link #initialize(String, String)} to reduce logging noise until the systems has
++	 * been fully Initialized.
+ 	 */
+ 	public abstract void beforeInitialize();
+ 
+ 	/**
+-	 * Initialize the logging system using sensible defaults. This method should generally
+-	 * try to find system specific configuration on classpath before falling back to
+-	 * sensible defaults.
++	 * Fully initialize the logging system.
++	 * @param configLocation a log configuration location or {@code null} if default
++	 * initialization is required
++	 * @param logFile the log output file that should be written or {@code null} for
++	 * console only output
+ 	 */
+-	public abstract void initialize();
+-
+-	/**
+-	 * Initialize the logging system from a logging configuration location.
+-	 * @param configLocation a log configuration location
+-	 */
+-	public abstract void initialize(String configLocation);
++	public abstract void initialize(String configLocation, String logFile);
+ 
+ 	/**
+ 	 * Sets the logging level for a given logger.
+@@ -71,17 +68,18 @@ public abstract class LoggingSystem {
+ 	public abstract void setLogLevel(String loggerName, LogLevel level);
+ 
+ 	/**
+-	 * Detect and return the logging system in use.
++	 * Detect and return the logging system in use. Supports Logback, Log4J, Log4J2 and
++	 * Java Logging.
+ 	 * @return The logging system
+ 	 */
+-	public static LoggingSystem get(ClassLoader classLoader, boolean fileOutput, boolean consoleOutput) {
++	public static LoggingSystem get(ClassLoader classLoader) {
+ 		for (Map.Entry<String, String> entry : SYSTEMS.entrySet()) {
+ 			if (ClassUtils.isPresent(entry.getKey(), classLoader)) {
+ 				try {
+ 					Class<?> systemClass = ClassUtils.forName(entry.getValue(),
+ 							classLoader);
+-					return (LoggingSystem) systemClass.getConstructor(ClassLoader.class, boolean.class, boolean.class)
+-							.newInstance(classLoader, fileOutput, consoleOutput);
++					return (LoggingSystem) systemClass.getConstructor(ClassLoader.class)
++							.newInstance(classLoader);
+ 				}
+ 				catch (Exception ex) {
+ 					throw new IllegalStateException(ex);
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/Slf4JLoggingSystem.java b/spring-boot/src/main/java/org/springframework/boot/logging/Slf4JLoggingSystem.java
+index 254b94b2094..d3f45453716 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/Slf4JLoggingSystem.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/Slf4JLoggingSystem.java
+@@ -27,16 +27,17 @@
+  */
+ public abstract class Slf4JLoggingSystem extends AbstractLoggingSystem {
+ 
+-	public Slf4JLoggingSystem(ClassLoader classLoader, boolean fileOutput, boolean consoleOutput) {
+-		super(classLoader, fileOutput, consoleOutput);
++	private static final String BRIDGE_HANDLER = "org.slf4j.bridge.SLF4JBridgeHandler";
++
++	public Slf4JLoggingSystem(ClassLoader classLoader) {
++		super(classLoader);
+ 	}
+ 
+ 	@Override
+ 	public void beforeInitialize() {
+ 		super.beforeInitialize();
+ 		try {
+-			if (ClassUtils.isPresent("org.slf4j.bridge.SLF4JBridgeHandler",
+-					getClassLoader())) {
++			if (ClassUtils.isPresent(BRIDGE_HANDLER, getClassLoader())) {
+ 				try {
+ 					SLF4JBridgeHandler.removeHandlersForRootLogger();
+ 				}
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/java/JavaLoggingSystem.java b/spring-boot/src/main/java/org/springframework/boot/logging/java/JavaLoggingSystem.java
+index edb36db470b..51cd358cd70 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/java/JavaLoggingSystem.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/java/JavaLoggingSystem.java
+@@ -16,6 +16,8 @@
+ 
+ package org.springframework.boot.logging.java;
+ 
++import java.io.ByteArrayInputStream;
++import java.io.InputStreamReader;
+ import java.util.Collections;
+ import java.util.HashMap;
+ import java.util.Map;
+@@ -27,8 +29,9 @@
+ import org.springframework.boot.logging.LogLevel;
+ import org.springframework.boot.logging.LoggingSystem;
+ import org.springframework.util.Assert;
++import org.springframework.util.FileCopyUtils;
+ import org.springframework.util.ResourceUtils;
+-import org.springframework.util.SystemPropertyUtils;
++import org.springframework.util.StringUtils;
+ 
+ /**
+  * {@link LoggingSystem} for {@link Logger java.util.logging}.
+@@ -52,30 +55,46 @@ public class JavaLoggingSystem extends AbstractLoggingSystem {
+ 	}
+ 
+ 	public JavaLoggingSystem(ClassLoader classLoader) {
+-		this(classLoader, false, true);
+-	}
+-	
+-	public JavaLoggingSystem(ClassLoader classLoader, boolean fileOutput,
+-			boolean consoleOutput) {
+-		super(classLoader, fileOutput, consoleOutput);
++		super(classLoader);
+ 	}
+ 
+ 	@Override
+-	protected String[] getLogFileNames() {
++	protected String[] getStandardConfigLocations() {
+ 		return new String[] { "logging.properties" };
+ 	}
+ 
+ 	@Override
+-	public void initialize(String configLocation) {
+-		Assert.notNull(configLocation, "ConfigLocation must not be null");
+-		String resolvedLocation = SystemPropertyUtils.resolvePlaceholders(configLocation);
++	public void beforeInitialize() {
++		super.beforeInitialize();
++		Logger.getLogger("").setLevel(Level.SEVERE);
++	}
++
++	@Override
++	protected void loadDefaults(String logFile) {
++		if (StringUtils.hasLength(logFile)) {
++			loadConfiguration(getPackagedConfigFile("logging-file.properties"), logFile);
++		}
++		else {
++			loadConfiguration(getPackagedConfigFile("logging.properties"), logFile);
++		}
++	}
++
++	@Override
++	protected void loadConfiguration(String location, String logFile) {
++		Assert.notNull(location, "Location must not be null");
+ 		try {
++			String configuration = FileCopyUtils.copyToString(new InputStreamReader(
++					ResourceUtils.getURL(location).openStream()));
++			if (StringUtils.hasLength(logFile)) {
++				configuration = configuration.replace("${LOG_FILE}",
++						StringUtils.cleanPath(logFile));
++			}
+ 			LogManager.getLogManager().readConfiguration(
+-					ResourceUtils.getURL(resolvedLocation).openStream());
++					new ByteArrayInputStream(configuration.getBytes()));
+ 		}
+ 		catch (Exception ex) {
+-			throw new IllegalStateException("Could not initialize logging from "
+-					+ configLocation, ex);
++			throw new IllegalStateException("Could not initialize Java logging from "
++					+ location, ex);
+ 		}
+ 	}
+ 
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/log4j/Log4JLoggingSystem.java b/spring-boot/src/main/java/org/springframework/boot/logging/log4j/Log4JLoggingSystem.java
+index 43a76ed8204..9b234188c89 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/log4j/Log4JLoggingSystem.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/log4j/Log4JLoggingSystem.java
+@@ -52,28 +52,42 @@ public class Log4JLoggingSystem extends Slf4JLoggingSystem {
+ 	}
+ 
+ 	public Log4JLoggingSystem(ClassLoader classLoader) {
+-		this(classLoader, false, true);
+-	}
+-	
+-	public Log4JLoggingSystem(ClassLoader classLoader, boolean fileOutput,
+-			boolean consoleOutput) {
+-		super(classLoader, fileOutput, consoleOutput);
++		super(classLoader);
+ 	}
+ 
+ 	@Override
+-	protected String[] getLogFileNames() {
++	protected String[] getStandardConfigLocations() {
+ 		return new String[] { "log4j.xml", "log4j.properties" };
+ 	}
+ 
+ 	@Override
+-	public void initialize(String configLocation) {
+-		Assert.notNull(configLocation, "ConfigLocation must not be null");
++	public void beforeInitialize() {
++		super.beforeInitialize();
++		LogManager.getRootLogger().setLevel(Level.FATAL);
++	}
++
++	@Override
++	protected void loadDefaults(String logFile) {
++		if (StringUtils.hasLength(logFile)) {
++			loadConfiguration(getPackagedConfigFile("log4j-file.properties"), logFile);
++		}
++		else {
++			loadConfiguration(getPackagedConfigFile("log4j.properties"), logFile);
++		}
++	}
++
++	@Override
++	protected void loadConfiguration(String location, String logFile) {
++		Assert.notNull(location, "Location must not be null");
++		if (StringUtils.hasLength(logFile)) {
++			System.setProperty("LOG_FILE", logFile);
++		}
+ 		try {
+-			Log4jConfigurer.initLogging(configLocation);
++			Log4jConfigurer.initLogging(location);
+ 		}
+ 		catch (Exception ex) {
+-			throw new IllegalStateException("Could not initialize logging from "
+-					+ configLocation, ex);
++			throw new IllegalStateException("Could not initialize Log4J logging from "
++					+ location, ex);
+ 		}
+ 	}
+ 
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystem.java b/spring-boot/src/main/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystem.java
+index 8142f8f8cf8..aee678ec090 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystem.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystem.java
+@@ -24,7 +24,6 @@
+ import org.apache.logging.log4j.Level;
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.core.LoggerContext;
+-import org.apache.logging.log4j.core.config.Configuration;
+ import org.apache.logging.log4j.core.config.ConfigurationFactory;
+ import org.apache.logging.log4j.core.config.ConfigurationSource;
+ import org.springframework.boot.logging.LogLevel;
+@@ -32,7 +31,7 @@
+ import org.springframework.boot.logging.Slf4JLoggingSystem;
+ import org.springframework.util.Assert;
+ import org.springframework.util.ResourceUtils;
+-import org.springframework.util.SystemPropertyUtils;
++import org.springframework.util.StringUtils;
+ 
+ /**
+  * {@link LoggingSystem} for <a href="http://logging.apache.org/log4j/2.x/">Log4j 2</a>.
+@@ -57,44 +56,53 @@ public class Log4J2LoggingSystem extends Slf4JLoggingSystem {
+ 	}
+ 
+ 	public Log4J2LoggingSystem(ClassLoader classLoader) {
+-		this(classLoader, false, true);
++		super(classLoader);
+ 	}
+-	
+-	public Log4J2LoggingSystem(ClassLoader classLoader, boolean fileOutput, boolean consoleOutput) {
+-		super(classLoader, fileOutput, consoleOutput);
+-	}
+-	
++
+ 	@Override
+-	protected String[] getLogFileNames() {
++	protected String[] getStandardConfigLocations() {
+ 		return new String[] { "log4j2.json", "log4j2.jsn", "log4j2.xml" };
+ 	}
+ 
+ 	@Override
+-	public void initialize(String configLocation) {
+-		Assert.notNull(configLocation, "ConfigLocation must not be null");
+-		String resolvedLocation = SystemPropertyUtils.resolvePlaceholders(configLocation);
+-		try {
+-			initializeAndStart(resolvedLocation);
++	public void beforeInitialize() {
++		super.beforeInitialize();
++		setLogLevel("", LogLevel.FATAL);
++	}
++
++	@Override
++	protected void loadDefaults(String logFile) {
++		if (StringUtils.hasLength(logFile)) {
++			loadConfiguration(getPackagedConfigFile("log4j2-file.xml"), logFile);
+ 		}
+-		catch (Exception ex) {
+-			throw new IllegalStateException("Could not initialize logging from "
+-					+ configLocation, ex);
++		else {
++			loadConfiguration(getPackagedConfigFile("log4j2.xml"), logFile);
+ 		}
+ 	}
+ 
+-	private void initializeAndStart(String resolvedLocation) throws Exception {
+-		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
+-		URL url = ResourceUtils.getURL(resolvedLocation);
+-		ConfigurationSource configSource = new ConfigurationSource(url.openStream(), url);
+-		Configuration config = ConfigurationFactory.getInstance().getConfiguration(
+-				configSource);
+-		ctx.start(config);
++	@Override
++	protected void loadConfiguration(String location, String logFile) {
++		Assert.notNull(location, "Location must not be null");
++		if (StringUtils.hasLength(logFile)) {
++			System.setProperty("LOG_FILE", logFile);
++		}
++		try {
++			LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
++			URL url = ResourceUtils.getURL(location);
++			ConfigurationSource source = new ConfigurationSource(url.openStream(), url);
++			ctx.start(ConfigurationFactory.getInstance().getConfiguration(source));
++		}
++		catch (Exception ex) {
++			throw new IllegalStateException("Could not initialize Log4J2 logging from "
++					+ location, ex);
++		}
+ 	}
+ 
+ 	@Override
+ 	public void setLogLevel(String loggerName, LogLevel level) {
+ 		LoggerContext ctx = (LoggerContext) LogManager.getContext(false);
+-		ctx.getConfiguration().getLoggerConfig(loggerName).setLevel(LEVELS.get(level));
++		ctx.getConfiguration().getLoggerConfig(loggerName == null ? "" : loggerName)
++				.setLevel(LEVELS.get(level));
+ 		ctx.updateLoggers();
+ 	}
+ 
+diff --git a/spring-boot/src/main/java/org/springframework/boot/logging/logback/LogbackLoggingSystem.java b/spring-boot/src/main/java/org/springframework/boot/logging/logback/LogbackLoggingSystem.java
+index a0daefef408..fc48dec5578 100644
+--- a/spring-boot/src/main/java/org/springframework/boot/logging/logback/LogbackLoggingSystem.java
++++ b/spring-boot/src/main/java/org/springframework/boot/logging/logback/LogbackLoggingSystem.java
+@@ -23,6 +23,7 @@
+ 
+ import org.slf4j.ILoggerFactory;
+ import org.slf4j.Logger;
++import org.slf4j.Marker;
+ import org.slf4j.impl.StaticLoggerBinder;
+ import org.springframework.boot.logging.LogLevel;
+ import org.springframework.boot.logging.LoggingSystem;
+@@ -30,11 +31,12 @@
+ import org.springframework.util.Assert;
+ import org.springframework.util.ResourceUtils;
+ import org.springframework.util.StringUtils;
+-import org.springframework.util.SystemPropertyUtils;
+ 
+ import ch.qos.logback.classic.Level;
+ import ch.qos.logback.classic.LoggerContext;
++import ch.qos.logback.classic.turbo.TurboFilter;
+ import ch.qos.logback.classic.util.ContextInitializer;
++import ch.qos.logback.core.spi.FilterReply;
+ 
+ /**
+  * {@link LoggingSystem} for for <a href="http://logback.qos.ch">logback</a>.
+@@ -58,25 +60,54 @@ public class LogbackLoggingSystem extends Slf4JLoggingSystem {
+ 		LEVELS = Collections.unmodifiableMap(levels);
+ 	}
+ 
++	private static final TurboFilter FILTER = new TurboFilter() {
++
++		@Override
++		public FilterReply decide(Marker marker, ch.qos.logback.classic.Logger logger,
++				Level level, String format, Object[] params, Throwable t) {
++			return FilterReply.DENY;
++		}
++
++	};
++
+ 	public LogbackLoggingSystem(ClassLoader classLoader) {
+-		this(classLoader, false, true);
+-	}
+-	
+-	public LogbackLoggingSystem(ClassLoader classLoader, boolean fileOutput,
+-			boolean consoleOutput) {
+-		super(classLoader, fileOutput, consoleOutput);
++		super(classLoader);
+ 	}
+ 
+ 	@Override
+-	protected String[] getLogFileNames() {
++	protected String[] getStandardConfigLocations() {
+ 		return new String[] { "logback-test.groovy", "logback-test.xml",
+ 				"logback.groovy", "logback.xml" };
+ 	}
+ 
+ 	@Override
+-	public void initialize(String configLocation) {
+-		Assert.notNull(configLocation, "ConfigLocation must not be null");
+-		String resolvedLocation = SystemPropertyUtils.resolvePlaceholders(configLocation);
++	public void beforeInitialize() {
++		super.beforeInitialize();
++		getLogger(null).getLoggerContext().getTurboFilterList().add(FILTER);
++	}
++
++	@Override
++	public void initialize(String configLocation, String logFile) {
++		getLogger(null).getLoggerContext().getTurboFilterList().remove(FILTER);
++		super.initialize(configLocation, logFile);
++	}
++
++	@Override
++	protected void loadDefaults(String logFile) {
++		if (StringUtils.hasLength(logFile)) {
++			loadConfiguration(getPackagedConfigFile("logback-file.xml"), logFile);
++		}
++		else {
++			loadConfiguration(getPackagedConfigFile("logback.xml"), logFile);
++		}
++	}
++
++	@Override
++	protected void loadConfiguration(String location, String logFile) {
++		Assert.notNull(location, "Location must not be null");
++		if (StringUtils.hasLength(logFile)) {
++			System.setProperty("LOG_FILE", logFile);
++		}
+ 		ILoggerFactory factory = StaticLoggerBinder.getSingleton().getLoggerFactory();
+ 		Assert.isInstanceOf(
+ 				LoggerContext.class,
+@@ -92,22 +123,25 @@ public void initialize(String configLocation) {
+ 		context.stop();
+ 		context.reset();
+ 		try {
+-			URL url = ResourceUtils.getURL(resolvedLocation);
++			URL url = ResourceUtils.getURL(location);
+ 			new ContextInitializer(context).configureByResource(url);
+ 		}
+ 		catch (Exception ex) {
+-			throw new IllegalStateException("Could not initialize logging from "
+-					+ configLocation, ex);
++			throw new IllegalStateException("Could not initialize Logback logging from "
++					+ location, ex);
+ 		}
+ 	}
+ 
+ 	@Override
+ 	public void setLogLevel(String loggerName, LogLevel level) {
++		getLogger(loggerName).setLevel(LEVELS.get(level));
++	}
++
++	private ch.qos.logback.classic.Logger getLogger(String name) {
+ 		ILoggerFactory factory = StaticLoggerBinder.getSingleton().getLoggerFactory();
+-		Logger logger = factory
+-				.getLogger(StringUtils.isEmpty(loggerName) ? Logger.ROOT_LOGGER_NAME
+-						: loggerName);
+-		((ch.qos.logback.classic.Logger) logger).setLevel(LEVELS.get(level));
++		return (ch.qos.logback.classic.Logger) factory.getLogger(StringUtils
++				.isEmpty(name) ? Logger.ROOT_LOGGER_NAME : name);
++
+ 	}
+ 
+ }
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/java/basic-logging.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/java/basic-logging.properties
+deleted file mode 100644
+index 73c81a46edb..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/java/basic-logging.properties
++++ /dev/null
+@@ -1,13 +0,0 @@
+-handlers = java.util.logging.ConsoleHandler
+-.level = INFO
+-
+-java.util.logging.ConsoleHandler.formatter = org.springframework.boot.logging.java.SimpleFormatter
+-java.util.logging.ConsoleHandler.level = ALL
+-
+-org.hibernate.validator.internal.util.Version.level = WARNING
+-org.apache.coyote.http11.Http11NioProtocol.level = WARNING
+-org.crsh.plugin.level = WARNING
+-org.apache.tomcat.util.net.NioSelectorPool.level = WARNING
+-org.apache.catalina.startup.DigesterFactory.level = SEVERE
+-org.apache.catalina.util.LifecycleBase.level = SEVERE
+-org.eclipse.jetty.util.component.AbstractLifeCycle.level = SEVERE
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-file-console.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-file-console.properties
+deleted file mode 100644
+index 0316feebabd..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-file-console.properties
++++ /dev/null
+@@ -1,20 +0,0 @@
+-handlers =java.util.logging.FileHandler,java.util.logging.ConsoleHandler
+-.level = INFO
+-
+-# File Logging
+-java.util.logging.FileHandler.pattern = %t/spring.log
+-java.util.logging.FileHandler.formatter = org.springframework.boot.logging.java.SimpleFormatter
+-java.util.logging.FileHandler.level = ALL
+-java.util.logging.FileHandler.limit = 10485760
+-java.util.logging.FileHandler.count = 10
+-
+-java.util.logging.ConsoleHandler.formatter = org.springframework.boot.logging.java.SimpleFormatter
+-java.util.logging.ConsoleHandler.level = ALL
+-
+-org.hibernate.validator.internal.util.Version.level = WARNING
+-org.apache.coyote.http11.Http11NioProtocol.level = WARNING
+-org.crsh.plugin.level = WARNING
+-org.apache.tomcat.util.net.NioSelectorPool.level = WARNING
+-org.apache.catalina.startup.DigesterFactory.level = SEVERE
+-org.apache.catalina.util.LifecycleBase.level = SEVERE
+-org.eclipse.jetty.util.component.AbstractLifeCycle.level = SEVERE
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-file.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-file.properties
+index 314d49eaf3d..f37a4a153da 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-file.properties
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-file.properties
+@@ -1,13 +1,16 @@
+-handlers =java.util.logging.FileHandler
++handlers =java.util.logging.FileHandler,java.util.logging.ConsoleHandler
+ .level = INFO
+ 
+ # File Logging
+-java.util.logging.FileHandler.pattern = %t/spring.log
++java.util.logging.FileHandler.pattern = ${LOG_FILE}
+ java.util.logging.FileHandler.formatter = org.springframework.boot.logging.java.SimpleFormatter
+ java.util.logging.FileHandler.level = ALL
+ java.util.logging.FileHandler.limit = 10485760
+ java.util.logging.FileHandler.count = 10
+ 
++java.util.logging.ConsoleHandler.formatter = org.springframework.boot.logging.java.SimpleFormatter
++java.util.logging.ConsoleHandler.level = ALL
++
+ org.hibernate.validator.internal.util.Version.level = WARNING
+ org.apache.coyote.http11.Http11NioProtocol.level = WARNING
+ org.crsh.plugin.level = WARNING
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-none.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-none.properties
+deleted file mode 100644
+index fa027f53ab8..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/java/logging-none.properties
++++ /dev/null
+@@ -1,10 +0,0 @@
+-handlers =
+-.level = INFO
+-
+-org.hibernate.validator.internal.util.Version.level = WARNING
+-org.apache.coyote.http11.Http11NioProtocol.level = WARNING
+-org.crsh.plugin.level = WARNING
+-org.apache.tomcat.util.net.NioSelectorPool.level = WARNING
+-org.apache.catalina.startup.DigesterFactory.level = SEVERE
+-org.apache.catalina.util.LifecycleBase.level = SEVERE
+-org.eclipse.jetty.util.component.AbstractLifeCycle.level = SEVERE
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/basic-log4j.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/basic-log4j.properties
+deleted file mode 100644
+index 28b637638f7..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/basic-log4j.properties
++++ /dev/null
+@@ -1,17 +0,0 @@
+-log4j.rootCategory=INFO, CONSOLE
+-
+-PID=????
+-LOG_PATTERN=[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${PID} %5p [%t] --- %c{1}: %m%n
+-
+-# CONSOLE is set to be a ConsoleAppender using a PatternLayout.
+-log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+-log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+-log4j.appender.CONSOLE.layout.ConversionPattern=${LOG_PATTERN}
+-
+-log4j.category.org.hibernate.validator.internal.util.Version=WARN
+-log4j.category.org.apache.coyote.http11.Http11NioProtocol=WARN
+-log4j.category.org.crsh.plugin=WARN
+-log4j.category.org.apache.tomcat.util.net.NioSelectorPool=WARN
+-log4j.category.org.apache.catalina.startup.DigesterFactory=ERROR
+-log4j.category.org.apache.catalina.util.LifecycleBase=ERROR
+-log4j.category.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-file-console.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-file-console.properties
+deleted file mode 100644
+index 58baefaced6..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-file-console.properties
++++ /dev/null
+@@ -1,25 +0,0 @@
+-log4j.rootCategory=INFO, CONSOLE, FILE
+-
+-PID=????
+-LOG_PATH=${java.io.tmpdir}
+-LOG_FILE=${LOG_PATH}/spring.log
+-LOG_PATTERN=[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${PID} %5p [%t] --- %c{1}: %m%n
+-
+-# CONSOLE is set to be a ConsoleAppender using a PatternLayout.
+-log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+-log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+-log4j.appender.CONSOLE.layout.ConversionPattern=${LOG_PATTERN}
+-
+-log4j.appender.FILE=org.apache.log4j.RollingFileAppender
+-log4j.appender.FILE.File=${LOG_FILE}
+-log4j.appender.FILE.MaxFileSize=10MB
+-log4j.appender.FILE.layout = org.apache.log4j.PatternLayout
+-log4j.appender.FILE.layout.ConversionPattern=${LOG_PATTERN}
+-
+-log4j.category.org.hibernate.validator.internal.util.Version=WARN
+-log4j.category.org.apache.coyote.http11.Http11NioProtocol=WARN
+-log4j.category.org.crsh.plugin=WARN
+-log4j.category.org.apache.tomcat.util.net.NioSelectorPool=WARN
+-log4j.category.org.apache.catalina.startup.DigesterFactory=ERROR
+-log4j.category.org.apache.catalina.util.LifecycleBase=ERROR
+-log4j.category.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-file.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-file.properties
+index 949ec6de237..ca1f0ec327d 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-file.properties
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-file.properties
+@@ -1,20 +1,31 @@
+-log4j.rootCategory=INFO,FILE
++log4j.rootCategory=INFO, CONSOLE, FILE
+ 
+ PID=????
+ LOG_PATH=${java.io.tmpdir}
+ LOG_FILE=${LOG_PATH}/spring.log
+ LOG_PATTERN=[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${PID} %5p [%t] --- %c{1}: %m%n
+ 
++# CONSOLE is set to be a ConsoleAppender using a PatternLayout.
++log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
++log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
++log4j.appender.CONSOLE.layout.ConversionPattern=${LOG_PATTERN}
++
+ log4j.appender.FILE=org.apache.log4j.RollingFileAppender
+ log4j.appender.FILE.File=${LOG_FILE}
+ log4j.appender.FILE.MaxFileSize=10MB
+ log4j.appender.FILE.layout = org.apache.log4j.PatternLayout
+ log4j.appender.FILE.layout.ConversionPattern=${LOG_PATTERN}
+ 
+-log4j.category.org.hibernate.validator.internal.util.Version=WARN
+-log4j.category.org.apache.coyote.http11.Http11NioProtocol=WARN
+-log4j.category.org.crsh.plugin=WARN
+-log4j.category.org.apache.tomcat.util.net.NioSelectorPool=WARN
+ log4j.category.org.apache.catalina.startup.DigesterFactory=ERROR
+ log4j.category.org.apache.catalina.util.LifecycleBase=ERROR
++log4j.category.org.apache.coyote.http11.Http11NioProtocol=WARN
++log4j.category.org.apache.sshd.common.util.SecurityUtils
++log4j.category.org.apache.tomcat.util.net.NioSelectorPool=WARN
++log4j.category.org.crsh.plugin=WARN
++log4j.category.org.crsh.ssh=WARN
+ log4j.category.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
++log4j.category.org.hibernate.validator.internal.util.Version=WARN
++log4j.category.org.springframework.boot.actuate.autoconfigure.CrshAutoConfiguration=WARN
++log4j.category.org.springframework.boot.actuate.endpoint.jmx=WARN
++log4j.category.org.thymeleaf=WARN
++
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-none.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-none.properties
+deleted file mode 100644
+index f8a630ca8de..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j-none.properties
++++ /dev/null
+@@ -1,15 +0,0 @@
+-log4j.rootCategory=INFO
+-
+-PID=????
+-LOG_PATH=${java.io.tmpdir}
+-LOG_FILE=${LOG_PATH}/spring.log
+-LOG_PATTERN=[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${PID} %5p [%t] --- %c{1}: %m%n
+-
+-
+-log4j.category.org.hibernate.validator.internal.util.Version=WARN
+-log4j.category.org.apache.coyote.http11.Http11NioProtocol=WARN
+-log4j.category.org.crsh.plugin=WARN
+-log4j.category.org.apache.tomcat.util.net.NioSelectorPool=WARN
+-log4j.category.org.apache.catalina.startup.DigesterFactory=ERROR
+-log4j.category.org.apache.catalina.util.LifecycleBase=ERROR
+-log4j.category.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j.properties b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j.properties
+index e0885761df1..4b4d9f291e5 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j.properties
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j/log4j.properties
+@@ -1,8 +1,6 @@
+ log4j.rootCategory=INFO, CONSOLE
+ 
+ PID=????
+-LOG_PATH=${java.io.tmpdir}
+-LOG_FILE=${LOG_PATH}/spring.log
+ LOG_PATTERN=[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${PID} %5p [%t] --- %c{1}: %m%n
+ 
+ # CONSOLE is set to be a ConsoleAppender using a PatternLayout.
+@@ -10,11 +8,15 @@ log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+ log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+ log4j.appender.CONSOLE.layout.ConversionPattern=${LOG_PATTERN}
+ 
+-
+-log4j.category.org.hibernate.validator.internal.util.Version=WARN
+-log4j.category.org.apache.coyote.http11.Http11NioProtocol=WARN
+-log4j.category.org.crsh.plugin=WARN
+-log4j.category.org.apache.tomcat.util.net.NioSelectorPool=WARN
+ log4j.category.org.apache.catalina.startup.DigesterFactory=ERROR
+ log4j.category.org.apache.catalina.util.LifecycleBase=ERROR
++log4j.category.org.apache.coyote.http11.Http11NioProtocol=WARN
++log4j.category.org.apache.sshd.common.util.SecurityUtils
++log4j.category.org.apache.tomcat.util.net.NioSelectorPool=WARN
++log4j.category.org.crsh.plugin=WARN
++log4j.category.org.crsh.ssh=WARN
+ log4j.category.org.eclipse.jetty.util.component.AbstractLifeCycle=ERROR
++log4j.category.org.hibernate.validator.internal.util.Version=WARN
++log4j.category.org.springframework.boot.actuate.autoconfigure.CrshAutoConfiguration=WARN
++log4j.category.org.springframework.boot.actuate.endpoint.jmx=WARN
++log4j.category.org.thymeleaf=WARN
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/basic-log4j2.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/basic-log4j2.xml
+deleted file mode 100644
+index d8e113eac39..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/basic-log4j2.xml
++++ /dev/null
+@@ -1,25 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<Configuration status="WARN">
+-    <Properties>
+-        <Property name="PID">????</Property>
+-        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
+-    </Properties>
+-    <Appenders>
+-        <Console name="Console" target="SYSTEM_OUT" follow="true">
+-            <PatternLayout pattern="${LOG_PATTERN}"/>
+-        </Console>
+-    </Appenders>
+-    <Loggers>
+-        <Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
+-        <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
+-        <Logger name="org.crsh.plugin" level="WARN" />
+-        <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
+-        <Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
+-        <Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
+-        <Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+-
+-        <Root level="info">
+-            <AppenderRef ref="Console"/>
+-        </Root>
+-    </Loggers>
+-</Configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-file-console.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-file-console.xml
+deleted file mode 100644
+index e2f1bb78a7f..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-file-console.xml
++++ /dev/null
+@@ -1,37 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<Configuration status="WARN">
+-    <Properties>
+-        <Property name="PID">????</Property>
+-        <Property name="LOG_PATH">/tmp</Property>
+-        <Property name="LOG_FILE">${sys:LOG_PATH}/spring.log</Property>
+-        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
+-    </Properties>
+-    <Appenders>
+-        <Console name="Console" target="SYSTEM_OUT" follow="true">
+-            <PatternLayout pattern="${LOG_PATTERN}"/>
+-        </Console>
+-        <RollingFile name="File" fileName="${sys:LOG_FILE}"
+-                     filePattern="logs/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz">
+-            <PatternLayout>
+-                <Pattern>${LOG_PATTERN}</Pattern>
+-            </PatternLayout>
+-            <Policies>
+-                <SizeBasedTriggeringPolicy size="10 MB"/>
+-            </Policies>
+-        </RollingFile>
+-    </Appenders>
+-    <Loggers>
+-        <Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
+-        <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
+-        <Logger name="org.crsh.plugin" level="warn" />
+-        <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
+-        <Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
+-        <Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
+-        <Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+-
+-        <Root level="info">
+-            <AppenderRef ref="Console"/>
+-            <AppenderRef ref="File"/>
+-        </Root>
+-    </Loggers>
+-</Configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-file.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-file.xml
+index b1bc0235c0a..9171b146c23 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-file.xml
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-file.xml
+@@ -1,33 +1,38 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Configuration status="WARN">
+-    <Properties>
+-        <Property name="PID">????</Property>
+-        <Property name="LOG_PATH">/tmp</Property>
+-        <Property name="LOG_FILE">${sys:LOG_PATH}/spring.log</Property>
+-        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
+-    </Properties>
+-    <Appenders>
+-        <RollingFile name="File" fileName="${sys:LOG_FILE}"
+-                     filePattern="logs/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz">
+-            <PatternLayout>
+-                <Pattern>${LOG_PATTERN}</Pattern>
+-            </PatternLayout>
+-            <Policies>
+-                <SizeBasedTriggeringPolicy size="10 MB"/>
+-            </Policies>
+-        </RollingFile>
+-    </Appenders>
+-    <Loggers>
+-        <Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
+-        <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
+-        <Logger name="org.crsh.plugin" level="warn" />
+-        <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
+-        <Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
+-        <Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
+-        <Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+-
+-        <Root level="info">
+-            <AppenderRef ref="File"/>
+-        </Root>
+-    </Loggers>
++	<Properties>
++		<Property name="PID">????</Property>
++		<Property name="LOG_PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
++	</Properties>
++	<Appenders>
++		<Console name="Console" target="SYSTEM_OUT" follow="true">
++			<PatternLayout pattern="${LOG_PATTERN}" />
++		</Console>
++		<RollingFile name="File" fileName="${sys:LOG_FILE}" filePattern="logs/$${date:yyyy-MM}/app-%d{yyyy-MM-dd-HH}-%i.log.gz">
++			<PatternLayout>
++				<Pattern>${LOG_PATTERN}</Pattern>
++			</PatternLayout>
++			<Policies>
++				<SizeBasedTriggeringPolicy size="10 MB" />
++			</Policies>
++		</RollingFile>
++	</Appenders>
++	<Loggers>
++		<Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
++		<Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
++		<Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
++		<logger name="org.apache.sshd.common.util.SecurityUtils" level="warn"/>
++		<Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
++		<Logger name="org.crsh.plugin" level="warn" />
++		<logger name="org.crsh.ssh" level="warn"/>
++		<Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
++		<Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
++		<logger name="org.springframework.boot.actuate.autoconfigure.CrshAutoConfiguration" level="warn"/>
++		<logger name="org.springframework.boot.actuate.endpoint.jmx" level="warn"/>
++		<logger name="org.thymeleaf" level="warn"/>
++		<Root level="info">
++			<AppenderRef ref="Console" />
++			<AppenderRef ref="File" />
++		</Root>
++	</Loggers>
+ </Configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-none.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-none.xml
+deleted file mode 100644
+index eed5a2c784b..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2-none.xml
++++ /dev/null
+@@ -1,21 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<Configuration status="WARN">
+-    <Properties>
+-        <Property name="PID">????</Property>
+-        <Property name="LOG_PATH">/tmp</Property>
+-        <Property name="LOG_FILE">${sys:LOG_PATH}/spring.log</Property>
+-        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
+-    </Properties>
+-    <Loggers>
+-        <Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
+-        <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
+-        <Logger name="org.crsh.plugin" level="warn" />
+-        <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
+-        <Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
+-        <Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
+-        <Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+-
+-        <Root level="info">
+-        </Root>
+-    </Loggers>
+-</Configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2.xml
+index 2374d828efd..45e09bc402d 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2.xml
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/log4j2/log4j2.xml
+@@ -1,27 +1,29 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Configuration status="WARN">
+-    <Properties>
+-        <Property name="PID">????</Property>
+-        <Property name="LOG_PATH">/tmp</Property>
+-        <Property name="LOG_FILE">${sys:LOG_PATH}/spring.log</Property>
+-        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
+-    </Properties>
+-    <Appenders>
+-        <Console name="Console" target="SYSTEM_OUT" follow="true">
+-            <PatternLayout pattern="${LOG_PATTERN}"/>
+-        </Console>
+-    </Appenders>
+-    <Loggers>
+-        <Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
+-        <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
+-        <Logger name="org.crsh.plugin" level="warn" />
+-        <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
+-        <Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
+-        <Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
+-        <Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
+-
+-        <Root level="info">
+-            <AppenderRef ref="Console"/>
+-        </Root>
+-    </Loggers>
++	<Properties>
++		<Property name="PID">????</Property>
++		<Property name="LOG_PATTERN">[%d{yyyy-MM-dd HH:mm:ss.SSS}] boot%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
++	</Properties>
++	<Appenders>
++		<Console name="Console" target="SYSTEM_OUT" follow="true">
++			<PatternLayout pattern="${LOG_PATTERN}" />
++		</Console>
++	</Appenders>
++	<Loggers>
++		<Logger name="org.apache.catalina.startup.DigesterFactory" level="error" />
++		<Logger name="org.apache.catalina.util.LifecycleBase" level="error" />
++		<Logger name="org.apache.coyote.http11.Http11NioProtocol" level="warn" />
++		<logger name="org.apache.sshd.common.util.SecurityUtils" level="warn"/>
++		<Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="warn" />
++		<Logger name="org.crsh.plugin" level="warn" />
++		<logger name="org.crsh.ssh" level="warn"/>
++		<Logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="error" />
++		<Logger name="org.hibernate.validator.internal.util.Version" level="warn" />
++		<logger name="org.springframework.boot.actuate.autoconfigure.CrshAutoConfiguration" level="warn"/>
++		<logger name="org.springframework.boot.actuate.endpoint.jmx" level="warn"/>
++		<logger name="org.thymeleaf" level="warn"/>
++		<Root level="info">
++			<AppenderRef ref="Console" />
++		</Root>
++	</Loggers>
+ </Configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/base.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/base.xml
+index dc572d95830..71d33621a61 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/base.xml
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/base.xml
+@@ -2,16 +2,28 @@
+ <included>
+ 	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+ 	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+-	
++
+ 	<property name="CONSOLE_LOG_PATTERN" value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t{14}]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wex"/>
+-	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+-		<encoder>
+-			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+-			<charset>utf8</charset>
+-		</encoder>
++	<property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } [%t] --- %-40.40logger{39} : %m%n%wex"/>
++
++	<appender name="DEBUG_LEVEL_REMAPPER" class="org.springframework.boot.logging.logback.LevelRemappingAppender">
++		<destinationLogger>org.springframework.boot</destinationLogger>
+ 	</appender>
+-	
+-	<root level="INFO">
+-		<appender-ref ref="CONSOLE" />
+- 	</root>
++
++	<logger name="org.apache.catalina.startup.DigesterFactory" level="ERROR"/>
++	<logger name="org.apache.catalina.util.LifecycleBase" level="ERROR"/>
++	<logger name="org.apache.coyote.http11.Http11NioProtocol" level="WARN"/>
++	<logger name="org.apache.sshd.common.util.SecurityUtils" level="WARN"/>
++	<logger name="org.apache.tomcat.util.net.NioSelectorPool" level="WARN"/>
++	<logger name="org.crsh.plugin" level="WARN"/>
++	<logger name="org.crsh.ssh" level="WARN"/>
++	<logger name="org.eclipse.jetty.util.component.AbstractLifeCycle" level="ERROR"/>
++	<logger name="org.hibernate.validator.internal.util.Version" level="WARN"/>
++	<logger name="org.springframework.boot.actuate.autoconfigure.CrshAutoConfiguration" level="WARN"/>
++	<logger name="org.springframework.boot.actuate.endpoint.jmx" additivity="false">
++		<appender-ref ref="DEBUG_LEVEL_REMAPPER"/>
++	</logger>
++	<logger name="org.thymeleaf" additivity="false">
++		<appender-ref ref="DEBUG_LEVEL_REMAPPER"/>
++	</logger>
+ </included>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/basic-logback.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/basic-logback.xml
+deleted file mode 100644
+index a5c5515b84b..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/basic-logback.xml
++++ /dev/null
+@@ -1,4 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<configuration>
+-	<include resource="org/springframework/boot/logging/logback/base.xml" />
+-</configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/console-appender.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/console-appender.xml
+new file mode 100644
+index 00000000000..a08abd194d2
+--- /dev/null
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/console-appender.xml
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<included>
++	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
++		<encoder>
++			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
++			<charset>utf8</charset>
++		</encoder>
++	</appender>
++</included>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/base-file.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/file-appender.xml
+similarity index 55%
+rename from spring-boot/src/main/resources/org/springframework/boot/logging/logback/base-file.xml
+rename to spring-boot/src/main/resources/org/springframework/boot/logging/logback/file-appender.xml
+index a7ed15fc0df..f6dd7835643 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/base-file.xml
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/file-appender.xml
+@@ -1,8 +1,5 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <included>
+-	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+-	<property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
+-	<property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } [%t] --- %-40.40logger{39} : %m%n%wex"/>
+ 	<appender name="FILE"
+ 		class="ch.qos.logback.core.rolling.RollingFileAppender">
+ 		<encoder>
+@@ -17,7 +14,4 @@
+ 			<MaxFileSize>10MB</MaxFileSize>
+ 		</triggeringPolicy>
+ 	</appender>
+-	<root level="INFO">
+-		<appender-ref ref="FILE" />
+- 	</root>
+ </included>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-file-console.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-file-console.xml
+deleted file mode 100644
+index 38e7fe99c46..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-file-console.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<configuration>
+- 	<include resource="org/springframework/boot/logging/logback/base-file.xml"/>
+- 	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+-</configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-file.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-file.xml
+index 6d0ccd35373..0d5c8a3c428 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-file.xml
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-file.xml
+@@ -1,4 +1,12 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <configuration>
+- 	<include resource="org/springframework/boot/logging/logback/base-file.xml"/>
++	<include resource="org/springframework/boot/logging/logback/base.xml"/>
++	<include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
++	<include resource="org/springframework/boot/logging/logback/file-appender.xml"/>
++
++	<root level="INFO">
++		<appender-ref ref="CONSOLE" />
++		<appender-ref ref="FILE" />
++ 	</root>
++
+ </configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-none.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-none.xml
+deleted file mode 100644
+index eb91e909b9b..00000000000
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback-none.xml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<configuration>
+-	<root level="INFO">
+- 	</root>
+-</configuration>
+diff --git a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback.xml b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback.xml
+index b8a41480d7d..5b372d2331b 100644
+--- a/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback.xml
++++ b/spring-boot/src/main/resources/org/springframework/boot/logging/logback/logback.xml
+@@ -1,4 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <configuration>
+ 	<include resource="org/springframework/boot/logging/logback/base.xml"/>
++	<include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
++	<root level="INFO">
++		<appender-ref ref="CONSOLE" />
++ 	</root>
+ </configuration>
+diff --git a/spring-boot/src/test/java/org/springframework/boot/logging/AbstractLoggingSystemTests.java b/spring-boot/src/test/java/org/springframework/boot/logging/AbstractLoggingSystemTests.java
+new file mode 100644
+index 00000000000..81457f7c267
+--- /dev/null
++++ b/spring-boot/src/test/java/org/springframework/boot/logging/AbstractLoggingSystemTests.java
+@@ -0,0 +1,51 @@
++/*
++ * Copyright 2012-2014 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.boot.logging;
++
++import java.io.File;
++
++import org.junit.After;
++import org.junit.Before;
++import org.springframework.util.StringUtils;
++
++/**
++ * Base for {@link LoggingSystem} tests.
++ *
++ * @author Phillip Webb
++ */
++public abstract class AbstractLoggingSystemTests {
++
++	@Before
++	public void deleteTempLog() {
++		new File(tmpDir() + "/spring.log").delete();
++	}
++
++	@After
++	public void clear() {
++		System.clearProperty("LOG_FILE");
++		System.clearProperty("PID");
++	}
++
++	protected final String tmpDir() {
++		String path = StringUtils.cleanPath(System.getProperty("java.io.tmpdir"));
++		if (path.endsWith("/")) {
++			path = path.substring(0, path.length() - 1);
++		}
++		return path;
++	}
++
++}
+diff --git a/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java b/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java
+index a0d9de3ae05..077cd1dab1c 100644
+--- a/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java
++++ b/spring-boot/src/test/java/org/springframework/boot/logging/LoggingApplicationListenerTests.java
+@@ -106,17 +106,6 @@ public void baseConfigLocation() {
+ 		assertFalse(new File(tmpDir() + "/spring.log").exists());
+ 	}
+ 
+-	@Test
+-	public void noConsole() {
+-		EnvironmentTestUtils.addEnvironment(this.context, "logging.console: false");
+-		this.initializer.initialize(this.context.getEnvironment(),
+-				this.context.getClassLoader());
+-		this.logger.info("Hello world");
+-		String output = this.outputCapture.toString().trim();
+-		assertFalse("Wrong output:\n" + output, output.contains("Hello world"));
+-		assertFalse(new File(tmpDir() + "/spring.log").exists());
+-	}
+-
+ 	@Test
+ 	public void overrideConfigLocation() {
+ 		EnvironmentTestUtils.addEnvironment(this.context,
+@@ -127,7 +116,8 @@ public void overrideConfigLocation() {
+ 		String output = this.outputCapture.toString().trim();
+ 		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
+ 		assertFalse("Wrong output:\n" + output, output.contains("???"));
+-		assertTrue("Wrong output:\n" + output, output.startsWith(tmpDir() + "/tmp.log"));
++		assertTrue("Wrong output:\n" + output, output.startsWith("LOG_FILE_IS_UNDEFINED"));
++		assertTrue("Wrong output:\n" + output, output.endsWith("BOOTBOOT"));
+ 	}
+ 
+ 	@Test
+@@ -178,7 +168,7 @@ public void addLogPathProperty() {
+ 		Log logger = LogFactory.getLog(LoggingApplicationListenerTests.class);
+ 		logger.info("Hello world");
+ 		String output = this.outputCapture.toString().trim();
+-		assertTrue("Wrong output:\n" + output, output.startsWith("target/foo/tmp.log"));
++		assertTrue("Wrong output:\n" + output, output.startsWith("target/foo/spring.log"));
+ 	}
+ 
+ 	@Test
+diff --git a/spring-boot/src/test/java/org/springframework/boot/logging/java/JavaLoggerSystemTests.java b/spring-boot/src/test/java/org/springframework/boot/logging/java/JavaLoggerSystemTests.java
+index 8c3f9ff6173..5645112bd33 100644
+--- a/spring-boot/src/test/java/org/springframework/boot/logging/java/JavaLoggerSystemTests.java
++++ b/spring-boot/src/test/java/org/springframework/boot/logging/java/JavaLoggerSystemTests.java
+@@ -16,6 +16,8 @@
+ 
+ package org.springframework.boot.logging.java;
+ 
++import java.io.File;
++import java.io.FileFilter;
+ import java.io.IOException;
+ import java.util.Locale;
+ 
+@@ -24,12 +26,15 @@
+ import org.junit.Before;
+ import org.junit.Rule;
+ import org.junit.Test;
++import org.springframework.boot.logging.AbstractLoggingSystemTests;
+ import org.springframework.boot.logging.LogLevel;
+ import org.springframework.boot.test.OutputCapture;
+ import org.springframework.util.ClassUtils;
+ import org.springframework.util.StringUtils;
+ 
+ import static org.hamcrest.Matchers.equalTo;
++import static org.hamcrest.Matchers.greaterThan;
++import static org.junit.Assert.assertFalse;
+ import static org.junit.Assert.assertThat;
+ import static org.junit.Assert.assertTrue;
+ 
+@@ -37,8 +42,18 @@
+  * Tests for {@link JavaLoggingSystem}.
+  *
+  * @author Dave Syer
++ * @author Phillip Webb
+  */
+-public class JavaLoggerSystemTests {
++public class JavaLoggerSystemTests extends AbstractLoggingSystemTests {
++
++	private static final FileFilter SPRING_LOG_FILTER = new FileFilter() {
++
++		@Override
++		public boolean accept(File pathname) {
++			return pathname.getName().startsWith("spring.log");
++		}
++
++	};
+ 
+ 	private final JavaLoggingSystem loggingSystem = new JavaLoggingSystem(getClass()
+ 			.getClassLoader());
+@@ -58,17 +73,43 @@ public void init() throws SecurityException, IOException {
+ 	}
+ 
+ 	@After
+-	public void clear() {
+-		System.clearProperty("LOG_FILE");
+-		System.clearProperty("LOG_PATH");
+-		System.clearProperty("PID");
++	public void clearLocale() {
+ 		Locale.setDefault(this.defaultLocale);
+ 	}
+ 
++	@Test
++	public void noFile() throws Exception {
++		this.loggingSystem.beforeInitialize();
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, null);
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertFalse(new File(tmpDir() + "/spring.log").exists());
++	}
++
++	@Test
++	public void withFile() throws Exception {
++		File temp = new File(tmpDir());
++		File[] logFiles = temp.listFiles(SPRING_LOG_FILTER);
++		for (File file : logFiles) {
++			file.delete();
++		}
++		this.loggingSystem.beforeInitialize();
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, tmpDir() + "/spring.log");
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertThat(temp.listFiles(SPRING_LOG_FILTER).length, greaterThan(0));
++	}
++
+ 	@Test
+ 	public void testCustomFormatter() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		this.logger.info("Hello world");
+ 		String output = this.output.toString().trim();
+ 		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
+@@ -79,9 +120,10 @@ public void testCustomFormatter() throws Exception {
+ 	public void testSystemPropertyInitializesFormat() throws Exception {
+ 		System.setProperty("PID", "1234");
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:"
+-				+ ClassUtils.addResourcePathToPackagePath(getClass(),
+-						"logging.properties"));
++		this.loggingSystem.initialize(
++				"classpath:"
++						+ ClassUtils.addResourcePathToPackagePath(getClass(),
++								"logging.properties"), null);
+ 		this.logger.info("Hello world");
+ 		this.logger.info("Hello world");
+ 		String output = this.output.toString().trim();
+@@ -92,7 +134,7 @@ public void testSystemPropertyInitializesFormat() throws Exception {
+ 	@Test
+ 	public void testNonDefaultConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:logging-nondefault.properties");
++		this.loggingSystem.initialize("classpath:logging-nondefault.properties", null);
+ 		this.logger.info("Hello world");
+ 		String output = this.output.toString().trim();
+ 		assertTrue("Wrong output:\n" + output, output.contains("INFO: Hello"));
+@@ -101,19 +143,13 @@ public void testNonDefaultConfigLocation() throws Exception {
+ 	@Test(expected = IllegalStateException.class)
+ 	public void testNonexistentConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:logging-nonexistent.properties");
+-	}
+-
+-	@Test(expected = IllegalArgumentException.class)
+-	public void testNullConfigLocation() throws Exception {
+-		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize(null);
++		this.loggingSystem.initialize("classpath:logging-nonexistent.properties", null);
+ 	}
+ 
+ 	@Test
+ 	public void setLevel() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		this.logger.debug("Hello");
+ 		this.loggingSystem.setLogLevel("org.springframework.boot", LogLevel.DEBUG);
+ 		this.logger.debug("Hello");
+diff --git a/spring-boot/src/test/java/org/springframework/boot/logging/log4j/Log4JLoggingSystemTests.java b/spring-boot/src/test/java/org/springframework/boot/logging/log4j/Log4JLoggingSystemTests.java
+index b5cebfec9a1..f700dd4274d 100644
+--- a/spring-boot/src/test/java/org/springframework/boot/logging/log4j/Log4JLoggingSystemTests.java
++++ b/spring-boot/src/test/java/org/springframework/boot/logging/log4j/Log4JLoggingSystemTests.java
+@@ -16,17 +16,20 @@
+ 
+ package org.springframework.boot.logging.log4j;
+ 
++import java.io.File;
++
+ import org.apache.commons.logging.impl.Log4JLogger;
+-import org.junit.After;
+ import org.junit.Before;
+ import org.junit.Ignore;
+ import org.junit.Rule;
+ import org.junit.Test;
++import org.springframework.boot.logging.AbstractLoggingSystemTests;
+ import org.springframework.boot.logging.LogLevel;
+ import org.springframework.boot.test.OutputCapture;
+ import org.springframework.util.StringUtils;
+ 
+ import static org.hamcrest.Matchers.equalTo;
++import static org.junit.Assert.assertFalse;
+ import static org.junit.Assert.assertThat;
+ import static org.junit.Assert.assertTrue;
+ 
+@@ -35,7 +38,7 @@
+  *
+  * @author Phillip Webb
+  */
+-public class Log4JLoggingSystemTests {
++public class Log4JLoggingSystemTests extends AbstractLoggingSystemTests {
+ 
+ 	@Rule
+ 	public OutputCapture output = new OutputCapture();
+@@ -50,39 +53,52 @@ public void setup() {
+ 		this.logger = new Log4JLogger(getClass().getName());
+ 	}
+ 
+-	@After
+-	public void clear() {
+-		System.clearProperty("LOG_FILE");
+-		System.clearProperty("LOG_PATH");
+-		System.clearProperty("PID");
++	@Test
++	public void noFile() throws Exception {
++		this.loggingSystem.beforeInitialize();
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, null);
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertFalse(new File(tmpDir() + "/spring.log").exists());
+ 	}
+ 
+ 	@Test
+-	public void testNonDefaultConfigLocation() throws Exception {
++	public void withFile() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:log4j-nondefault.properties");
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, tmpDir() + "/spring.log");
+ 		this.logger.info("Hello world");
+ 		String output = this.output.toString().trim();
+ 		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
+-		assertTrue("Wrong output:\n" + output, output.contains("/tmp/spring.log"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertTrue(new File(tmpDir() + "/spring.log").exists());
+ 	}
+ 
+-	@Test(expected = IllegalStateException.class)
+-	public void testNonexistentConfigLocation() throws Exception {
++	@Test
++	public void testNonDefaultConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:log4j-nonexistent.xml");
++		this.loggingSystem.initialize("classpath:log4j-nondefault.properties", tmpDir()
++				+ "/spring.log");
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertTrue("Wrong output:\n" + output, output.contains(tmpDir() + "/spring.log"));
++		assertFalse(new File(tmpDir() + "/tmp.log").exists());
+ 	}
+ 
+-	@Test(expected = IllegalArgumentException.class)
+-	public void testNullConfigLocation() throws Exception {
++	@Test(expected = IllegalStateException.class)
++	public void testNonexistentConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize(null);
++		this.loggingSystem.initialize("classpath:log4j-nonexistent.xml", null);
+ 	}
+ 
+ 	@Test
+ 	public void setLevel() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		this.logger.debug("Hello");
+ 		this.loggingSystem.setLogLevel("org.springframework.boot", LogLevel.DEBUG);
+ 		this.logger.debug("Hello");
+@@ -94,7 +110,7 @@ public void setLevel() throws Exception {
+ 	@Ignore("Fails on Bamboo")
+ 	public void loggingThatUsesJulIsCaptured() {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		java.util.logging.Logger julLogger = java.util.logging.Logger
+ 				.getLogger(getClass().getName());
+ 		julLogger.severe("Hello world");
+diff --git a/spring-boot/src/test/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystemTests.java b/spring-boot/src/test/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystemTests.java
+index b08aa01143d..bf9305b1e92 100644
+--- a/spring-boot/src/test/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystemTests.java
++++ b/spring-boot/src/test/java/org/springframework/boot/logging/log4j2/Log4J2LoggingSystemTests.java
+@@ -16,18 +16,21 @@
+ 
+ package org.springframework.boot.logging.log4j2;
+ 
++import java.io.File;
++
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
+-import org.junit.After;
+ import org.junit.Before;
+ import org.junit.Ignore;
+ import org.junit.Rule;
+ import org.junit.Test;
++import org.springframework.boot.logging.AbstractLoggingSystemTests;
+ import org.springframework.boot.logging.LogLevel;
+ import org.springframework.boot.test.OutputCapture;
+ import org.springframework.util.StringUtils;
+ 
+ import static org.hamcrest.Matchers.equalTo;
++import static org.junit.Assert.assertFalse;
+ import static org.junit.Assert.assertThat;
+ import static org.junit.Assert.assertTrue;
+ 
+@@ -35,8 +38,9 @@
+  * Tests for {@link Log4J2LoggingSystem}.
+  *
+  * @author Daniel Fullarton
++ * @author Phillip Webb
+  */
+-public class Log4J2LoggingSystemTests {
++public class Log4J2LoggingSystemTests extends AbstractLoggingSystemTests {
+ 
+ 	@Rule
+ 	public OutputCapture output = new OutputCapture();
+@@ -51,39 +55,52 @@ public void setup() {
+ 		this.logger = LogManager.getLogger(getClass());
+ 	}
+ 
+-	@After
+-	public void clear() {
+-		System.clearProperty("LOG_FILE");
+-		System.clearProperty("LOG_PATH");
+-		System.clearProperty("PID");
++	@Test
++	public void noFile() throws Exception {
++		this.loggingSystem.beforeInitialize();
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, null);
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertFalse(new File(tmpDir() + "/spring.log").exists());
+ 	}
+ 
+ 	@Test
+-	public void testNonDefaultConfigLocation() throws Exception {
++	public void withFile() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:log4j2-nondefault.xml");
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, tmpDir() + "/spring.log");
+ 		this.logger.info("Hello world");
+ 		String output = this.output.toString().trim();
+ 		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
+-		assertTrue("Wrong output:\n" + output, output.contains("/tmp/spring.log"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertTrue(new File(tmpDir() + "/spring.log").exists());
+ 	}
+ 
+-	@Test(expected = IllegalStateException.class)
+-	public void testNonexistentConfigLocation() throws Exception {
++	@Test
++	public void testNonDefaultConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:log4j2-nonexistent.xml");
++		this.loggingSystem.initialize("classpath:log4j2-nondefault.xml", tmpDir()
++				+ "/tmp.log");
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertTrue("Wrong output:\n" + output, output.contains(tmpDir() + "/tmp.log"));
++		assertFalse(new File(tmpDir() + "/tmp.log").exists());
+ 	}
+ 
+-	@Test(expected = IllegalArgumentException.class)
+-	public void testNullConfigLocation() throws Exception {
++	@Test(expected = IllegalStateException.class)
++	public void testNonexistentConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize(null);
++		this.loggingSystem.initialize("classpath:log4j2-nonexistent.xml", null);
+ 	}
+ 
+ 	@Test
+ 	public void setLevel() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		this.logger.debug("Hello");
+ 		this.loggingSystem.setLogLevel("org.springframework.boot", LogLevel.DEBUG);
+ 		this.logger.debug("Hello");
+@@ -95,7 +112,7 @@ public void setLevel() throws Exception {
+ 	@Ignore("Fails on Bamboo")
+ 	public void loggingThatUsesJulIsCaptured() {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		java.util.logging.Logger julLogger = java.util.logging.Logger
+ 				.getLogger(getClass().getName());
+ 		julLogger.severe("Hello world");
+diff --git a/spring-boot/src/test/java/org/springframework/boot/logging/logback/LogbackLoggingSystemTests.java b/spring-boot/src/test/java/org/springframework/boot/logging/logback/LogbackLoggingSystemTests.java
+index e752491c17a..e0eb506388c 100644
+--- a/spring-boot/src/test/java/org/springframework/boot/logging/logback/LogbackLoggingSystemTests.java
++++ b/spring-boot/src/test/java/org/springframework/boot/logging/logback/LogbackLoggingSystemTests.java
+@@ -20,12 +20,12 @@
+ 
+ import org.apache.commons.logging.Log;
+ import org.apache.commons.logging.impl.SLF4JLogFactory;
+-import org.junit.After;
+ import org.junit.Before;
+ import org.junit.Rule;
+ import org.junit.Test;
+ import org.slf4j.ILoggerFactory;
+ import org.slf4j.impl.StaticLoggerBinder;
++import org.springframework.boot.logging.AbstractLoggingSystemTests;
+ import org.springframework.boot.logging.LogLevel;
+ import org.springframework.boot.test.OutputCapture;
+ import org.springframework.util.StringUtils;
+@@ -43,8 +43,9 @@
+  * Tests for {@link LogbackLoggingSystem}.
+  *
+  * @author Dave Syer
++ * @author Phillip Webb
+  */
+-public class LogbackLoggingSystemTests {
++public class LogbackLoggingSystemTests extends AbstractLoggingSystemTests {
+ 
+ 	@Rule
+ 	public OutputCapture output = new OutputCapture();
+@@ -57,22 +58,30 @@ public class LogbackLoggingSystemTests {
+ 	@Before
+ 	public void setup() {
+ 		this.logger = new SLF4JLogFactory().getInstance(getClass().getName());
+-		new File(tmpDir() + "/spring.log").delete();
+ 	}
+ 
+-	private String tmpDir() {
+-		String path = StringUtils.cleanPath(System.getProperty("java.io.tmpdir"));
+-		if (path.endsWith("/")) {
+-			path = path.substring(0, path.length() - 1);
+-		}
+-		return path;
++	@Test
++	public void noFile() throws Exception {
++		this.loggingSystem.beforeInitialize();
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, null);
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertFalse(new File(tmpDir() + "/spring.log").exists());
+ 	}
+ 
+-	@After
+-	public void clear() {
+-		System.clearProperty("LOG_FILE");
+-		System.clearProperty("LOG_PATH");
+-		System.clearProperty("PID");
++	@Test
++	public void withFile() throws Exception {
++		this.loggingSystem.beforeInitialize();
++		this.logger.info("Hidden");
++		this.loggingSystem.initialize(null, tmpDir() + "/spring.log");
++		this.logger.info("Hello world");
++		String output = this.output.toString().trim();
++		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
++		assertFalse("Output not hidden:\n" + output, output.contains("Hidden"));
++		assertTrue(new File(tmpDir() + "/spring.log").exists());
+ 	}
+ 
+ 	@Test
+@@ -87,31 +96,26 @@ public void testBasicConfigLocation() throws Exception {
+ 	@Test
+ 	public void testNonDefaultConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:logback-nondefault.xml");
++		this.loggingSystem.initialize("classpath:logback-nondefault.xml", tmpDir()
++				+ "/tmp.log");
+ 		this.logger.info("Hello world");
+ 		String output = this.output.toString().trim();
+ 		assertTrue("Wrong output:\n" + output, output.contains("Hello world"));
+-		assertTrue("Wrong output (not " + tmpDir() + " :\n" + output,
+-				output.contains(tmpDir() + "/tmp.log"));
++		assertTrue("Wrong output:\n" + output, output.contains(tmpDir() + "/tmp.log"));
++		assertTrue("Wrong output:\n" + output, output.endsWith("BOOTBOOT"));
+ 		assertFalse(new File(tmpDir() + "/tmp.log").exists());
+ 	}
+ 
+ 	@Test(expected = IllegalStateException.class)
+ 	public void testNonexistentConfigLocation() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize("classpath:logback-nonexistent.xml");
+-	}
+-
+-	@Test(expected = IllegalArgumentException.class)
+-	public void testNullConfigLocation() throws Exception {
+-		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize(null);
++		this.loggingSystem.initialize("classpath:logback-nonexistent.xml", null);
+ 	}
+ 
+ 	@Test
+ 	public void setLevel() throws Exception {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		this.logger.debug("Hello");
+ 		this.loggingSystem.setLogLevel("org.springframework.boot", LogLevel.DEBUG);
+ 		this.logger.debug("Hello");
+@@ -122,7 +126,7 @@ public void setLevel() throws Exception {
+ 	@Test
+ 	public void loggingThatUsesJulIsCaptured() {
+ 		this.loggingSystem.beforeInitialize();
+-		this.loggingSystem.initialize();
++		this.loggingSystem.initialize(null, null);
+ 		java.util.logging.Logger julLogger = java.util.logging.Logger
+ 				.getLogger(getClass().getName());
+ 		julLogger.info("Hello world");
+diff --git a/spring-boot/src/test/resources/log4j-nondefault.properties b/spring-boot/src/test/resources/log4j-nondefault.properties
+index 544139af915..d852ca65d81 100644
+--- a/spring-boot/src/test/resources/log4j-nondefault.properties
++++ b/spring-boot/src/test/resources/log4j-nondefault.properties
+@@ -2,8 +2,6 @@ log4j.reset=true
+ log4j.rootCategory=INFO, CONSOLE
+ 
+ PID=????
+-LOG_PATH=/tmp
+-LOG_FILE=${LOG_PATH}/spring.log
+ LOG_PATTERN=${LOG_FILE} %d{yyyy-MM-dd HH:mm:ss.SSS}] service%X{context} - ${PID} %5p [%t] --- %c{1}: %m%n
+ 
+ # CONSOLE is set to be a ConsoleAppender using a PatternLayout.
+diff --git a/spring-boot/src/test/resources/log4j2-nondefault.xml b/spring-boot/src/test/resources/log4j2-nondefault.xml
+index 53bf99dd3c9..9ab4cd276be 100644
+--- a/spring-boot/src/test/resources/log4j2-nondefault.xml
++++ b/spring-boot/src/test/resources/log4j2-nondefault.xml
+@@ -1,19 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <Configuration status="WARN">
+-    <Properties>
+-        <Property name="PID">????</Property>
+-        <Property name="LOG_PATH">/tmp</Property>
+-        <Property name="LOG_FILE">${sys:LOG_PATH}/spring.log</Property>
+-        <Property name="LOG_PATTERN">${sys:LOG_FILE} %d{yyyy-MM-dd HH:mm:ss.SSS}] service%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
+-    </Properties>
+-    <Appenders>
+-        <Console name="Console" target="SYSTEM_OUT" follow="true">
+-            <PatternLayout pattern="${LOG_PATTERN}"/>
+-        </Console>
+-    </Appenders>
+-    <Loggers>
+-        <Root level="info">
+-            <AppenderRef ref="Console"/>
+-        </Root>
+-    </Loggers>
+-</Configuration>
+\ No newline at end of file
++	<Properties>
++		<Property name="PID">????</Property>
++		<Property name="LOG_PATTERN">${sys:LOG_FILE} %d{yyyy-MM-dd HH:mm:ss.SSS}] service%X{context} - ${sys:PID} %5p [%t] --- %c{1}: %m%n</Property>
++	</Properties>
++	<Appenders>
++		<Console name="Console" target="SYSTEM_OUT" follow="true">
++			<PatternLayout pattern="${LOG_PATTERN}"/>
++		</Console>
++	</Appenders>
++	<Loggers>
++		<Root level="info">
++			<AppenderRef ref="Console"/>
++		</Root>
++	</Loggers>
++</Configuration>
+diff --git a/spring-boot/src/test/resources/logback-nondefault.xml b/spring-boot/src/test/resources/logback-nondefault.xml
+index 50447122677..42240686728 100644
+--- a/spring-boot/src/test/resources/logback-nondefault.xml
++++ b/spring-boot/src/test/resources/logback-nondefault.xml
+@@ -1,9 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <configuration>
+-	<property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}tmp.log}"/>
+ 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+ 		<encoder>
+-			<pattern>${LOG_FILE} [%t] ${PID:-????} %c{1}: %m%n</pattern>
++			<pattern>${LOG_FILE} [%t] ${PID:-????} %c{1}: %m%n BOOTBOOT</pattern>
+ 		</encoder>
+ 	</appender>
+ 	<root level="INFO">

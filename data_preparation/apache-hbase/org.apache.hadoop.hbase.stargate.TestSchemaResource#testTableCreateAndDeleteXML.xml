@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="2" failures="0" name="org.apache.hadoop.hbase.stargate.TestSchemaResource" time="684.94" errors="2" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/tmp/proj/apache-hbase-20929/apache-hbase/contrib/stargate/core"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/tmp/proj/apache-hbase-20929/apache-hbase/contrib/stargate/core"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter4959266394690618588.jar"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="surefire.test.class.path" value="/tmp/proj/apache-hbase-20929/apache-hbase/contrib/stargate/core/target/test-classes:/tmp/proj/apache-hbase-20929/apache-hbase/contrib/stargate/core/target/classes:/root/.m2/repository/com/google/protobuf/protobuf-java/2.3.0/protobuf-java-2.3.0.jar:/root/.m2/repository/com/sun/jersey/jersey-core/1.1.5.1/jersey-core-1.1.5.1.jar:/root/.m2/repository/com/sun/jersey/jersey-json/1.1.5.1/jersey-json-1.1.5.1.jar:/root/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/root/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.12/jaxb-impl-2.1.12.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.1.1/jackson-core-asl-1.1.1.jar:/root/.m2/repository/com/sun/jersey/jersey-server/1.1.5.1/jersey-server-1.1.5.1.jar:/root/.m2/repository/asm/asm/3.1/asm-3.1.jar:/root/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/root/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/root/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/root/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/root/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/root/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/root/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar:/tmp/proj/apache-hbase-20929/apache-hbase/core/target/hbase-core-0.21.0-SNAPSHOT.jar:/root/.m2/repository/commons-lang/commons-lang/2.5/commons-lang-2.5.jar:/root/.m2/repository/org/apache/thrift/thrift/0.2.0/thrift-0.2.0.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.5.8/slf4j-log4j12-1.5.8.jar:/root/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/root/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/root/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/root/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/root/.m2/repository/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.jar:/root/.m2/repository/org/jruby/jruby-complete/1.4.0/jruby-complete-1.4.0.jar:/root/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2-with-200-826/hadoop-core-0.20.2-with-200-826.jar:/root/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/root/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/root/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/root/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/root/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/root/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:/root/.m2/repository/net/java/dev/jets3t/jets3t/0.6.1/jets3t-0.6.1.jar:/root/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/root/.m2/repository/org/apache/hadoop/zookeeper/3.3.0/zookeeper-3.3.0.jar:/root/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/root/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/root/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/root/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/root/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/root/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar:/tmp/proj/apache-hbase-20929/apache-hbase/core/target/hbase-core-0.21.0-SNAPSHOT-tests.jar:/root/.m2/repository/org/apache/hadoop/hadoop-test/0.20.2-with-200-826/hadoop-test-0.20.2-with-200-826.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.15.0-72-generic"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/tmp/proj/apache-hbase-20929/apache-hbase/contrib/stargate/core/target/test-classes:/tmp/proj/apache-hbase-20929/apache-hbase/contrib/stargate/core/target/classes:/root/.m2/repository/com/google/protobuf/protobuf-java/2.3.0/protobuf-java-2.3.0.jar:/root/.m2/repository/com/sun/jersey/jersey-core/1.1.5.1/jersey-core-1.1.5.1.jar:/root/.m2/repository/com/sun/jersey/jersey-json/1.1.5.1/jersey-json-1.1.5.1.jar:/root/.m2/repository/org/codehaus/jettison/jettison/1.1/jettison-1.1.jar:/root/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.12/jaxb-impl-2.1.12.jar:/root/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.1.1/jackson-core-asl-1.1.1.jar:/root/.m2/repository/com/sun/jersey/jersey-server/1.1.5.1/jersey-server-1.1.5.1.jar:/root/.m2/repository/asm/asm/3.1/asm-3.1.jar:/root/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/root/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/root/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/root/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/root/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/root/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/root/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/root/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar:/tmp/proj/apache-hbase-20929/apache-hbase/core/target/hbase-core-0.21.0-SNAPSHOT.jar:/root/.m2/repository/commons-lang/commons-lang/2.5/commons-lang-2.5.jar:/root/.m2/repository/org/apache/thrift/thrift/0.2.0/thrift-0.2.0.jar:/root/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar:/root/.m2/repository/org/slf4j/slf4j-log4j12/1.5.8/slf4j-log4j12-1.5.8.jar:/root/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/root/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/root/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/root/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/root/.m2/repository/tomcat/jasper-runtime/5.5.23/jasper-runtime-5.5.23.jar:/root/.m2/repository/org/jruby/jruby-complete/1.4.0/jruby-complete-1.4.0.jar:/root/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2-with-200-826/hadoop-core-0.20.2-with-200-826.jar:/root/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/root/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/root/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/root/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/root/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/root/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/root/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:/root/.m2/repository/net/java/dev/jets3t/jets3t/0.6.1/jets3t-0.6.1.jar:/root/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/root/.m2/repository/org/apache/hadoop/zookeeper/3.3.0/zookeeper-3.3.0.jar:/root/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/root/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/root/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/root/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/root/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/root/.m2/repository/junit/junit/4.8.1/junit-4.8.1.jar:/tmp/proj/apache-hbase-20929/apache-hbase/core/target/hbase-core-0.21.0-SNAPSHOT-tests.jar:/root/.m2/repository/org/apache/hadoop/hadoop-test/0.20.2-with-200-826/hadoop-test-0.20.2-with-200-826.jar:"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="/tmp/surefirebooter4959266394690618588.jar /tmp/surefire27350439027254146tmp /tmp/surefire4992829621602736804tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="zookeeper.preAllocSize" value="100"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.apache.hadoop.hbase.stargate.TestSchemaResource" name="testTableCreateAndDeleteXML" time="684.904">
+    <error message="Timed out trying to locate root region because: Failed setting up proxy to /127.0.0.1:33921 after attempts=1" type="org.apache.hadoop.hbase.client.NoServerForRegionException">org.apache.hadoop.hbase.client.NoServerForRegionException: Timed out trying to locate root region because: Failed setting up proxy to /127.0.0.1:33921 after attempts=1
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRootRegion(HConnectionManager.java:1023)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:629)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:605)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegionInMeta(HConnectionManager.java:675)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:634)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:605)
+	at org.apache.hadoop.hbase.client.HTable.&lt;init&gt;(HTable.java:132)
+	at org.apache.hadoop.hbase.stargate.MiniClusterTestBase.startHBase(MiniClusterTestBase.java:134)
+	at org.apache.hadoop.hbase.stargate.MiniClusterTestBase.startMiniCluster(MiniClusterTestBase.java:192)
+	at org.apache.hadoop.hbase.stargate.MiniClusterTestBase.setUp(MiniClusterTestBase.java:228)
+	at org.apache.hadoop.hbase.stargate.TestSchemaResource.setUp(TestSchemaResource.java:56)
+	at junit.framework.TestCase.runBare(TestCase.java:132)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:59)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:115)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:350)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1021)
+</error>
+    <system-out>Starting DataNode 0 with dfs.data.dir: build/test/data/dfs/data/data1,build/test/data/dfs/data/data2
+Starting DataNode 1 with dfs.data.dir: build/test/data/dfs/data/data3,build/test/data/dfs/data/data4
+</system-out>
+  </testcase>
+  <testcase classname="org.apache.hadoop.hbase.stargate.TestSchemaResource" name="testTableCreateAndDeletePB" time="0.005">
+    <error message="Cannot lock storage build/test/data/dfs/name1. The directory is already locked." type="java.io.IOException">java.io.IOException: Cannot lock storage build/test/data/dfs/name1. The directory is already locked.
+	at org.apache.hadoop.hdfs.server.common.Storage$StorageDirectory.lock(Storage.java:510)
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.format(FSImage.java:1087)
+	at org.apache.hadoop.hdfs.server.namenode.FSImage.format(FSImage.java:1110)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.format(NameNode.java:856)
+	at org.apache.hadoop.hdfs.server.namenode.NameNode.format(NameNode.java:142)
+	at org.apache.hadoop.hdfs.MiniDFSCluster.&lt;init&gt;(MiniDFSCluster.java:265)
+	at org.apache.hadoop.hbase.stargate.MiniClusterTestBase.startDFS(MiniClusterTestBase.java:82)
+	at org.apache.hadoop.hbase.stargate.MiniClusterTestBase.startMiniCluster(MiniClusterTestBase.java:190)
+	at org.apache.hadoop.hbase.stargate.MiniClusterTestBase.setUp(MiniClusterTestBase.java:228)
+	at org.apache.hadoop.hbase.stargate.TestSchemaResource.setUp(TestSchemaResource.java:56)
+	at junit.framework.TestCase.runBare(TestCase.java:132)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:59)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:115)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:102)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:350)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1021)
+</error>
+  </testcase>
+</testsuite>

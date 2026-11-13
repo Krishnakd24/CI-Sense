@@ -1,0 +1,280 @@
+diff --git a/core/src/test/java/io/undertow/server/security/AuthenticationTestBase.java b/core/src/test/java/io/undertow/server/security/AuthenticationTestBase.java
+index 8989b73f77..4ae8665195 100644
+--- a/core/src/test/java/io/undertow/server/security/AuthenticationTestBase.java
++++ b/core/src/test/java/io/undertow/server/security/AuthenticationTestBase.java
+@@ -18,6 +18,7 @@
+ package io.undertow.server.security;
+ 
+ import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.fail;
+ import io.undertow.security.api.AuthenticationMechanism;
+ import io.undertow.security.api.AuthenticationMode;
+ import io.undertow.security.api.NotificationReceiver;
+@@ -271,6 +272,18 @@ protected static String getAuthenticatedUser(final HttpServerExchange exchange)
+         return null;
+     }
+ 
++    protected static String getAuthHeader(final HttpString prefix, final Header[] values) {
++        for (Header current : values) {
++            String currentValue = current.getValue();
++            if (currentValue.startsWith(prefix.toString())) {
++                return currentValue;
++            }
++        }
++
++        fail("Expected header not found.");
++        return null; // Unreachable
++    }
++
+     /**
+      * A simple end of chain handler to set a header and cause the call to return.
+      * <p/>
+diff --git a/core/src/test/java/io/undertow/server/security/BasicAuthenticationTestCase.java b/core/src/test/java/io/undertow/server/security/BasicAuthenticationTestCase.java
+index 287f2de5e3..6e2c18372f 100644
+--- a/core/src/test/java/io/undertow/server/security/BasicAuthenticationTestCase.java
++++ b/core/src/test/java/io/undertow/server/security/BasicAuthenticationTestCase.java
+@@ -46,9 +46,13 @@
+ @RunWith(DefaultServer.class)
+ public class BasicAuthenticationTestCase extends AuthenticationTestBase {
+ 
++    static AuthenticationMechanism getTestMechanism() {
++        return new BasicAuthenticationMechanism("Test Realm");
++    }
++
+     @Override
+     protected List<AuthenticationMechanism> getTestMechanisms() {
+-        AuthenticationMechanism mechanism = new BasicAuthenticationMechanism("Test Realm");
++        AuthenticationMechanism mechanism = getTestMechanism();
+ 
+         return Collections.singletonList(mechanism);
+     }
+@@ -56,14 +60,18 @@ protected List<AuthenticationMechanism> getTestMechanisms() {
+     @Test
+     public void testBasicSuccess() throws Exception {
+         setAuthenticationChain();
++        _testBasicSuccess();
++        assertSingleNotificationType(EventType.AUTHENTICATED);
++    }
+ 
++    static void _testBasicSuccess() throws Exception {
+         TestHttpClient client = new TestHttpClient();
+         HttpGet get = new HttpGet(DefaultServer.getDefaultServerURL());
+         HttpResponse result = client.execute(get);
+         assertEquals(401, result.getStatusLine().getStatusCode());
+         Header[] values = result.getHeaders(WWW_AUTHENTICATE.toString());
+-        assertEquals(1, values.length);
+-        assertEquals(BASIC + " realm=\"Test Realm\"", values[0].getValue());
++        String header = getAuthHeader(BASIC, values);
++        assertEquals(BASIC + " realm=\"Test Realm\"", header);
+         HttpClientUtils.readResponse(result);
+ 
+         get = new HttpGet(DefaultServer.getDefaultServerURL());
+@@ -75,20 +83,23 @@ public void testBasicSuccess() throws Exception {
+         assertEquals(1, values.length);
+         assertEquals("ResponseHandler", values[0].getValue());
+         HttpClientUtils.readResponse(result);
+-        assertSingleNotificationType(EventType.AUTHENTICATED);
+     }
+ 
+     @Test
+     public void testBadUserName() throws Exception {
+         setAuthenticationChain();
++        _testBadUserName();
++        assertSingleNotificationType(EventType.FAILED_AUTHENTICATION);
++    }
+ 
++    static void _testBadUserName() throws Exception {
+         TestHttpClient client = new TestHttpClient();
+         HttpGet get = new HttpGet(DefaultServer.getDefaultServerURL());
+         HttpResponse result = client.execute(get);
+         assertEquals(401, result.getStatusLine().getStatusCode());
+         Header[] values = result.getHeaders(WWW_AUTHENTICATE.toString());
+-        assertEquals(1, values.length);
+-        assertEquals(BASIC + " realm=\"Test Realm\"", values[0].getValue());
++        String header = getAuthHeader(BASIC, values);
++        assertEquals(BASIC + " realm=\"Test Realm\"", header);
+         HttpClientUtils.readResponse(result);
+ 
+         get = new HttpGet(DefaultServer.getDefaultServerURL());
+@@ -96,20 +107,23 @@ public void testBadUserName() throws Exception {
+         result = client.execute(get);
+         assertEquals(401, result.getStatusLine().getStatusCode());
+         HttpClientUtils.readResponse(result);
+-        assertSingleNotificationType(EventType.FAILED_AUTHENTICATION);
+     }
+ 
+     @Test
+     public void testBadPassword() throws Exception {
+         setAuthenticationChain();
++        _testBadPassword();
++        assertSingleNotificationType(EventType.FAILED_AUTHENTICATION);
++    }
+ 
++    static void _testBadPassword() throws Exception {
+         TestHttpClient client = new TestHttpClient();
+         HttpGet get = new HttpGet(DefaultServer.getDefaultServerURL());
+         HttpResponse result = client.execute(get);
+         assertEquals(401, result.getStatusLine().getStatusCode());
+         Header[] values = result.getHeaders(WWW_AUTHENTICATE.toString());
+-        assertEquals(1, values.length);
+-        assertEquals(BASIC + " realm=\"Test Realm\"", values[0].getValue());
++        String header = getAuthHeader(BASIC, values);
++        assertEquals(BASIC + " realm=\"Test Realm\"", header);
+         HttpClientUtils.readResponse(result);
+ 
+         get = new HttpGet(DefaultServer.getDefaultServerURL());
+@@ -117,7 +131,6 @@ public void testBadPassword() throws Exception {
+         result = client.execute(get);
+         assertEquals(401, result.getStatusLine().getStatusCode());
+         HttpClientUtils.readResponse(result);
+-        assertSingleNotificationType(EventType.FAILED_AUTHENTICATION);
+     }
+ 
+ }
+diff --git a/core/src/test/java/io/undertow/server/security/SpnegoAuthenticationTestCase.java b/core/src/test/java/io/undertow/server/security/SpnegoAuthenticationTestCase.java
+index e4906d7935..f263382e35 100644
+--- a/core/src/test/java/io/undertow/server/security/SpnegoAuthenticationTestCase.java
++++ b/core/src/test/java/io/undertow/server/security/SpnegoAuthenticationTestCase.java
+@@ -18,21 +18,13 @@
+ 
+ package io.undertow.server.security;
+ 
++import static io.undertow.server.security.KerberosKDCUtil.login;
+ import static io.undertow.util.Headers.AUTHORIZATION;
+ import static io.undertow.util.Headers.NEGOTIATE;
+ import static io.undertow.util.Headers.WWW_AUTHENTICATE;
+ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertTrue;
+ import static org.junit.Assert.fail;
+-import static io.undertow.server.security.KerberosKDCUtil.login;
+-
+-import java.security.GeneralSecurityException;
+-import java.security.PrivilegedExceptionAction;
+-import java.util.Collections;
+-import java.util.List;
+-
+-import javax.security.auth.Subject;
+-
+ import io.undertow.security.api.AuthenticationMechanism;
+ import io.undertow.security.api.GSSAPIServerSubjectFactory;
+ import io.undertow.security.api.SecurityNotification.EventType;
+@@ -42,6 +34,13 @@
+ import io.undertow.testutils.TestHttpClient;
+ import io.undertow.util.FlexBase64;
+ 
++import java.security.GeneralSecurityException;
++import java.security.PrivilegedExceptionAction;
++import java.util.Collections;
++import java.util.List;
++
++import javax.security.auth.Subject;
++
+ import org.apache.http.Header;
+ import org.apache.http.HttpResponse;
+ import org.apache.http.client.methods.HttpGet;
+@@ -83,7 +82,7 @@ public static void stopServers() {
+     }
+ 
+     @Test
+-    public void testBasicSuccess() throws Exception {
++    public void testSpnegoSuccess() throws Exception {
+         setAuthenticationChain();
+ 
+         final TestHttpClient client = new TestHttpClient();
+@@ -91,8 +90,8 @@ public void testBasicSuccess() throws Exception {
+         HttpResponse result = client.execute(get);
+         assertEquals(401, result.getStatusLine().getStatusCode());
+         Header[] values = result.getHeaders(WWW_AUTHENTICATE.toString());
+-        assertEquals(1, values.length);
+-        assertEquals(NEGOTIATE.toString(), values[0].getValue());
++        String header = getAuthHeader(NEGOTIATE, values);
++        assertEquals(NEGOTIATE.toString(), header);
+         HttpClientUtils.readResponse(result);
+ 
+         Subject clientSubject = login("jduke", "theduke".toCharArray());
+@@ -119,8 +118,7 @@ public Void run() throws Exception {
+ 
+                         Header[] headers = result.getHeaders(WWW_AUTHENTICATE.toString());
+                         if (headers.length > 0) {
+-                            String header = headers[0].getValue();
+-                            assertTrue("Negotiate header", header.startsWith(NEGOTIATE.toString() + " "));
++                            String header = getAuthHeader(NEGOTIATE, headers);
+ 
+                             byte[] headerBytes = header.getBytes("UTF-8");
+                             token = FlexBase64.decode(headerBytes, NEGOTIATE.toString().length() + 1, headerBytes.length).array();
+diff --git a/core/src/test/java/io/undertow/server/security/SpnegoBasicAuthenticationTestCase.java b/core/src/test/java/io/undertow/server/security/SpnegoBasicAuthenticationTestCase.java
+new file mode 100644
+index 0000000000..2925947d61
+--- /dev/null
++++ b/core/src/test/java/io/undertow/server/security/SpnegoBasicAuthenticationTestCase.java
+@@ -0,0 +1,70 @@
++/*
++ * JBoss, Home of Professional Open Source.
++ * Copyright 2013 Red Hat, Inc., and individual contributors
++ * as indicated by the @author tags.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package io.undertow.server.security;
++
++import static io.undertow.server.security.BasicAuthenticationTestCase._testBadPassword;
++import static io.undertow.server.security.BasicAuthenticationTestCase._testBadUserName;
++import static io.undertow.server.security.BasicAuthenticationTestCase._testBasicSuccess;
++import io.undertow.security.api.AuthenticationMechanism;
++import io.undertow.security.api.SecurityNotification.EventType;
++import io.undertow.testutils.DefaultServer;
++
++import java.util.ArrayList;
++import java.util.List;
++
++import org.junit.Test;
++import org.junit.runner.RunWith;
++
++/**
++ * A test case to test the SPNEGO authentication mechanism with a fallback to BASIC authentication.
++ *
++ * @author <a href="mailto:darran.lofthouse@jboss.com">Darran Lofthouse</a>
++ */
++@RunWith(DefaultServer.class)
++public class SpnegoBasicAuthenticationTestCase extends SpnegoAuthenticationTestCase {
++
++    @Override
++    protected List<AuthenticationMechanism> getTestMechanisms() {
++        ArrayList<AuthenticationMechanism> mechanisms = new ArrayList<AuthenticationMechanism>(super.getTestMechanisms());
++        mechanisms.add(BasicAuthenticationTestCase.getTestMechanism());
++
++        return mechanisms;
++    }
++
++    @Test
++    public void testBasicSuccess() throws Exception {
++        setAuthenticationChain();
++        _testBasicSuccess();
++        assertSingleNotificationType(EventType.AUTHENTICATED);
++    }
++
++    @Test
++    public void testBadUserName() throws Exception {
++        setAuthenticationChain();
++        _testBadUserName();
++        assertSingleNotificationType(EventType.FAILED_AUTHENTICATION);
++    }
++
++    @Test
++    public void testBadPassword() throws Exception {
++        setAuthenticationChain();
++        _testBadPassword();
++        assertSingleNotificationType(EventType.FAILED_AUTHENTICATION);
++    }
++
++}

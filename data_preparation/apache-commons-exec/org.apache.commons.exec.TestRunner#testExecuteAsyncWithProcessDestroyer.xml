@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="55" failures="1" name="org.apache.commons.exec.TestRunner" time="27.33" errors="0" skipped="0">
+  <properties>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="env.PWD" value="/working/proj/apache-commons-exec-536/apache-commons-exec"/>
+    <property name="env.LANG" value="C.UTF-8"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="user.name" value="root"/>
+    <property name="env._" value="/usr/bin/nohup"/>
+    <property name="maven.build.version" value="Apache Maven 3.6.0"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="env.PATH" value="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"/>
+    <property name="user.language" value="en"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="user.timezone" value=""/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="env.SHLVL" value="1"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="env.TERM" value="vt220"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="user.home" value="/root"/>
+    <property name="env.OLDPWD" value="/working/proj/apache-commons-exec-536/apache-commons-exec"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="env.MAVEN_CMD_LINE_ARGS" value=" -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="maven.version" value="3.6.0"/>
+    <property name="env.INVOCATION_ID" value="d1702dd306af45bfb6c01e2aa0c71218"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="surefire.test.class.path" value="/working/proj/apache-commons-exec-536/apache-commons-exec/target/test-classes:/working/proj/apache-commons-exec-536/apache-commons-exec/target/classes:/root/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="env.JOURNAL_STREAM" value="9:17114"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/apache-commons-exec-536/apache-commons-exec"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="user.dir" value="/working/proj/apache-commons-exec-536/apache-commons-exec"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="basedir" value="/working/proj/apache-commons-exec-536/apache-commons-exec"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="env.MAVEN_PROJECTBASEDIR" value="/working/proj/apache-commons-exec-536/apache-commons-exec"/>
+  </properties>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testExecutableZeroLengthString" time="0.003"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testExecutableWhitespaceString" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testNullExecutable" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddNullArgument" time="0.011"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentWithSpace" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentWithQuote" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentWithQuotesAround" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentWithSingleQuote" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentWithBothQuotes" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentsWithQuotes" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentsWithQuotesAndSpaces" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentsArray" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgumentsArrayNull" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testParseWithQuotes" time="0.006"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testParseWithUnevenQuotes" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testParseWithNull" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testParseWithOnlyWhitespace" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testComplexAddArgument" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testComplexAddArguments1" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testComplexAddArguments2" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testCommandLineParsingWithExpansion" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testExecutable" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testParse" time="0"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArgument" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.CommandLineTest" name="testAddArguments" time="0"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteAsyncWithProcessDestroyer" time="2.107">
+    <failure type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at org.apache.commons.exec.DefaultExecutorTest.testExecuteAsyncWithProcessDestroyer(DefaultExecutorTest.java:324)
+</failure>
+  </testcase>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecute" time="0.002"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithWorkingDirectory" time="0.002"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithInvalidWorkingDirectory" time="0"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithError" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithArg" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithEnv" time="0.007"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteAsync" time="2.001"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteAsyncWithError" time="2.001"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteAsyncWithTimelyUserTermination" time="2.002"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteAsyncWithTooLateUserTermination" time="6"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWatchdog" time="10.012"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteNonExistingApplication" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteAsyncWithNonExistingApplication" time="2.001"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteStability" time="1.085"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithCustomExitValue1" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithCustomExitValue2" time="0.007"/>
+  <testcase classname="org.apache.commons.exec.DefaultExecutorTest" name="testExecuteWithProcessDestroyer" time="0.002"/>
+  <testcase classname="org.apache.commons.exec.environment.EnvironmentUtilTest" name="testGetProcEnvironment" time="0.003"/>
+  <testcase classname="org.apache.commons.exec.environment.EnvironmentUtilTest" name="testToStrings" time="0"/>
+  <testcase classname="org.apache.commons.exec.util.MapUtilTest" name="testCopyMap" time="0"/>
+  <testcase classname="org.apache.commons.exec.util.MapUtilTest" name="testMergeMap" time="0"/>
+  <testcase classname="org.apache.commons.exec.util.MapUtilTest" name="testPrefixMap" time="0"/>
+  <testcase classname="org.apache.commons.exec.TestUtilTest" name="testAssertArrayEquals" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.TestUtilTest" name="testAssertArrayNotEquals" time="0"/>
+  <testcase classname="org.apache.commons.exec.TestUtilTest" name="testAssertArrayNotOrderEquals" time="0"/>
+  <testcase classname="org.apache.commons.exec.TestUtilTest" name="testAssertArrayEqualsOrderNotSignificant" time="0"/>
+  <testcase classname="org.apache.commons.exec.TestUtilTest" name="testAssertArrayEqualsNullNull" time="0"/>
+  <testcase classname="org.apache.commons.exec.TestUtilTest" name="testAssertArrayEqualsActualNull" time="0.001"/>
+  <testcase classname="org.apache.commons.exec.TestUtilTest" name="testAssertArrayEqualsExpectedNull" time="0"/>
+</testsuite>

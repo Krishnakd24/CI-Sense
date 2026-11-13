@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.boot.gradle.SpringLoadedTests" time="11.709" tests="2" errors="2" skipped="0" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/spring-projects-spring-boot-146/spring-projects-spring-boot"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/spring-projects-spring-boot-146/spring-projects-spring-boot"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="defaultJvmArgsArePreservedWhenLoadedAgentIsConfigured" classname="org.springframework.boot.gradle.SpringLoadedTests" time="1.312">
+    <error message="Could not execute build using Gradle distribution &apos;http://services.gradle.org/distributions/gradle-1.12-bin.zip&apos;." type="org.gradle.tooling.BuildException"><![CDATA[org.gradle.tooling.BuildException: Could not execute build using Gradle distribution 'http://services.gradle.org/distributions/gradle-1.12-bin.zip'.
+	at org.gradle.tooling.internal.consumer.ResultHandlerAdapter.onFailure(ResultHandlerAdapter.java:55)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:71)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+	at org.gradle.tooling.internal.consumer.BlockingResultHandler.getResult(BlockingResultHandler.java:46)
+	at org.gradle.tooling.internal.consumer.DefaultBuildLauncher.run(DefaultBuildLauncher.java:100)
+	at org.springframework.boot.gradle.SpringLoadedTests.defaultJvmArgsArePreservedWhenLoadedAgentIsConfigured(SpringLoadedTests.java:54)
+Caused by: org.gradle.internal.exceptions.LocationAwareException: Could not resolve all dependencies for configuration ':compile'.
+	at org.gradle.initialization.DefaultExceptionAnalyser.transform(DefaultExceptionAnalyser.java:77)
+	at org.gradle.initialization.MultipleBuildFailuresExceptionAnalyser.transform(MultipleBuildFailuresExceptionAnalyser.java:47)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:115)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:81)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:76)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:31)
+	at org.gradle.tooling.internal.provider.ConfiguringBuildAction.run(ConfiguringBuildAction.java:150)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:26)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:29)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:53)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:30)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:106)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:93)
+	at org.gradle.tooling.internal.provider.DefaultConnection.getModel(DefaultConnection.java:140)
+	at org.gradle.tooling.internal.consumer.connection.ModelBuilderBackedConsumerConnection.run(ModelBuilderBackedConsumerConnection.java:40)
+	at org.gradle.tooling.internal.consumer.ModelProvider.provide(ModelProvider.java:77)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection$1.run(LazyConnection.java:94)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:102)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for configuration ':compile'.
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultLenientConfiguration.rethrowFailure(DefaultLenientConfiguration.java:52)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultResolvedConfiguration.rethrowFailure(DefaultResolvedConfiguration.java:36)
+	at org.gradle.api.internal.artifacts.ivyservice.SelfResolvingDependencyResolver$FilesAggregatingResolvedConfiguration.rethrowFailure(SelfResolvingDependencyResolver.java:110)
+	at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingArtifactDependencyResolver$ErrorHandlingResolvedConfiguration.rethrowFailure(ErrorHandlingArtifactDependencyResolver.java:180)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.getFiles(DefaultConfiguration.java:465)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getFiles(DefaultConfiguration.java:202)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getFiles(Unknown Source)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:191)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:103)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:182)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:98)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.CompositeFileCollection$1.resolve(CompositeFileCollection.java:88)
+	at org.gradle.api.internal.file.CompositeFileCollection.getSourceCollections(CompositeFileCollection.java:143)
+	at org.gradle.api.internal.file.CompositeFileTree.getSourceCollections(CompositeFileTree.java:30)
+	at org.gradle.api.internal.file.CompositeFileCollection.getFiles(CompositeFileCollection.java:38)
+	at org.gradle.api.internal.changedetection.state.DefaultFileCollectionSnapshotter.snapshot(DefaultFileCollectionSnapshotter.java:48)
+	at org.gradle.api.internal.changedetection.rules.InputFilesStateChangeRule.create(InputFilesStateChangeRule.java:33)
+	at org.gradle.api.internal.changedetection.rules.TaskUpToDateState.<init>(TaskUpToDateState.java:46)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.getStates(DefaultTaskArtifactStateRepository.java:126)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.isUpToDate(DefaultTaskArtifactStateRepository.java:69)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:58)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:42)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:53)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+	at org.gradle.api.internal.AbstractTask.executeWithoutThrowingTaskFailure(AbstractTask.java:289)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.executeTask(AbstractTaskPlanExecutor.java:79)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.processTask(AbstractTaskPlanExecutor.java:63)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.run(AbstractTaskPlanExecutor.java:51)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor.process(DefaultTaskPlanExecutor.java:23)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter.execute(DefaultTaskGraphExecuter.java:86)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:29)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.access$200(DefaultBuildExecuter.java:23)
+	at org.gradle.execution.DefaultBuildExecuter$2.proceed(DefaultBuildExecuter.java:67)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:32)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:54)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:166)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:113)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:81)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:76)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:31)
+	at org.gradle.tooling.internal.provider.ConfiguringBuildAction.run(ConfiguringBuildAction.java:150)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:26)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:29)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:53)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:30)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:106)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:93)
+	at org.gradle.tooling.internal.provider.DefaultConnection.getModel(DefaultConnection.java:140)
+	at org.gradle.tooling.internal.consumer.connection.ModelBuilderBackedConsumerConnection.run(ModelBuilderBackedConsumerConnection.java:40)
+	at org.gradle.tooling.internal.consumer.ModelProvider.provide(ModelProvider.java:77)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection$1.run(LazyConnection.java:94)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:102)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+Caused by: org.gradle.api.internal.artifacts.ivyservice.ModuleVersionResolveException: Could not resolve org.springframework.boot:spring-boot-autoconfigure:1.2.0.BUILD-SNAPSHOT.
+Required by:
+    :spring-loaded-jvm-args:unspecified > org.springframework.boot:spring-boot-starter:1.2.0.BUILD-SNAPSHOT
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.resolve(RepositoryChainDependencyResolver.java:72)
+	at org.gradle.api.internal.artifacts.ivyservice.clientmodule.ClientModuleResolver.resolve(ClientModuleResolver.java:35)
+	at org.gradle.api.internal.artifacts.ivyservice.projectmodule.ProjectDependencyResolver.resolve(ProjectDependencyResolver.java:49)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.LazyDependencyToModuleResolver$AbstractVersionResolveResult.resolve(LazyDependencyToModuleResolver.java:69)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.resolve(DependencyGraphBuilder.java:655)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.getMetaData(DependencyGraphBuilder.java:666)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.calculateTargetConfigurations(DependencyGraphBuilder.java:340)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.attachToTargetConfigurations(DependencyGraphBuilder.java:314)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.traverseGraph(DependencyGraphBuilder.java:130)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.resolve(DependencyGraphBuilder.java:70)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:116)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:82)
+	at org.gradle.internal.Transformers$3.transform(Transformers.java:131)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:61)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:39)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver.resolve(DefaultDependencyResolver.java:82)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver$1.run(CacheLockingArtifactDependencyResolver.java:42)
+	at org.gradle.internal.Factories$1.create(Factories.java:22)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:187)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:175)
+	at org.gradle.cache.internal.DefaultPersistentDirectoryStore.useCache(DefaultPersistentDirectoryStore.java:106)
+	at org.gradle.cache.internal.DefaultCacheFactory$ReferenceTrackingCache.useCache(DefaultCacheFactory.java:193)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultCacheLockingManager.useCache(DefaultCacheLockingManager.java:65)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver.resolve(CacheLockingArtifactDependencyResolver.java:40)
+	at org.gradle.api.internal.artifacts.ivyservice.SelfResolvingDependencyResolver.resolve(SelfResolvingDependencyResolver.java:45)
+	at org.gradle.api.internal.artifacts.ivyservice.ShortcircuitEmptyConfigsArtifactDependencyResolver.resolve(ShortcircuitEmptyConfigsArtifactDependencyResolver.java:55)
+	at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingArtifactDependencyResolver.resolve(ErrorHandlingArtifactDependencyResolver.java:47)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultConfigurationResolver.resolve(DefaultConfigurationResolver.java:46)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveNow(DefaultConfiguration.java:240)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getResolvedConfiguration(DefaultConfiguration.java:230)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getResolvedConfiguration(Unknown Source)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.getFiles(DefaultConfiguration.java:463)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getFiles(DefaultConfiguration.java:202)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getFiles(Unknown Source)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:191)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:103)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:182)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:98)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.CompositeFileCollection$1.resolve(CompositeFileCollection.java:88)
+	at org.gradle.api.internal.file.CompositeFileCollection.getSourceCollections(CompositeFileCollection.java:143)
+	at org.gradle.api.internal.file.CompositeFileTree.getSourceCollections(CompositeFileTree.java:30)
+	at org.gradle.api.internal.file.CompositeFileCollection.getFiles(CompositeFileCollection.java:38)
+	at org.gradle.api.internal.changedetection.state.DefaultFileCollectionSnapshotter.snapshot(DefaultFileCollectionSnapshotter.java:48)
+	at org.gradle.api.internal.changedetection.rules.InputFilesStateChangeRule.create(InputFilesStateChangeRule.java:33)
+	at org.gradle.api.internal.changedetection.rules.TaskUpToDateState.<init>(TaskUpToDateState.java:46)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.getStates(DefaultTaskArtifactStateRepository.java:126)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.isUpToDate(DefaultTaskArtifactStateRepository.java:69)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:58)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:42)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:53)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+	at org.gradle.api.internal.AbstractTask.executeWithoutThrowingTaskFailure(AbstractTask.java:289)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.executeTask(AbstractTaskPlanExecutor.java:79)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.processTask(AbstractTaskPlanExecutor.java:63)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.run(AbstractTaskPlanExecutor.java:51)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor.process(DefaultTaskPlanExecutor.java:23)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter.execute(DefaultTaskGraphExecuter.java:86)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:29)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.access$200(DefaultBuildExecuter.java:23)
+	at org.gradle.execution.DefaultBuildExecuter$2.proceed(DefaultBuildExecuter.java:67)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:32)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:54)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:166)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:113)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:81)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:76)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:31)
+	at org.gradle.tooling.internal.provider.ConfiguringBuildAction.run(ConfiguringBuildAction.java:150)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:26)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:29)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:53)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:30)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:106)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:93)
+	at org.gradle.tooling.internal.provider.DefaultConnection.getModel(DefaultConnection.java:140)
+	at org.gradle.tooling.internal.consumer.connection.ModelBuilderBackedConsumerConnection.run(ModelBuilderBackedConsumerConnection.java:40)
+	at org.gradle.tooling.internal.consumer.ModelProvider.provide(ModelProvider.java:77)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection$1.run(LazyConnection.java:94)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:102)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+Caused by: org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.MetaDataParseException: Could not parse POM /root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.2.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-1.2.0.BUILD-SNAPSHOT.pom
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.AbstractModuleDescriptorParser.parseDescriptor(AbstractModuleDescriptorParser.java:48)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.AbstractModuleDescriptorParser.parseMetaData(AbstractModuleDescriptorParser.java:39)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.getArtifactMetadata(ExternalResourceResolver.java:214)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.findMetaDataArtifact(ExternalResourceResolver.java:195)
+	at org.gradle.api.internal.artifacts.repositories.resolver.MavenLocalResolver.findMetaDataArtifact(MavenLocalResolver.java:41)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.resolveStaticDependency(ExternalResourceResolver.java:165)
+	at org.gradle.api.internal.artifacts.repositories.resolver.MavenResolver.getDependency(MavenResolver.java:83)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.LocalModuleVersionRepository.getLocalDependency(LocalModuleVersionRepository.java:44)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.CachedRepository.getLocalDependency(CachedRepository.java:67)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$RepositoryResolveState$LocalModuleAccess.getDependency(RepositoryChainDependencyResolver.java:206)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$StaticVersionRepositoryResolveState.process(RepositoryChainDependencyResolver.java:228)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$RepositoryResolveState.resolve(RepositoryChainDependencyResolver.java:179)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.findLatestModule(RepositoryChainDependencyResolver.java:110)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.findLatestModule(RepositoryChainDependencyResolver.java:86)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.resolve(RepositoryChainDependencyResolver.java:61)
+	at org.gradle.api.internal.artifacts.ivyservice.clientmodule.ClientModuleResolver.resolve(ClientModuleResolver.java:35)
+	at org.gradle.api.internal.artifacts.ivyservice.projectmodule.ProjectDependencyResolver.resolve(ProjectDependencyResolver.java:49)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.LazyDependencyToModuleResolver$AbstractVersionResolveResult.resolve(LazyDependencyToModuleResolver.java:69)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.resolve(DependencyGraphBuilder.java:655)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.getMetaData(DependencyGraphBuilder.java:666)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.calculateTargetConfigurations(DependencyGraphBuilder.java:340)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.attachToTargetConfigurations(DependencyGraphBuilder.java:314)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.traverseGraph(DependencyGraphBuilder.java:130)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.resolve(DependencyGraphBuilder.java:70)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:116)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:82)
+	at org.gradle.internal.Transformers$3.transform(Transformers.java:131)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:61)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:39)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver.resolve(DefaultDependencyResolver.java:82)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver$1.run(CacheLockingArtifactDependencyResolver.java:42)
+	at org.gradle.internal.Factories$1.create(Factories.java:22)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:187)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:175)
+	at org.gradle.cache.internal.DefaultPersistentDirectoryStore.useCache(DefaultPersistentDirectoryStore.java:106)
+	at org.gradle.cache.internal.DefaultCacheFactory$ReferenceTrackingCache.useCache(DefaultCacheFactory.java:193)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultCacheLockingManager.useCache(DefaultCacheLockingManager.java:65)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver.resolve(CacheLockingArtifactDependencyResolver.java:40)
+	at org.gradle.api.internal.artifacts.ivyservice.SelfResolvingDependencyResolver.resolve(SelfResolvingDependencyResolver.java:45)
+	at org.gradle.api.internal.artifacts.ivyservice.ShortcircuitEmptyConfigsArtifactDependencyResolver.resolve(ShortcircuitEmptyConfigsArtifactDependencyResolver.java:55)
+	at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingArtifactDependencyResolver.resolve(ErrorHandlingArtifactDependencyResolver.java:47)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultConfigurationResolver.resolve(DefaultConfigurationResolver.java:46)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveNow(DefaultConfiguration.java:240)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getResolvedConfiguration(DefaultConfiguration.java:230)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getResolvedConfiguration(Unknown Source)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.getFiles(DefaultConfiguration.java:463)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getFiles(DefaultConfiguration.java:202)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getFiles(Unknown Source)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:191)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:103)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:182)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:98)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.CompositeFileCollection$1.resolve(CompositeFileCollection.java:88)
+	at org.gradle.api.internal.file.CompositeFileCollection.getSourceCollections(CompositeFileCollection.java:143)
+	at org.gradle.api.internal.file.CompositeFileTree.getSourceCollections(CompositeFileTree.java:30)
+	at org.gradle.api.internal.file.CompositeFileCollection.getFiles(CompositeFileCollection.java:38)
+	at org.gradle.api.internal.changedetection.state.DefaultFileCollectionSnapshotter.snapshot(DefaultFileCollectionSnapshotter.java:48)
+	at org.gradle.api.internal.changedetection.rules.InputFilesStateChangeRule.create(InputFilesStateChangeRule.java:33)
+	at org.gradle.api.internal.changedetection.rules.TaskUpToDateState.<init>(TaskUpToDateState.java:46)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.getStates(DefaultTaskArtifactStateRepository.java:126)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.isUpToDate(DefaultTaskArtifactStateRepository.java:69)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:58)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:42)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:53)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+	at org.gradle.api.internal.AbstractTask.executeWithoutThrowingTaskFailure(AbstractTask.java:289)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.executeTask(AbstractTaskPlanExecutor.java:79)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.processTask(AbstractTaskPlanExecutor.java:63)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.run(AbstractTaskPlanExecutor.java:51)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor.process(DefaultTaskPlanExecutor.java:23)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter.execute(DefaultTaskGraphExecuter.java:86)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:29)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.access$200(DefaultBuildExecuter.java:23)
+	at org.gradle.execution.DefaultBuildExecuter$2.proceed(DefaultBuildExecuter.java:67)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:32)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:54)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:166)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:113)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:81)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:76)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:31)
+	at org.gradle.tooling.internal.provider.ConfiguringBuildAction.run(ConfiguringBuildAction.java:150)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:26)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:29)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:53)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:30)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:106)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:93)
+	at org.gradle.tooling.internal.provider.DefaultConnection.getModel(DefaultConnection.java:140)
+	at org.gradle.tooling.internal.consumer.connection.ModelBuilderBackedConsumerConnection.run(ModelBuilderBackedConsumerConnection.java:40)
+	at org.gradle.tooling.internal.consumer.ModelProvider.provide(ModelProvider.java:77)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection$1.run(LazyConnection.java:94)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:102)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+Caused by: org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.UnresolvedDependencyVersionException: Unable to resolve version for dependency 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar'
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorBuilder.determineVersion(GradlePomModuleDescriptorBuilder.java:326)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorBuilder.addDependency(GradlePomModuleDescriptorBuilder.java:246)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorParser.doParsePom(GradlePomModuleDescriptorParser.java:136)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorParser.doParseDescriptor(GradlePomModuleDescriptorParser.java:63)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.AbstractModuleDescriptorParser.parseDescriptor(AbstractModuleDescriptorParser.java:44)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.AbstractModuleDescriptorParser.parseMetaData(AbstractModuleDescriptorParser.java:39)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.getArtifactMetadata(ExternalResourceResolver.java:214)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.findMetaDataArtifact(ExternalResourceResolver.java:195)
+	at org.gradle.api.internal.artifacts.repositories.resolver.MavenLocalResolver.findMetaDataArtifact(MavenLocalResolver.java:41)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.resolveStaticDependency(ExternalResourceResolver.java:165)
+	at org.gradle.api.internal.artifacts.repositories.resolver.MavenResolver.getDependency(MavenResolver.java:83)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.LocalModuleVersionRepository.getLocalDependency(LocalModuleVersionRepository.java:44)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.CachedRepository.getLocalDependency(CachedRepository.java:67)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$RepositoryResolveState$LocalModuleAccess.getDependency(RepositoryChainDependencyResolver.java:206)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$StaticVersionRepositoryResolveState.process(RepositoryChainDependencyResolver.java:228)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$RepositoryResolveState.resolve(RepositoryChainDependencyResolver.java:179)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.findLatestModule(RepositoryChainDependencyResolver.java:110)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.findLatestModule(RepositoryChainDependencyResolver.java:86)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.resolve(RepositoryChainDependencyResolver.java:61)
+	at org.gradle.api.internal.artifacts.ivyservice.clientmodule.ClientModuleResolver.resolve(ClientModuleResolver.java:35)
+	at org.gradle.api.internal.artifacts.ivyservice.projectmodule.ProjectDependencyResolver.resolve(ProjectDependencyResolver.java:49)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.LazyDependencyToModuleResolver$AbstractVersionResolveResult.resolve(LazyDependencyToModuleResolver.java:69)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.resolve(DependencyGraphBuilder.java:655)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.getMetaData(DependencyGraphBuilder.java:666)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.calculateTargetConfigurations(DependencyGraphBuilder.java:340)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.attachToTargetConfigurations(DependencyGraphBuilder.java:314)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.traverseGraph(DependencyGraphBuilder.java:130)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.resolve(DependencyGraphBuilder.java:70)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:116)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:82)
+	at org.gradle.internal.Transformers$3.transform(Transformers.java:131)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:61)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:39)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver.resolve(DefaultDependencyResolver.java:82)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver$1.run(CacheLockingArtifactDependencyResolver.java:42)
+	at org.gradle.internal.Factories$1.create(Factories.java:22)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:187)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:175)
+	at org.gradle.cache.internal.DefaultPersistentDirectoryStore.useCache(DefaultPersistentDirectoryStore.java:106)
+	at org.gradle.cache.internal.DefaultCacheFactory$ReferenceTrackingCache.useCache(DefaultCacheFactory.java:193)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultCacheLockingManager.useCache(DefaultCacheLockingManager.java:65)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver.resolve(CacheLockingArtifactDependencyResolver.java:40)
+	at org.gradle.api.internal.artifacts.ivyservice.SelfResolvingDependencyResolver.resolve(SelfResolvingDependencyResolver.java:45)
+	at org.gradle.api.internal.artifacts.ivyservice.ShortcircuitEmptyConfigsArtifactDependencyResolver.resolve(ShortcircuitEmptyConfigsArtifactDependencyResolver.java:55)
+	at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingArtifactDependencyResolver.resolve(ErrorHandlingArtifactDependencyResolver.java:47)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultConfigurationResolver.resolve(DefaultConfigurationResolver.java:46)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveNow(DefaultConfiguration.java:240)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getResolvedConfiguration(DefaultConfiguration.java:230)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getResolvedConfiguration(Unknown Source)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.getFiles(DefaultConfiguration.java:463)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getFiles(DefaultConfiguration.java:202)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getFiles(Unknown Source)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:191)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:103)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:182)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:98)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.CompositeFileCollection$1.resolve(CompositeFileCollection.java:88)
+	at org.gradle.api.internal.file.CompositeFileCollection.getSourceCollections(CompositeFileCollection.java:143)
+	at org.gradle.api.internal.file.CompositeFileTree.getSourceCollections(CompositeFileTree.java:30)
+	at org.gradle.api.internal.file.CompositeFileCollection.getFiles(CompositeFileCollection.java:38)
+	at org.gradle.api.internal.changedetection.state.DefaultFileCollectionSnapshotter.snapshot(DefaultFileCollectionSnapshotter.java:48)
+	at org.gradle.api.internal.changedetection.rules.InputFilesStateChangeRule.create(InputFilesStateChangeRule.java:33)
+	at org.gradle.api.internal.changedetection.rules.TaskUpToDateState.<init>(TaskUpToDateState.java:46)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.getStates(DefaultTaskArtifactStateRepository.java:126)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.isUpToDate(DefaultTaskArtifactStateRepository.java:69)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:58)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:42)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:53)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+	at org.gradle.api.internal.AbstractTask.executeWithoutThrowingTaskFailure(AbstractTask.java:289)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.executeTask(AbstractTaskPlanExecutor.java:79)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.processTask(AbstractTaskPlanExecutor.java:63)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.run(AbstractTaskPlanExecutor.java:51)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor.process(DefaultTaskPlanExecutor.java:23)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter.execute(DefaultTaskGraphExecuter.java:86)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:29)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.access$200(DefaultBuildExecuter.java:23)
+	at org.gradle.execution.DefaultBuildExecuter$2.proceed(DefaultBuildExecuter.java:67)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:32)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:54)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:166)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:113)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:81)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:76)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:31)
+	at org.gradle.tooling.internal.provider.ConfiguringBuildAction.run(ConfiguringBuildAction.java:150)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:26)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:29)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:53)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:30)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:106)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:93)
+	at org.gradle.tooling.internal.provider.DefaultConnection.getModel(DefaultConnection.java:140)
+	at org.gradle.tooling.internal.consumer.connection.ModelBuilderBackedConsumerConnection.run(ModelBuilderBackedConsumerConnection.java:40)
+	at org.gradle.tooling.internal.consumer.ModelProvider.provide(ModelProvider.java:77)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection$1.run(LazyConnection.java:94)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:102)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+]]></error>
+    <system-out><![CDATA[Tooling API is using target Gradle version: 1.12.
+:compileJava
+
+BUILD FAILED
+
+Total time: 1.331 secs
+]]></system-out>
+    <system-err><![CDATA[
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not resolve all dependencies for configuration ':compile'.
+> Could not resolve org.springframework.boot:spring-boot-autoconfigure:1.2.0.BUILD-SNAPSHOT.
+  Required by:
+      :spring-loaded-jvm-args:unspecified > org.springframework.boot:spring-boot-starter:1.2.0.BUILD-SNAPSHOT
+   > Could not parse POM /root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.2.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-1.2.0.BUILD-SNAPSHOT.pom
+      > Unable to resolve version for dependency 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar'
+
+* Try:
+Run with --info or --debug option to get more log output.
+
+* Exception is:
+org.gradle.api.artifacts.ResolveException: Could not resolve all dependencies for configuration ':compile'.
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultLenientConfiguration.rethrowFailure(DefaultLenientConfiguration.java:52)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultResolvedConfiguration.rethrowFailure(DefaultResolvedConfiguration.java:36)
+	at org.gradle.api.internal.artifacts.ivyservice.SelfResolvingDependencyResolver$FilesAggregatingResolvedConfiguration.rethrowFailure(SelfResolvingDependencyResolver.java:110)
+	at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingArtifactDependencyResolver$ErrorHandlingResolvedConfiguration.rethrowFailure(ErrorHandlingArtifactDependencyResolver.java:180)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.getFiles(DefaultConfiguration.java:465)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getFiles(DefaultConfiguration.java:202)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getFiles(Unknown Source)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:191)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:103)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext$FileTreeConverter.convertInto(DefaultFileCollectionResolveContext.java:182)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.doResolve(DefaultFileCollectionResolveContext.java:98)
+	at org.gradle.api.internal.file.collections.DefaultFileCollectionResolveContext.resolveAsFileTrees(DefaultFileCollectionResolveContext.java:75)
+	at org.gradle.api.internal.file.CompositeFileCollection$1.resolve(CompositeFileCollection.java:88)
+	at org.gradle.api.internal.file.CompositeFileCollection.getSourceCollections(CompositeFileCollection.java:143)
+	at org.gradle.api.internal.file.CompositeFileTree.getSourceCollections(CompositeFileTree.java:30)
+	at org.gradle.api.internal.file.CompositeFileCollection.getFiles(CompositeFileCollection.java:38)
+	at org.gradle.api.internal.changedetection.state.DefaultFileCollectionSnapshotter.snapshot(DefaultFileCollectionSnapshotter.java:48)
+	at org.gradle.api.internal.changedetection.rules.InputFilesStateChangeRule.create(InputFilesStateChangeRule.java:33)
+	at org.gradle.api.internal.changedetection.rules.TaskUpToDateState.<init>(TaskUpToDateState.java:46)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.getStates(DefaultTaskArtifactStateRepository.java:126)
+	at org.gradle.api.internal.changedetection.changes.DefaultTaskArtifactStateRepository$TaskArtifactStateImpl.isUpToDate(DefaultTaskArtifactStateRepository.java:69)
+	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:58)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:42)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:53)
+	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
+	at org.gradle.api.internal.AbstractTask.executeWithoutThrowingTaskFailure(AbstractTask.java:289)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.executeTask(AbstractTaskPlanExecutor.java:79)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.processTask(AbstractTaskPlanExecutor.java:63)
+	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.run(AbstractTaskPlanExecutor.java:51)
+	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor.process(DefaultTaskPlanExecutor.java:23)
+	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter.execute(DefaultTaskGraphExecuter.java:86)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:29)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.access$200(DefaultBuildExecuter.java:23)
+	at org.gradle.execution.DefaultBuildExecuter$2.proceed(DefaultBuildExecuter.java:67)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:32)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:61)
+	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:54)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:166)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:113)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:81)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:64)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:76)
+	at org.gradle.tooling.internal.provider.BuildModelAction.run(BuildModelAction.java:31)
+	at org.gradle.tooling.internal.provider.ConfiguringBuildAction.run(ConfiguringBuildAction.java:150)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:26)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:42)
+	at org.gradle.tooling.internal.provider.DaemonBuildActionExecuter.execute(DaemonBuildActionExecuter.java:29)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:53)
+	at org.gradle.tooling.internal.provider.LoggingBridgingBuildActionExecuter.execute(LoggingBridgingBuildActionExecuter.java:30)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:106)
+	at org.gradle.tooling.internal.provider.ProviderConnection.run(ProviderConnection.java:93)
+	at org.gradle.tooling.internal.provider.DefaultConnection.getModel(DefaultConnection.java:140)
+	at org.gradle.tooling.internal.consumer.connection.ModelBuilderBackedConsumerConnection.run(ModelBuilderBackedConsumerConnection.java:40)
+	at org.gradle.tooling.internal.consumer.ModelProvider.provide(ModelProvider.java:77)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection$1.run(LazyConnection.java:94)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.withConnection(LazyConnection.java:102)
+	at org.gradle.tooling.internal.consumer.connection.LazyConnection.run(LazyConnection.java:92)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection$1.run(ProgressLoggingConnection.java:56)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:70)
+	at org.gradle.tooling.internal.consumer.connection.ProgressLoggingConnection.run(ProgressLoggingConnection.java:54)
+	at org.gradle.tooling.internal.consumer.connection.LoggingInitializerConnection.run(LoggingInitializerConnection.java:52)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$1.run(DefaultAsyncConnection.java:51)
+	at org.gradle.tooling.internal.consumer.async.DefaultAsyncConnection$2.run(DefaultAsyncConnection.java:69)
+	at org.gradle.internal.concurrent.DefaultExecutorFactory$StoppableExecutorImpl$1.run(DefaultExecutorFactory.java:66)
+Caused by: org.gradle.api.internal.artifacts.ivyservice.ModuleVersionResolveException: Could not resolve org.springframework.boot:spring-boot-autoconfigure:1.2.0.BUILD-SNAPSHOT.
+Required by:
+    :spring-loaded-jvm-args:unspecified > org.springframework.boot:spring-boot-starter:1.2.0.BUILD-SNAPSHOT
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.resolve(RepositoryChainDependencyResolver.java:72)
+	at org.gradle.api.internal.artifacts.ivyservice.clientmodule.ClientModuleResolver.resolve(ClientModuleResolver.java:35)
+	at org.gradle.api.internal.artifacts.ivyservice.projectmodule.ProjectDependencyResolver.resolve(ProjectDependencyResolver.java:49)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.LazyDependencyToModuleResolver$AbstractVersionResolveResult.resolve(LazyDependencyToModuleResolver.java:69)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.resolve(DependencyGraphBuilder.java:655)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$ModuleVersionResolveState.getMetaData(DependencyGraphBuilder.java:666)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.calculateTargetConfigurations(DependencyGraphBuilder.java:340)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder$DependencyEdge.attachToTargetConfigurations(DependencyGraphBuilder.java:314)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.traverseGraph(DependencyGraphBuilder.java:130)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DependencyGraphBuilder.resolve(DependencyGraphBuilder.java:70)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:116)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver$1.execute(DefaultDependencyResolver.java:82)
+	at org.gradle.internal.Transformers$3.transform(Transformers.java:131)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:61)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultIvyContextManager.withIvy(DefaultIvyContextManager.java:39)
+	at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultDependencyResolver.resolve(DefaultDependencyResolver.java:82)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver$1.run(CacheLockingArtifactDependencyResolver.java:42)
+	at org.gradle.internal.Factories$1.create(Factories.java:22)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:187)
+	at org.gradle.cache.internal.DefaultCacheAccess.useCache(DefaultCacheAccess.java:175)
+	at org.gradle.cache.internal.DefaultPersistentDirectoryStore.useCache(DefaultPersistentDirectoryStore.java:106)
+	at org.gradle.cache.internal.DefaultCacheFactory$ReferenceTrackingCache.useCache(DefaultCacheFactory.java:193)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultCacheLockingManager.useCache(DefaultCacheLockingManager.java:65)
+	at org.gradle.api.internal.artifacts.ivyservice.CacheLockingArtifactDependencyResolver.resolve(CacheLockingArtifactDependencyResolver.java:40)
+	at org.gradle.api.internal.artifacts.ivyservice.SelfResolvingDependencyResolver.resolve(SelfResolvingDependencyResolver.java:45)
+	at org.gradle.api.internal.artifacts.ivyservice.ShortcircuitEmptyConfigsArtifactDependencyResolver.resolve(ShortcircuitEmptyConfigsArtifactDependencyResolver.java:55)
+	at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingArtifactDependencyResolver.resolve(ErrorHandlingArtifactDependencyResolver.java:47)
+	at org.gradle.api.internal.artifacts.ivyservice.DefaultConfigurationResolver.resolve(DefaultConfigurationResolver.java:46)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveNow(DefaultConfiguration.java:240)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.getResolvedConfiguration(DefaultConfiguration.java:230)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration_Decorated.getResolvedConfiguration(Unknown Source)
+	at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.getFiles(DefaultConfiguration.java:463)
+	... 64 more
+Caused by: org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.MetaDataParseException: Could not parse POM /root/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/1.2.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-1.2.0.BUILD-SNAPSHOT.pom
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.AbstractModuleDescriptorParser.parseDescriptor(AbstractModuleDescriptorParser.java:48)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.AbstractModuleDescriptorParser.parseMetaData(AbstractModuleDescriptorParser.java:39)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.getArtifactMetadata(ExternalResourceResolver.java:214)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.findMetaDataArtifact(ExternalResourceResolver.java:195)
+	at org.gradle.api.internal.artifacts.repositories.resolver.MavenLocalResolver.findMetaDataArtifact(MavenLocalResolver.java:41)
+	at org.gradle.api.internal.artifacts.repositories.resolver.ExternalResourceResolver.resolveStaticDependency(ExternalResourceResolver.java:165)
+	at org.gradle.api.internal.artifacts.repositories.resolver.MavenResolver.getDependency(MavenResolver.java:83)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.LocalModuleVersionRepository.getLocalDependency(LocalModuleVersionRepository.java:44)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.memcache.CachedRepository.getLocalDependency(CachedRepository.java:67)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$RepositoryResolveState$LocalModuleAccess.getDependency(RepositoryChainDependencyResolver.java:206)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$StaticVersionRepositoryResolveState.process(RepositoryChainDependencyResolver.java:228)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver$RepositoryResolveState.resolve(RepositoryChainDependencyResolver.java:179)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.findLatestModule(RepositoryChainDependencyResolver.java:110)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.findLatestModule(RepositoryChainDependencyResolver.java:86)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.RepositoryChainDependencyResolver.resolve(RepositoryChainDependencyResolver.java:61)
+	... 95 more
+Caused by: org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.UnresolvedDependencyVersionException: Unable to resolve version for dependency 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar'
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorBuilder.determineVersion(GradlePomModuleDescriptorBuilder.java:326)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorBuilder.addDependency(GradlePomModuleDescriptorBuilder.java:246)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorParser.doParsePom(GradlePomModuleDescriptorParser.java:136)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.GradlePomModuleDescriptorParser.doParseDescriptor(GradlePomModuleDescriptorParser.java:63)
+	at org.gradle.api.internal.artifacts.ivyservice.ivyresolve.parser.AbstractModuleDescriptorParser.parseDescriptor(AbstractModuleDescriptorParser.java:44)
+	... 109 more
+
+]]></system-err>
+  </testcase>
+  <testcase name="springLoadedCanBeUsedWithGradle16" classname="org.springframework.boot.gradle.SpringLoadedTests" time="10.397">
+    <error message="target/spring-loaded-jvm-args/build/output.txt (No such file or directory)" type="java.io.FileNotFoundException"><![CDATA[java.io.FileNotFoundException: target/spring-loaded-jvm-args/build/output.txt (No such file or directory)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileReader.<init>(FileReader.java:72)
+	at org.springframework.boot.gradle.SpringLoadedTests.getOutput(SpringLoadedTests.java:79)
+	at org.springframework.boot.gradle.SpringLoadedTests.springLoadedCanBeUsedWithGradle16(SpringLoadedTests.java:73)
+]]></error>
+    <system-out><![CDATA[00:05:03.226 [Connection worker] DEBUG o.g.t.i.provider.DefaultConnection - Tooling API provider 1.6 created.
+00:05:03.340 [Connection worker] DEBUG o.g.t.i.provider.ProviderConnection - Configuring logging to level: INFO
+Tooling API uses target gradle version: 1.6.
+Download http://repo1.maven.org/maven2/org/springframework/spring-core/4.1.3.RELEASE/spring-core-4.1.3.RELEASE.pom
+Download http://repo1.maven.org/maven2/org/springframework/spring-core/4.1.3.RELEASE/spring-core-4.1.3.RELEASE.jar
+:compileJava
+Download http://repo1.maven.org/maven2/org/yaml/snakeyaml/1.14/snakeyaml-1.14.pom
+Download http://repo1.maven.org/maven2/org/springframework/spring-context/4.1.3.RELEASE/spring-context-4.1.3.RELEASE.pom
+Download http://repo1.maven.org/maven2/org/springframework/spring-aop/4.1.3.RELEASE/spring-aop-4.1.3.RELEASE.pom
+Download http://repo1.maven.org/maven2/org/springframework/spring-beans/4.1.3.RELEASE/spring-beans-4.1.3.RELEASE.pom
+Download http://repo1.maven.org/maven2/org/springframework/spring-expression/4.1.3.RELEASE/spring-expression-4.1.3.RELEASE.pom
+Download http://repo1.maven.org/maven2/org/springframework/spring-beans/4.1.3.RELEASE/spring-beans-4.1.3.RELEASE.jar
+Download http://repo1.maven.org/maven2/org/springframework/spring-aop/4.1.3.RELEASE/spring-aop-4.1.3.RELEASE.jar
+Download http://repo1.maven.org/maven2/org/springframework/spring-expression/4.1.3.RELEASE/spring-expression-4.1.3.RELEASE.jar
+Download http://repo1.maven.org/maven2/org/springframework/spring-context/4.1.3.RELEASE/spring-context-4.1.3.RELEASE.jar
+Download http://repo1.maven.org/maven2/org/yaml/snakeyaml/1.14/snakeyaml-1.14.jar
+:processResources UP-TO-DATE
+:classes
+:findMainClass
+:bootRun
+
+BUILD SUCCESSFUL
+
+Total time: 10.377 secs
+]]></system-out>
+  </testcase>
+</testsuite>

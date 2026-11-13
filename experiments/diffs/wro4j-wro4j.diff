@@ -1,0 +1,161 @@
+diff --git a/wro4j-examples b/wro4j-examples
+new file mode 160000
+index 000000000..9b36400ac
+--- /dev/null
++++ b/wro4j-examples
+@@ -0,0 +1 @@
++Subproject commit 9b36400aca75eb5e7ef04c445cf80306d714a556
+diff --git a/wro4j-grails-plugin b/wro4j-grails-plugin
+new file mode 160000
+index 000000000..e16afd76c
+--- /dev/null
++++ b/wro4j-grails-plugin
+@@ -0,0 +1 @@
++Subproject commit e16afd76c983f96a1b5ac37e3314a0ec4b66b1d2
+diff --git a/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractSingleProcessorMojo.java b/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractSingleProcessorMojo.java
+index 8e5d75415..00df6b706 100644
+--- a/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractSingleProcessorMojo.java
++++ b/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractSingleProcessorMojo.java
+@@ -63,7 +63,7 @@ public final void doExecute()
+       for (final ResourceType resourceType : ResourceType.values()) {
+         final String groupWithExtension = group + "." + resourceType.name().toLowerCase();
+ 
+-        if (isParallelPostprocessing()) {
++        if (isParallelProcessing()) {
+           callables.add(Context.decorate(new Callable<Void>() {
+             public Void call()
+                 throws Exception {
+@@ -76,7 +76,7 @@ public Void call()
+         }
+       }
+     }
+-    if (isParallelPostprocessing()) {
++    if (isParallelProcessing()) {
+       getTaskExecutor().submit(callables);
+     }
+   }
+diff --git a/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractWro4jMojo.java b/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractWro4jMojo.java
+index e881e0c34..1fe47b3af 100644
+--- a/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractWro4jMojo.java
++++ b/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/AbstractWro4jMojo.java
+@@ -117,10 +117,13 @@ public abstract class AbstractWro4jMojo
+    */
+   private BuildContext buildContext;
+   /**
+-   * @parameter default-value="false" expression="${parallelPostprocessing}"
++   * When this flag is enabled and there are more than one group to be processed, these will be processed in parallel,
++   * resulting in faster overall plugin execution time.
++   *
++   * @parameter default-value="false" expression="${parallelProcessing}"
+    * @optional
+    */
+-  private boolean parallelPostprocessing;
++  private boolean parallelProcessing;
+   private TaskExecutor<Void> taskExecutor;
+ 
+   /**
+@@ -134,8 +137,8 @@ public final void execute()
+     getLog().info("targetGroups: " + getTargetGroups());
+     getLog().info("minimize: " + isMinimize());
+     getLog().info("ignoreMissingResources: " + isIgnoreMissingResources());
+-    getLog().info("parallelPostprocessing: " + isParallelPostprocessing());
+-    getLog().debug("wroManagerFactory: " + this.wroManagerFactory);
++    getLog().info("parallelProcessing: " + isParallelProcessing());
++    getLog().debug("wroManagerFactory: " + wroManagerFactory);
+     getLog().debug("extraConfig: " + extraConfigFile);
+ 
+     extendPluginClasspath();
+@@ -590,15 +593,15 @@ void setIgnoreMissingResources(final boolean ignoreMissingResources) {
+   /**
+    * @VisibleForTesting
+    */
+-  protected final boolean isParallelPostprocessing() {
+-    return parallelPostprocessing;
++  protected final boolean isParallelProcessing() {
++    return parallelProcessing;
+   }
+ 
+   /**
+    * @VisibleForTesting
+    */
+-  final void setParallelPostprocessing(final boolean parallelPostprocessing) {
+-    this.parallelPostprocessing = parallelPostprocessing;
++  final void setParallelProcessing(final boolean parallelProcessing) {
++    this.parallelProcessing = parallelProcessing;
+   }
+ 
+   /**
+diff --git a/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/Wro4jMojo.java b/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/Wro4jMojo.java
+index 963710ee7..301c26253 100644
+--- a/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/Wro4jMojo.java
++++ b/wro4j-maven-plugin/src/main/java/ro/isdc/wro/maven/plugin/Wro4jMojo.java
+@@ -137,7 +137,7 @@ protected void doExecute()
+         final File destinationFolder = computeDestinationFolder(resourceType);
+         final String groupWithExtension = group + "." + resourceType.name().toLowerCase();
+ 
+-        if (isParallelPostprocessing()) {
++        if (isParallelProcessing()) {
+           callables.add(Context.decorate(new Callable<Void>() {
+             public Void call()
+                 throws Exception {
+@@ -150,7 +150,7 @@ public Void call()
+         }
+       }
+     }
+-    if (isParallelPostprocessing()) {
++    if (isParallelProcessing()) {
+       getTaskExecutor().submit(callables);
+     }
+     watch.stop();
+diff --git a/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/AbstractTestLinterMojo.java b/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/AbstractTestLinterMojo.java
+index 95ccf4df6..afab8eeb4 100644
+--- a/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/AbstractTestLinterMojo.java
++++ b/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/AbstractTestLinterMojo.java
+@@ -134,11 +134,11 @@ public void submit(final Collection<Callable<Void>> callables)
+     mojo.setTaskExecutor(taskExecutor);
+     mojo.setIgnoreMissingResources(true);
+ 
+-    mojo.setParallelPostprocessing(false);
++    mojo.setParallelProcessing(false);
+     mojo.execute();
+     assertFalse(invoked.get());
+ 
+-    mojo.setParallelPostprocessing(true);
++    mojo.setParallelProcessing(true);
+     mojo.execute();
+     assertTrue(invoked.get());
+   }
+diff --git a/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/TestWro4jMojo.java b/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/TestWro4jMojo.java
+index 49878a445..eb92602fe 100644
+--- a/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/TestWro4jMojo.java
++++ b/wro4j-maven-plugin/src/test/java/ro/isdc/wro/maven/plugin/TestWro4jMojo.java
+@@ -283,12 +283,12 @@ public void testMojoWithConfigurableWroManagerFactoryWithValidConfigFileSet()
+   }
+ 
+   @Test
+-  public void shouldBeFasterWhenRunningPostProcessingInParallel() throws Exception {
++  public void shouldBeFasterWhenRunningProcessingInParallel() throws Exception {
+     final long begin = System.currentTimeMillis();
+-    victim.setParallelPostprocessing(false);
++    victim.setParallelProcessing(false);
+     testMojoWithConfigurableWroManagerFactoryWithValidConfigFileSet();
+     final long endSerial = System.currentTimeMillis();
+-    victim.setParallelPostprocessing(true);
++    victim.setParallelProcessing(true);
+     testMojoWithConfigurableWroManagerFactoryWithValidConfigFileSet();
+     final long endParallel = System.currentTimeMillis();
+ 
+@@ -313,11 +313,11 @@ public void submit(final Collection<Callable<Void>> callables)
+     victim.setTaskExecutor(taskExecutor);
+     victim.setIgnoreMissingResources(true);
+ 
+-    victim.setParallelPostprocessing(false);
++    victim.setParallelProcessing(false);
+     victim.execute();
+     assertFalse(invoked.get());
+ 
+-    victim.setParallelPostprocessing(true);
++    victim.setParallelProcessing(true);
+     victim.execute();
+     assertTrue(invoked.get());
+   }

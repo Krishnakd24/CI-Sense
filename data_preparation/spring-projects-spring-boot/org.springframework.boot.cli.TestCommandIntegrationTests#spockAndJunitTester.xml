@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.boot.cli.TestCommandIntegrationTests" time="7.833" tests="11" errors="3" skipped="0" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.242-b08"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/tmp/proj/spring-projects-spring-boot-50000/spring-projects-spring-boot"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/tmp/proj/spring-projects-spring-boot-50000/spring-projects-spring-boot"/>
+    <property name="java.runtime.version" value="1.8.0_242-8u242-b08-0ubuntu3~18.04-b08"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-88-generic"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B -s /experiment/maven-settings.xml install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_242"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="spockAndJunitTester" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.312">
+    <error message="java.util.concurrent.ExecutionException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:&#10;General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;&#10;org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)&#10;	at groovy.grape.Grape.grab(Grape.java:163)&#10;	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)&#10;	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)&#10;	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)&#10;	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)&#10;	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)&#10;	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)&#10;	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)&#10;	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)&#10;	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)&#10;	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)&#10;	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)&#10;	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)&#10;	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)&#10;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#10;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)&#10;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)&#10;	at java.lang.Thread.run(Thread.java:748)&#10;Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)&#10;	... 19 more&#10;Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)&#10;	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)&#10;	... 20 more&#10;Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)&#10;	... 21 more&#10;Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)&#10;	... 28 more&#10;Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)&#10;	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)&#10;	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)&#10;	... 31 more&#10;Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)&#10;	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)&#10;	... 36 more&#10;&#10;1 error&#10;" type="java.lang.IllegalStateException">java.lang.IllegalStateException: java.util.concurrent.ExecutionException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+
+org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)
+	at groovy.grape.Grape.grab(Grape.java:163)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)
+	... 19 more
+Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)
+	... 20 more
+Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)
+	... 21 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)
+	... 28 more
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)
+	... 31 more
+Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)
+	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)
+	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)
+	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)
+	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)
+	... 36 more
+
+1 error
+
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:206)
+	at org.springframework.boot.cli.CliTester.test(CliTester.java:79)
+	at org.springframework.boot.cli.TestCommandIntegrationTests.spockAndJunitTester(TestCommandIntegrationTests.java:111)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+
+org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)
+	at groovy.grape.Grape.grab(Grape.java:163)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)
+	... 19 more
+Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)
+	... 20 more
+Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)
+	... 21 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)
+	... 28 more
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)
+	... 31 more
+Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)
+	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)
+	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)
+	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)
+	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)
+	... 36 more
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
+	at org.codehaus.groovy.control.ErrorCollector.addException(ErrorCollector.java:155)
+	at org.codehaus.groovy.control.SourceUnit.addException(SourceUnit.java:345)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:369)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</error>
+  </testcase>
+  <testcase name="noFile" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.001"/>
+  <testcase name="integrationAutoConfigEmbeddedTest" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="2.963"/>
+  <testcase name="spockTester" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.246">
+    <error message="java.util.concurrent.ExecutionException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:&#10;General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;&#10;org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)&#10;	at groovy.grape.Grape.grab(Grape.java:163)&#10;	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)&#10;	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)&#10;	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)&#10;	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)&#10;	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)&#10;	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)&#10;	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)&#10;	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)&#10;	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)&#10;	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)&#10;	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)&#10;	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)&#10;	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)&#10;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#10;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)&#10;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)&#10;	at java.lang.Thread.run(Thread.java:748)&#10;Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)&#10;	... 19 more&#10;Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)&#10;	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)&#10;	... 20 more&#10;Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)&#10;	... 21 more&#10;Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)&#10;	... 28 more&#10;Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)&#10;	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)&#10;	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)&#10;	... 31 more&#10;Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)&#10;	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)&#10;	... 36 more&#10;&#10;1 error&#10;" type="java.lang.IllegalStateException">java.lang.IllegalStateException: java.util.concurrent.ExecutionException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+
+org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)
+	at groovy.grape.Grape.grab(Grape.java:163)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)
+	... 19 more
+Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)
+	... 20 more
+Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)
+	... 21 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)
+	... 28 more
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)
+	... 31 more
+Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)
+	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)
+	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)
+	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)
+	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)
+	... 36 more
+
+1 error
+
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:206)
+	at org.springframework.boot.cli.CliTester.test(CliTester.java:79)
+	at org.springframework.boot.cli.TestCommandIntegrationTests.spockTester(TestCommandIntegrationTests.java:105)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+
+org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)
+	at groovy.grape.Grape.grab(Grape.java:163)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)
+	... 19 more
+Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)
+	... 20 more
+Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)
+	... 21 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)
+	... 28 more
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)
+	... 31 more
+Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)
+	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)
+	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)
+	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)
+	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)
+	... 36 more
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
+	at org.codehaus.groovy.control.ErrorCollector.addException(ErrorCollector.java:155)
+	at org.codehaus.groovy.control.SourceUnit.addException(SourceUnit.java:345)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:369)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</error>
+  </testcase>
+  <testcase name="integrationAutoConfigTest" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="1.942"/>
+  <testcase name="empty" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.114"/>
+  <testcase name="appAndTestsInOneFile" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.195"/>
+  <testcase name="verifyFailures" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.254">
+    <error message="java.util.concurrent.ExecutionException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:&#10;General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;&#10;org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)&#10;	at groovy.grape.Grape.grab(Grape.java:163)&#10;	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)&#10;	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)&#10;	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)&#10;	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)&#10;	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)&#10;	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)&#10;	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)&#10;	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)&#10;	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)&#10;	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)&#10;	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)&#10;	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)&#10;	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)&#10;	at java.util.concurrent.FutureTask.run(FutureTask.java:266)&#10;	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)&#10;	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)&#10;	at java.lang.Thread.run(Thread.java:748)&#10;Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)&#10;	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)&#10;	... 19 more&#10;Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)&#10;	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)&#10;	... 20 more&#10;Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)&#10;	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)&#10;	... 21 more&#10;Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)&#10;	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)&#10;	... 28 more&#10;Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)&#10;	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)&#10;	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)&#10;	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)&#10;	... 31 more&#10;Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)&#10;	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)&#10;	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)&#10;	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)&#10;	... 36 more&#10;&#10;1 error&#10;" type="java.lang.IllegalStateException">java.lang.IllegalStateException: java.util.concurrent.ExecutionException: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+
+org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)
+	at groovy.grape.Grape.grab(Grape.java:163)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)
+	... 19 more
+Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)
+	... 20 more
+Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)
+	... 21 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)
+	... 28 more
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)
+	... 31 more
+Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)
+	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)
+	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)
+	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)
+	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)
+	... 36 more
+
+1 error
+
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:206)
+	at org.springframework.boot.cli.CliTester.test(CliTester.java:79)
+	at org.springframework.boot.cli.TestCommandIntegrationTests.verifyFailures(TestCommandIntegrationTests.java:117)
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+General error during conversion: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+
+org.springframework.boot.cli.compiler.grape.DependencyResolutionFailedException: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:223)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.grab(AetherGrapeEngine.java:113)
+	at groovy.grape.Grape.grab(Grape.java:163)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:360)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.eclipse.aether.resolution.DependencyResolutionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:401)
+	at org.springframework.boot.cli.compiler.grape.AetherGrapeEngine.resolve(AetherGrapeEngine.java:215)
+	... 19 more
+Caused by: org.eclipse.aether.collection.DependencyCollectionException: Failed to collect dependencies at org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:303)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies(DefaultRepositorySystem.java:362)
+	... 20 more
+Caused by: org.eclipse.aether.resolution.ArtifactDescriptorException: Failed to read artifact descriptor for org.spockframework:spock-core:jar:0.7-groovy-2.0
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:335)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(DefaultArtifactDescriptorReader.java:217)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.resolveCachedArtifactDescriptor(DefaultDependencyCollector.java:537)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.getArtifactDescriptorResult(DefaultDependencyCollector.java:521)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:421)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.processDependency(DefaultDependencyCollector.java:375)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.process(DefaultDependencyCollector.java:363)
+	at org.eclipse.aether.internal.impl.DefaultDependencyCollector.collectDependencies(DefaultDependencyCollector.java:266)
+	... 21 more
+Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:462)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:264)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:241)
+	at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(DefaultArtifactDescriptorReader.java:320)
+	... 28 more
+Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Could not transfer artifact org.spockframework:spock-core:pom:0.7-groovy-2.0 from/to central (http://repo1.maven.org/maven2/): HTTPS Required (501)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:43)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:538)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:439)
+	... 31 more
+Caused by: org.apache.http.client.HttpResponseException: HTTPS Required (501)
+	at org.eclipse.aether.transport.http.HttpTransporter.handleStatus(HttpTransporter.java:458)
+	at org.eclipse.aether.transport.http.HttpTransporter.execute(HttpTransporter.java:283)
+	at org.eclipse.aether.transport.http.HttpTransporter.implGet(HttpTransporter.java:235)
+	at org.eclipse.aether.spi.connector.transport.AbstractTransporter.get(AbstractTransporter.java:59)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask(BasicRepositoryConnector.java:447)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:350)
+	... 36 more
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:309)
+	at org.codehaus.groovy.control.ErrorCollector.addException(ErrorCollector.java:155)
+	at org.codehaus.groovy.control.SourceUnit.addException(SourceUnit.java:345)
+	at groovy.grape.GrabAnnotationTransformation.visit(GrabAnnotationTransformation.java:369)
+	at org.codehaus.groovy.transform.ASTTransformationVisitor$3.call(ASTTransformationVisitor.java:319)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:923)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:585)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:561)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:538)
+	at org.springframework.boot.cli.compiler.GroovyCompiler.compile(GroovyCompiler.java:197)
+	at org.springframework.boot.cli.command.test.TestRunner.compileAndRunTests(TestRunner.java:53)
+	at org.springframework.boot.cli.command.test.TestCommand$TestOptionHandler.run(TestCommand.java:56)
+	at org.springframework.boot.cli.command.options.OptionHandler.run(OptionHandler.java:92)
+	at org.springframework.boot.cli.command.OptionParsingCommand.run(OptionParsingCommand.java:53)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:104)
+	at org.springframework.boot.cli.CliTester$1.call(CliTester.java:98)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</error>
+  </testcase>
+  <testcase name="integrationTest" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="1.374"/>
+  <testcase name="appInOneFileTestsInAnotherFile" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.344"/>
+  <testcase name="noTests" classname="org.springframework.boot.cli.TestCommandIntegrationTests" time="0.088"/>
+</testsuite>

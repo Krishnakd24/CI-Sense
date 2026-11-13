@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="5" failures="0" name="ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine" time="0.096" errors="2" skipped="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/wro4j-wro4j-1/wro4j-wro4j"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/wro4j-wro4j-1/wro4j-wro4j"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine" name="shouldProcessValidCss" time="0.064">
+    <error message="org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic" type="ro.isdc.wro.WroRuntimeException">ro.isdc.wro.WroRuntimeException: org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at ro.isdc.wro.extensions.processor.support.sass.RubySassEngine.process(RubySassEngine.java:69)
+	at ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine.shouldProcessValidCss(TestRubySassEngine.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: javax.script.ScriptException: org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at org.jruby.embed.jsr223.JRubyEngine.wrapException(JRubyEngine.java:104)
+	at org.jruby.embed.jsr223.JRubyEngine.eval(JRubyEngine.java:93)
+	at org.jruby.embed.jsr223.JRubyEngine.eval(JRubyEngine.java:142)
+	at ro.isdc.wro.extensions.processor.support.sass.RubySassEngine.process(RubySassEngine.java:67)
+	... 31 more
+Caused by: org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at org.jruby.embed.internal.EmbedEvalUnitImpl.run(EmbedEvalUnitImpl.java:137)
+	at org.jruby.embed.jsr223.JRubyEngine.eval(JRubyEngine.java:90)
+	... 33 more
+Caused by: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at org.jruby.runtime.invokedynamic.InvocationLinker.createRubyHandle(InvocationLinker.java:1640)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.access$900(InvocationLinker.java:71)
+	at org.jruby.runtime.invokedynamic.InvocationLinker$RubyCallGenerator.generate(InvocationLinker.java:689)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.tryDispatchDirect(InvocationLinker.java:738)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.getTarget(InvocationLinker.java:748)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.invocationFallback(InvocationLinker.java:133)
+	at rubyjit.Sass::SCSS::Parser$$block_child_091219F3365B33342230DE718BF820A98916ED931142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb:536)
+	at rubyjit.Sass::SCSS::Parser$$block_contents_34AB70F4A2CF23D6A803EDDC0AA2DE4AC77A3E281142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb:526)
+	at rubyjit.Sass::SCSS::Parser$$stylesheet_FBB20705FB8D6806FF8948FF532562B864DEC0581142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb:70)
+	at rubyjit.Sass::SCSS::Parser$$stylesheet_FBB20705FB8D6806FF8948FF532562B864DEC0581142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb)
+	at org.jruby.internal.runtime.methods.JittedMethod.call(JittedMethod.java:141)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:306)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:136)
+	at org.jruby.ast.VCallNode.interpret(VCallNode.java:88)
+	at org.jruby.ast.LocalAsgnNode.interpret(LocalAsgnNode.java:123)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:105)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:139)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:170)
+	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.invocationFallback(InvocationLinker.java:136)
+	at rubyjit.Sass::Engine$$_to_tree_1C65A1B6C5BA874C0B5796B75771F2BCF61998C41142282751.chained_0_rescue_1$RUBY$SYNTHETIC__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb:342)
+	at rubyjit.Sass::Engine$$_to_tree_1C65A1B6C5BA874C0B5796B75771F2BCF61998C41142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb)
+	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.invocationFallback(InvocationLinker.java:136)
+	at rubyjit.Sass::Engine$$_render_B7E18C751F1EC548DEC68A086E480004BED3CAE31142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb:315)
+	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.invocationFallback(InvocationLinker.java:136)
+	at rubyjit.Sass::Engine$$render_88D772B7F62383DDF82BA41573156600D6EE4F751142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb:262)
+	at rubyjit.Sass::Engine$$render_88D772B7F62383DDF82BA41573156600D6EE4F751142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb)
+	at org.jruby.internal.runtime.methods.JittedMethod.call(JittedMethod.java:141)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:170)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:306)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:136)
+	at org.jruby.ast.CallNoArgNode.interpret(CallNoArgNode.java:60)
+	at org.jruby.ast.DAsgnNode.interpret(DAsgnNode.java:110)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:105)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.ast.RootNode.interpret(RootNode.java:129)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_ROOT(ASTInterpreter.java:121)
+	at org.jruby.Ruby.runInterpreter(Ruby.java:834)
+	at org.jruby.Ruby.runInterpreter(Ruby.java:842)
+	at org.jruby.embed.internal.EmbedEvalUnitImpl.run(EmbedEvalUnitImpl.java:121)
+	... 34 more
+Caused by: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at com.headius.invokebinder.Binder.invokeStaticQuiet(Binder.java:1079)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.createRubyHandle(InvocationLinker.java:1629)
+	... 77 more
+Caused by: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at java.lang.invoke.MemberName.makeAccessException(MemberName.java:867)
+	at java.lang.invoke.MemberName$Factory.resolveOrFail(MemberName.java:1003)
+	at java.lang.invoke.MethodHandles$Lookup.resolveOrFail(MethodHandles.java:1386)
+	at java.lang.invoke.MethodHandles$Lookup.findStatic(MethodHandles.java:780)
+	at com.headius.invokebinder.Binder.invokeStatic(Binder.java:1055)
+	at com.headius.invokebinder.Binder.invokeStaticQuiet(Binder.java:1077)
+	... 78 more
+Caused by: java.lang.LinkageError: loader constraint violation: when resolving method &quot;rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Lrubyjit/Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;&quot; the class loader (instance of org/jruby/util/ClassCache$OneShotClassLoader) of the current class, rubyjit/Sass::SCSS::Parser$$block_child_091219F3365B33342230DE718BF820A98916ED931142282751, and the class loader (instance of org/jruby/util/ClassCache$OneShotClassLoader) for the method&apos;s defining class, rubyjit/Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751, have different Class objects for the type rubyjit/Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751 used in the signature
+	at java.lang.invoke.MethodHandleNatives.resolve(Native Method)
+	at java.lang.invoke.MemberName$Factory.resolve(MemberName.java:975)
+	at java.lang.invoke.MemberName$Factory.resolveOrFail(MemberName.java:1000)
+	... 82 more
+</error>
+  </testcase>
+  <testcase classname="ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine" name="shouldProcessValidSass" time="0.02">
+    <error message="org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic" type="ro.isdc.wro.WroRuntimeException">ro.isdc.wro.WroRuntimeException: org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at ro.isdc.wro.extensions.processor.support.sass.RubySassEngine.process(RubySassEngine.java:69)
+	at ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine.shouldProcessValidSass(TestRubySassEngine.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: javax.script.ScriptException: org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at org.jruby.embed.jsr223.JRubyEngine.wrapException(JRubyEngine.java:104)
+	at org.jruby.embed.jsr223.JRubyEngine.eval(JRubyEngine.java:93)
+	at org.jruby.embed.jsr223.JRubyEngine.eval(JRubyEngine.java:142)
+	at ro.isdc.wro.extensions.processor.support.sass.RubySassEngine.process(RubySassEngine.java:67)
+	... 31 more
+Caused by: org.jruby.embed.EvalFailedException: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at org.jruby.embed.internal.EmbedEvalUnitImpl.run(EmbedEvalUnitImpl.java:137)
+	at org.jruby.embed.jsr223.JRubyEngine.eval(JRubyEngine.java:90)
+	... 33 more
+Caused by: java.lang.RuntimeException: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at org.jruby.runtime.invokedynamic.InvocationLinker.createRubyHandle(InvocationLinker.java:1640)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.access$900(InvocationLinker.java:71)
+	at org.jruby.runtime.invokedynamic.InvocationLinker$RubyCallGenerator.generate(InvocationLinker.java:689)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.tryDispatchDirect(InvocationLinker.java:738)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.getTarget(InvocationLinker.java:748)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.invocationFallback(InvocationLinker.java:133)
+	at rubyjit.Sass::SCSS::Parser$$block_child_091219F3365B33342230DE718BF820A98916ED931142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb:536)
+	at rubyjit.Sass::SCSS::Parser$$block_contents_34AB70F4A2CF23D6A803EDDC0AA2DE4AC77A3E281142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb:526)
+	at rubyjit.Sass::SCSS::Parser$$stylesheet_FBB20705FB8D6806FF8948FF532562B864DEC0581142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb:70)
+	at rubyjit.Sass::SCSS::Parser$$stylesheet_FBB20705FB8D6806FF8948FF532562B864DEC0581142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/scss/parser.rb)
+	at org.jruby.internal.runtime.methods.JittedMethod.call(JittedMethod.java:141)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:134)
+	at org.jruby.ast.VCallNode.interpret(VCallNode.java:88)
+	at org.jruby.ast.LocalAsgnNode.interpret(LocalAsgnNode.java:123)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:105)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_METHOD(ASTInterpreter.java:74)
+	at org.jruby.internal.runtime.methods.InterpretedMethod.call(InterpretedMethod.java:139)
+	at org.jruby.internal.runtime.methods.DefaultMethod.call(DefaultMethod.java:170)
+	at rubyjit.Sass::Engine$$_to_tree_1C65A1B6C5BA874C0B5796B75771F2BCF61998C41142282751.chained_0_rescue_1$RUBY$SYNTHETIC__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb:342)
+	at rubyjit.Sass::Engine$$_to_tree_1C65A1B6C5BA874C0B5796B75771F2BCF61998C41142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb)
+	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.invocationFallback(InvocationLinker.java:136)
+	at rubyjit.Sass::Engine$$_render_B7E18C751F1EC548DEC68A086E480004BED3CAE31142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb:315)
+	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.invocationFallback(InvocationLinker.java:136)
+	at rubyjit.Sass::Engine$$render_88D772B7F62383DDF82BA41573156600D6EE4F751142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb:262)
+	at rubyjit.Sass::Engine$$render_88D772B7F62383DDF82BA41573156600D6EE4F751142282751.__file__(jar:file:/root/.m2/repository/me/n4u/sass/sass-gems/3.2.1/sass-gems-3.2.1.jar!/gems/sass-3.2.1/lib/sass/engine.rb)
+	at org.jruby.internal.runtime.methods.JittedMethod.call(JittedMethod.java:141)
+	at org.jruby.runtime.callsite.CachingCallSite.cacheAndCall(CachingCallSite.java:306)
+	at org.jruby.runtime.callsite.CachingCallSite.call(CachingCallSite.java:136)
+	at org.jruby.ast.CallNoArgNode.interpret(CallNoArgNode.java:60)
+	at org.jruby.ast.DAsgnNode.interpret(DAsgnNode.java:110)
+	at org.jruby.ast.NewlineNode.interpret(NewlineNode.java:105)
+	at org.jruby.ast.BlockNode.interpret(BlockNode.java:71)
+	at org.jruby.ast.RootNode.interpret(RootNode.java:129)
+	at org.jruby.evaluator.ASTInterpreter.INTERPRET_ROOT(ASTInterpreter.java:121)
+	at org.jruby.Ruby.runInterpreter(Ruby.java:834)
+	at org.jruby.Ruby.runInterpreter(Ruby.java:842)
+	at org.jruby.embed.internal.EmbedEvalUnitImpl.run(EmbedEvalUnitImpl.java:121)
+	... 34 more
+Caused by: com.headius.invokebinder.InvalidTransformException: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at com.headius.invokebinder.Binder.invokeStaticQuiet(Binder.java:1079)
+	at org.jruby.runtime.invokedynamic.InvocationLinker.createRubyHandle(InvocationLinker.java:1629)
+	... 73 more
+Caused by: java.lang.IllegalAccessException: no such method: rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751,ThreadContext,IRubyObject,Block)IRubyObject/invokeStatic
+	at java.lang.invoke.MemberName.makeAccessException(MemberName.java:867)
+	at java.lang.invoke.MemberName$Factory.resolveOrFail(MemberName.java:1003)
+	at java.lang.invoke.MethodHandles$Lookup.resolveOrFail(MethodHandles.java:1386)
+	at java.lang.invoke.MethodHandles$Lookup.findStatic(MethodHandles.java:780)
+	at com.headius.invokebinder.Binder.invokeStatic(Binder.java:1055)
+	at com.headius.invokebinder.Binder.invokeStaticQuiet(Binder.java:1077)
+	... 74 more
+Caused by: java.lang.LinkageError: loader constraint violation: when resolving method &quot;rubyjit.Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751.__file__(Lrubyjit/Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751;Lorg/jruby/runtime/ThreadContext;Lorg/jruby/runtime/builtin/IRubyObject;Lorg/jruby/runtime/Block;)Lorg/jruby/runtime/builtin/IRubyObject;&quot; the class loader (instance of org/jruby/util/ClassCache$OneShotClassLoader) of the current class, rubyjit/Sass::SCSS::Parser$$block_child_091219F3365B33342230DE718BF820A98916ED931142282751, and the class loader (instance of org/jruby/util/ClassCache$OneShotClassLoader) for the method&apos;s defining class, rubyjit/Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751, have different Class objects for the type rubyjit/Sass::SCSS::Parser$$variable_9BEF35395911B8B8536A8D01B5B5AAD09363B7711142282751 used in the signature
+	at java.lang.invoke.MethodHandleNatives.resolve(Native Method)
+	at java.lang.invoke.MemberName$Factory.resolve(MemberName.java:975)
+	at java.lang.invoke.MemberName$Factory.resolveOrFail(MemberName.java:1000)
+	... 78 more
+</error>
+  </testcase>
+  <testcase classname="ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine" name="cannotProcessInvalidCss" time="0.012"/>
+  <testcase classname="ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine" name="shouldReturnEmptyStringWhenEmptyContentIsProcessed" time="0"/>
+  <testcase classname="ro.isdc.wro.extensions.processor.support.sass.TestRubySassEngine" name="shouldReturnEmptyStringWhenNullContentIsProcessed" time="0"/>
+</testsuite>

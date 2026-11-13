@@ -1,22 +1,114 @@
-# CI-Sense
+﻿# CI-Sense research
 
-Code for comparing flaky-test predictions from test code (B0), code plus failure reports (B1), and code plus reports plus a project change description (B2_o1). The notebook has six cells: prediction and comparison for each level. Prediction uses independent Antigravity CLI conversations, parallel workers, checkpointed outputs, and repeated attempts for unresolved predictions.
+Research comparing flaky-test predictions from code (B0), code plus failure reports (B1), and code plus reports plus a project change description (B2_o1). The independent dashboard is maintained at https://github.com/Krishnakd24/CI-sense_dashboard.
 
-## Data and privacy
+## Directory structure
 
-Raw datasets, label files, prediction logs, and prompts containing dataset examples are not included as separate files. The notebook contains saved comparison outputs, including metrics and selected prediction rows, for review by the professor. Obtain input and log files separately from their owner. `.gitignore` blocks common local data and result paths, but inspect staged files before every commit.
+```text
+CI-Sense-research/
+|-- experiments/
+|   |-- CI_SENSE_experiments.ipynb  # Main B0, B1, and B2_o1 notebook
+|   |-- convert_b0.py              # B0 CSV-to-JSON conversion
+|   |-- convert_b1.py              # Join code and ordered failure reports
+|   |-- prepare_b2_o1.py           # Add project change descriptions
+|   |-- b*_runner.py              # Standalone inference helpers
+|   |-- b*_parallel.py            # Parallel execution helpers
+|   |-- b*_evaluation.py          # Evaluation helpers
+|   |-- retry_*_errors.py         # Retry unresolved predictions
+|   |-- *.csv                     # Frozen inputs, labels, and project mappings
+|   |-- *_data_v1.json            # Structured model inputs
+|   |-- b0_few_shot.json           # B0 example provenance
+|   |-- prompt_*.txt              # Exact prompts and templates
+|   |-- requirements_b0.txt        # Standalone experiment dependencies
+|   |-- diffs/                    # Project commit diffs
+|   |-- b0_results/
+|   |   |-- b0_flash_medium_v1/    # Earlier B0 run
+|   |   `-- b0_flash_medium_v2/    # Completed B0 experiment
+|   |-- b1_results/
+|   |   |-- pilot_v1/
+|   |   `-- b1_flash_medium_v1/    # Completed B1 experiment
+|   `-- b2_o1_results/
+|       |-- pilot_v1/
+|       `-- b2_o1_flash_medium_v1/ # Completed B2_o1 experiment
+|-- data_preparation/
+|   |-- <project-name>/           # Original XML failure reports, by project
+|   |-- extract_test_code.py
+|   |-- extract_test_failure_details.ps1
+|   |-- inspect_sample_diffs.ps1
+|   |-- NOT_A_PROJECT_sample_commit_diffs/ # Historical diffs and summary
+|   |-- *.csv                     # Source tables, extracted data, identity checks
+|   `-- ...                       # Verification and historical publishing helpers
+|-- archive/
+|   |-- earlier-experiments/      # Earlier notebooks and operational utilities
+|   `-- previous-repository-layout/ # Preserved original repository files
+|-- references/
+|   `-- berndt26-flaky.pdf
+|-- .gitignore
+|-- requirements.txt
+`-- README.md
+```
 
-The B1 prompt in this repository is a template with placeholders; its examples are populated locally from the data. Each B0 prompt includes four examples. Each B1 and B2_o1 prompt includes two. Examples are also included in evaluations. Test names and project identifiers can still appear inside source code and stack traces. Predictions are uncalibrated model estimates.
+Wildcard entries group existing files for readability. Local-only handoff notes, caches, and Git metadata are omitted from this submission tree. Each result directory contains the files produced by that run; completed runs include prediction logs, manifests, metrics, and comparisons.
 
-## Setup
+| Folder | Contents |
+|---|---|
+| experiments/ | Consolidated notebook, converters, runners, retry/evaluation helpers, frozen CSVs, structured JSON inputs, exact prompts, diffs, and saved results |
+| data_preparation/ | Original project XML folders, historical tables, extracted code/reports, identity checks, project/commit mapping, and extraction utilities |
+| archive/earlier-experiments/ | Earlier notebooks, pilots, authentication utility, and machine-specific retry launcher |
+| archive/previous-repository-layout/ | Preserved copies of the former repository notebook, converters, and B1 template |
+| references/ | Existing reference PDF, retained unchanged |
 
-1. Install Python and dependencies: `python -m pip install -r requirements.txt`. Install and sign in to Antigravity CLI (`agy`) separately; ensure the selected model is available on your account.
-2. Place the input files next to the notebook: `b0_data.csv`, `data_B1.csv`, `sample_300_labels.csv`, and the private `prompt_b0.txt` supplied separately. For B2_o1, also supply `b2_o1_data_v1.json` and `prompt_b2_o1.txt` privately. Keep these files local and untracked.
-3. Run `python convert_b0.py` and `python convert_b1.py` to create `b0_data_v1.json` and `b1_data_v1.json`. The converters never overwrite existing outputs. B1 conversion joins the two CSVs by ID, preserves ordered report entries, drops explicit test identity fields, and omits unavailable (`NA` or empty) values.
-4. Open `CI_SENSE_experiments.ipynb` with its working directory set to this repository. An empty ID list (`[]`) selects all tests; a list such as `["198", "200"]` selects only those IDs. Prediction cells make model calls and default to 8 workers and 3 runs; comparison cells use existing results only.
+Experiment code, inputs, and result folders stay together to preserve existing relative paths. Canonical experiment inputs are in experiments; duplicate CSVs under data_preparation are preserved preparation outputs. No research scripts, datasets, prompts, notebooks, or results were regenerated during organization.
 
-Each request uses a fresh conversation with tool restrictions and is rejected if tool use is reported. Quota or authentication issues stop dispatch and offer a shared login prompt after in-flight requests finish. Once signed in, resume; successful results are skipped. Recursive retries continue until selected predictions succeed or the user stops the cell. This can consume additional quota; persistent failures remain visible in local logs. Avoid running two schedulers for the same experiment at once.
+Local handoff notes, credentials, caches, and lock files are ignored. Earlier dataset Git checkouts are preserved outside both submission repositories in the local workspace's repository-archives folder.
 
-The comparison cells are already executed and show the completed B0 v2, B1 v1, and B2_o1 v1 results in GitHub. Re-executing those comparison cells requires the private result logs in the matching result folders. The B0 and B1 prediction cells default to separate future experiment names (v3 and v2) so they cannot overwrite the completed logs. To start another experiment, use a new name in its prediction cell and point the corresponding comparison cell at that name.
+## Review and run
 
-The reported research sample is near balanced and need not represent deployment prevalence. Compare precision, recall, F1, confusion matrices, and run-to-run consistency as well as accuracy. Any threshold tuned on the same tests requires separate validation.
+```powershell
+python -m pip install -r requirements.txt
+cd experiments
+jupyter notebook CI_SENSE_experiments.ipynb
+```
+
+Set the notebook working directory to experiments. Its six cells contain prediction and comparison for B0, B1, and B2_o1. Three comparison cells already have saved outputs; reading them makes no model calls. Rerunning comparisons reads the supplied logs.
+
+Prediction requires a separately installed/authenticated Antigravity CLI (agy) and the configured model. Prediction cells make real calls, default to eight workers and three independent predictions per test, and may consume quota. Empty ID lists select all 300 tests. Calls use independent conversations, checkpointing, shared authentication pauses, and retries.
+
+Completed B0/B1 results are v2/v1. Their prediction defaults use future v3/v2 names to protect completed results. Use new names for changed configurations. Manifests may reject resuming with changed code/configuration hashes. Do not run multiple schedulers on one result folder.
+
+Generated JSON inputs are supplied. convert_b0.py, convert_b1.py, and prepare_b2_o1.py document transformations and refuse to overwrite outputs. B0 supports an alternative output filename. Do not delete supplied outputs merely to rerun preparation.
+
+Archived scripts/notebooks retain their original contents and may require original working directories/import paths if reused. data_preparation/inspect_sample_diffs.ps1 writes to sample_commit_diffs; its historical output is named NOT_A_PROJECT_sample_commit_diffs. Publishing helpers retain historical local paths and are not submission entry points.
+
+## Data and exact prompts
+
+- b0_data.csv / b0_data_v1.json: 300 sampled test-code records.
+- data_B1.csv / b1_data_v1.json: code and ordered failure reports. Thirty-nine tests have two matching entries; this does not establish separate executions.
+- sample_300_labels.csv: evaluation labels; fleaky=1 means flaky. Labels are excluded from target prompts.
+- id_project_mapping.csv, data_B3_v1.csv, data_B3_v2.csv, data_B3_v3.csv, and diffs/: project mapping, diffs, and successive descriptions.
+- b2_o1_data_v1.json: B1 plus descriptions from data_B3_v3.csv. B3 filenames are preparation data, not a separate completed prediction experiment.
+- prompt_b0.txt, prompt_b1.txt, prompt_b2_o1.txt, prompt_b2_o1_template.txt, and b0_few_shot.json: exact prompts/templates and example provenance. B0 uses four labeled examples; B1/B2_o1 use two.
+
+The dashboard bundles a byte-identical copy of experiments/prompt_b2_o1.txt. At runtime the app replaces its probability-only output section with probability plus concise reasons. The research template is unchanged.
+
+## Completed results
+
+Each completed experiment has 900 accepted predictions: 300 tests times three runs. Majority-vote threshold is 0.5.
+
+| Directory under experiments/ | Accuracy | TN | FP | FN | TP |
+|---|---:|---:|---:|---:|---:|
+| b0_results/b0_flash_medium_v2/ | 51.33% | 66 | 73 | 73 | 88 |
+| b1_results/b1_flash_medium_v1/ | 84.33% | 134 | 5 | 42 | 119 |
+| b2_o1_results/b2_o1_flash_medium_v1/ | 86.33% | 134 | 5 | 36 | 125 |
+
+Inspect predictions.jsonl, manifests, metrics, variability, and comparison tables for execution/evaluation evidence. Pilot folders and B0 v1 are historical runs, not the primary completed results.
+
+## Limitations
+
+The sample deliberately contains 161 flaky and 139 non-flaky tests. Fixed examples are included among evaluated IDs. B0 uses more examples than B1/B2_o1, so B0-to-B1 does not isolate report context alone. Several tests share project context; held-out project/test evaluation is needed before generalization claims.
+
+Project SHAs have not been established as failed CI build commits. First-parent diffs/descriptions are not proven causes of failures. One of 24 projects has a root commit, leaving 23 available diffs.
+
+Completed B0/B1 runs used an earlier validator that rejected some internal finish steps and retried calls; rejected responses were not retained. Current code corrects that validator. Historical results were preserved, not rerun.
+
+Probabilities are uncalibrated estimates; a single failure does not prove flakiness. Organization is not a fresh model run or live dashboard validation.

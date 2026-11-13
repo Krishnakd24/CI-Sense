@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.squareup.okhttp.internal.http.ResponseCacheTest" time="3.654" tests="86" errors="5" skipped="0" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/square-okhttp-2697/square-okhttp"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/square-okhttp-2697/square-okhttp"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="cacheCanUseCriteriaBesidesVariantObeyed" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0"/>
+  <testcase name="requestOnlyIfCachedWithNoResponseCached" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0"/>
+  <testcase name="maxAgePreferredWithMaxAgeAndExpires" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.014"/>
+  <testcase name="contentLocationDoesNotPopulateCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.047"/>
+  <testcase name="clientPrematureDisconnectWithNoLengthHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.022"/>
+  <testcase name="setIfModifiedSince" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0"/>
+  <testcase name="noDefaultExpirationForUrlsWithQueryString" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.06"/>
+  <testcase name="maxAgeInTheFutureWithDateHeader" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.002"/>
+  <testcase name="serverReturnsDocumentOlderThanCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.006"/>
+  <testcase name="responseCachingAndInputStreamSkipWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.001"/>
+  <testcase name="clientSuppliedConditionWithoutCachedResult" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.024"/>
+  <testcase name="requestPragmaNoCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.043"/>
+  <testcase name="cacheControlNoStoreAndExpirationDateInTheFuture" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.047">
+    <error message="Network is unreachable (connect failed)" type="java.net.SocketException">java.net.SocketException: Network is unreachable (connect failed)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.squareup.okhttp.internal.Platform.connectSocket(Platform.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:95)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:490)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1424)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1439)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.assertNotCached(ResponseCacheTest.java:1353)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.cacheControlNoStoreAndExpirationDateInTheFuture(ResponseCacheTest.java:673)
+</error>
+  </testcase>
+  <testcase name="cachePlusRange" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.058"/>
+  <testcase name="cacheControlNoCacheAndExpirationDateInTheFuture" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.123"/>
+  <testcase name="requestMaxStale" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.006"/>
+  <testcase name="getHeadersDeletesCached100LevelWarnings" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.005"/>
+  <testcase name="serverDisconnectsPrematurelyWithNoLengthHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0"/>
+  <testcase name="clientPrematureDisconnectWithContentLengthHeader" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.103"/>
+  <testcase name="clientSuppliedIfModifiedSinceWithCachedResult" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.015"/>
+  <testcase name="secureResponseCachingAndProtocolRedirects" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:490)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1424)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1439)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.secureResponseCachingAndProtocolRedirects(ResponseCacheTest.java:311)
+]]></error>
+    <system-err><![CDATA[Sep 04, 2019 8:21:19 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 304 OK
+Sep 04, 2019 8:21:19 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 301 OK
+]]></system-err>
+  </testcase>
+  <testcase name="responseSourceHeaderConditionalCacheNotFetched" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.004"/>
+  <testcase name="clientPrematureDisconnectWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="1.115"/>
+  <testcase name="useCachesFalseDoesNotReadFromCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.05"/>
+  <testcase name="connectionIsReturnedToPoolAfterConditionalSuccess" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.061"/>
+  <testcase name="maxAgePreferredOverHigherMaxAge" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.052"/>
+  <testcase name="responseSourceHeaderConditionalCacheFetched" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.055"/>
+  <testcase name="getHeadersRetainsCached200LevelWarnings" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.005"/>
+  <testcase name="getHeadersReturnsNetworkEndToEndHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.007"/>
+  <testcase name="etagAndExpirationDateInThePast" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.116"/>
+  <testcase name="pragmaNoCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.047"/>
+  <testcase name="expirationDateInThePastWithLastModifiedHeader" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.092"/>
+  <testcase name="responseSourceHeaderFetched" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.002"/>
+  <testcase name="partialRangeResponsesDoNotCorruptCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.058"/>
+  <testcase name="redirectToCachedResult" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.047"/>
+  <testcase name="serverDisconnectsPrematurelyWithChunkedEncoding" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.018"/>
+  <testcase name="defaultExpirationDateFullyCachedForMoreThan24Hours" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.009"/>
+  <testcase name="useCachesFalseDoesNotWriteToCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.05"/>
+  <testcase name="defaultUseCachesSetsInitialValueOnly" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0"/>
+  <testcase name="maxAgeInThePastWithDateAndLastModifiedHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.097"/>
+  <testcase name="serverDisconnectsPrematurelyWithContentLengthHeader" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.008"/>
+  <testcase name="emptyResponseHeaderNameFromCacheIsLenient" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.003"/>
+  <testcase name="maxAgeInTheFutureWithNoDateHeader" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.004"/>
+  <testcase name="clientSuppliedIfNoneMatchSinceWithCachedResult" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.008"/>
+  <testcase name="etag" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.104"/>
+  <testcase name="responseCacheRequestHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.004"/>
+  <testcase name="authorizationResponseCachedWithSMaxAge" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.003"/>
+  <testcase name="requestOnlyIfCachedWithFullResponseCached" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.005"/>
+  <testcase name="responseCachingAndInputStreamSkipWithFixedLength" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.004"/>
+  <testcase name="secureResponseCachingAndRedirects" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.008">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:490)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1424)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1439)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.secureResponseCachingAndRedirects(ResponseCacheTest.java:274)
+]]></error>
+    <system-err><![CDATA[Sep 04, 2019 8:21:21 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 200 Fantastic
+]]></system-err>
+  </testcase>
+  <testcase name="requestOnlyIfCachedWithUnhelpfulResponseCached" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.024"/>
+  <testcase name="cacheReturnsInsecureResponseForSecureRequest" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:490)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1424)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1439)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.cacheReturnsInsecureResponseForSecureRequest(ResponseCacheTest.java:207)
+]]></error>
+    <system-err><![CDATA[Sep 04, 2019 8:21:21 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 200 OK
+]]></system-err>
+  </testcase>
+  <testcase name="defaultExpirationDateFullyCachedForLessThan24Hours" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.012"/>
+  <testcase name="postInvalidatesCacheWithUncacheableResponse" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.05"/>
+  <testcase name="authorizationResponseCachedWithMustRevalidate" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.004"/>
+  <testcase name="maxAgePreferredOverLowerSharedMaxAge" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.01"/>
+  <testcase name="responseCachingAndRedirects" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.05"/>
+  <testcase name="expiresDateBeforeModifiedDate" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.093"/>
+  <testcase name="cachePlusCookies" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.014"/>
+  <testcase name="expirationDateInTheFuture" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.005"/>
+  <testcase name="maxAgeInTheFutureWithDateAndLastModifiedHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.006"/>
+  <testcase name="maxAgeWithLastModifiedButNoServedDate" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.008"/>
+  <testcase name="responseSourceHeaderCached" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.003"/>
+  <testcase name="requestOnlyIfCachedWithConditionalResponseCached" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.003"/>
+  <testcase name="etagAndExpirationDateInTheFuture" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.003"/>
+  <testcase name="pragmaNoCacheAndExpirationDateInTheFuture" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.103"/>
+  <testcase name="requestMinFresh" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.047"/>
+  <testcase name="defaultExpirationDateConditionallyCached" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.092"/>
+  <testcase name="requestMaxAge" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.048"/>
+  <testcase name="nonIdentityEncodingAndConditionalCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.005"/>
+  <testcase name="notModifiedSpecifiesEncoding" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.05"/>
+  <testcase name="responseCacheCanIgnore" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.003"/>
+  <testcase name="authorizationRequestHeaderPreventsCaching" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.046"/>
+  <testcase name="expirationDateInThePastWithNoLastModifiedHeader" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.047"/>
+  <testcase name="maxAgeInThePastWithDateHeaderButNoLastModifiedHeader" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.044"/>
+  <testcase name="authorizationResponseCachedWithPublic" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.004"/>
+  <testcase name="nonIdentityEncodingAndFullCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.013"/>
+  <testcase name="requestMaxStaleNotHonoredWithMustRevalidate" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.043"/>
+  <testcase name="secureResponseCaching" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.002">
+    <error message="sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V" type="java.lang.NoSuchMethodError"><![CDATA[java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:372)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:325)
+	at com.squareup.okhttp.internal.http.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:490)
+	at com.squareup.okhttp.internal.http.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
+	at com.squareup.okhttp.internal.http.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:25)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1424)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.readAscii(ResponseCacheTest.java:1439)
+	at com.squareup.okhttp.internal.http.ResponseCacheTest.secureResponseCaching(ResponseCacheTest.java:175)
+]]></error>
+  </testcase>
+  <testcase name="cacheControlNoCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.05"/>
+  <testcase name="cacheControlNoStore" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.047"/>
+  <testcase name="conditionalHitDoesNotUpdateCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.049"/>
+  <testcase name="responseCacheCanCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.002"/>
+  <testcase name="getHeadersReturnsCachedHopByHopHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.004"/>
+  <testcase name="requestCacheControlNoCache" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.05"/>
+  <testcase name="responseCachingAndInputStreamSkipWithNoLengthHeaders" classname="com.squareup.okhttp.internal.http.ResponseCacheTest" time="0.006"/>
+</testsuite>

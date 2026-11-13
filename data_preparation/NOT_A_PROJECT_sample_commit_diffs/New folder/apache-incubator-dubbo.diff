@@ -1,0 +1,25 @@
+diff --git a/.travis.yml b/.travis.yml
+index 2b617a3e8536..f1a1bf5c1ace 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -2,6 +2,7 @@ language: java
+ sudo: false # faster builds
+ 
+ jdk:
++  - oraclejdk11
+   - oraclejdk10
+   - oraclejdk9
+   - oraclejdk8
+diff --git a/pom.xml b/pom.xml
+index 5bd895dc60f8..2d814751faed 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -118,7 +118,7 @@
+         <maven_javadoc_version>3.0.1</maven_javadoc_version>
+         <maven_jetty_version>9.4.11.v20180605</maven_jetty_version>
+         <maven_checkstyle_version>3.0.0</maven_checkstyle_version>
+-        <maven_jacoco_version>0.8.1</maven_jacoco_version>
++        <maven_jacoco_version>0.8.2</maven_jacoco_version>
+         <apache-rat-plugin.version>0.12</apache-rat-plugin.version>
+         <arguments />
+         <checkstyle.skip>true</checkstyle.skip>

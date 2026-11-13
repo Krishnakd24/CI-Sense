@@ -1,0 +1,38 @@
+{
+  "model": "Gemini 3.8 Flash (Medium)",
+  "effort": "medium",
+  "prompt_sha256": "f469a2ec2e8890b0ee3fb46ba437eb09a39180a125d94c488eae72e25fc062bc",
+  "data_sha256": "a0f517f2fdd0cb99038432eafd4663d75836719ca2baa9b943ccfc3079569e46",
+  "settings": {
+    "toolPermission": "strict",
+    "useG1Credits": false,
+    "disableSlashCommands": true,
+    "allowNonWorkspaceAccess": false,
+    "permissions": {
+      "allow": [],
+      "ask": [],
+      "deny": [
+        "read_url(*)",
+        "execute_url(*)",
+        "command(*)",
+        "mcp(*)",
+        "read_file(*)",
+        "write_file(*)"
+      ]
+    }
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "flaky_probability": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "required": [
+      "flaky_probability"
+    ],
+    "additionalProperties": false
+  }
+}

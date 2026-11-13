@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.squareup.okhttp.AsyncApiTest" time="32.027" tests="14" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/square-okhttp-2566/square-okhttp"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/square-okhttp-2566/square-okhttp"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="redirectWithRedirectsDisabled" classname="com.squareup.okhttp.AsyncApiTest" time="0"/>
+  <testcase name="connectionPooling" classname="com.squareup.okhttp.AsyncApiTest" time="0.102"/>
+  <testcase name="canceledBeforeResponseReadIsNeverDelivered" classname="com.squareup.okhttp.AsyncApiTest" time="0.05"/>
+  <testcase name="canceledAfterResponseIsDeliveredDoesNothing" classname="com.squareup.okhttp.AsyncApiTest" time="0.014"/>
+  <testcase name="redirect" classname="com.squareup.okhttp.AsyncApiTest" time="10.003">
+    <failure message="Timed out waiting for response to http://ip-172-31-53-199:43209/c" type="java.lang.AssertionError">java.lang.AssertionError: Timed out waiting for response to http://ip-172-31-53-199:43209/c
+	at com.squareup.okhttp.RecordingReceiver.await(RecordingReceiver.java:87)
+	at com.squareup.okhttp.AsyncApiTest.redirect(AsyncApiTest.java:194)
+</failure>
+  </testcase>
+  <testcase name="follow20Redirects" classname="com.squareup.okhttp.AsyncApiTest" time="0.887"/>
+  <testcase name="doesNotFollow21Redirects" classname="com.squareup.okhttp.AsyncApiTest" time="0.856"/>
+  <testcase name="get" classname="com.squareup.okhttp.AsyncApiTest" time="0.003"/>
+  <testcase name="tls" classname="com.squareup.okhttp.AsyncApiTest" time="10.003">
+    <failure message="Timed out waiting for response to https://ip-172-31-53-199:36069/" type="java.lang.AssertionError">java.lang.AssertionError: Timed out waiting for response to https://ip-172-31-53-199:36069/
+	at com.squareup.okhttp.RecordingReceiver.await(RecordingReceiver.java:87)
+	at com.squareup.okhttp.AsyncApiTest.tls(AsyncApiTest.java:115)
+</failure>
+    <system-err><![CDATA[Sep 04, 2019 8:21:01 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 200 OK
+Exception in thread "OkHttp Dispatcher" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.Job.getResponse(Job.java:126)
+	at com.squareup.okhttp.Job.execute(Job.java:76)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "MockWebServer" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:322)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]></system-err>
+  </testcase>
+  <testcase name="post" classname="com.squareup.okhttp.AsyncApiTest" time="0.009"/>
+  <testcase name="cache" classname="com.squareup.okhttp.AsyncApiTest" time="0.002"/>
+  <testcase name="recoverFromTlsHandshakeFailure" classname="com.squareup.okhttp.AsyncApiTest" time="10.004">
+    <failure message="Timed out waiting for response to https://ip-172-31-53-199:38067/" type="java.lang.AssertionError">java.lang.AssertionError: Timed out waiting for response to https://ip-172-31-53-199:38067/
+	at com.squareup.okhttp.RecordingReceiver.await(RecordingReceiver.java:87)
+	at com.squareup.okhttp.AsyncApiTest.recoverFromTlsHandshakeFailure(AsyncApiTest.java:132)
+</failure>
+    <system-err><![CDATA[Sep 04, 2019 8:21:11 PM com.squareup.okhttp.mockwebserver.MockWebServer$3 processOneRequest
+INFO: Received request: GET / HTTP/1.1 and responded: HTTP/1.1 304 OK
+Exception in thread "OkHttp Dispatcher" java.lang.IllegalStateException: cache is closed
+	at com.squareup.okhttp.internal.DiskLruCache.checkNotClosed(DiskLruCache.java:608)
+	at com.squareup.okhttp.internal.DiskLruCache.edit(DiskLruCache.java:448)
+	at com.squareup.okhttp.internal.DiskLruCache.access$1600(DiskLruCache.java:86)
+	at com.squareup.okhttp.internal.DiskLruCache$Snapshot.edit(DiskLruCache.java:685)
+	at com.squareup.okhttp.HttpResponseCache.update(HttpResponseCache.java:215)
+	at com.squareup.okhttp.internal.http.HttpEngine.readResponse(HttpEngine.java:583)
+	at com.squareup.okhttp.Job.getResponse(Job.java:134)
+	at com.squareup.okhttp.Job.execute(Job.java:76)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "OkHttp Dispatcher" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.Connection.upgradeToTls(Connection.java:123)
+	at com.squareup.okhttp.Connection.connect(Connection.java:101)
+	at com.squareup.okhttp.internal.http.HttpEngine.connect(HttpEngine.java:237)
+	at com.squareup.okhttp.internal.http.HttpEngine.sendRequest(HttpEngine.java:181)
+	at com.squareup.okhttp.Job.getResponse(Job.java:126)
+	at com.squareup.okhttp.Job.execute(Job.java:76)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "MockWebServer" java.lang.NoSuchMethodError: sun.security.ssl.Handshaker.setSNIServerNames(Ljava/util/List;)V
+	at sun.security.ssl.SSLSocketImpl.initHandshaker(SSLSocketImpl.java:1328)
+	at sun.security.ssl.SSLSocketImpl.doneConnect(SSLSocketImpl.java:693)
+	at sun.security.ssl.SSLSocketImpl.<init>(SSLSocketImpl.java:568)
+	at sun.security.ssl.SSLSocketFactoryImpl.createSocket(SSLSocketFactoryImpl.java:110)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.processHandshakeFailure(MockWebServer.java:417)
+	at com.squareup.okhttp.mockwebserver.MockWebServer.access$1000(MockWebServer.java:77)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.processConnection(MockWebServer.java:319)
+	at com.squareup.okhttp.mockwebserver.MockWebServer$3.execute(MockWebServer.java:303)
+	at com.squareup.okhttp.internal.NamedRunnable.run(NamedRunnable.java:33)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]></system-err>
+  </testcase>
+  <testcase name="postBodyRetransmittedOnRedirect" classname="com.squareup.okhttp.AsyncApiTest" time="0.047"/>
+  <testcase name="connectionReuseWhenResponseBodyConsumed" classname="com.squareup.okhttp.AsyncApiTest" time="0.047"/>
+</testsuite>

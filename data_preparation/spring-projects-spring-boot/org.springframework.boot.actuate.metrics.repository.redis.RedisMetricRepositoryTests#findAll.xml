@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.078" tests="12" errors="12" skipped="0" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/spring-projects-spring-boot-0/spring-projects-spring-boot"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/spring-projects-spring-boot-0/spring-projects-spring-boot"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1045-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="findAll" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.026">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.Connection.getBulkReply(Connection.java:184)
+	at redis.clients.jedis.BinaryJedis.zincrby(BinaryJedis.java:1582)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.zIncrBy(JedisConnection.java:2069)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.zIncrBy(DefaultStringRedisConnection.java:974)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:70)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultZSetOperations.incrementScore(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.DefaultBoundZSetOperations.incrementScore(DefaultBoundZSetOperations.java:55)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.trackMembership(RedisMetricRepository.java:194)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.increment(RedisMetricRepository.java:148)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.findAll(RedisMetricRepositoryTests.java:83)
+</error>
+    <system-out><![CDATA[20:36:33.381 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.394 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+20:36:33.396 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.396 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+]]></system-out>
+  </testcase>
+  <testcase name="findAll" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.027">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.BinaryJedis.get(BinaryJedis.java:119)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.get(JedisConnection.java:1099)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:280)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:46)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:51)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:43)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.clear(RedisMetricRepositoryTests.java:51)
+</error>
+  </testcase>
+  <testcase name="incrementAndGet" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.001">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.Connection.getBulkReply(Connection.java:184)
+	at redis.clients.jedis.BinaryJedis.zincrby(BinaryJedis.java:1582)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.zIncrBy(JedisConnection.java:2069)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.zIncrBy(DefaultStringRedisConnection.java:974)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:70)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultZSetOperations.incrementScore(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.DefaultBoundZSetOperations.incrementScore(DefaultBoundZSetOperations.java:55)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.trackMembership(RedisMetricRepository.java:194)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.increment(RedisMetricRepository.java:148)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.incrementAndGet(RedisMetricRepositoryTests.java:68)
+</error>
+    <system-out><![CDATA[20:36:33.409 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.410 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+20:36:33.410 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.410 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+]]></system-out>
+  </testcase>
+  <testcase name="incrementAndGet" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.002">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.BinaryJedis.get(BinaryJedis.java:119)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.get(JedisConnection.java:1099)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:280)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:46)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:51)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:43)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.clear(RedisMetricRepositoryTests.java:51)
+</error>
+  </testcase>
+  <testcase name="setIncrementAndGet" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.002">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.Connection.getBulkReply(Connection.java:184)
+	at redis.clients.jedis.BinaryJedis.zincrby(BinaryJedis.java:1582)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.zIncrBy(JedisConnection.java:2069)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.zIncrBy(DefaultStringRedisConnection.java:974)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:70)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultZSetOperations.incrementScore(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.DefaultBoundZSetOperations.incrementScore(DefaultBoundZSetOperations.java:55)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.trackMembership(RedisMetricRepository.java:194)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.set(RedisMetricRepository.java:159)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.setIncrementAndGet(RedisMetricRepositoryTests.java:74)
+</error>
+    <system-out><![CDATA[20:36:33.417 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.417 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+20:36:33.418 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.418 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+]]></system-out>
+  </testcase>
+  <testcase name="setIncrementAndGet" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.003">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.BinaryJedis.get(BinaryJedis.java:119)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.get(JedisConnection.java:1099)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:280)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:46)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:51)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:43)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.clear(RedisMetricRepositoryTests.java:51)
+</error>
+  </testcase>
+  <testcase name="setAndGet" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.002">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.Connection.getBulkReply(Connection.java:184)
+	at redis.clients.jedis.BinaryJedis.zincrby(BinaryJedis.java:1582)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.zIncrBy(JedisConnection.java:2069)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.zIncrBy(DefaultStringRedisConnection.java:974)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:70)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultZSetOperations.incrementScore(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.DefaultBoundZSetOperations.incrementScore(DefaultBoundZSetOperations.java:55)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.trackMembership(RedisMetricRepository.java:194)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.set(RedisMetricRepository.java:159)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.setAndGet(RedisMetricRepositoryTests.java:60)
+</error>
+    <system-out><![CDATA[20:36:33.429 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.429 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+20:36:33.429 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.430 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+]]></system-out>
+  </testcase>
+  <testcase name="setAndGet" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.003">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.BinaryJedis.get(BinaryJedis.java:119)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.get(JedisConnection.java:1099)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:280)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:46)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:51)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:43)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.clear(RedisMetricRepositoryTests.java:51)
+</error>
+  </testcase>
+  <testcase name="count" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.004">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.Connection.getBulkReply(Connection.java:184)
+	at redis.clients.jedis.BinaryJedis.zincrby(BinaryJedis.java:1582)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.zIncrBy(JedisConnection.java:2069)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.zIncrBy(DefaultStringRedisConnection.java:974)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:70)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultZSetOperations.incrementScore(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.DefaultBoundZSetOperations.incrementScore(DefaultBoundZSetOperations.java:55)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.trackMembership(RedisMetricRepository.java:194)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.increment(RedisMetricRepository.java:148)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.count(RedisMetricRepositoryTests.java:97)
+</error>
+    <system-out><![CDATA[20:36:33.437 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.439 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+20:36:33.439 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.440 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+]]></system-out>
+  </testcase>
+  <testcase name="count" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.005">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.BinaryJedis.get(BinaryJedis.java:119)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.get(JedisConnection.java:1099)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:280)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:46)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:51)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:43)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.clear(RedisMetricRepositoryTests.java:51)
+</error>
+  </testcase>
+  <testcase name="findOneWithAll" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.001">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.Connection.getBulkReply(Connection.java:184)
+	at redis.clients.jedis.BinaryJedis.zincrby(BinaryJedis.java:1582)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.zIncrBy(JedisConnection.java:2069)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.zIncrBy(DefaultStringRedisConnection.java:974)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:70)
+	at org.springframework.data.redis.core.DefaultZSetOperations$3.doInRedis(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultZSetOperations.incrementScore(DefaultZSetOperations.java:67)
+	at org.springframework.data.redis.core.DefaultBoundZSetOperations.incrementScore(DefaultBoundZSetOperations.java:55)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.trackMembership(RedisMetricRepository.java:194)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepository.increment(RedisMetricRepository.java:148)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.findOneWithAll(RedisMetricRepositoryTests.java:90)
+</error>
+    <system-out><![CDATA[20:36:33.449 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.449 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+20:36:33.449 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Opening RedisConnection
+20:36:33.449 [main] DEBUG o.s.d.r.core.RedisConnectionUtils - Closing Redis Connection
+]]></system-out>
+  </testcase>
+  <testcase name="findOneWithAll" classname="org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests" time="0.002">
+    <error message="NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required." type="org.springframework.dao.InvalidDataAccessApiUsageException">org.springframework.dao.InvalidDataAccessApiUsageException: NOAUTH Authentication required.; nested exception is redis.clients.jedis.exceptions.JedisDataException: NOAUTH Authentication required.
+	at redis.clients.jedis.Protocol.processError(Protocol.java:104)
+	at redis.clients.jedis.Protocol.process(Protocol.java:122)
+	at redis.clients.jedis.Protocol.read(Protocol.java:191)
+	at redis.clients.jedis.Connection.getBinaryBulkReply(Connection.java:195)
+	at redis.clients.jedis.BinaryJedis.get(BinaryJedis.java:119)
+	at org.springframework.data.redis.connection.jedis.JedisConnection.get(JedisConnection.java:1099)
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.get(DefaultStringRedisConnection.java:280)
+	at org.springframework.data.redis.core.DefaultValueOperations$1.inRedis(DefaultValueOperations.java:46)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:51)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:190)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:152)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:85)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:43)
+	at org.springframework.boot.actuate.metrics.repository.redis.RedisMetricRepositoryTests.clear(RedisMetricRepositoryTests.java:51)
+</error>
+  </testcase>
+</testsuite>

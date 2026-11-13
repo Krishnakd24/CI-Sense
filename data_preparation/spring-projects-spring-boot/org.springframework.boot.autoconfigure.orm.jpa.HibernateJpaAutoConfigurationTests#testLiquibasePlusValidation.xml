@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="4.625" tests="17" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="maven.findbugsplugin.version" value="3.0.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="android.sdk.path" value="/data/android"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="maven.wagon.http.ssl.insecure" value="true"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="maven.multiModuleProjectDirectory" value="/working/proj/spring-projects-spring-boot-4454/spring-projects-spring-boot"/>
+    <property name="maven.javadoc.skip" value="true"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/spring-projects-spring-boot-4454/spring-projects-spring-boot"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="javax.accessibility.assistive_technologies" value="org.GNOME.Accessibility.AtkWrapper"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="gpg.skip" value="true"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="maven.test.failure.ignore" value="true"/>
+    <property name="os.version" value="4.15.0-1047-aws"/>
+    <property name="maven.wagon.http.ssl.allowall" value="true"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.test.failure.ignore=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Ddependency-check.skip=true -Dgpg.skip -Dmaven.javadoc.skip -Dandroid.sdk.path=/data/android -Dmaven.findbugsplugin.version=3.0.4 -fn -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="dependency-check.skip" value="true"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testNamingStrategyThatWorkedInOneDotOhContinuesToWork" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.283"/>
+  <testcase name="testCustomNamingStrategyViaJpaProperties" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.205"/>
+  <testcase name="testCustomNamingStrategy" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.266"/>
+  <testcase name="testDataScriptWithMissingDdl" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.262"/>
+  <testcase name="testLiquibasePlusValidation" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="1.497">
+    <error message="Error creating bean with name &apos;liquibase&apos; defined in class org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration: Invocation of init method failed; nested exception is java.lang.ExceptionInInitializerError" type="org.springframework.beans.factory.BeanCreationException"><![CDATA[org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration: Invocation of init method failed; nested exception is java.lang.ExceptionInInitializerError
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1501)
+	at liquibase.util.NetUtil.getLocalHostName(NetUtil.java:41)
+	at liquibase.sqlgenerator.core.LockDatabaseChangeLogGenerator.<clinit>(LockDatabaseChangeLogGenerator.java:28)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at liquibase.sqlgenerator.SqlGeneratorFactory.<init>(SqlGeneratorFactory.java:39)
+	at liquibase.sqlgenerator.SqlGeneratorFactory.getInstance(SqlGeneratorFactory.java:53)
+	at liquibase.executor.AbstractExecutor.applyVisitors(AbstractExecutor.java:22)
+	at liquibase.executor.jvm.JdbcExecutor.access$500(JdbcExecutor.java:34)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:275)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:50)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:97)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:87)
+	at liquibase.database.AbstractJdbcDatabase.checkDatabaseChangeLogLockTable(AbstractJdbcDatabase.java:890)
+	at liquibase.lockservice.LockServiceImpl.acquireLock(LockServiceImpl.java:114)
+	at liquibase.lockservice.LockServiceImpl.waitForLock(LockServiceImpl.java:80)
+	at liquibase.Liquibase.update(Liquibase.java:125)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:334)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:291)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1627)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1564)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:540)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:747)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests.testLiquibasePlusValidation(HibernateJpaAutoConfigurationTests.java:138)
+]]></error>
+  </testcase>
+  <testcase name="testFlywayPlusValidation" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.462"/>
+  <testcase name="testDataScript" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.101"/>
+  <testcase name="testOpenEntityManagerInViewInterceptorCreated" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.148"/>
+  <testcase name="testDataSourceTransactionManagerNotCreated" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.282"/>
+  <testcase name="testNoDataSource" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.015"/>
+  <testcase name="customJpaProperties" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.164"/>
+  <testcase name="testEntityManagerCreated" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.175"/>
+  <testcase name="usesManuallyDefinedTransactionManagerBeanIfAvailable" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.164"/>
+  <testcase name="usesManuallyDefinedEntityManagerFactoryBeanIfAvailable" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.142"/>
+  <testcase name="testOpenEntityManagerInViewInterceptorNotRegisteredWhenExplicitlyOff" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.173"/>
+  <testcase name="customPersistenceUnitManager" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.152"/>
+  <testcase name="testOpenEntityManagerInViewInterceptorNotRegisteredWhenFilterPresent" classname="org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurationTests" time="0.134"/>
+</testsuite>

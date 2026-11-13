@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="15" failures="0" name="org.apache.hadoop.hbase.client.TestAdmin" time="471.717" errors="4" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
+    <property name="java.vm.version" value="25.222-b10"/>
+    <property name="java.vm.vendor" value="Private Build"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/working/proj/apache-hbase-5244/apache-hbase/core"/>
+    <property name="java.runtime.version" value="1.8.0_222-8u222-b10-1ubuntu1~18.04.1-b10"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/working/proj/apache-hbase-5244/apache-hbase/core"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="test.build.data" value="build/test/data"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="4.15.0-1047-aws"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/tmp/surefirebooter455136171913004016.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
+    <property name="sun.java.command" value="/tmp/surefirebooter455136171913004016.jar /tmp/surefire7395136472139656616tmp /tmp/surefire7375495805609119292tmp"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_222"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="zookeeper.preAllocSize" value="100"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
+    <property name="java.vendor" value="Private Build"/>
+    <property name="localRepository" value="/root/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testCreateTable" time="0.404"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testCreateTableWithRegions" time="2.252"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testDisableAndEnableTable" time="11.341"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testTableExist" time="0.44"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testForceSplit" time="34.475">
+    <error message="org.apache.hadoop.hbase.client.RetriesExhaustedException: Trying to contact region server null for region , row &apos;kmf&apos;, but failed after 6 attempts.
+Exceptions:
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+" type="java.lang.RuntimeException">java.lang.RuntimeException: org.apache.hadoop.hbase.client.RetriesExhaustedException: Trying to contact region server null for region , row &apos;kmf&apos;, but failed after 6 attempts.
+Exceptions:
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+
+	at org.apache.hadoop.hbase.client.HTable$ClientScanner$1.hasNext(HTable.java:926)
+	at org.apache.hadoop.hbase.client.TestAdmin.testForceSplit(TestAdmin.java:370)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:59)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:115)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
+Caused by: org.apache.hadoop.hbase.client.RetriesExhaustedException: Trying to contact region server null for region , row &apos;kmf&apos;, but failed after 6 attempts.
+Exceptions:
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testForceSplit,kmf,1568227923023
+
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.getRegionServerWithRetries(HConnectionManager.java:1068)
+	at org.apache.hadoop.hbase.client.HTable$ClientScanner.nextScanner(HTable.java:779)
+	at org.apache.hadoop.hbase.client.HTable$ClientScanner.next(HTable.java:863)
+	at org.apache.hadoop.hbase.client.HTable$ClientScanner$1.hasNext(HTable.java:923)
+	... 30 more
+</error>
+    <system-out>Initial regions (1): {REGION =&gt; {NAME =&gt; &apos;testForceSplit,,1568227915043&apos;, STARTKEY =&gt; &apos;&apos;, ENDKEY =&gt; &apos;&apos;, ENCODED =&gt; 2029480201, TABLE =&gt; {{NAME =&gt; &apos;testForceSplit&apos;, FAMILIES =&gt; [{NAME =&gt; &apos;info&apos;, VERSIONS =&gt; &apos;3&apos;, IN_MEMORY =&gt; &apos;false&apos;, TTL =&gt; &apos;2147483647&apos;, COMPRESSION =&gt; &apos;NONE&apos;, BLOCKCACHE =&gt; &apos;true&apos;, BLOCKSIZE =&gt; &apos;65536&apos;, REPLICATION_SCOPE =&gt; &apos;0&apos;}]}}=172.31.52.87:45785}
+</system-out>
+  </testcase>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testEmptyHHTableDescriptor" time="0"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testEnableDisableAddColumnDeleteColumn" time="1.142"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testCreateBadTables" time="1.005"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testTableNameClash" time="12.66">
+    <error message="No server address listed in .META. for region testTableNameClash,,1568227951962" type="org.apache.hadoop.hbase.client.NoServerForRegionException">org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testTableNameClash,,1568227951962
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegionInMeta(HConnectionManager.java:732)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:638)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:605)
+	at org.apache.hadoop.hbase.client.HBaseAdmin.createTable(HBaseAdmin.java:244)
+	at org.apache.hadoop.hbase.client.HBaseAdmin.createTable(HBaseAdmin.java:166)
+	at org.apache.hadoop.hbase.client.TestAdmin.testTableNameClash(TestAdmin.java:483)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:59)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:115)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
+</error>
+  </testcase>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testReadOnlyTable" time="0.359"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testTableNames" time="0.001"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testTableNotFoundExceptionWithATable" time="12.367">
+    <error message="Unexpected exception, expected&lt;org.apache.hadoop.hbase.TableExistsException&gt; but was&lt;org.apache.hadoop.hbase.client.NoServerForRegionException&gt;" type="java.lang.Exception">java.lang.Exception: Unexpected exception, expected&lt;org.apache.hadoop.hbase.TableExistsException&gt; but was&lt;org.apache.hadoop.hbase.client.NoServerForRegionException&gt;
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:28)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:59)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:115)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
+Caused by: org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region testTableNotFoundExceptionWithATable,,1568227964691
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegionInMeta(HConnectionManager.java:732)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:638)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:605)
+	at org.apache.hadoop.hbase.client.HBaseAdmin.createTable(HBaseAdmin.java:244)
+	at org.apache.hadoop.hbase.client.HBaseAdmin.createTable(HBaseAdmin.java:166)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.createTable(HBaseTestingUtility.java:300)
+	at org.apache.hadoop.hbase.HBaseTestingUtility.createTable(HBaseTestingUtility.java:284)
+	at org.apache.hadoop.hbase.client.TestAdmin.testTableNotFoundExceptionWithATable(TestAdmin.java:542)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:21)
+	... 21 more
+</error>
+  </testcase>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testTableNotFoundExceptionWithoutAnyTables" time="0.001"/>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testHundredsOfTable" time="13.37">
+    <error message="No server address listed in .META. for region table3,,1568227978062" type="org.apache.hadoop.hbase.client.NoServerForRegionException">org.apache.hadoop.hbase.client.NoServerForRegionException: No server address listed in .META. for region table3,,1568227978062
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegionInMeta(HConnectionManager.java:732)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:638)
+	at org.apache.hadoop.hbase.client.HConnectionManager$TableServers.locateRegion(HConnectionManager.java:605)
+	at org.apache.hadoop.hbase.client.HBaseAdmin.createTable(HBaseAdmin.java:244)
+	at org.apache.hadoop.hbase.client.HBaseAdmin.createTable(HBaseAdmin.java:166)
+	at org.apache.hadoop.hbase.client.TestAdmin.testHundredsOfTable(TestAdmin.java:568)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:59)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:115)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:290)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1017)
+</error>
+  </testcase>
+  <testcase classname="org.apache.hadoop.hbase.client.TestAdmin" name="testGetTableDescriptor" time="0.418"/>
+</testsuite>
